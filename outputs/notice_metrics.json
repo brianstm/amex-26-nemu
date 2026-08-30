@@ -1,0 +1,26 @@
+{
+  "n_rows": 60000,
+  "hidden_acceptance_leakage": 7338106.254698356,
+  "hidden_total_leakage": 12002388.921953633,
+  "estimated_leakage": 6815577.710077273,
+  "recovery_ratio_vs_acceptance": 0.9287924531909681,
+  "row_corr_vs_acceptance_leakage": 0.8151447129654312,
+  "row_corr_vs_total_leakage": 0.8104945579856611,
+  "row_mape_vs_acceptance_leakage": 0.6336629891799364,
+  "corridor_corr_vs_acceptance_leakage": 0.9640129746432308,
+  "corridor_mape_vs_acceptance_leakage": 0.21333832463789434,
+  "cause_row_accuracy": 0.8707833333333334,
+  "cause_value_weighted_accuracy": 0.9197134121294002,
+  "pu_c_hat": 0.8967974082633782,
+  "cause_mix": {
+    "rail_substitution": 39118,
+    "cash": 9577,
+    "no_demand": 5848,
+    "no_acceptance": 5457
+  },
+  "uplift_method": "causal_forest_dml",
+  "uplift_corr_2x": 0.5623108201549968,
+  "uplift_corr_statement_credit": 0.6119633316857627,
+  "uplift_arm_match": 0.9061049625133881,
+  "uplift_expected_net": 243198.61263401835
+}

@@ -1,0 +1,2401 @@
+decline_id,trip_id,member_id,category,dest_district,reason
+D00000,T002154,M01001,retail,George Town,card_not_accepted
+D00001,T004297,M04585,dining,Khao San,card_not_accepted
+D00002,T004581,M03047,dining,Khao San,card_not_accepted
+D00003,T002239,M02506,retail,Malioboro,card_not_accepted
+D00004,T007199,M00160,dining,Old City,card_not_accepted
+D00005,T008155,M03363,transport,Ba Dinh,card_not_accepted
+D00006,T007189,M02491,transport,Khao San,card_not_accepted
+D00007,T005113,M04760,transport,Han River,card_not_accepted
+D00008,T009015,M01174,lodging,Khao San,card_not_accepted
+D00009,T007419,M00988,transport,Khao San,card_not_accepted
+D00010,T007421,M04030,lodging,Ubud,card_not_accepted
+D00011,T008676,M01946,lodging,Malioboro,card_not_accepted
+D00012,T008488,M04874,lodging,Ba Dinh,card_not_accepted
+D00013,T011177,M00895,retail,George Town,card_not_accepted
+D00014,T007754,M02250,lodging,Han River,card_not_accepted
+D00015,T007263,M03910,lodging,Old Quarter,card_not_accepted
+D00016,T000406,M01627,retail,Old City,card_not_accepted
+D00017,T004078,M00188,transport,Han River,card_not_accepted
+D00018,T002602,M02281,lodging,Old Quarter,card_not_accepted
+D00019,T003763,M00038,retail,Khao San,card_not_accepted
+D00020,T003473,M03612,dining,Ubud,card_not_accepted
+D00021,T012669,M01280,retail,Old Quarter,card_not_accepted
+D00022,T002150,M04651,lodging,George Town,card_not_accepted
+D00023,T011505,M01684,dining,Old Quarter,card_not_accepted
+D00024,T007849,M04729,dining,Ubud,card_not_accepted
+D00025,T009701,M04962,transport,Old City,card_not_accepted
+D00026,T006434,M02356,dining,Old City,card_not_accepted
+D00027,T000180,M02161,retail,Ubud,card_not_accepted
+D00028,T005947,M02686,transport,Old City,card_not_accepted
+D00029,T007214,M01944,retail,Malioboro,card_not_accepted
+D00030,T011968,M01034,dining,George Town,card_not_accepted
+D00031,T013341,M01970,dining,Khao San,card_not_accepted
+D00032,T012968,M01755,lodging,Ubud,card_not_accepted
+D00033,T014059,M02673,dining,Ubud,card_not_accepted
+D00034,T012084,M00728,lodging,Malioboro,card_not_accepted
+D00035,T013860,M01280,lodging,Old City,card_not_accepted
+D00036,T005500,M03323,retail,Ba Dinh,card_not_accepted
+D00037,T000295,M03463,retail,Malioboro,card_not_accepted
+D00038,T014393,M02097,lodging,Malioboro,card_not_accepted
+D00039,T014326,M00676,transport,Ubud,card_not_accepted
+D00040,T014952,M04506,transport,Ubud,card_not_accepted
+D00041,T005447,M03474,lodging,Ubud,card_not_accepted
+D00042,T007849,M04729,transport,Ubud,card_not_accepted
+D00043,T008847,M03184,lodging,Ubud,card_not_accepted
+D00044,T001805,M03347,retail,Ubud,card_not_accepted
+D00045,T007502,M03026,lodging,Ba Dinh,card_not_accepted
+D00046,T008935,M03444,transport,George Town,card_not_accepted
+D00047,T004331,M04132,transport,Ba Dinh,card_not_accepted
+D00048,T009792,M01275,transport,Ubud,card_not_accepted
+D00049,T001963,M02610,dining,Malioboro,card_not_accepted
+D00050,T009461,M00977,dining,Ubud,card_not_accepted
+D00051,T014285,M00294,lodging,Ubud,card_not_accepted
+D00052,T003838,M00799,transport,Ubud,card_not_accepted
+D00053,T006224,M02127,retail,Old City,card_not_accepted
+D00054,T008874,M00984,retail,Old City,card_not_accepted
+D00055,T000295,M03463,dining,Malioboro,card_not_accepted
+D00056,T001634,M03405,retail,Han River,card_not_accepted
+D00057,T007676,M00544,retail,Malioboro,card_not_accepted
+D00058,T001721,M00145,retail,Ubud,card_not_accepted
+D00059,T006669,M02054,dining,Malioboro,card_not_accepted
+D00060,T010892,M04631,transport,Malioboro,card_not_accepted
+D00061,T007148,M02874,lodging,Ubud,card_not_accepted
+D00062,T010609,M04636,lodging,Ubud,card_not_accepted
+D00063,T002171,M04131,dining,Old Quarter,card_not_accepted
+D00064,T000613,M00681,lodging,George Town,card_not_accepted
+D00065,T009341,M03886,dining,Ba Dinh,card_not_accepted
+D00066,T004480,M01577,dining,Old Quarter,card_not_accepted
+D00067,T011754,M02081,dining,George Town,card_not_accepted
+D00068,T004275,M03791,retail,Ubud,card_not_accepted
+D00069,T013567,M02339,transport,Han River,card_not_accepted
+D00070,T005421,M04718,retail,Old City,card_not_accepted
+D00071,T004007,M04744,transport,Khao San,card_not_accepted
+D00072,T009300,M02869,dining,Ba Dinh,card_not_accepted
+D00073,T004134,M00505,lodging,Khao San,card_not_accepted
+D00074,T001736,M00105,retail,Malioboro,card_not_accepted
+D00075,T005860,M00620,lodging,Old City,card_not_accepted
+D00076,T001486,M00864,lodging,Khao San,card_not_accepted
+D00077,T008952,M02528,transport,Khao San,card_not_accepted
+D00078,T001521,M02775,retail,Khao San,card_not_accepted
+D00079,T008493,M01286,transport,Khao San,card_not_accepted
+D00080,T008128,M01727,retail,Malioboro,card_not_accepted
+D00081,T012680,M03510,dining,Han River,card_not_accepted
+D00082,T003157,M01503,transport,Khao San,card_not_accepted
+D00083,T013151,M01747,dining,Han River,card_not_accepted
+D00084,T013950,M04818,dining,Khao San,card_not_accepted
+D00085,T007852,M02227,transport,Old Quarter,card_not_accepted
+D00086,T012968,M01755,dining,Ubud,card_not_accepted
+D00087,T012734,M04506,dining,Malioboro,card_not_accepted
+D00088,T009385,M02630,transport,Malioboro,card_not_accepted
+D00089,T006281,M03164,lodging,George Town,card_not_accepted
+D00090,T013222,M01245,retail,Old Quarter,card_not_accepted
+D00091,T007661,M03131,dining,Malioboro,card_not_accepted
+D00092,T004169,M00137,retail,Ba Dinh,card_not_accepted
+D00093,T013874,M03347,lodging,Old City,card_not_accepted
+D00094,T010801,M03871,dining,Ubud,card_not_accepted
+D00095,T007667,M02883,transport,Ba Dinh,card_not_accepted
+D00096,T011305,M01886,dining,George Town,card_not_accepted
+D00097,T009550,M04563,transport,Ubud,card_not_accepted
+D00098,T003939,M04009,transport,Ubud,card_not_accepted
+D00099,T008871,M04859,dining,Ubud,card_not_accepted
+D00100,T006655,M01343,retail,Old City,card_not_accepted
+D00101,T011048,M00466,retail,Khao San,card_not_accepted
+D00102,T000587,M01091,transport,Ubud,card_not_accepted
+D00103,T002871,M02041,lodging,Han River,card_not_accepted
+D00104,T009513,M04860,transport,Ubud,card_not_accepted
+D00105,T008004,M00535,lodging,George Town,card_not_accepted
+D00106,T014704,M03120,dining,Ubud,card_not_accepted
+D00107,T007090,M00565,retail,Ubud,card_not_accepted
+D00108,T009044,M04636,transport,Ubud,card_not_accepted
+D00109,T011414,M02618,lodging,George Town,card_not_accepted
+D00110,T006544,M01954,transport,Ubud,card_not_accepted
+D00111,T011880,M04876,transport,George Town,card_not_accepted
+D00112,T005807,M01800,dining,Ba Dinh,card_not_accepted
+D00113,T004632,M01003,retail,George Town,card_not_accepted
+D00114,T010546,M00353,transport,George Town,card_not_accepted
+D00115,T004828,M04439,retail,Khao San,card_not_accepted
+D00116,T005402,M02241,transport,Old City,card_not_accepted
+D00117,T013520,M02609,lodging,Ba Dinh,card_not_accepted
+D00118,T005051,M01740,transport,Malioboro,card_not_accepted
+D00119,T011767,M03096,dining,Old City,card_not_accepted
+D00120,T000052,M04218,transport,Khao San,card_not_accepted
+D00121,T005085,M00024,dining,Old City,card_not_accepted
+D00122,T001221,M02207,retail,Old Quarter,card_not_accepted
+D00123,T002528,M01594,lodging,Han River,card_not_accepted
+D00124,T003180,M03427,lodging,Old City,card_not_accepted
+D00125,T006226,M02976,dining,Malioboro,card_not_accepted
+D00126,T010972,M04992,dining,Khao San,card_not_accepted
+D00127,T004245,M02507,lodging,George Town,card_not_accepted
+D00128,T007833,M03178,retail,Han River,card_not_accepted
+D00129,T001413,M02356,retail,Old Quarter,card_not_accepted
+D00130,T013407,M03717,transport,Ba Dinh,card_not_accepted
+D00131,T000772,M04395,lodging,Malioboro,card_not_accepted
+D00132,T014859,M01495,retail,Khao San,card_not_accepted
+D00133,T012664,M03048,lodging,Ubud,card_not_accepted
+D00134,T012721,M01821,retail,Ubud,card_not_accepted
+D00135,T005296,M03475,dining,Khao San,card_not_accepted
+D00136,T011975,M00279,dining,Malioboro,card_not_accepted
+D00137,T000038,M01161,retail,Malioboro,card_not_accepted
+D00138,T010865,M03404,retail,Ba Dinh,card_not_accepted
+D00139,T007428,M03522,retail,Ubud,card_not_accepted
+D00140,T001391,M04202,lodging,George Town,card_not_accepted
+D00141,T010165,M02145,lodging,George Town,card_not_accepted
+D00142,T001963,M02610,retail,Malioboro,card_not_accepted
+D00143,T010918,M02281,retail,Malioboro,card_not_accepted
+D00144,T011631,M02534,transport,Old Quarter,card_not_accepted
+D00145,T011041,M00885,lodging,Khao San,card_not_accepted
+D00146,T001966,M02749,dining,George Town,card_not_accepted
+D00147,T012886,M04194,dining,Ubud,card_not_accepted
+D00148,T009362,M03451,retail,Khao San,card_not_accepted
+D00149,T011082,M01385,transport,Ubud,card_not_accepted
+D00150,T003788,M04817,lodging,George Town,card_not_accepted
+D00151,T007229,M03386,lodging,Malioboro,card_not_accepted
+D00152,T011667,M01559,transport,Han River,card_not_accepted
+D00153,T005223,M00630,lodging,Ubud,card_not_accepted
+D00154,T012286,M00628,lodging,Han River,card_not_accepted
+D00155,T005966,M04301,dining,Khao San,card_not_accepted
+D00156,T014359,M01543,retail,Malioboro,card_not_accepted
+D00157,T007355,M02161,dining,Old City,card_not_accepted
+D00158,T000691,M01603,lodging,Han River,card_not_accepted
+D00159,T010299,M02119,transport,Old City,card_not_accepted
+D00160,T012479,M02658,transport,Old Quarter,card_not_accepted
+D00161,T005772,M04257,retail,Khao San,card_not_accepted
+D00162,T007234,M00237,retail,Old Quarter,card_not_accepted
+D00163,T012265,M00740,retail,George Town,card_not_accepted
+D00164,T012983,M02753,transport,Ubud,card_not_accepted
+D00165,T009612,M02075,retail,Khao San,card_not_accepted
+D00166,T013337,M03979,lodging,Old Quarter,card_not_accepted
+D00167,T013326,M00126,dining,Malioboro,card_not_accepted
+D00168,T005925,M03595,retail,Khao San,card_not_accepted
+D00169,T008053,M02270,dining,Han River,card_not_accepted
+D00170,T002742,M02182,transport,Ubud,card_not_accepted
+D00171,T007591,M00911,dining,Ba Dinh,card_not_accepted
+D00172,T011641,M02939,retail,Han River,card_not_accepted
+D00173,T005118,M03482,lodging,Old Quarter,card_not_accepted
+D00174,T014107,M03846,retail,Old Quarter,card_not_accepted
+D00175,T003524,M00769,dining,Ubud,card_not_accepted
+D00176,T011813,M04656,dining,Han River,card_not_accepted
+D00177,T001229,M03362,retail,Han River,card_not_accepted
+D00178,T002049,M02976,lodging,Ubud,card_not_accepted
+D00179,T006002,M00504,dining,George Town,card_not_accepted
+D00180,T003939,M04009,dining,Ubud,card_not_accepted
+D00181,T001649,M03812,retail,Han River,card_not_accepted
+D00182,T011375,M04299,dining,Khao San,card_not_accepted
+D00183,T005605,M00425,dining,Old Quarter,card_not_accepted
+D00184,T013517,M01645,retail,Ubud,card_not_accepted
+D00185,T001887,M01468,transport,Ba Dinh,card_not_accepted
+D00186,T003760,M00926,dining,Malioboro,card_not_accepted
+D00187,T006270,M03440,dining,Old Quarter,card_not_accepted
+D00188,T014330,M00886,transport,Malioboro,card_not_accepted
+D00189,T009738,M04466,dining,Old Quarter,card_not_accepted
+D00190,T004053,M03366,retail,George Town,card_not_accepted
+D00191,T006346,M03233,dining,Ubud,card_not_accepted
+D00192,T006025,M04669,lodging,Ubud,card_not_accepted
+D00193,T006114,M03779,retail,Ubud,card_not_accepted
+D00194,T004294,M01645,lodging,Malioboro,card_not_accepted
+D00195,T009393,M02935,dining,Old City,card_not_accepted
+D00196,T006593,M02002,transport,Han River,card_not_accepted
+D00197,T012310,M01414,transport,Ba Dinh,card_not_accepted
+D00198,T004988,M04425,retail,Han River,card_not_accepted
+D00199,T009513,M04860,lodging,Ubud,card_not_accepted
+D00200,T006793,M03912,dining,Ubud,card_not_accepted
+D00201,T011528,M04502,retail,Han River,card_not_accepted
+D00202,T006019,M01424,retail,Old Quarter,card_not_accepted
+D00203,T001059,M01264,retail,Ba Dinh,card_not_accepted
+D00204,T014449,M00883,retail,George Town,card_not_accepted
+D00205,T004289,M01567,retail,Khao San,card_not_accepted
+D00206,T008457,M03386,retail,Han River,card_not_accepted
+D00207,T000419,M02624,dining,George Town,card_not_accepted
+D00208,T010826,M01589,transport,Old Quarter,card_not_accepted
+D00209,T008355,M00123,lodging,Malioboro,card_not_accepted
+D00210,T002487,M04293,lodging,George Town,card_not_accepted
+D00211,T001658,M03082,transport,Old City,card_not_accepted
+D00212,T014147,M00835,transport,Han River,card_not_accepted
+D00213,T011203,M00107,lodging,Ubud,card_not_accepted
+D00214,T004935,M02920,lodging,Ba Dinh,card_not_accepted
+D00215,T005524,M00712,transport,George Town,card_not_accepted
+D00216,T011229,M03374,transport,Old Quarter,card_not_accepted
+D00217,T011342,M04137,transport,Khao San,card_not_accepted
+D00218,T004807,M03155,retail,Old City,card_not_accepted
+D00219,T006225,M01151,lodging,Ubud,card_not_accepted
+D00220,T007074,M04973,retail,George Town,card_not_accepted
+D00221,T012872,M01022,lodging,Ubud,card_not_accepted
+D00222,T014944,M01678,dining,Old Quarter,card_not_accepted
+D00223,T002949,M02207,transport,Khao San,card_not_accepted
+D00224,T014696,M01044,transport,Ubud,card_not_accepted
+D00225,T012828,M02015,lodging,George Town,card_not_accepted
+D00226,T008041,M02871,retail,Old Quarter,card_not_accepted
+D00227,T004027,M02590,retail,Khao San,card_not_accepted
+D00228,T013550,M03954,lodging,Ubud,card_not_accepted
+D00229,T001418,M03814,retail,Khao San,card_not_accepted
+D00230,T003235,M04090,lodging,Han River,card_not_accepted
+D00231,T006260,M02763,retail,George Town,card_not_accepted
+D00232,T004944,M02562,lodging,Old Quarter,card_not_accepted
+D00233,T007718,M04351,retail,Malioboro,card_not_accepted
+D00234,T007162,M01622,transport,Old City,card_not_accepted
+D00235,T005447,M03474,transport,Ubud,card_not_accepted
+D00236,T000612,M04660,dining,Han River,card_not_accepted
+D00237,T002298,M01265,transport,Ba Dinh,card_not_accepted
+D00238,T003180,M03427,dining,Old City,card_not_accepted
+D00239,T010852,M02090,dining,Malioboro,card_not_accepted
+D00240,T013384,M03516,lodging,Old Quarter,card_not_accepted
+D00241,T002774,M01001,retail,Malioboro,card_not_accepted
+D00242,T009269,M01823,retail,Ubud,card_not_accepted
+D00243,T012677,M01105,dining,George Town,card_not_accepted
+D00244,T001155,M03584,lodging,Ubud,card_not_accepted
+D00245,T010445,M00388,retail,Ba Dinh,card_not_accepted
+D00246,T008366,M02281,dining,Han River,card_not_accepted
+D00247,T011522,M01888,dining,Khao San,card_not_accepted
+D00248,T004672,M02196,retail,Old Quarter,card_not_accepted
+D00249,T011480,M02183,retail,Ubud,card_not_accepted
+D00250,T000214,M04585,retail,Ubud,card_not_accepted
+D00251,T006503,M04690,retail,Malioboro,card_not_accepted
+D00252,T012140,M01876,transport,Han River,card_not_accepted
+D00253,T007347,M04121,lodging,Ubud,card_not_accepted
+D00254,T004460,M03580,transport,Khao San,card_not_accepted
+D00255,T004688,M00794,transport,Ba Dinh,card_not_accepted
+D00256,T014707,M03491,retail,Old City,card_not_accepted
+D00257,T012385,M03475,dining,Ba Dinh,card_not_accepted
+D00258,T009306,M04930,retail,Old Quarter,card_not_accepted
+D00259,T001978,M02017,retail,George Town,card_not_accepted
+D00260,T008959,M03310,dining,Old Quarter,card_not_accepted
+D00261,T014344,M02642,transport,Han River,card_not_accepted
+D00262,T014888,M02496,retail,Han River,card_not_accepted
+D00263,T006018,M03522,lodging,Old Quarter,card_not_accepted
+D00264,T010835,M02984,transport,Khao San,card_not_accepted
+D00265,T004231,M01375,transport,Khao San,card_not_accepted
+D00266,T010724,M04237,retail,Old Quarter,card_not_accepted
+D00267,T009965,M03673,transport,Ba Dinh,card_not_accepted
+D00268,T012325,M03780,dining,Old City,card_not_accepted
+D00269,T006072,M04052,lodging,Khao San,card_not_accepted
+D00270,T003900,M00904,dining,Malioboro,card_not_accepted
+D00271,T000062,M02156,dining,Old City,card_not_accepted
+D00272,T002972,M04800,transport,Khao San,card_not_accepted
+D00273,T004198,M03332,dining,Ubud,card_not_accepted
+D00274,T006661,M02945,lodging,Old City,card_not_accepted
+D00275,T007466,M00057,retail,Ba Dinh,card_not_accepted
+D00276,T008804,M04240,lodging,Old City,card_not_accepted
+D00277,T014190,M02732,dining,Ubud,card_not_accepted
+D00278,T014277,M04530,transport,Ba Dinh,card_not_accepted
+D00279,T004271,M03083,dining,Malioboro,card_not_accepted
+D00280,T006390,M01566,retail,Malioboro,card_not_accepted
+D00281,T010398,M01715,dining,Malioboro,card_not_accepted
+D00282,T014266,M03726,lodging,George Town,card_not_accepted
+D00283,T014001,M00301,transport,Malioboro,card_not_accepted
+D00284,T005860,M00620,retail,Old City,card_not_accepted
+D00285,T005053,M00369,transport,George Town,card_not_accepted
+D00286,T006983,M02266,dining,Ubud,card_not_accepted
+D00287,T006858,M01169,lodging,Malioboro,card_not_accepted
+D00288,T000884,M02236,retail,Old Quarter,card_not_accepted
+D00289,T009780,M03673,dining,Khao San,card_not_accepted
+D00290,T007335,M04735,retail,Ubud,card_not_accepted
+D00291,T006208,M01086,retail,Old Quarter,card_not_accepted
+D00292,T001525,M03068,dining,Ubud,card_not_accepted
+D00293,T012022,M01935,dining,Old Quarter,card_not_accepted
+D00294,T008290,M03564,dining,Malioboro,card_not_accepted
+D00295,T002142,M03645,transport,George Town,card_not_accepted
+D00296,T000647,M00312,lodging,Han River,card_not_accepted
+D00297,T005342,M03663,retail,Old City,card_not_accepted
+D00298,T007534,M04564,dining,Old Quarter,card_not_accepted
+D00299,T012349,M02211,dining,Old City,card_not_accepted
+D00300,T009746,M00810,dining,Old City,card_not_accepted
+D00301,T007580,M04232,lodging,Han River,card_not_accepted
+D00302,T009026,M02564,lodging,Old City,card_not_accepted
+D00303,T008477,M04593,dining,Ba Dinh,card_not_accepted
+D00304,T009696,M02541,dining,Malioboro,card_not_accepted
+D00305,T004955,M04811,transport,George Town,card_not_accepted
+D00306,T006680,M03913,lodging,Ba Dinh,card_not_accepted
+D00307,T012928,M01635,lodging,Han River,card_not_accepted
+D00308,T005163,M03900,lodging,George Town,card_not_accepted
+D00309,T009650,M01835,lodging,Old City,card_not_accepted
+D00310,T013049,M01311,dining,Han River,card_not_accepted
+D00311,T000340,M02701,retail,Old City,card_not_accepted
+D00312,T009936,M03117,dining,Han River,card_not_accepted
+D00313,T006111,M00211,lodging,Han River,card_not_accepted
+D00314,T009372,M02287,dining,Malioboro,card_not_accepted
+D00315,T000169,M02169,transport,Malioboro,card_not_accepted
+D00316,T012987,M01735,transport,Khao San,card_not_accepted
+D00317,T000513,M04604,dining,Ubud,card_not_accepted
+D00318,T005407,M00444,lodging,George Town,card_not_accepted
+D00319,T012441,M04825,retail,Malioboro,card_not_accepted
+D00320,T006329,M02350,transport,Ba Dinh,card_not_accepted
+D00321,T011266,M00165,retail,Han River,card_not_accepted
+D00322,T006772,M01638,lodging,Ubud,card_not_accepted
+D00323,T007895,M03004,transport,Han River,card_not_accepted
+D00324,T000903,M01979,transport,Ubud,card_not_accepted
+D00325,T010445,M00388,lodging,Ba Dinh,card_not_accepted
+D00326,T012956,M04580,lodging,Old Quarter,card_not_accepted
+D00327,T006082,M03614,dining,Old Quarter,card_not_accepted
+D00328,T012189,M02705,transport,Malioboro,card_not_accepted
+D00329,T013710,M02616,transport,Ba Dinh,card_not_accepted
+D00330,T006429,M02677,transport,Malioboro,card_not_accepted
+D00331,T010921,M01638,retail,Khao San,card_not_accepted
+D00332,T008352,M04807,lodging,Old City,card_not_accepted
+D00333,T008941,M02149,lodging,Han River,card_not_accepted
+D00334,T013185,M02088,dining,George Town,card_not_accepted
+D00335,T004120,M01055,lodging,Ubud,card_not_accepted
+D00336,T012148,M03057,lodging,Ba Dinh,card_not_accepted
+D00337,T007637,M04982,retail,George Town,card_not_accepted
+D00338,T007522,M02566,transport,Malioboro,card_not_accepted
+D00339,T013539,M00270,dining,Ubud,card_not_accepted
+D00340,T004975,M02370,retail,Old Quarter,card_not_accepted
+D00341,T014870,M03443,lodging,Han River,card_not_accepted
+D00342,T003395,M02181,lodging,Han River,card_not_accepted
+D00343,T000155,M00514,transport,Khao San,card_not_accepted
+D00344,T010455,M03644,retail,Ba Dinh,card_not_accepted
+D00345,T001187,M03914,retail,Khao San,card_not_accepted
+D00346,T014041,M03419,transport,Old Quarter,card_not_accepted
+D00347,T004409,M03168,retail,Ubud,card_not_accepted
+D00348,T001305,M00704,lodging,Old City,card_not_accepted
+D00349,T012328,M02759,retail,Malioboro,card_not_accepted
+D00350,T007218,M02625,retail,Ubud,card_not_accepted
+D00351,T005750,M04422,transport,Old City,card_not_accepted
+D00352,T002113,M00354,transport,George Town,card_not_accepted
+D00353,T003935,M00854,dining,Ubud,card_not_accepted
+D00354,T005113,M04760,retail,Han River,card_not_accepted
+D00355,T004741,M02277,lodging,Malioboro,card_not_accepted
+D00356,T010186,M03082,lodging,Old Quarter,card_not_accepted
+D00357,T014174,M04848,dining,Ba Dinh,card_not_accepted
+D00358,T008029,M02079,dining,Old Quarter,card_not_accepted
+D00359,T009161,M02285,lodging,Han River,card_not_accepted
+D00360,T009590,M02939,lodging,Old Quarter,card_not_accepted
+D00361,T002806,M02170,transport,Ubud,card_not_accepted
+D00362,T004638,M02784,retail,Han River,card_not_accepted
+D00363,T001367,M03251,dining,Ubud,card_not_accepted
+D00364,T005928,M02520,retail,Ubud,card_not_accepted
+D00365,T007071,M03185,dining,Malioboro,card_not_accepted
+D00366,T006755,M03346,transport,Old Quarter,card_not_accepted
+D00367,T003163,M04515,transport,Old City,card_not_accepted
+D00368,T001069,M03907,retail,Malioboro,card_not_accepted
+D00369,T008804,M04240,dining,Old City,card_not_accepted
+D00370,T009460,M04548,retail,Malioboro,card_not_accepted
+D00371,T005296,M03475,transport,Khao San,card_not_accepted
+D00372,T012274,M01309,retail,Malioboro,card_not_accepted
+D00373,T014475,M03363,dining,Malioboro,card_not_accepted
+D00374,T013021,M04502,dining,Ubud,card_not_accepted
+D00375,T008688,M03288,dining,Malioboro,card_not_accepted
+D00376,T005050,M03339,lodging,Old City,card_not_accepted
+D00377,T012396,M01259,retail,Ubud,card_not_accepted
+D00378,T002914,M03988,lodging,Ubud,card_not_accepted
+D00379,T013095,M03791,retail,Malioboro,card_not_accepted
+D00380,T009728,M00498,transport,Old Quarter,card_not_accepted
+D00381,T000417,M03946,dining,Ubud,card_not_accepted
+D00382,T003777,M04271,retail,George Town,card_not_accepted
+D00383,T011618,M02502,transport,Han River,card_not_accepted
+D00384,T006639,M00129,retail,Old Quarter,card_not_accepted
+D00385,T007719,M03746,lodging,Old Quarter,card_not_accepted
+D00386,T014525,M02260,lodging,Han River,card_not_accepted
+D00387,T000373,M03543,lodging,Ubud,card_not_accepted
+D00388,T012027,M03895,lodging,Old City,card_not_accepted
+D00389,T012814,M00889,transport,Khao San,card_not_accepted
+D00390,T000486,M00226,dining,Khao San,card_not_accepted
+D00391,T006241,M03081,transport,Old Quarter,card_not_accepted
+D00392,T010449,M00043,transport,Ubud,card_not_accepted
+D00393,T004526,M04482,lodging,Old Quarter,card_not_accepted
+D00394,T013451,M01565,retail,Old City,card_not_accepted
+D00395,T004468,M00278,dining,Ba Dinh,card_not_accepted
+D00396,T009550,M04563,lodging,Ubud,card_not_accepted
+D00397,T007542,M01728,transport,Han River,card_not_accepted
+D00398,T009505,M04742,retail,Old City,card_not_accepted
+D00399,T012871,M00210,lodging,Ubud,card_not_accepted
+D00400,T010659,M04798,transport,Ubud,card_not_accepted
+D00401,T008669,M01397,lodging,Old City,card_not_accepted
+D00402,T010114,M04911,retail,Malioboro,card_not_accepted
+D00403,T008029,M02079,lodging,Old Quarter,card_not_accepted
+D00404,T004683,M02301,dining,Old Quarter,card_not_accepted
+D00405,T010545,M02813,dining,Khao San,card_not_accepted
+D00406,T005894,M00325,lodging,Malioboro,card_not_accepted
+D00407,T008081,M02958,lodging,George Town,card_not_accepted
+D00408,T009339,M02241,lodging,Malioboro,card_not_accepted
+D00409,T013320,M01437,dining,Ubud,card_not_accepted
+D00410,T005003,M04054,retail,Ubud,card_not_accepted
+D00411,T013260,M00300,retail,Ubud,card_not_accepted
+D00412,T008220,M04525,transport,Ba Dinh,card_not_accepted
+D00413,T004245,M02507,retail,George Town,card_not_accepted
+D00414,T005890,M02169,dining,Khao San,card_not_accepted
+D00415,T003251,M04110,transport,Ubud,card_not_accepted
+D00416,T013958,M01301,dining,Khao San,card_not_accepted
+D00417,T006593,M02002,dining,Han River,card_not_accepted
+D00418,T007765,M02199,dining,Ubud,card_not_accepted
+D00419,T007090,M00565,transport,Ubud,card_not_accepted
+D00420,T008579,M02745,dining,Old City,card_not_accepted
+D00421,T005306,M01508,transport,Han River,card_not_accepted
+D00422,T011909,M00189,transport,Khao San,card_not_accepted
+D00423,T010675,M01926,transport,Malioboro,card_not_accepted
+D00424,T004037,M04364,dining,Ba Dinh,card_not_accepted
+D00425,T004454,M03375,transport,Malioboro,card_not_accepted
+D00426,T004031,M01627,transport,Malioboro,card_not_accepted
+D00427,T001485,M01581,dining,Old City,card_not_accepted
+D00428,T002200,M02870,dining,Khao San,card_not_accepted
+D00429,T006072,M04052,retail,Khao San,card_not_accepted
+D00430,T008567,M03263,transport,George Town,card_not_accepted
+D00431,T005218,M03781,transport,Old Quarter,card_not_accepted
+D00432,T005978,M04530,dining,Ubud,card_not_accepted
+D00433,T004219,M04213,retail,Ba Dinh,card_not_accepted
+D00434,T013260,M00300,dining,Ubud,card_not_accepted
+D00435,T002250,M01416,lodging,George Town,card_not_accepted
+D00436,T002731,M00470,retail,Khao San,card_not_accepted
+D00437,T006104,M03487,retail,Ubud,card_not_accepted
+D00438,T007994,M00163,lodging,Ba Dinh,card_not_accepted
+D00439,T013791,M02148,lodging,Old City,card_not_accepted
+D00440,T010466,M04193,lodging,Han River,card_not_accepted
+D00441,T007640,M04136,retail,Old City,card_not_accepted
+D00442,T009785,M01343,dining,Han River,card_not_accepted
+D00443,T003977,M04294,retail,Old City,card_not_accepted
+D00444,T007774,M04911,dining,Old Quarter,card_not_accepted
+D00445,T009176,M02254,dining,Old City,card_not_accepted
+D00446,T012066,M02243,retail,Han River,card_not_accepted
+D00447,T008676,M01946,transport,Malioboro,card_not_accepted
+D00448,T011016,M00389,lodging,Malioboro,card_not_accepted
+D00449,T009673,M03567,dining,Khao San,card_not_accepted
+D00450,T009314,M00648,lodging,Han River,card_not_accepted
+D00451,T010504,M02782,transport,George Town,card_not_accepted
+D00452,T000497,M02237,lodging,Han River,card_not_accepted
+D00453,T011237,M04810,lodging,Malioboro,card_not_accepted
+D00454,T010669,M01292,dining,Han River,card_not_accepted
+D00455,T002439,M02161,transport,Old Quarter,card_not_accepted
+D00456,T006144,M04058,lodging,Old Quarter,card_not_accepted
+D00457,T007093,M04574,transport,George Town,card_not_accepted
+D00458,T011520,M04027,transport,Khao San,card_not_accepted
+D00459,T011336,M03461,dining,Ba Dinh,card_not_accepted
+D00460,T007797,M03008,transport,Malioboro,card_not_accepted
+D00461,T006726,M03599,lodging,Old City,card_not_accepted
+D00462,T010745,M00391,lodging,Khao San,card_not_accepted
+D00463,T008412,M04746,dining,Khao San,card_not_accepted
+D00464,T002413,M04136,dining,Khao San,card_not_accepted
+D00465,T002793,M04822,dining,George Town,card_not_accepted
+D00466,T004828,M04439,transport,Khao San,card_not_accepted
+D00467,T009673,M03567,transport,Khao San,card_not_accepted
+D00468,T005011,M00391,lodging,Khao San,card_not_accepted
+D00469,T014380,M03482,retail,Han River,card_not_accepted
+D00470,T005172,M02065,lodging,Ubud,card_not_accepted
+D00471,T003773,M02182,lodging,Ubud,card_not_accepted
+D00472,T000334,M03573,lodging,Old Quarter,card_not_accepted
+D00473,T013789,M03578,lodging,Old City,card_not_accepted
+D00474,T012282,M00297,transport,Malioboro,card_not_accepted
+D00475,T010145,M02920,lodging,George Town,card_not_accepted
+D00476,T002250,M01416,transport,George Town,card_not_accepted
+D00477,T009409,M03516,dining,Han River,card_not_accepted
+D00478,T012880,M03233,dining,Han River,card_not_accepted
+D00479,T011658,M00309,retail,Khao San,card_not_accepted
+D00480,T014745,M01065,lodging,Old Quarter,card_not_accepted
+D00481,T013047,M02469,dining,Old City,card_not_accepted
+D00482,T005501,M00982,transport,Malioboro,card_not_accepted
+D00483,T013980,M04628,retail,Old City,card_not_accepted
+D00484,T013898,M04162,lodging,Malioboro,card_not_accepted
+D00485,T000381,M03912,lodging,Malioboro,card_not_accepted
+D00486,T014530,M02197,retail,Old Quarter,card_not_accepted
+D00487,T000673,M02611,lodging,Old Quarter,card_not_accepted
+D00488,T003928,M02415,lodging,Malioboro,card_not_accepted
+D00489,T006077,M04843,transport,Old City,card_not_accepted
+D00490,T005604,M02255,retail,Khao San,card_not_accepted
+D00491,T014754,M00718,dining,Old Quarter,card_not_accepted
+D00492,T010380,M00862,retail,Old Quarter,card_not_accepted
+D00493,T004707,M01488,dining,Malioboro,card_not_accepted
+D00494,T013632,M00402,retail,Ubud,card_not_accepted
+D00495,T014696,M01044,retail,Ubud,card_not_accepted
+D00496,T011721,M00789,retail,Old City,card_not_accepted
+D00497,T012816,M00103,dining,Malioboro,card_not_accepted
+D00498,T006859,M00445,dining,Ubud,card_not_accepted
+D00499,T014490,M02096,transport,Ubud,card_not_accepted
+D00500,T014253,M04276,lodging,Old Quarter,card_not_accepted
+D00501,T000373,M03543,retail,Ubud,card_not_accepted
+D00502,T003077,M04469,retail,Ba Dinh,card_not_accepted
+D00503,T000556,M00129,retail,Old City,card_not_accepted
+D00504,T000307,M00597,retail,Malioboro,card_not_accepted
+D00505,T009605,M00771,dining,Khao San,card_not_accepted
+D00506,T010248,M04703,dining,George Town,card_not_accepted
+D00507,T009686,M03441,retail,Han River,card_not_accepted
+D00508,T014132,M04947,retail,Old Quarter,card_not_accepted
+D00509,T000637,M02356,transport,Ubud,card_not_accepted
+D00510,T008278,M01132,dining,Old City,card_not_accepted
+D00511,T004876,M02822,lodging,Khao San,card_not_accepted
+D00512,T001426,M02072,transport,Khao San,card_not_accepted
+D00513,T000971,M01994,dining,Old City,card_not_accepted
+D00514,T007936,M02490,lodging,Malioboro,card_not_accepted
+D00515,T011342,M04137,lodging,Khao San,card_not_accepted
+D00516,T010096,M02297,retail,Han River,card_not_accepted
+D00517,T009905,M02864,lodging,Han River,card_not_accepted
+D00518,T000892,M01140,lodging,Khao San,card_not_accepted
+D00519,T012702,M01242,dining,Ubud,card_not_accepted
+D00520,T011753,M01404,retail,George Town,card_not_accepted
+D00521,T005038,M00835,lodging,Khao San,card_not_accepted
+D00522,T006682,M02939,dining,Malioboro,card_not_accepted
+D00523,T012585,M00724,transport,Old City,card_not_accepted
+D00524,T007536,M03127,dining,Han River,card_not_accepted
+D00525,T007707,M01418,lodging,Old Quarter,card_not_accepted
+D00526,T000587,M01091,dining,Ubud,card_not_accepted
+D00527,T005627,M00475,transport,Ubud,card_not_accepted
+D00528,T006103,M03812,transport,Old Quarter,card_not_accepted
+D00529,T003573,M04831,lodging,Old City,card_not_accepted
+D00530,T005703,M00824,retail,Malioboro,card_not_accepted
+D00531,T009878,M04452,dining,Ubud,card_not_accepted
+D00532,T012257,M03342,retail,Khao San,card_not_accepted
+D00533,T014414,M04993,retail,George Town,card_not_accepted
+D00534,T007913,M04562,transport,Ba Dinh,card_not_accepted
+D00535,T011025,M02839,transport,Ubud,card_not_accepted
+D00536,T013523,M03692,retail,Old Quarter,card_not_accepted
+D00537,T000173,M01100,transport,George Town,card_not_accepted
+D00538,T002011,M03482,retail,Old Quarter,card_not_accepted
+D00539,T002880,M02644,dining,Ubud,card_not_accepted
+D00540,T001187,M03914,dining,Khao San,card_not_accepted
+D00541,T008967,M04444,transport,George Town,card_not_accepted
+D00542,T003950,M00470,transport,Khao San,card_not_accepted
+D00543,T000532,M04361,lodging,Malioboro,card_not_accepted
+D00544,T014285,M00294,transport,Ubud,card_not_accepted
+D00545,T004854,M01034,dining,Khao San,card_not_accepted
+D00546,T001314,M01901,retail,Ba Dinh,card_not_accepted
+D00547,T009680,M04627,dining,Malioboro,card_not_accepted
+D00548,T014385,M02581,transport,George Town,card_not_accepted
+D00549,T010486,M02965,dining,Khao San,card_not_accepted
+D00550,T013782,M00710,lodging,Old Quarter,card_not_accepted
+D00551,T002593,M01849,dining,Malioboro,card_not_accepted
+D00552,T000561,M04318,retail,Ubud,card_not_accepted
+D00553,T002474,M04673,transport,Ubud,card_not_accepted
+D00554,T004580,M01821,transport,Malioboro,card_not_accepted
+D00555,T002479,M03131,transport,Khao San,card_not_accepted
+D00556,T013971,M00570,dining,Han River,card_not_accepted
+D00557,T013249,M01307,lodging,Han River,card_not_accepted
+D00558,T009799,M04551,dining,Malioboro,card_not_accepted
+D00559,T000269,M01809,retail,Malioboro,card_not_accepted
+D00560,T005824,M04110,transport,Ubud,card_not_accepted
+D00561,T009322,M04361,transport,Old Quarter,card_not_accepted
+D00562,T011101,M02026,lodging,Old Quarter,card_not_accepted
+D00563,T008521,M03662,dining,Old City,card_not_accepted
+D00564,T003239,M02642,dining,George Town,card_not_accepted
+D00565,T007945,M04512,retail,Ba Dinh,card_not_accepted
+D00566,T012308,M03250,retail,Old Quarter,card_not_accepted
+D00567,T005626,M04628,retail,Ubud,card_not_accepted
+D00568,T003663,M01459,dining,George Town,card_not_accepted
+D00569,T012703,M03544,dining,Old Quarter,card_not_accepted
+D00570,T012956,M04580,dining,Old Quarter,card_not_accepted
+D00571,T006895,M01912,dining,Old Quarter,card_not_accepted
+D00572,T009044,M04636,lodging,Ubud,card_not_accepted
+D00573,T002641,M01800,lodging,Ubud,card_not_accepted
+D00574,T005987,M03651,lodging,Ubud,card_not_accepted
+D00575,T007910,M02101,dining,Ba Dinh,card_not_accepted
+D00576,T002957,M00353,transport,Old Quarter,card_not_accepted
+D00577,T012461,M02174,dining,Ba Dinh,card_not_accepted
+D00578,T011703,M00924,retail,Han River,card_not_accepted
+D00579,T014679,M01619,dining,Old City,card_not_accepted
+D00580,T014833,M02272,transport,Ubud,card_not_accepted
+D00581,T008323,M03971,lodging,Han River,card_not_accepted
+D00582,T008627,M03912,transport,Ubud,card_not_accepted
+D00583,T014969,M03900,transport,George Town,card_not_accepted
+D00584,T000812,M04258,transport,Han River,card_not_accepted
+D00585,T007895,M03004,lodging,Han River,card_not_accepted
+D00586,T007588,M00515,lodging,Old Quarter,card_not_accepted
+D00587,T012884,M01907,transport,Ba Dinh,card_not_accepted
+D00588,T006140,M00381,transport,Khao San,card_not_accepted
+D00589,T014331,M02154,dining,Malioboro,card_not_accepted
+D00590,T012433,M03082,dining,Ubud,card_not_accepted
+D00591,T012073,M03195,retail,Malioboro,card_not_accepted
+D00592,T001858,M00833,retail,Khao San,card_not_accepted
+D00593,T003944,M04258,transport,Ubud,card_not_accepted
+D00594,T000356,M01314,dining,Ubud,card_not_accepted
+D00595,T006772,M01638,dining,Ubud,card_not_accepted
+D00596,T000991,M03886,lodging,Old City,card_not_accepted
+D00597,T006144,M04058,transport,Old Quarter,card_not_accepted
+D00598,T000243,M04751,transport,Ubud,card_not_accepted
+D00599,T004129,M02271,retail,George Town,card_not_accepted
+D00600,T010295,M03044,retail,Ba Dinh,card_not_accepted
+D00601,T010168,M00703,retail,Ubud,card_not_accepted
+D00602,T003105,M01614,lodging,Khao San,card_not_accepted
+D00603,T003986,M04302,transport,Han River,card_not_accepted
+D00604,T009322,M04361,dining,Old Quarter,card_not_accepted
+D00605,T010794,M02753,lodging,Ubud,card_not_accepted
+D00606,T001380,M00653,transport,Old City,card_not_accepted
+D00607,T002378,M01165,transport,Khao San,card_not_accepted
+D00608,T003387,M02627,transport,Ubud,card_not_accepted
+D00609,T010114,M04911,dining,Malioboro,card_not_accepted
+D00610,T001529,M03236,transport,Ubud,card_not_accepted
+D00611,T009514,M04040,lodging,Han River,card_not_accepted
+D00612,T012569,M00319,lodging,George Town,card_not_accepted
+D00613,T000478,M04478,dining,Khao San,card_not_accepted
+D00614,T009679,M01968,retail,Ubud,card_not_accepted
+D00615,T002261,M01884,lodging,Ubud,card_not_accepted
+D00616,T003891,M02296,transport,George Town,card_not_accepted
+D00617,T000129,M01811,transport,Old Quarter,card_not_accepted
+D00618,T009122,M03552,lodging,Old City,card_not_accepted
+D00619,T007148,M02874,transport,Ubud,card_not_accepted
+D00620,T010681,M01538,lodging,Malioboro,card_not_accepted
+D00621,T011081,M03382,lodging,Old City,card_not_accepted
+D00622,T014952,M04506,dining,Ubud,card_not_accepted
+D00623,T002355,M04732,transport,Malioboro,card_not_accepted
+D00624,T003246,M02483,dining,George Town,card_not_accepted
+D00625,T007368,M03156,retail,Ubud,card_not_accepted
+D00626,T003861,M02354,dining,Old City,card_not_accepted
+D00627,T007090,M00565,dining,Ubud,card_not_accepted
+D00628,T012023,M04627,retail,Old Quarter,card_not_accepted
+D00629,T001833,M02350,lodging,Ubud,card_not_accepted
+D00630,T012084,M00728,retail,Malioboro,card_not_accepted
+D00631,T010434,M00094,transport,Ubud,card_not_accepted
+D00632,T002319,M04123,retail,George Town,card_not_accepted
+D00633,T003066,M03092,retail,Khao San,card_not_accepted
+D00634,T011334,M02434,lodging,Han River,card_not_accepted
+D00635,T002290,M00266,lodging,Han River,card_not_accepted
+D00636,T001890,M02489,lodging,Old Quarter,card_not_accepted
+D00637,T001296,M00414,transport,Ubud,card_not_accepted
+D00638,T000054,M04580,lodging,Old City,card_not_accepted
+D00639,T009950,M01989,lodging,Malioboro,card_not_accepted
+D00640,T006911,M04648,transport,Ubud,card_not_accepted
+D00641,T002993,M00803,transport,Ubud,card_not_accepted
+D00642,T006018,M03522,dining,Old Quarter,card_not_accepted
+D00643,T007850,M03123,dining,George Town,card_not_accepted
+D00644,T000761,M03651,transport,Old City,card_not_accepted
+D00645,T002355,M04732,retail,Malioboro,card_not_accepted
+D00646,T011660,M02420,dining,Han River,card_not_accepted
+D00647,T008245,M02065,retail,Ubud,card_not_accepted
+D00648,T001141,M01036,lodging,Malioboro,card_not_accepted
+D00649,T009689,M04091,retail,Old Quarter,card_not_accepted
+D00650,T013421,M00378,retail,George Town,card_not_accepted
+D00651,T001266,M00626,retail,George Town,card_not_accepted
+D00652,T000513,M04604,transport,Ubud,card_not_accepted
+D00653,T001195,M02956,lodging,George Town,card_not_accepted
+D00654,T004537,M00718,transport,Old Quarter,card_not_accepted
+D00655,T007358,M03461,transport,Old City,card_not_accepted
+D00656,T003731,M03500,retail,Malioboro,card_not_accepted
+D00657,T005703,M00824,lodging,Malioboro,card_not_accepted
+D00658,T007953,M01044,dining,Ubud,card_not_accepted
+D00659,T008062,M00603,retail,Ubud,card_not_accepted
+D00660,T008103,M00388,lodging,Malioboro,card_not_accepted
+D00661,T001277,M02130,retail,Ba Dinh,card_not_accepted
+D00662,T003097,M01553,dining,Old City,card_not_accepted
+D00663,T009993,M01900,retail,Ba Dinh,card_not_accepted
+D00664,T005816,M00788,transport,Malioboro,card_not_accepted
+D00665,T011947,M00747,dining,Ubud,card_not_accepted
+D00666,T012914,M04388,transport,Old City,card_not_accepted
+D00667,T003744,M00926,lodging,Old Quarter,card_not_accepted
+D00668,T010386,M02911,retail,Old Quarter,card_not_accepted
+D00669,T000484,M01766,transport,Old Quarter,card_not_accepted
+D00670,T008815,M01653,transport,Khao San,card_not_accepted
+D00671,T003998,M00041,lodging,Old City,card_not_accepted
+D00672,T010888,M00061,dining,Khao San,card_not_accepted
+D00673,T012934,M00548,retail,George Town,card_not_accepted
+D00674,T006535,M01000,retail,Ubud,card_not_accepted
+D00675,T000536,M01405,dining,Ba Dinh,card_not_accepted
+D00676,T010347,M00559,retail,Han River,card_not_accepted
+D00677,T005004,M00253,lodging,Han River,card_not_accepted
+D00678,T005252,M03164,dining,Old City,card_not_accepted
+D00679,T009379,M03371,retail,Old Quarter,card_not_accepted
+D00680,T008355,M00123,transport,Malioboro,card_not_accepted
+D00681,T004347,M00966,retail,Old City,card_not_accepted
+D00682,T012609,M01012,retail,Ubud,card_not_accepted
+D00683,T003251,M04110,lodging,Ubud,card_not_accepted
+D00684,T011506,M02272,dining,Malioboro,card_not_accepted
+D00685,T007007,M02541,dining,Old City,card_not_accepted
+D00686,T011481,M02301,transport,George Town,card_not_accepted
+D00687,T003395,M02181,dining,Han River,card_not_accepted
+D00688,T005421,M04718,lodging,Old City,card_not_accepted
+D00689,T000244,M02513,retail,Khao San,card_not_accepted
+D00690,T010669,M01292,retail,Han River,card_not_accepted
+D00691,T001858,M00833,lodging,Khao San,card_not_accepted
+D00692,T003774,M02624,retail,Ubud,card_not_accepted
+D00693,T001045,M04351,lodging,Ubud,card_not_accepted
+D00694,T002355,M04732,dining,Malioboro,card_not_accepted
+D00695,T003689,M01552,dining,Old Quarter,card_not_accepted
+D00696,T014463,M02630,lodging,Malioboro,card_not_accepted
+D00697,T012017,M03799,retail,Han River,card_not_accepted
+D00698,T007799,M02744,lodging,Ubud,card_not_accepted
+D00699,T009835,M02500,transport,Han River,card_not_accepted
+D00700,T010257,M02228,lodging,Malioboro,card_not_accepted
+D00701,T001949,M01714,transport,Old Quarter,card_not_accepted
+D00702,T008387,M01821,dining,Khao San,card_not_accepted
+D00703,T014190,M02732,transport,Ubud,card_not_accepted
+D00704,T002884,M02841,dining,Ubud,card_not_accepted
+D00705,T006736,M00824,lodging,George Town,card_not_accepted
+D00706,T006883,M00498,retail,Ubud,card_not_accepted
+D00707,T006882,M02167,dining,Khao San,card_not_accepted
+D00708,T003944,M04258,dining,Ubud,card_not_accepted
+D00709,T010208,M00007,lodging,Khao San,card_not_accepted
+D00710,T001002,M02695,dining,Malioboro,card_not_accepted
+D00711,T010295,M03044,transport,Ba Dinh,card_not_accepted
+D00712,T009905,M02864,transport,Han River,card_not_accepted
+D00713,T012685,M00614,retail,Old Quarter,card_not_accepted
+D00714,T013069,M04050,transport,Khao San,card_not_accepted
+D00715,T012308,M03250,transport,Old Quarter,card_not_accepted
+D00716,T004211,M02417,retail,Ubud,card_not_accepted
+D00717,T007719,M03746,transport,Old Quarter,card_not_accepted
+D00718,T004124,M00914,retail,Ubud,card_not_accepted
+D00719,T005831,M00945,transport,Ubud,card_not_accepted
+D00720,T006625,M00338,retail,Ubud,card_not_accepted
+D00721,T013286,M00544,transport,Old Quarter,card_not_accepted
+D00722,T002731,M00470,lodging,Khao San,card_not_accepted
+D00723,T009092,M04179,retail,Old Quarter,card_not_accepted
+D00724,T007534,M04564,transport,Old Quarter,card_not_accepted
+D00725,T004308,M00674,transport,Khao San,card_not_accepted
+D00726,T006153,M00718,lodging,Old Quarter,card_not_accepted
+D00727,T002554,M03329,lodging,Old City,card_not_accepted
+D00728,T011441,M03253,dining,George Town,card_not_accepted
+D00729,T002133,M01675,transport,Ba Dinh,card_not_accepted
+D00730,T006234,M01788,transport,Ubud,card_not_accepted
+D00731,T007297,M04129,retail,George Town,card_not_accepted
+D00732,T002550,M00332,dining,Old City,card_not_accepted
+D00733,T010698,M04664,lodging,Old City,card_not_accepted
+D00734,T009676,M01194,retail,George Town,card_not_accepted
+D00735,T009264,M04394,transport,Khao San,card_not_accepted
+D00736,T007143,M04960,transport,Malioboro,card_not_accepted
+D00737,T002671,M02579,dining,George Town,card_not_accepted
+D00738,T002927,M04336,lodging,Old Quarter,card_not_accepted
+D00739,T006104,M03487,lodging,Ubud,card_not_accepted
+D00740,T010942,M02661,lodging,Old Quarter,card_not_accepted
+D00741,T014874,M04779,lodging,Malioboro,card_not_accepted
+D00742,T002582,M00711,lodging,Ubud,card_not_accepted
+D00743,T000532,M04361,transport,Malioboro,card_not_accepted
+D00744,T014443,M00241,lodging,Ubud,card_not_accepted
+D00745,T012146,M04040,transport,George Town,card_not_accepted
+D00746,T001911,M01789,retail,Ubud,card_not_accepted
+D00747,T013337,M03979,transport,Old Quarter,card_not_accepted
+D00748,T007989,M02494,lodging,Malioboro,card_not_accepted
+D00749,T011699,M03164,lodging,Ubud,card_not_accepted
+D00750,T002265,M03405,dining,Ubud,card_not_accepted
+D00751,T009055,M04817,lodging,Khao San,card_not_accepted
+D00752,T009504,M02544,transport,Old Quarter,card_not_accepted
+D00753,T006697,M03814,retail,Old Quarter,card_not_accepted
+D00754,T009400,M03299,transport,Ubud,card_not_accepted
+D00755,T007921,M00659,transport,Ubud,card_not_accepted
+D00756,T006690,M02304,dining,Khao San,card_not_accepted
+D00757,T009391,M04143,retail,Ubud,card_not_accepted
+D00758,T003120,M03318,retail,Ba Dinh,card_not_accepted
+D00759,T006370,M01987,transport,Ubud,card_not_accepted
+D00760,T014132,M04947,dining,Old Quarter,card_not_accepted
+D00761,T002330,M04112,dining,George Town,card_not_accepted
+D00762,T008847,M03184,retail,Ubud,card_not_accepted
+D00763,T004240,M04514,dining,George Town,card_not_accepted
+D00764,T003364,M03936,retail,Khao San,card_not_accepted
+D00765,T006173,M00636,transport,Han River,card_not_accepted
+D00766,T006967,M03232,transport,Malioboro,card_not_accepted
+D00767,T002011,M03482,lodging,Old Quarter,card_not_accepted
+D00768,T012203,M00163,transport,George Town,card_not_accepted
+D00769,T004773,M04506,dining,Ubud,card_not_accepted
+D00770,T009586,M04358,lodging,Han River,card_not_accepted
+D00771,T009126,M01011,retail,George Town,card_not_accepted
+D00772,T003839,M01512,retail,Ubud,card_not_accepted
+D00773,T013570,M03852,dining,Han River,card_not_accepted
+D00774,T008171,M03171,transport,George Town,card_not_accepted
+D00775,T014094,M00251,dining,Han River,card_not_accepted
+D00776,T001363,M01797,lodging,Old City,card_not_accepted
+D00777,T014884,M01179,retail,Old City,card_not_accepted
+D00778,T010291,M01240,transport,Malioboro,card_not_accepted
+D00779,T011564,M00653,dining,Malioboro,card_not_accepted
+D00780,T011222,M03957,dining,Malioboro,card_not_accepted
+D00781,T014462,M01543,dining,Han River,card_not_accepted
+D00782,T005501,M00982,dining,Malioboro,card_not_accepted
+D00783,T012415,M02026,dining,George Town,card_not_accepted
+D00784,T005192,M02973,lodging,Khao San,card_not_accepted
+D00785,T014804,M03913,retail,Malioboro,card_not_accepted
+D00786,T007062,M02819,transport,George Town,card_not_accepted
+D00787,T012208,M00094,retail,Old Quarter,card_not_accepted
+D00788,T003524,M00769,retail,Ubud,card_not_accepted
+D00789,T000405,M00824,retail,Khao San,card_not_accepted
+D00790,T000462,M04655,transport,Ba Dinh,card_not_accepted
+D00791,T006598,M00329,lodging,Old City,card_not_accepted
+D00792,T009598,M03036,dining,Malioboro,card_not_accepted
+D00793,T004120,M01055,retail,Ubud,card_not_accepted
+D00794,T003951,M03950,lodging,Ba Dinh,card_not_accepted
+D00795,T008448,M04456,lodging,Old Quarter,card_not_accepted
+D00796,T002353,M03601,lodging,Ubud,card_not_accepted
+D00797,T002317,M00061,dining,Han River,card_not_accepted
+D00798,T003364,M03936,transport,Khao San,card_not_accepted
+D00799,T000294,M04885,retail,Old City,card_not_accepted
+D00800,T000172,M00455,transport,Ubud,card_not_accepted
+D00801,T000913,M02918,transport,Ubud,card_not_accepted
+D00802,T011405,M01068,retail,Ba Dinh,card_not_accepted
+D00803,T004992,M00112,dining,Khao San,card_not_accepted
+D00804,T013523,M03692,transport,Old Quarter,card_not_accepted
+D00805,T003510,M02804,retail,Han River,card_not_accepted
+D00806,T001833,M02350,transport,Ubud,card_not_accepted
+D00807,T005129,M03129,retail,Malioboro,card_not_accepted
+D00808,T001649,M03812,dining,Han River,card_not_accepted
+D00809,T010386,M02911,dining,Old Quarter,card_not_accepted
+D00810,T009957,M01694,lodging,Malioboro,card_not_accepted
+D00811,T004819,M00237,lodging,George Town,card_not_accepted
+D00812,T013975,M02874,lodging,Ubud,card_not_accepted
+D00813,T003928,M02415,transport,Malioboro,card_not_accepted
+D00814,T002628,M00183,lodging,Ubud,card_not_accepted
+D00815,T006895,M01912,transport,Old Quarter,card_not_accepted
+D00816,T003714,M00589,lodging,Ba Dinh,card_not_accepted
+D00817,T000041,M01835,retail,Ba Dinh,card_not_accepted
+D00818,T014814,M01119,retail,Han River,card_not_accepted
+D00819,T005946,M03489,transport,Han River,card_not_accepted
+D00820,T000190,M03757,dining,Khao San,card_not_accepted
+D00821,T005022,M02015,dining,George Town,card_not_accepted
+D00822,T006567,M01625,lodging,Malioboro,card_not_accepted
+D00823,T002666,M01140,lodging,Old Quarter,card_not_accepted
+D00824,T014059,M02673,transport,Ubud,card_not_accepted
+D00825,T008008,M00094,dining,Malioboro,card_not_accepted
+D00826,T001317,M03469,retail,Old City,card_not_accepted
+D00827,T007536,M03127,lodging,Han River,card_not_accepted
+D00828,T013442,M00190,transport,Old Quarter,card_not_accepted
+D00829,T003526,M00151,retail,Ubud,card_not_accepted
+D00830,T004460,M03580,dining,Khao San,card_not_accepted
+D00831,T009508,M02559,lodging,Old City,card_not_accepted
+D00832,T002530,M04501,lodging,Ubud,card_not_accepted
+D00833,T013316,M00194,retail,George Town,card_not_accepted
+D00834,T010122,M02302,lodging,George Town,card_not_accepted
+D00835,T014633,M00858,dining,George Town,card_not_accepted
+D00836,T014774,M01333,retail,Han River,card_not_accepted
+D00837,T014966,M02890,transport,George Town,card_not_accepted
+D00838,T005464,M00245,dining,Old City,card_not_accepted
+D00839,T013818,M03195,retail,Malioboro,card_not_accepted
+D00840,T006901,M02408,lodging,Ubud,card_not_accepted
+D00841,T009213,M02970,lodging,Malioboro,card_not_accepted
+D00842,T012520,M00207,retail,Malioboro,card_not_accepted
+D00843,T006394,M01596,retail,Han River,card_not_accepted
+D00844,T003417,M00563,dining,Ubud,card_not_accepted
+D00845,T010488,M03817,dining,Old Quarter,card_not_accepted
+D00846,T006835,M03233,dining,Ba Dinh,card_not_accepted
+D00847,T007028,M02885,transport,Ubud,card_not_accepted
+D00848,T001911,M01789,dining,Ubud,card_not_accepted
+D00849,T012082,M02815,retail,Ubud,card_not_accepted
+D00850,T003163,M04515,retail,Old City,card_not_accepted
+D00851,T001820,M04746,retail,George Town,card_not_accepted
+D00852,T004564,M00333,transport,Ubud,card_not_accepted
+D00853,T006025,M04669,dining,Ubud,card_not_accepted
+D00854,T009026,M02564,transport,Old City,card_not_accepted
+D00855,T001074,M00367,lodging,Malioboro,card_not_accepted
+D00856,T010135,M04614,retail,Old City,card_not_accepted
+D00857,T007218,M02625,lodging,Ubud,card_not_accepted
+D00858,T000092,M03469,transport,Old City,card_not_accepted
+D00859,T005147,M04004,transport,Khao San,card_not_accepted
+D00860,T010982,M00160,retail,Han River,card_not_accepted
+D00861,T000195,M01084,lodging,Old Quarter,card_not_accepted
+D00862,T005807,M01800,lodging,Ba Dinh,card_not_accepted
+D00863,T002781,M03406,dining,Old City,card_not_accepted
+D00864,T014970,M01600,lodging,Ba Dinh,card_not_accepted
+D00865,T008679,M00369,lodging,Ubud,card_not_accepted
+D00866,T003878,M03156,dining,Ubud,card_not_accepted
+D00867,T009261,M03234,retail,Malioboro,card_not_accepted
+D00868,T014737,M04026,transport,George Town,card_not_accepted
+D00869,T012286,M00628,retail,Han River,card_not_accepted
+D00870,T001340,M00806,retail,Ba Dinh,card_not_accepted
+D00871,T008875,M01366,transport,Khao San,card_not_accepted
+D00872,T000549,M04389,retail,Ubud,card_not_accepted
+D00873,T000466,M02634,dining,Ubud,card_not_accepted
+D00874,T003756,M00816,transport,Han River,card_not_accepted
+D00875,T006107,M04236,retail,Khao San,card_not_accepted
+D00876,T011129,M01544,transport,Old City,card_not_accepted
+D00877,T003736,M00149,retail,Old City,card_not_accepted
+D00878,T002071,M02614,retail,Ba Dinh,card_not_accepted
+D00879,T013507,M00509,dining,Han River,card_not_accepted
+D00880,T002308,M01852,transport,Han River,card_not_accepted
+D00881,T002873,M03987,dining,Ubud,card_not_accepted
+D00882,T013356,M01229,lodging,Ba Dinh,card_not_accepted
+D00883,T002030,M04417,transport,Khao San,card_not_accepted
+D00884,T002733,M03461,dining,Ubud,card_not_accepted
+D00885,T002145,M01972,transport,Old Quarter,card_not_accepted
+D00886,T011048,M00466,lodging,Khao San,card_not_accepted
+D00887,T006983,M02266,retail,Ubud,card_not_accepted
+D00888,T004930,M04017,retail,Old City,card_not_accepted
+D00889,T013145,M00649,lodging,Ba Dinh,card_not_accepted
+D00890,T006168,M03276,transport,Old City,card_not_accepted
+D00891,T013786,M01271,retail,Old Quarter,card_not_accepted
+D00892,T003862,M04946,dining,Old Quarter,card_not_accepted
+D00893,T014333,M04839,transport,Old Quarter,card_not_accepted
+D00894,T008952,M02528,retail,Khao San,card_not_accepted
+D00895,T014903,M04233,transport,Malioboro,card_not_accepted
+D00896,T010836,M00352,dining,Malioboro,card_not_accepted
+D00897,T000865,M02928,dining,Old City,card_not_accepted
+D00898,T014874,M04779,retail,Malioboro,card_not_accepted
+D00899,T012673,M03327,retail,Old City,card_not_accepted
+D00900,T010632,M03590,lodging,Ubud,card_not_accepted
+D00901,T003514,M02804,dining,Khao San,card_not_accepted
+D00902,T001060,M01660,dining,Malioboro,card_not_accepted
+D00903,T000052,M04218,dining,Khao San,card_not_accepted
+D00904,T001178,M03370,lodging,Ba Dinh,card_not_accepted
+D00905,T003738,M03651,lodging,Old Quarter,card_not_accepted
+D00906,T003878,M03156,retail,Ubud,card_not_accepted
+D00907,T011375,M04299,retail,Khao San,card_not_accepted
+D00908,T011337,M02236,dining,Khao San,card_not_accepted
+D00909,T011090,M04817,lodging,Khao San,card_not_accepted
+D00910,T003710,M03539,dining,Old City,card_not_accepted
+D00911,T012478,M03910,retail,Ubud,card_not_accepted
+D00912,T011577,M03387,transport,Ubud,card_not_accepted
+D00913,T006625,M00338,lodging,Ubud,card_not_accepted
+D00914,T013373,M04698,retail,George Town,card_not_accepted
+D00915,T007570,M03706,transport,Han River,card_not_accepted
+D00916,T006506,M01517,lodging,Ba Dinh,card_not_accepted
+D00917,T009242,M01775,retail,Old City,card_not_accepted
+D00918,T003020,M01149,transport,Ubud,card_not_accepted
+D00919,T009695,M03371,retail,Ba Dinh,card_not_accepted
+D00920,T000326,M01011,retail,Ubud,card_not_accepted
+D00921,T001093,M00497,transport,Ba Dinh,card_not_accepted
+D00922,T011033,M04301,transport,Malioboro,card_not_accepted
+D00923,T003935,M00854,lodging,Ubud,card_not_accepted
+D00924,T011902,M02593,transport,Ba Dinh,card_not_accepted
+D00925,T007143,M04960,lodging,Malioboro,card_not_accepted
+D00926,T014147,M00835,retail,Han River,card_not_accepted
+D00927,T000612,M04660,transport,Han River,card_not_accepted
+D00928,T013371,M02925,retail,Ba Dinh,card_not_accepted
+D00929,T003503,M00534,dining,Khao San,card_not_accepted
+D00930,T012719,M01751,dining,Han River,card_not_accepted
+D00931,T001074,M00367,dining,Malioboro,card_not_accepted
+D00932,T007158,M01755,retail,Malioboro,card_not_accepted
+D00933,T001635,M03833,transport,Han River,card_not_accepted
+D00934,T012137,M04551,transport,Khao San,card_not_accepted
+D00935,T005332,M03802,transport,Old Quarter,card_not_accepted
+D00936,T006396,M01050,retail,Khao San,card_not_accepted
+D00937,T004968,M00112,retail,Khao San,card_not_accepted
+D00938,T012964,M04483,lodging,Han River,card_not_accepted
+D00939,T014505,M02677,retail,Ba Dinh,card_not_accepted
+D00940,T002213,M01069,retail,Ubud,card_not_accepted
+D00941,T013155,M02283,dining,Malioboro,card_not_accepted
+D00942,T007687,M00194,dining,Khao San,card_not_accepted
+D00943,T010823,M00958,retail,Old City,card_not_accepted
+D00944,T005190,M02273,dining,Malioboro,card_not_accepted
+D00945,T010306,M03485,lodging,Old City,card_not_accepted
+D00946,T001825,M03760,dining,Khao San,card_not_accepted
+D00947,T012037,M00777,retail,George Town,card_not_accepted
+D00948,T007687,M00194,retail,Khao San,card_not_accepted
+D00949,T004066,M00873,dining,Old Quarter,card_not_accepted
+D00950,T013145,M00649,dining,Ba Dinh,card_not_accepted
+D00951,T008284,M04439,retail,Han River,card_not_accepted
+D00952,T008849,M00784,dining,Old Quarter,card_not_accepted
+D00953,T005306,M01508,retail,Han River,card_not_accepted
+D00954,T012235,M02072,transport,Old Quarter,card_not_accepted
+D00955,T002535,M04297,retail,Malioboro,card_not_accepted
+D00956,T002157,M04894,lodging,Ubud,card_not_accepted
+D00957,T008110,M02828,retail,Han River,card_not_accepted
+D00958,T013510,M02030,lodging,Malioboro,card_not_accepted
+D00959,T004758,M04604,dining,Old City,card_not_accepted
+D00960,T010982,M00160,dining,Han River,card_not_accepted
+D00961,T010687,M01408,lodging,Old Quarter,card_not_accepted
+D00962,T009723,M00208,dining,Ubud,card_not_accepted
+D00963,T004992,M00112,lodging,Khao San,card_not_accepted
+D00964,T007797,M03008,retail,Malioboro,card_not_accepted
+D00965,T002942,M04668,lodging,Old Quarter,card_not_accepted
+D00966,T005459,M04046,transport,Old City,card_not_accepted
+D00967,T000742,M01550,retail,Old City,card_not_accepted
+D00968,T006622,M02263,dining,Malioboro,card_not_accepted
+D00969,T006669,M02054,lodging,Malioboro,card_not_accepted
+D00970,T004348,M04973,transport,Old Quarter,card_not_accepted
+D00971,T000623,M04027,retail,Old Quarter,card_not_accepted
+D00972,T002326,M03806,dining,George Town,card_not_accepted
+D00973,T010031,M01087,lodging,George Town,card_not_accepted
+D00974,T014629,M01796,retail,Ubud,card_not_accepted
+D00975,T001331,M03519,dining,George Town,card_not_accepted
+D00976,T014529,M04812,transport,Khao San,card_not_accepted
+D00977,T001353,M03760,transport,Han River,card_not_accepted
+D00978,T009216,M03376,dining,Ba Dinh,card_not_accepted
+D00979,T006417,M01404,retail,Old City,card_not_accepted
+D00980,T001972,M02528,transport,Old City,card_not_accepted
+D00981,T002914,M03988,dining,Ubud,card_not_accepted
+D00982,T005177,M04058,transport,Ubud,card_not_accepted
+D00983,T002299,M00649,lodging,Khao San,card_not_accepted
+D00984,T002814,M04391,retail,George Town,card_not_accepted
+D00985,T009804,M03847,retail,Old Quarter,card_not_accepted
+D00986,T005806,M03109,retail,Malioboro,card_not_accepted
+D00987,T001682,M03564,lodging,Ubud,card_not_accepted
+D00988,T010741,M02760,dining,Malioboro,card_not_accepted
+D00989,T013887,M03852,retail,Old Quarter,card_not_accepted
+D00990,T000543,M04156,retail,Old City,card_not_accepted
+D00991,T013200,M00069,transport,George Town,card_not_accepted
+D00992,T002593,M01849,retail,Malioboro,card_not_accepted
+D00993,T009300,M02869,lodging,Ba Dinh,card_not_accepted
+D00994,T007343,M02858,transport,Malioboro,card_not_accepted
+D00995,T013155,M02283,retail,Malioboro,card_not_accepted
+D00996,T007309,M01220,dining,Khao San,card_not_accepted
+D00997,T013131,M01964,dining,Ubud,card_not_accepted
+D00998,T014629,M01796,transport,Ubud,card_not_accepted
+D00999,T014248,M02713,dining,Old City,card_not_accepted
+D01000,T011559,M04221,transport,Ubud,card_not_accepted
+D01001,T001367,M03251,lodging,Ubud,card_not_accepted
+D01002,T001351,M00921,dining,Old Quarter,card_not_accepted
+D01003,T000647,M00312,transport,Han River,card_not_accepted
+D01004,T008289,M00649,lodging,Han River,card_not_accepted
+D01005,T012077,M02718,retail,Khao San,card_not_accepted
+D01006,T008062,M00603,transport,Ubud,card_not_accepted
+D01007,T000653,M02394,transport,Old Quarter,card_not_accepted
+D01008,T008825,M03218,retail,Ubud,card_not_accepted
+D01009,T007996,M01738,lodging,Malioboro,card_not_accepted
+D01010,T011416,M01044,lodging,Ubud,card_not_accepted
+D01011,T014353,M02288,transport,George Town,card_not_accepted
+D01012,T004961,M01800,transport,Ubud,card_not_accepted
+D01013,T014355,M03757,dining,Khao San,card_not_accepted
+D01014,T004548,M03917,lodging,Malioboro,card_not_accepted
+D01015,T011920,M00297,retail,Malioboro,card_not_accepted
+D01016,T001921,M02600,dining,Khao San,card_not_accepted
+D01017,T006620,M01328,retail,Ba Dinh,card_not_accepted
+D01018,T002902,M00331,dining,Ba Dinh,card_not_accepted
+D01019,T004980,M01630,transport,Ubud,card_not_accepted
+D01020,T006657,M00582,lodging,Old City,card_not_accepted
+D01021,T007773,M02539,transport,Old Quarter,card_not_accepted
+D01022,T012296,M04968,transport,Malioboro,card_not_accepted
+D01023,T003774,M02624,lodging,Ubud,card_not_accepted
+D01024,T007102,M04005,retail,Old City,card_not_accepted
+D01025,T002718,M03479,dining,Han River,card_not_accepted
+D01026,T006298,M00069,retail,Malioboro,card_not_accepted
+D01027,T013851,M04053,dining,Malioboro,card_not_accepted
+D01028,T011623,M01405,retail,Old City,card_not_accepted
+D01029,T003711,M04798,lodging,George Town,card_not_accepted
+D01030,T013546,M00207,dining,Ba Dinh,card_not_accepted
+D01031,T004961,M01800,dining,Ubud,card_not_accepted
+D01032,T009582,M02010,lodging,George Town,card_not_accepted
+D01033,T011810,M04103,lodging,Khao San,card_not_accepted
+D01034,T006419,M03342,transport,Ubud,card_not_accepted
+D01035,T002438,M02708,retail,Ubud,card_not_accepted
+D01036,T010966,M02474,transport,Ubud,card_not_accepted
+D01037,T004432,M02436,lodging,George Town,card_not_accepted
+D01038,T011047,M02653,dining,Malioboro,card_not_accepted
+D01039,T013407,M03717,lodging,Ba Dinh,card_not_accepted
+D01040,T014797,M04849,retail,Ubud,card_not_accepted
+D01041,T000219,M04202,dining,Old City,card_not_accepted
+D01042,T001966,M02749,lodging,George Town,card_not_accepted
+D01043,T014743,M04161,dining,Han River,card_not_accepted
+D01044,T009442,M01694,transport,Old Quarter,card_not_accepted
+D01045,T007194,M02847,transport,Ba Dinh,card_not_accepted
+D01046,T014905,M00635,dining,Malioboro,card_not_accepted
+D01047,T006450,M02251,transport,Old Quarter,card_not_accepted
+D01048,T006500,M02928,retail,Old Quarter,card_not_accepted
+D01049,T013048,M00358,lodging,Khao San,card_not_accepted
+D01050,T003321,M04558,transport,George Town,card_not_accepted
+D01051,T012736,M01107,lodging,Old Quarter,card_not_accepted
+D01052,T013632,M00402,transport,Ubud,card_not_accepted
+D01053,T013631,M03446,retail,Han River,card_not_accepted
+D01054,T002439,M02161,dining,Old Quarter,card_not_accepted
+D01055,T001637,M03873,transport,Malioboro,card_not_accepted
+D01056,T004297,M04585,transport,Khao San,card_not_accepted
+D01057,T001993,M04527,dining,Khao San,card_not_accepted
+D01058,T011996,M01452,transport,Old Quarter,card_not_accepted
+D01059,T010925,M00504,transport,George Town,card_not_accepted
+D01060,T011680,M04331,retail,Old Quarter,card_not_accepted
+D01061,T002171,M04131,transport,Old Quarter,card_not_accepted
+D01062,T003950,M00470,retail,Khao San,card_not_accepted
+D01063,T006973,M04708,dining,Ubud,card_not_accepted
+D01064,T009028,M01839,transport,Old City,card_not_accepted
+D01065,T006449,M04876,transport,Old City,card_not_accepted
+D01066,T009794,M03051,lodging,Old City,card_not_accepted
+D01067,T004161,M02479,retail,Han River,card_not_accepted
+D01068,T003312,M01182,retail,Malioboro,card_not_accepted
+D01069,T014797,M04849,transport,Ubud,card_not_accepted
+D01070,T001310,M01784,dining,Old City,card_not_accepted
+D01071,T009767,M02493,transport,George Town,card_not_accepted
+D01072,T004189,M00512,retail,Khao San,card_not_accepted
+D01073,T013184,M03089,dining,Malioboro,card_not_accepted
+D01074,T005675,M03249,transport,Old Quarter,card_not_accepted
+D01075,T011727,M04245,retail,Malioboro,card_not_accepted
+D01076,T002945,M00411,retail,Old Quarter,card_not_accepted
+D01077,T004988,M04425,dining,Han River,card_not_accepted
+D01078,T011559,M04221,lodging,Ubud,card_not_accepted
+D01079,T000711,M03076,dining,Malioboro,card_not_accepted
+D01080,T002024,M00255,retail,Khao San,card_not_accepted
+D01081,T002401,M04271,lodging,Ba Dinh,card_not_accepted
+D01082,T006601,M03382,lodging,Old Quarter,card_not_accepted
+D01083,T010695,M03913,dining,Khao San,card_not_accepted
+D01084,T012864,M04696,dining,Malioboro,card_not_accepted
+D01085,T012803,M03241,dining,Han River,card_not_accepted
+D01086,T004017,M00926,lodging,Old Quarter,card_not_accepted
+D01087,T011538,M04904,transport,Malioboro,card_not_accepted
+D01088,T010582,M01486,retail,Khao San,card_not_accepted
+D01089,T010186,M03082,retail,Old Quarter,card_not_accepted
+D01090,T006799,M02635,dining,Ubud,card_not_accepted
+D01091,T013157,M02621,retail,Old City,card_not_accepted
+D01092,T003275,M03791,transport,Old Quarter,card_not_accepted
+D01093,T006706,M01261,lodging,Old Quarter,card_not_accepted
+D01094,T002874,M00595,transport,Ubud,card_not_accepted
+D01095,T006506,M01517,transport,Ba Dinh,card_not_accepted
+D01096,T014296,M00945,transport,Malioboro,card_not_accepted
+D01097,T001688,M03886,dining,Old Quarter,card_not_accepted
+D01098,T014779,M01122,retail,George Town,card_not_accepted
+D01099,T008941,M02149,retail,Han River,card_not_accepted
+D01100,T006735,M01065,lodging,Old Quarter,card_not_accepted
+D01101,T007544,M03149,dining,George Town,card_not_accepted
+D01102,T003061,M00731,retail,Ba Dinh,card_not_accepted
+D01103,T005267,M00062,lodging,Old Quarter,card_not_accepted
+D01104,T000049,M01016,retail,Malioboro,card_not_accepted
+D01105,T004294,M01645,transport,Malioboro,card_not_accepted
+D01106,T010012,M04779,lodging,Malioboro,card_not_accepted
+D01107,T014691,M02989,lodging,Malioboro,card_not_accepted
+D01108,T013492,M01816,retail,Han River,card_not_accepted
+D01109,T009763,M00679,retail,Old City,card_not_accepted
+D01110,T013002,M03067,transport,George Town,card_not_accepted
+D01111,T005318,M00596,lodging,Old Quarter,card_not_accepted
+D01112,T012669,M01280,dining,Old Quarter,card_not_accepted
+D01113,T002248,M02890,lodging,Han River,card_not_accepted
+D01114,T012474,M00610,dining,Han River,card_not_accepted
+D01115,T006446,M02937,lodging,Ubud,card_not_accepted
+D01116,T001576,M01577,dining,Ubud,card_not_accepted
+D01117,T011856,M03947,retail,Old Quarter,card_not_accepted
+D01118,T013408,M03055,dining,Ubud,card_not_accepted
+D01119,T008733,M01439,dining,Ubud,card_not_accepted
+D01120,T006354,M03018,dining,Ubud,card_not_accepted
+D01121,T000571,M00965,lodging,Old City,card_not_accepted
+D01122,T009957,M01694,retail,Malioboro,card_not_accepted
+D01123,T004395,M00690,retail,Han River,card_not_accepted
+D01124,T011975,M00279,transport,Malioboro,card_not_accepted
+D01125,T013160,M04447,dining,Ubud,card_not_accepted
+D01126,T009282,M04204,transport,Khao San,card_not_accepted
+D01127,T012900,M01085,retail,Malioboro,card_not_accepted
+D01128,T004651,M03570,dining,Malioboro,card_not_accepted
+D01129,T005480,M00914,retail,George Town,card_not_accepted
+D01130,T012128,M00713,retail,Ba Dinh,card_not_accepted
+D01131,T011359,M03861,transport,Old Quarter,card_not_accepted
+D01132,T010208,M00007,retail,Khao San,card_not_accepted
+D01133,T000761,M03651,lodging,Old City,card_not_accepted
+D01134,T005807,M01800,transport,Ba Dinh,card_not_accepted
+D01135,T004738,M02434,transport,Han River,card_not_accepted
+D01136,T008053,M02270,retail,Han River,card_not_accepted
+D01137,T009203,M03458,retail,Old City,card_not_accepted
+D01138,T008284,M04439,transport,Han River,card_not_accepted
+D01139,T003521,M02185,lodging,Malioboro,card_not_accepted
+D01140,T003772,M00348,lodging,Han River,card_not_accepted
+D01141,T006883,M00498,transport,Ubud,card_not_accepted
+D01142,T010165,M02145,retail,George Town,card_not_accepted
+D01143,T006176,M03378,dining,Old Quarter,card_not_accepted
+D01144,T001529,M03236,lodging,Ubud,card_not_accepted
+D01145,T002530,M04501,transport,Ubud,card_not_accepted
+D01146,T004638,M02784,lodging,Han River,card_not_accepted
+D01147,T000971,M01994,retail,Old City,card_not_accepted
+D01148,T014458,M00190,transport,Khao San,card_not_accepted
+D01149,T009242,M01775,transport,Old City,card_not_accepted
+D01150,T011952,M04699,lodging,Malioboro,card_not_accepted
+D01151,T003795,M00445,dining,Malioboro,card_not_accepted
+D01152,T006347,M03394,lodging,Ba Dinh,card_not_accepted
+D01153,T004624,M01938,lodging,Old City,card_not_accepted
+D01154,T003088,M03340,transport,Han River,card_not_accepted
+D01155,T010712,M03154,dining,Old Quarter,card_not_accepted
+D01156,T010819,M04850,transport,Old Quarter,card_not_accepted
+D01157,T001850,M02408,dining,Ba Dinh,card_not_accepted
+D01158,T008658,M00419,retail,Ubud,card_not_accepted
+D01159,T012308,M03250,dining,Old Quarter,card_not_accepted
+D01160,T000598,M04896,retail,Ba Dinh,card_not_accepted
+D01161,T005786,M00416,retail,Khao San,card_not_accepted
+D01162,T009764,M03231,dining,Khao San,card_not_accepted
+D01163,T012768,M00014,retail,Old City,card_not_accepted
+D01164,T003918,M00597,transport,Khao San,card_not_accepted
+D01165,T000963,M03249,lodging,Ubud,card_not_accepted
+D01166,T013544,M03660,lodging,Old Quarter,card_not_accepted
+D01167,T012330,M03061,lodging,Old Quarter,card_not_accepted
+D01168,T008236,M02699,retail,Old City,card_not_accepted
+D01169,T005233,M03127,dining,Khao San,card_not_accepted
+D01170,T009957,M01694,dining,Malioboro,card_not_accepted
+D01171,T011082,M01385,retail,Ubud,card_not_accepted
+D01172,T000780,M02276,lodging,Han River,card_not_accepted
+D01173,T007765,M02199,transport,Ubud,card_not_accepted
+D01174,T004420,M02858,dining,Ubud,card_not_accepted
+D01175,T008521,M03662,lodging,Old City,card_not_accepted
+D01176,T010329,M00947,transport,Ubud,card_not_accepted
+D01177,T012625,M03582,lodging,Ubud,card_not_accepted
+D01178,T000201,M04369,dining,Malioboro,card_not_accepted
+D01179,T012330,M03061,transport,Old Quarter,card_not_accepted
+D01180,T010724,M04237,transport,Old Quarter,card_not_accepted
+D01181,T009965,M03673,lodging,Ba Dinh,card_not_accepted
+D01182,T013890,M04568,lodging,Malioboro,card_not_accepted
+D01183,T001808,M00320,lodging,Khao San,card_not_accepted
+D01184,T012259,M04001,retail,Han River,card_not_accepted
+D01185,T006891,M00249,dining,Khao San,card_not_accepted
+D01186,T010869,M02553,dining,Malioboro,card_not_accepted
+D01187,T002711,M04163,lodging,Old Quarter,card_not_accepted
+D01188,T003066,M03092,lodging,Khao San,card_not_accepted
+D01189,T008917,M03457,transport,Malioboro,card_not_accepted
+D01190,T011017,M03894,retail,George Town,card_not_accepted
+D01191,T006186,M04914,dining,Khao San,card_not_accepted
+D01192,T009582,M02010,dining,George Town,card_not_accepted
+D01193,T010684,M03134,lodging,Ubud,card_not_accepted
+D01194,T003783,M01123,dining,Ubud,card_not_accepted
+D01195,T012828,M02015,dining,George Town,card_not_accepted
+D01196,T002602,M02281,transport,Old Quarter,card_not_accepted
+D01197,T013090,M00503,transport,Malioboro,card_not_accepted
+D01198,T003410,M01684,retail,Malioboro,card_not_accepted
+D01199,T014868,M04581,transport,Old Quarter,card_not_accepted
+D01200,T003269,M02921,dining,Ubud,card_not_accepted
+D01201,T014288,M03073,retail,Old Quarter,card_not_accepted
+D01202,T008433,M03698,lodging,Malioboro,card_not_accepted
+D01203,T000746,M00430,dining,Old Quarter,card_not_accepted
+D01204,T011518,M02111,retail,George Town,card_not_accepted
+D01205,T007906,M01802,transport,Han River,card_not_accepted
+D01206,T007602,M02206,retail,Malioboro,card_not_accepted
+D01207,T001217,M04626,dining,Ubud,card_not_accepted
+D01208,T004214,M02644,transport,Old City,card_not_accepted
+D01209,T011496,M04744,retail,Old City,card_not_accepted
+D01210,T009585,M03354,dining,Malioboro,card_not_accepted
+D01211,T003376,M02369,lodging,George Town,card_not_accepted
+D01212,T012358,M02798,retail,Ba Dinh,card_not_accepted
+D01213,T014077,M02000,transport,Malioboro,card_not_accepted
+D01214,T010010,M02161,retail,Khao San,card_not_accepted
+D01215,T012766,M00012,retail,George Town,card_not_accepted
+D01216,T007692,M04270,lodging,Han River,card_not_accepted
+D01217,T011880,M04876,retail,George Town,card_not_accepted
+D01218,T010591,M02430,transport,Han River,card_not_accepted
+D01219,T010176,M04411,retail,Malioboro,card_not_accepted
+D01220,T003554,M04237,lodging,Malioboro,card_not_accepted
+D01221,T002286,M04076,transport,Han River,card_not_accepted
+D01222,T004292,M02973,lodging,Khao San,card_not_accepted
+D01223,T014326,M00676,dining,Ubud,card_not_accepted
+D01224,T009499,M03716,dining,Malioboro,card_not_accepted
+D01225,T009039,M04368,dining,Han River,card_not_accepted
+D01226,T006622,M02263,retail,Malioboro,card_not_accepted
+D01227,T009763,M00679,lodging,Old City,card_not_accepted
+D01228,T009614,M04681,lodging,Malioboro,card_not_accepted
+D01229,T014958,M02649,lodging,Malioboro,card_not_accepted
+D01230,T012821,M03999,transport,Old Quarter,card_not_accepted
+D01231,T009438,M02973,retail,Ba Dinh,card_not_accepted
+D01232,T009970,M03837,transport,Ubud,card_not_accepted
+D01233,T008488,M04874,retail,Ba Dinh,card_not_accepted
+D01234,T011356,M00072,retail,Ubud,card_not_accepted
+D01235,T003970,M02912,dining,Malioboro,card_not_accepted
+D01236,T008976,M01987,lodging,Old Quarter,card_not_accepted
+D01237,T010660,M02384,lodging,Malioboro,card_not_accepted
+D01238,T000036,M00592,retail,Malioboro,card_not_accepted
+D01239,T014001,M00301,dining,Malioboro,card_not_accepted
+D01240,T006321,M03824,transport,Ubud,card_not_accepted
+D01241,T013599,M00780,retail,Old Quarter,card_not_accepted
+D01242,T000730,M03858,dining,Malioboro,card_not_accepted
+D01243,T012383,M02070,retail,Han River,card_not_accepted
+D01244,T001986,M03791,retail,Malioboro,card_not_accepted
+D01245,T009238,M03949,dining,Old Quarter,card_not_accepted
+D01246,T005651,M04787,dining,Ba Dinh,card_not_accepted
+D01247,T007150,M01652,transport,Malioboro,card_not_accepted
+D01248,T009679,M01968,lodging,Ubud,card_not_accepted
+D01249,T006467,M03792,retail,George Town,card_not_accepted
+D01250,T013975,M02874,retail,Ubud,card_not_accepted
+D01251,T006567,M01625,dining,Malioboro,card_not_accepted
+D01252,T002020,M04678,lodging,Han River,card_not_accepted
+D01253,T001537,M01600,dining,Ubud,card_not_accepted
+D01254,T014303,M03540,retail,Ubud,card_not_accepted
+D01255,T005071,M02921,transport,Han River,card_not_accepted
+D01256,T000195,M01084,transport,Old Quarter,card_not_accepted
+D01257,T008335,M03439,retail,Khao San,card_not_accepted
+D01258,T012733,M03320,retail,Old City,card_not_accepted
+D01259,T000305,M01182,dining,Ubud,card_not_accepted
+D01260,T009073,M04389,retail,Malioboro,card_not_accepted
+D01261,T006517,M00567,transport,Han River,card_not_accepted
+D01262,T006974,M03435,retail,George Town,card_not_accepted
+D01263,T000036,M00592,transport,Malioboro,card_not_accepted
+D01264,T006398,M01635,retail,George Town,card_not_accepted
+D01265,T008467,M02828,transport,Malioboro,card_not_accepted
+D01266,T008096,M01124,lodging,Ubud,card_not_accepted
+D01267,T013183,M03640,transport,Han River,card_not_accepted
+D01268,T009459,M01896,dining,Old City,card_not_accepted
+D01269,T014353,M02288,dining,George Town,card_not_accepted
+D01270,T007389,M01154,lodging,Malioboro,card_not_accepted
+D01271,T000296,M03282,transport,Han River,card_not_accepted
+D01272,T004831,M01889,dining,Old City,card_not_accepted
+D01273,T002499,M04184,transport,Old City,card_not_accepted
+D01274,T014174,M04848,transport,Ba Dinh,card_not_accepted
+D01275,T010862,M00080,dining,Han River,card_not_accepted
+D01276,T012144,M01372,retail,Malioboro,card_not_accepted
+D01277,T005588,M03231,retail,Ba Dinh,card_not_accepted
+D01278,T007850,M03123,retail,George Town,card_not_accepted
+D01279,T013944,M04946,dining,Han River,card_not_accepted
+D01280,T013599,M00780,dining,Old Quarter,card_not_accepted
+D01281,T003212,M02494,transport,Khao San,card_not_accepted
+D01282,T002556,M00773,retail,Han River,card_not_accepted
+D01283,T003731,M03500,dining,Malioboro,card_not_accepted
+D01284,T009348,M00133,retail,Malioboro,card_not_accepted
+D01285,T003839,M01512,dining,Ubud,card_not_accepted
+D01286,T006973,M04708,transport,Ubud,card_not_accepted
+D01287,T008748,M00336,dining,Khao San,card_not_accepted
+D01288,T014392,M03791,transport,Ba Dinh,card_not_accepted
+D01289,T011559,M04221,dining,Ubud,card_not_accepted
+D01290,T007379,M00508,retail,Han River,card_not_accepted
+D01291,T000549,M04389,lodging,Ubud,card_not_accepted
+D01292,T014304,M04359,dining,Old Quarter,card_not_accepted
+D01293,T005079,M01197,lodging,George Town,card_not_accepted
+D01294,T014468,M01640,dining,Khao San,card_not_accepted
+D01295,T010307,M02281,transport,Old City,card_not_accepted
+D01296,T001986,M03791,lodging,Malioboro,card_not_accepted
+D01297,T014066,M00793,transport,Ba Dinh,card_not_accepted
+D01298,T002817,M02537,retail,Old City,card_not_accepted
+D01299,T009404,M04996,lodging,Ubud,card_not_accepted
+D01300,T007719,M03746,dining,Old Quarter,card_not_accepted
+D01301,T009376,M00329,retail,Old Quarter,card_not_accepted
+D01302,T002335,M01249,dining,Han River,card_not_accepted
+D01303,T009122,M03552,dining,Old City,card_not_accepted
+D01304,T013845,M02491,transport,Khao San,card_not_accepted
+D01305,T004632,M01003,transport,George Town,card_not_accepted
+D01306,T004161,M02479,dining,Han River,card_not_accepted
+D01307,T013965,M01625,retail,Malioboro,card_not_accepted
+D01308,T006098,M02633,lodging,Han River,card_not_accepted
+D01309,T001154,M04760,dining,Old City,card_not_accepted
+D01310,T013833,M02463,lodging,Ubud,card_not_accepted
+D01311,T013093,M02169,retail,Malioboro,card_not_accepted
+D01312,T007364,M02376,lodging,Old Quarter,card_not_accepted
+D01313,T012559,M02396,transport,Malioboro,card_not_accepted
+D01314,T010629,M00343,dining,Han River,card_not_accepted
+D01315,T005452,M00260,transport,Malioboro,card_not_accepted
+D01316,T003970,M02912,retail,Malioboro,card_not_accepted
+D01317,T007957,M03896,lodging,Ubud,card_not_accepted
+D01318,T001887,M01468,retail,Ba Dinh,card_not_accepted
+D01319,T010724,M04237,dining,Old Quarter,card_not_accepted
+D01320,T007906,M01802,lodging,Han River,card_not_accepted
+D01321,T006296,M01374,dining,Ubud,card_not_accepted
+D01322,T012962,M04776,lodging,Malioboro,card_not_accepted
+D01323,T012874,M02590,retail,Old Quarter,card_not_accepted
+D01324,T011230,M00769,transport,Ubud,card_not_accepted
+D01325,T002150,M04651,dining,George Town,card_not_accepted
+D01326,T012169,M01922,transport,Ubud,card_not_accepted
+D01327,T002037,M03911,dining,Ubud,card_not_accepted
+D01328,T006123,M02948,lodging,George Town,card_not_accepted
+D01329,T007774,M04911,lodging,Old Quarter,card_not_accepted
+D01330,T006801,M01289,lodging,Ba Dinh,card_not_accepted
+D01331,T014001,M00301,retail,Malioboro,card_not_accepted
+D01332,T006547,M02555,dining,Old Quarter,card_not_accepted
+D01333,T003731,M03500,transport,Malioboro,card_not_accepted
+D01334,T009322,M04361,retail,Old Quarter,card_not_accepted
+D01335,T011501,M03186,dining,Malioboro,card_not_accepted
+D01336,T001682,M03564,transport,Ubud,card_not_accepted
+D01337,T009881,M04486,retail,Khao San,card_not_accepted
+D01338,T005713,M01741,lodging,Old Quarter,card_not_accepted
+D01339,T013466,M01126,retail,Ubud,card_not_accepted
+D01340,T000129,M01811,retail,Old Quarter,card_not_accepted
+D01341,T012097,M02600,dining,Khao San,card_not_accepted
+D01342,T012841,M03900,lodging,Malioboro,card_not_accepted
+D01343,T011689,M02716,transport,Ubud,card_not_accepted
+D01344,T006346,M03233,transport,Ubud,card_not_accepted
+D01345,T010383,M04202,dining,Khao San,card_not_accepted
+D01346,T010502,M01753,retail,George Town,card_not_accepted
+D01347,T009092,M04179,lodging,Old Quarter,card_not_accepted
+D01348,T011410,M00099,transport,Ubud,card_not_accepted
+D01349,T007571,M03546,dining,Ba Dinh,card_not_accepted
+D01350,T000168,M00781,lodging,Old Quarter,card_not_accepted
+D01351,T009726,M00381,retail,Old Quarter,card_not_accepted
+D01352,T014037,M03172,transport,Ubud,card_not_accepted
+D01353,T014490,M02096,dining,Ubud,card_not_accepted
+D01354,T004594,M01053,transport,Old City,card_not_accepted
+D01355,T014003,M03719,transport,George Town,card_not_accepted
+D01356,T008410,M03482,retail,Old Quarter,card_not_accepted
+D01357,T000013,M03879,dining,Khao San,card_not_accepted
+D01358,T008403,M00028,retail,Han River,card_not_accepted
+D01359,T009782,M04250,lodging,Han River,card_not_accepted
+D01360,T009510,M03954,lodging,Khao San,card_not_accepted
+D01361,T001635,M03833,lodging,Han River,card_not_accepted
+D01362,T008985,M00915,transport,George Town,card_not_accepted
+D01363,T010675,M01926,lodging,Malioboro,card_not_accepted
+D01364,T008974,M00752,retail,Old City,card_not_accepted
+D01365,T003939,M04009,retail,Ubud,card_not_accepted
+D01366,T003622,M01718,dining,Old City,card_not_accepted
+D01367,T007124,M02161,retail,George Town,card_not_accepted
+D01368,T008341,M01614,lodging,Malioboro,card_not_accepted
+D01369,T014609,M00176,transport,Old Quarter,card_not_accepted
+D01370,T007580,M04232,transport,Han River,card_not_accepted
+D01371,T011428,M02468,transport,Ba Dinh,card_not_accepted
+D01372,T012173,M04103,dining,Old Quarter,card_not_accepted
+D01373,T008240,M00101,retail,Ubud,card_not_accepted
+D01374,T007922,M04487,transport,Old City,card_not_accepted
+D01375,T007698,M03665,lodging,Ba Dinh,card_not_accepted
+D01376,T002200,M02870,retail,Khao San,card_not_accepted
+D01377,T004732,M00710,dining,Han River,card_not_accepted
+D01378,T005052,M03541,retail,Han River,card_not_accepted
+D01379,T011721,M00789,lodging,Old City,card_not_accepted
+D01380,T004057,M04121,lodging,Han River,card_not_accepted
+D01381,T013095,M03791,lodging,Malioboro,card_not_accepted
+D01382,T004047,M03069,retail,Old City,card_not_accepted
+D01383,T000326,M01011,transport,Ubud,card_not_accepted
+D01384,T003157,M01503,retail,Khao San,card_not_accepted
+D01385,T005336,M01602,transport,Malioboro,card_not_accepted
+D01386,T012889,M01977,dining,Malioboro,card_not_accepted
+D01387,T013320,M01437,retail,Ubud,card_not_accepted
+D01388,T004743,M01250,retail,Malioboro,card_not_accepted
+D01389,T004556,M01129,lodging,Old City,card_not_accepted
+D01390,T005642,M03232,transport,Old Quarter,card_not_accepted
+D01391,T004651,M03570,transport,Malioboro,card_not_accepted
+D01392,T007328,M03928,dining,Malioboro,card_not_accepted
+D01393,T013550,M03954,transport,Ubud,card_not_accepted
+D01394,T005960,M03476,dining,Khao San,card_not_accepted
+D01395,T002528,M01594,transport,Han River,card_not_accepted
+D01396,T006589,M00872,transport,Malioboro,card_not_accepted
+D01397,T013530,M01743,retail,Old City,card_not_accepted
+D01398,T002122,M04798,retail,Malioboro,card_not_accepted
+D01399,T008788,M02457,dining,Han River,card_not_accepted
+D01400,T010492,M01334,lodging,Old Quarter,card_not_accepted
+D01401,T011937,M00201,transport,Khao San,card_not_accepted
+D01402,T002453,M01856,retail,Ubud,card_not_accepted
+D01403,T001571,M02303,transport,George Town,card_not_accepted
+D01404,T012803,M03241,transport,Han River,card_not_accepted
+D01405,T002299,M00649,retail,Khao San,card_not_accepted
+D01406,T006077,M04843,lodging,Old City,card_not_accepted
+D01407,T008658,M00419,transport,Ubud,card_not_accepted
+D01408,T001098,M03552,dining,Old Quarter,card_not_accepted
+D01409,T006186,M04914,transport,Khao San,card_not_accepted
+D01410,T014078,M04214,retail,Old City,card_not_accepted
+D01411,T003501,M00222,retail,George Town,card_not_accepted
+D01412,T014145,M02154,transport,Old City,card_not_accepted
+D01413,T011643,M01291,transport,Malioboro,card_not_accepted
+D01414,T000412,M02275,dining,Han River,card_not_accepted
+D01415,T004298,M01283,dining,Malioboro,card_not_accepted
+D01416,T004553,M04572,dining,Han River,card_not_accepted
+D01417,T003011,M00513,retail,Old Quarter,card_not_accepted
+D01418,T005682,M02159,transport,Malioboro,card_not_accepted
+D01419,T010908,M03629,transport,Khao San,card_not_accepted
+D01420,T003927,M00279,transport,Ubud,card_not_accepted
+D01421,T014826,M00470,retail,Malioboro,card_not_accepted
+D01422,T007267,M03841,lodging,Han River,card_not_accepted
+D01423,T002958,M03829,dining,Old Quarter,card_not_accepted
+D01424,T004322,M01384,retail,Old Quarter,card_not_accepted
+D01425,T004134,M00505,dining,Khao San,card_not_accepted
+D01426,T007832,M01124,transport,Ubud,card_not_accepted
+D01427,T004028,M00932,lodging,Khao San,card_not_accepted
+D01428,T002366,M03763,transport,George Town,card_not_accepted
+D01429,T010918,M02281,transport,Malioboro,card_not_accepted
+D01430,T006326,M04605,retail,Khao San,card_not_accepted
+D01431,T005428,M01333,dining,Ba Dinh,card_not_accepted
+D01432,T014744,M00578,dining,Old City,card_not_accepted
+D01433,T003176,M01662,retail,George Town,card_not_accepted
+D01434,T007245,M03359,retail,Ba Dinh,card_not_accepted
+D01435,T011326,M01538,lodging,George Town,card_not_accepted
+D01436,T013441,M02146,dining,Old Quarter,card_not_accepted
+D01437,T004120,M01055,transport,Ubud,card_not_accepted
+D01438,T014500,M02270,dining,Ubud,card_not_accepted
+D01439,T012876,M02355,lodging,Han River,card_not_accepted
+D01440,T012795,M01519,retail,George Town,card_not_accepted
+D01441,T009761,M03984,transport,Malioboro,card_not_accepted
+D01442,T000180,M02161,transport,Ubud,card_not_accepted
+D01443,T004363,M03607,transport,Old City,card_not_accepted
+D01444,T008627,M03912,retail,Ubud,card_not_accepted
+D01445,T004027,M02590,dining,Khao San,card_not_accepted
+D01446,T002301,M00933,lodging,Old Quarter,card_not_accepted
+D01447,T007474,M04941,retail,Han River,card_not_accepted
+D01448,T006733,M01014,dining,Ubud,card_not_accepted
+D01449,T005147,M04004,dining,Khao San,card_not_accepted
+D01450,T005619,M01763,retail,Old Quarter,card_not_accepted
+D01451,T007148,M02874,retail,Ubud,card_not_accepted
+D01452,T000623,M04027,transport,Old Quarter,card_not_accepted
+D01453,T006882,M02167,retail,Khao San,card_not_accepted
+D01454,T014905,M00635,transport,Malioboro,card_not_accepted
+D01455,T014317,M04336,lodging,Khao San,card_not_accepted
+D01456,T002242,M01189,lodging,Old Quarter,card_not_accepted
+D01457,T012098,M03005,retail,Old City,card_not_accepted
+D01458,T012734,M04506,lodging,Malioboro,card_not_accepted
+D01459,T010801,M03871,transport,Ubud,card_not_accepted
+D01460,T007928,M03558,dining,Malioboro,card_not_accepted
+D01461,T009722,M02820,lodging,Old Quarter,card_not_accepted
+D01462,T013582,M00827,dining,Old Quarter,card_not_accepted
+D01463,T011160,M01008,dining,Khao San,card_not_accepted
+D01464,T008556,M03664,lodging,Ubud,card_not_accepted
+D01465,T002858,M04797,dining,Khao San,card_not_accepted
+D01466,T002171,M04131,retail,Old Quarter,card_not_accepted
+D01467,T000963,M03249,retail,Ubud,card_not_accepted
+D01468,T006579,M02534,lodging,Han River,card_not_accepted
+D01469,T007542,M01728,retail,Han River,card_not_accepted
+D01470,T001778,M03223,dining,Ba Dinh,card_not_accepted
+D01471,T008649,M03219,retail,Khao San,card_not_accepted
+D01472,T001127,M00212,dining,Khao San,card_not_accepted
+D01473,T011415,M02163,dining,Ubud,card_not_accepted
+D01474,T013286,M00544,dining,Old Quarter,card_not_accepted
+D01475,T002192,M04000,retail,Ubud,card_not_accepted
+D01476,T009117,M03696,dining,Ubud,card_not_accepted
+D01477,T004778,M02310,lodging,Khao San,card_not_accepted
+D01478,T011507,M02041,lodging,Khao San,card_not_accepted
+D01479,T004939,M00030,dining,Ba Dinh,card_not_accepted
+D01480,T001113,M03912,retail,Malioboro,card_not_accepted
+D01481,T009571,M01160,dining,Old City,card_not_accepted
+D01482,T011599,M00901,dining,George Town,card_not_accepted
+D01483,T001106,M03109,lodging,Old City,card_not_accepted
+D01484,T005660,M04818,transport,George Town,card_not_accepted
+D01485,T008162,M03824,lodging,Khao San,card_not_accepted
+D01486,T001517,M04760,dining,Malioboro,card_not_accepted
+D01487,T009288,M00984,dining,Malioboro,card_not_accepted
+D01488,T002190,M01575,dining,Khao San,card_not_accepted
+D01489,T012154,M04469,retail,Malioboro,card_not_accepted
+D01490,T006862,M00483,lodging,Malioboro,card_not_accepted
+D01491,T003440,M01304,retail,Old Quarter,card_not_accepted
+D01492,T004078,M00188,retail,Han River,card_not_accepted
+D01493,T005856,M02965,retail,Malioboro,card_not_accepted
+D01494,T000595,M03140,retail,Han River,card_not_accepted
+D01495,T000109,M03342,transport,Ubud,card_not_accepted
+D01496,T011549,M00855,transport,Old Quarter,card_not_accepted
+D01497,T007229,M03386,transport,Malioboro,card_not_accepted
+D01498,T014814,M01119,lodging,Han River,card_not_accepted
+D01499,T008410,M03482,dining,Old Quarter,card_not_accepted
+D01500,T014615,M00423,dining,Ba Dinh,card_not_accepted
+D01501,T011237,M04810,retail,Malioboro,card_not_accepted
+D01502,T014291,M04001,transport,Old Quarter,card_not_accepted
+D01503,T003030,M02929,dining,George Town,card_not_accepted
+D01504,T003575,M00247,retail,Khao San,card_not_accepted
+D01505,T000484,M01766,dining,Old Quarter,card_not_accepted
+D01506,T011445,M02775,lodging,Old City,card_not_accepted
+D01507,T010327,M01731,lodging,Ba Dinh,card_not_accepted
+D01508,T010858,M02989,lodging,Old Quarter,card_not_accepted
+D01509,T011041,M00885,retail,Khao San,card_not_accepted
+D01510,T009743,M02337,transport,Han River,card_not_accepted
+D01511,T014458,M00190,dining,Khao San,card_not_accepted
+D01512,T009216,M03376,retail,Ba Dinh,card_not_accepted
+D01513,T006377,M00408,dining,Ubud,card_not_accepted
+D01514,T008658,M00419,lodging,Ubud,card_not_accepted
+D01515,T008196,M04611,retail,Khao San,card_not_accepted
+D01516,T003194,M03111,dining,George Town,card_not_accepted
+D01517,T001991,M03673,dining,Khao San,card_not_accepted
+D01518,T005694,M03131,dining,Ba Dinh,card_not_accepted
+D01519,T001069,M03907,dining,Malioboro,card_not_accepted
+D01520,T011324,M00480,lodging,Ubud,card_not_accepted
+D01521,T007839,M04770,transport,Ubud,card_not_accepted
+D01522,T011947,M00747,transport,Ubud,card_not_accepted
+D01523,T001810,M04110,retail,Ubud,card_not_accepted
+D01524,T010310,M04971,transport,Ba Dinh,card_not_accepted
+D01525,T013120,M03183,retail,Old Quarter,card_not_accepted
+D01526,T005653,M02782,transport,Khao San,card_not_accepted
+D01527,T007684,M01675,transport,Khao San,card_not_accepted
+D01528,T004923,M02279,dining,Ubud,card_not_accepted
+D01529,T010122,M02302,dining,George Town,card_not_accepted
+D01530,T005626,M04628,dining,Ubud,card_not_accepted
+D01531,T003927,M00279,dining,Ubud,card_not_accepted
+D01532,T004793,M02127,transport,Malioboro,card_not_accepted
+D01533,T011999,M02686,transport,George Town,card_not_accepted
+D01534,T011902,M02593,retail,Ba Dinh,card_not_accepted
+D01535,T013442,M00190,lodging,Old Quarter,card_not_accepted
+D01536,T010327,M01731,dining,Ba Dinh,card_not_accepted
+D01537,T001414,M03025,lodging,Han River,card_not_accepted
+D01538,T005245,M01160,lodging,Malioboro,card_not_accepted
+D01539,T006059,M02041,transport,George Town,card_not_accepted
+D01540,T010327,M01731,transport,Ba Dinh,card_not_accepted
+D01541,T001422,M02308,lodging,Old Quarter,card_not_accepted
+D01542,T008941,M02149,dining,Han River,card_not_accepted
+D01543,T005960,M03476,transport,Khao San,card_not_accepted
+D01544,T007038,M03630,dining,Khao San,card_not_accepted
+D01545,T012664,M03048,transport,Ubud,card_not_accepted
+D01546,T012553,M02841,retail,Ba Dinh,card_not_accepted
+D01547,T010769,M00965,retail,Ubud,card_not_accepted
+D01548,T007516,M04550,transport,Ubud,card_not_accepted
+D01549,T000054,M04580,transport,Old City,card_not_accepted
+D01550,T012617,M01876,retail,George Town,card_not_accepted
+D01551,T012900,M01085,dining,Malioboro,card_not_accepted
+D01552,T011266,M00165,dining,Han River,card_not_accepted
+D01553,T013421,M00378,transport,George Town,card_not_accepted
+D01554,T009096,M02079,dining,Old Quarter,card_not_accepted
+D01555,T008800,M04129,lodging,Old City,card_not_accepted
+D01556,T004892,M00520,dining,Ubud,card_not_accepted
+D01557,T013245,M02365,retail,Khao San,card_not_accepted
+D01558,T014489,M01304,dining,Ubud,card_not_accepted
+D01559,T000647,M00312,dining,Han River,card_not_accepted
+D01560,T004413,M04695,transport,Old Quarter,card_not_accepted
+D01561,T012880,M03233,transport,Han River,card_not_accepted
+D01562,T001938,M00330,lodging,Malioboro,card_not_accepted
+D01563,T013953,M03098,transport,Han River,card_not_accepted
+D01564,T010681,M01538,retail,Malioboro,card_not_accepted
+D01565,T001845,M01614,lodging,George Town,card_not_accepted
+D01566,T011743,M01506,retail,Ubud,card_not_accepted
+D01567,T013157,M02621,lodging,Old City,card_not_accepted
+D01568,T012157,M04550,dining,George Town,card_not_accepted
+D01569,T007477,M02384,retail,Old City,card_not_accepted
+D01570,T010792,M03768,dining,Ubud,card_not_accepted
+D01571,T008887,M00183,dining,Malioboro,card_not_accepted
+D01572,T000520,M00194,dining,Khao San,card_not_accepted
+D01573,T009950,M01989,retail,Malioboro,card_not_accepted
+D01574,T001076,M01092,retail,Ba Dinh,card_not_accepted
+D01575,T014515,M01124,retail,Malioboro,card_not_accepted
+D01576,T005014,M02256,transport,Malioboro,card_not_accepted
+D01577,T008131,M04627,dining,Ba Dinh,card_not_accepted
+D01578,T003888,M04976,transport,Khao San,card_not_accepted
+D01579,T010384,M03924,transport,Ba Dinh,card_not_accepted
+D01580,T002355,M04732,lodging,Malioboro,card_not_accepted
+D01581,T004815,M00083,dining,Ba Dinh,card_not_accepted
+D01582,T010482,M02455,dining,Ubud,card_not_accepted
+D01583,T012401,M00254,dining,George Town,card_not_accepted
+D01584,T008935,M03444,lodging,George Town,card_not_accepted
+D01585,T002230,M01581,retail,George Town,card_not_accepted
+D01586,T014120,M02636,lodging,Khao San,card_not_accepted
+D01587,T011355,M01192,dining,Ubud,card_not_accepted
+D01588,T013535,M01595,lodging,Old Quarter,card_not_accepted
+D01589,T014697,M03405,transport,Old City,card_not_accepted
+D01590,T014236,M02216,transport,Han River,card_not_accepted
+D01591,T007565,M03956,lodging,Ba Dinh,card_not_accepted
+D01592,T013639,M04906,retail,Ubud,card_not_accepted
+D01593,T005928,M02520,transport,Ubud,card_not_accepted
+D01594,T006612,M04723,lodging,Old City,card_not_accepted
+D01595,T001217,M04626,lodging,Ubud,card_not_accepted
+D01596,T006784,M01508,dining,Ba Dinh,card_not_accepted
+D01597,T010575,M04298,transport,Old Quarter,card_not_accepted
+D01598,T003253,M04876,transport,Old Quarter,card_not_accepted
+D01599,T008209,M03325,lodging,Han River,card_not_accepted
+D01600,T004548,M03917,retail,Malioboro,card_not_accepted
+D01601,T002537,M02252,retail,Ba Dinh,card_not_accepted
+D01602,T003587,M02822,transport,Ba Dinh,card_not_accepted
+D01603,T012066,M02243,lodging,Han River,card_not_accepted
+D01604,T014745,M01065,transport,Old Quarter,card_not_accepted
+D01605,T002156,M03352,transport,Old Quarter,card_not_accepted
+D01606,T001739,M02884,lodging,Old City,card_not_accepted
+D01607,T012664,M03048,dining,Ubud,card_not_accepted
+D01608,T003977,M04294,transport,Old City,card_not_accepted
+D01609,T001613,M02928,lodging,Malioboro,card_not_accepted
+D01610,T001562,M04808,transport,Old City,card_not_accepted
+D01611,T011948,M02412,dining,Malioboro,card_not_accepted
+D01612,T007361,M03092,retail,Malioboro,card_not_accepted
+D01613,T010099,M03240,dining,Ubud,card_not_accepted
+D01614,T003631,M00873,retail,Khao San,card_not_accepted
+D01615,T004595,M00857,transport,Khao San,card_not_accepted
+D01616,T010589,M02735,dining,Old City,card_not_accepted
+D01617,T004124,M00914,transport,Ubud,card_not_accepted
+D01618,T014233,M04823,retail,Ubud,card_not_accepted
+D01619,T006496,M02837,lodging,Han River,card_not_accepted
+D01620,T002479,M03131,retail,Khao San,card_not_accepted
+D01621,T004298,M01283,transport,Malioboro,card_not_accepted
+D01622,T013240,M02416,retail,Ba Dinh,card_not_accepted
+D01623,T010582,M01486,transport,Khao San,card_not_accepted
+D01624,T002162,M00835,transport,Old Quarter,card_not_accepted
+D01625,T005382,M00932,transport,Khao San,card_not_accepted
+D01626,T001195,M02956,transport,George Town,card_not_accepted
+D01627,T014886,M01333,retail,George Town,card_not_accepted
+D01628,T006424,M02873,transport,Malioboro,card_not_accepted
+D01629,T002671,M02579,lodging,George Town,card_not_accepted
+D01630,T012385,M03475,lodging,Ba Dinh,card_not_accepted
+D01631,T004628,M00503,dining,Ba Dinh,card_not_accepted
+D01632,T011011,M00416,transport,Malioboro,card_not_accepted
+D01633,T009048,M00751,retail,Malioboro,card_not_accepted
+D01634,T000805,M01485,dining,Han River,card_not_accepted
+D01635,T006347,M03394,retail,Ba Dinh,card_not_accepted
+D01636,T009187,M00323,transport,Malioboro,card_not_accepted
+D01637,T012024,M04263,lodging,George Town,card_not_accepted
+D01638,T007934,M04387,dining,Ubud,card_not_accepted
+D01639,T004935,M02920,retail,Ba Dinh,card_not_accepted
+D01640,T002554,M03329,retail,Old City,card_not_accepted
+D01641,T005760,M04486,transport,George Town,card_not_accepted
+D01642,T004151,M01580,transport,Malioboro,card_not_accepted
+D01643,T009765,M00015,transport,Ubud,card_not_accepted
+D01644,T007254,M01383,dining,Malioboro,card_not_accepted
+D01645,T014633,M00858,lodging,George Town,card_not_accepted
+D01646,T011082,M01385,lodging,Ubud,card_not_accepted
+D01647,T004427,M02430,retail,Han River,card_not_accepted
+D01648,T006059,M02041,lodging,George Town,card_not_accepted
+D01649,T012169,M01922,dining,Ubud,card_not_accepted
+D01650,T004196,M00547,retail,Khao San,card_not_accepted
+D01651,T008041,M02871,transport,Old Quarter,card_not_accepted
+D01652,T003387,M02627,lodging,Ubud,card_not_accepted
+D01653,T011008,M02980,lodging,Ba Dinh,card_not_accepted
+D01654,T008963,M02167,dining,Ba Dinh,card_not_accepted
+D01655,T002528,M01594,retail,Han River,card_not_accepted
+D01656,T011813,M04656,lodging,Han River,card_not_accepted
+D01657,T011715,M00005,transport,Malioboro,card_not_accepted
+D01658,T012258,M02982,transport,Khao San,card_not_accepted
+D01659,T001733,M01962,dining,Khao San,card_not_accepted
+D01660,T013797,M04470,transport,Ubud,card_not_accepted
+D01661,T002981,M03914,retail,Malioboro,card_not_accepted
+D01662,T012187,M03895,transport,Ubud,card_not_accepted
+D01663,T002077,M01398,lodging,Han River,card_not_accepted
+D01664,T000704,M02421,retail,George Town,card_not_accepted
+D01665,T006890,M00149,retail,Ubud,card_not_accepted
+D01666,T012731,M04674,transport,Old Quarter,card_not_accepted
+D01667,T006938,M02026,transport,George Town,card_not_accepted
+D01668,T006897,M02613,retail,Old Quarter,card_not_accepted
+D01669,T006709,M00929,lodging,Han River,card_not_accepted
+D01670,T001786,M02841,lodging,Malioboro,card_not_accepted
+D01671,T007249,M02654,lodging,Han River,card_not_accepted
+D01672,T005952,M03768,transport,George Town,card_not_accepted
+D01673,T011758,M04360,transport,Old Quarter,card_not_accepted
+D01674,T003491,M02117,transport,Malioboro,card_not_accepted
+D01675,T007957,M03896,dining,Ubud,card_not_accepted
+D01676,T013159,M01106,retail,Malioboro,card_not_accepted
+D01677,T001743,M00932,retail,Old Quarter,card_not_accepted
+D01678,T002537,M02252,transport,Ba Dinh,card_not_accepted
+D01679,T011507,M02041,transport,Khao San,card_not_accepted
+D01680,T004845,M00421,transport,Old Quarter,card_not_accepted
+D01681,T004512,M01845,retail,Ba Dinh,card_not_accepted
+D01682,T001198,M00361,transport,Malioboro,card_not_accepted
+D01683,T012394,M04763,retail,Ba Dinh,card_not_accepted
+D01684,T011394,M00012,lodging,Ba Dinh,card_not_accepted
+D01685,T007883,M00171,lodging,Han River,card_not_accepted
+D01686,T005267,M00062,dining,Old Quarter,card_not_accepted
+D01687,T012557,M03853,transport,Malioboro,card_not_accepted
+D01688,T012685,M00614,transport,Old Quarter,card_not_accepted
+D01689,T003410,M01684,transport,Malioboro,card_not_accepted
+D01690,T007783,M00660,retail,Khao San,card_not_accepted
+D01691,T007808,M04947,lodging,Old City,card_not_accepted
+D01692,T009044,M04636,dining,Ubud,card_not_accepted
+D01693,T012219,M00294,transport,Han River,card_not_accepted
+D01694,T014835,M02479,retail,Old City,card_not_accepted
+D01695,T005336,M01602,retail,Malioboro,card_not_accepted
+D01696,T008162,M03824,transport,Khao San,card_not_accepted
+D01697,T007417,M00858,lodging,Ubud,card_not_accepted
+D01698,T011577,M03387,retail,Ubud,card_not_accepted
+D01699,T000529,M00994,lodging,Ubud,card_not_accepted
+D01700,T011222,M03957,lodging,Malioboro,card_not_accepted
+D01701,T008749,M04674,transport,Han River,card_not_accepted
+D01702,T008431,M04490,dining,George Town,card_not_accepted
+D01703,T009058,M02365,transport,Malioboro,card_not_accepted
+D01704,T000497,M02237,transport,Han River,card_not_accepted
+D01705,T002262,M00843,transport,Old City,card_not_accepted
+D01706,T000866,M03564,lodging,Han River,card_not_accepted
+D01707,T011959,M04810,lodging,George Town,card_not_accepted
+D01708,T011311,M04578,dining,Khao San,card_not_accepted
+D01709,T000549,M04389,transport,Ubud,card_not_accepted
+D01710,T002397,M01873,dining,Khao San,card_not_accepted
+D01711,T009554,M04335,dining,Ubud,card_not_accepted
+D01712,T002939,M02636,lodging,Malioboro,card_not_accepted
+D01713,T012478,M03910,lodging,Ubud,card_not_accepted
+D01714,T001755,M03966,dining,Khao San,card_not_accepted
+D01715,T010168,M00703,lodging,Ubud,card_not_accepted
+D01716,T009257,M00476,retail,Ba Dinh,card_not_accepted
+D01717,T003524,M00769,lodging,Ubud,card_not_accepted
+D01718,T004988,M04425,lodging,Han River,card_not_accepted
+D01719,T004295,M03225,lodging,Han River,card_not_accepted
+D01720,T004432,M02436,dining,George Town,card_not_accepted
+D01721,T010176,M04411,lodging,Malioboro,card_not_accepted
+D01722,T006220,M03913,dining,Old Quarter,card_not_accepted
+D01723,T014660,M04628,transport,Malioboro,card_not_accepted
+D01724,T006652,M01334,dining,Ba Dinh,card_not_accepted
+D01725,T014277,M04530,retail,Ba Dinh,card_not_accepted
+D01726,T006280,M02841,transport,Malioboro,card_not_accepted
+D01727,T010886,M03078,dining,Old Quarter,card_not_accepted
+D01728,T011549,M00855,lodging,Old Quarter,card_not_accepted
+D01729,T008934,M04386,retail,Khao San,card_not_accepted
+D01730,T014588,M04938,lodging,Khao San,card_not_accepted
+D01731,T002893,M01811,lodging,George Town,card_not_accepted
+D01732,T007936,M02490,retail,Malioboro,card_not_accepted
+D01733,T012793,M01992,transport,Malioboro,card_not_accepted
+D01734,T013337,M03979,dining,Old Quarter,card_not_accepted
+D01735,T001566,M04563,lodging,Old City,card_not_accepted
+D01736,T008948,M01951,lodging,Ubud,card_not_accepted
+D01737,T012450,M03895,dining,George Town,card_not_accepted
+D01738,T009342,M01630,retail,Ubud,card_not_accepted
+D01739,T002942,M04668,dining,Old Quarter,card_not_accepted
+D01740,T010307,M02281,dining,Old City,card_not_accepted
+D01741,T014369,M00610,transport,Malioboro,card_not_accepted
+D01742,T004614,M04233,lodging,Old City,card_not_accepted
+D01743,T006731,M02785,transport,Khao San,card_not_accepted
+D01744,T010087,M03307,retail,Malioboro,card_not_accepted
+D01745,T012436,M00747,lodging,Ubud,card_not_accepted
+D01746,T011961,M03316,lodging,Khao San,card_not_accepted
+D01747,T003773,M02182,transport,Ubud,card_not_accepted
+D01748,T012116,M02420,lodging,Old City,card_not_accepted
+D01749,T002078,M03647,dining,Old City,card_not_accepted
+D01750,T010681,M01538,transport,Malioboro,card_not_accepted
+D01751,T011165,M01020,retail,Han River,card_not_accepted
+D01752,T003251,M04110,retail,Ubud,card_not_accepted
+D01753,T010823,M00958,dining,Old City,card_not_accepted
+D01754,T012587,M01951,dining,Han River,card_not_accepted
+D01755,T001508,M01137,retail,Old City,card_not_accepted
+D01756,T010898,M03483,retail,Ubud,card_not_accepted
+D01757,T012520,M00207,transport,Malioboro,card_not_accepted
+D01758,T010857,M01728,dining,Khao San,card_not_accepted
+D01759,T013110,M03151,dining,Han River,card_not_accepted
+D01760,T001665,M00570,retail,Old City,card_not_accepted
+D01761,T006111,M00211,retail,Han River,card_not_accepted
+D01762,T005926,M02757,lodging,Old Quarter,card_not_accepted
+D01763,T001127,M00212,lodging,Khao San,card_not_accepted
+D01764,T007189,M02491,dining,Khao San,card_not_accepted
+D01765,T012249,M02828,retail,Han River,card_not_accepted
+D01766,T013426,M00533,retail,George Town,card_not_accepted
+D01767,T011883,M02534,retail,Ba Dinh,card_not_accepted
+D01768,T009227,M03999,dining,Malioboro,card_not_accepted
+D01769,T005168,M02853,transport,Han River,card_not_accepted
+D01770,T008066,M01452,transport,Ba Dinh,card_not_accepted
+D01771,T005327,M02177,lodging,Han River,card_not_accepted
+D01772,T008952,M02528,dining,Khao San,card_not_accepted
+D01773,T008171,M03171,dining,George Town,card_not_accepted
+D01774,T007624,M00190,transport,Ubud,card_not_accepted
+D01775,T012587,M01951,lodging,Han River,card_not_accepted
+D01776,T004780,M00494,retail,Ba Dinh,card_not_accepted
+D01777,T002397,M01873,transport,Khao San,card_not_accepted
+D01778,T008209,M03325,transport,Han River,card_not_accepted
+D01779,T000183,M04933,lodging,Han River,card_not_accepted
+D01780,T011228,M00276,lodging,George Town,card_not_accepted
+D01781,T003312,M01182,dining,Malioboro,card_not_accepted
+D01782,T007974,M01437,lodging,Old Quarter,card_not_accepted
+D01783,T000623,M04027,lodging,Old Quarter,card_not_accepted
+D01784,T008948,M01951,transport,Ubud,card_not_accepted
+D01785,T003527,M02229,dining,Malioboro,card_not_accepted
+D01786,T001413,M02356,lodging,Old Quarter,card_not_accepted
+D01787,T007159,M04364,dining,Han River,card_not_accepted
+D01788,T000153,M01551,retail,Old Quarter,card_not_accepted
+D01789,T000959,M01996,retail,Malioboro,card_not_accepted
+D01790,T003176,M01662,transport,George Town,card_not_accepted
+D01791,T011920,M00297,dining,Malioboro,card_not_accepted
+D01792,T006545,M01641,transport,Han River,card_not_accepted
+D01793,T005978,M04530,transport,Ubud,card_not_accepted
+D01794,T012040,M01723,transport,Malioboro,card_not_accepted
+D01795,T013851,M04053,retail,Malioboro,card_not_accepted
+D01796,T004466,M00014,transport,Malioboro,card_not_accepted
+D01797,T006275,M02171,dining,Malioboro,card_not_accepted
+D01798,T008130,M01366,dining,Ba Dinh,card_not_accepted
+D01799,T011856,M03947,transport,Old Quarter,card_not_accepted
+D01800,T004676,M03757,lodging,Han River,card_not_accepted
+D01801,T006072,M04052,transport,Khao San,card_not_accepted
+D01802,T003526,M00151,lodging,Ubud,card_not_accepted
+D01803,T010918,M02281,dining,Malioboro,card_not_accepted
+D01804,T002641,M01800,dining,Ubud,card_not_accepted
+D01805,T010135,M04614,dining,Old City,card_not_accepted
+D01806,T014525,M02260,dining,Han River,card_not_accepted
+D01807,T013996,M03515,lodging,Ubud,card_not_accepted
+D01808,T006002,M00504,lodging,George Town,card_not_accepted
+D01809,T000756,M00100,transport,Khao San,card_not_accepted
+D01810,T009919,M04276,retail,Ba Dinh,card_not_accepted
+D01811,T009848,M03647,retail,Ba Dinh,card_not_accepted
+D01812,T008760,M00223,dining,Malioboro,card_not_accepted
+D01813,T006422,M04021,retail,Old City,card_not_accepted
+D01814,T008094,M04234,lodging,Ba Dinh,card_not_accepted
+D01815,T013222,M01245,lodging,Old Quarter,card_not_accepted
+D01816,T001426,M02072,dining,Khao San,card_not_accepted
+D01817,T006517,M00567,dining,Han River,card_not_accepted
+D01818,T009314,M00648,dining,Han River,card_not_accepted
+D01819,T002335,M01249,transport,Han River,card_not_accepted
+D01820,T003677,M01296,retail,Han River,card_not_accepted
+D01821,T009120,M04574,lodging,Khao San,card_not_accepted
+D01822,T011831,M00223,transport,Malioboro,card_not_accepted
+D01823,T004042,M02066,retail,Khao San,card_not_accepted
+D01824,T001997,M00911,lodging,Old Quarter,card_not_accepted
+D01825,T001562,M04808,dining,Old City,card_not_accepted
+D01826,T001321,M04130,dining,Malioboro,card_not_accepted
+D01827,T003909,M04841,lodging,George Town,card_not_accepted
+D01828,T010192,M01885,retail,Malioboro,card_not_accepted
+D01829,T010660,M02384,transport,Malioboro,card_not_accepted
+D01830,T009306,M04930,transport,Old Quarter,card_not_accepted
+D01831,T002620,M04240,dining,Khao San,card_not_accepted
+D01832,T000513,M04604,lodging,Ubud,card_not_accepted
+D01833,T006506,M01517,retail,Ba Dinh,card_not_accepted
+D01834,T010764,M00967,dining,Ba Dinh,card_not_accepted
+D01835,T013131,M01964,lodging,Ubud,card_not_accepted
+D01836,T003147,M04088,lodging,Old City,card_not_accepted
+D01837,T005188,M04816,dining,Khao San,card_not_accepted
+D01838,T001060,M01660,transport,Malioboro,card_not_accepted
+D01839,T008516,M02674,dining,Ba Dinh,card_not_accepted
+D01840,T001381,M01062,transport,Khao San,card_not_accepted
+D01841,T006175,M02141,retail,Old City,card_not_accepted
+D01842,T003240,M02228,transport,Ubud,card_not_accepted
+D01843,T009227,M03999,transport,Malioboro,card_not_accepted
+D01844,T008811,M03439,retail,Han River,card_not_accepted
+D01845,T006646,M01821,retail,Ubud,card_not_accepted
+D01846,T006971,M01331,dining,Old Quarter,card_not_accepted
+D01847,T008538,M03715,dining,Old City,card_not_accepted
+D01848,T004198,M03332,transport,Ubud,card_not_accepted
+D01849,T009453,M00103,dining,Old Quarter,card_not_accepted
+D01850,T003933,M02568,lodging,Old City,card_not_accepted
+D01851,T013550,M03954,retail,Ubud,card_not_accepted
+D01852,T010504,M02782,retail,George Town,card_not_accepted
+D01853,T012870,M01646,retail,Ubud,card_not_accepted
+D01854,T004106,M02310,retail,Old City,card_not_accepted
+D01855,T004179,M03233,retail,Ubud,card_not_accepted
+D01856,T011203,M00107,retail,Ubud,card_not_accepted
+D01857,T013571,M01091,dining,Malioboro,card_not_accepted
+D01858,T011102,M04823,retail,Han River,card_not_accepted
+D01859,T004031,M01627,retail,Malioboro,card_not_accepted
+D01860,T012282,M00297,retail,Malioboro,card_not_accepted
+D01861,T008568,M02550,lodging,Ba Dinh,card_not_accepted
+D01862,T002235,M02615,dining,Malioboro,card_not_accepted
+D01863,T013178,M04590,retail,Han River,card_not_accepted
+D01864,T001745,M00563,retail,Ubud,card_not_accepted
+D01865,T009746,M00810,retail,Old City,card_not_accepted
+D01866,T009461,M00977,lodging,Ubud,card_not_accepted
+D01867,T001461,M03067,transport,Han River,card_not_accepted
+D01868,T007570,M03706,dining,Han River,card_not_accepted
+D01869,T006683,M03915,transport,Ubud,card_not_accepted
+D01870,T008572,M00103,transport,Old Quarter,card_not_accepted
+D01871,T000490,M00208,retail,Old Quarter,card_not_accepted
+D01872,T001993,M04527,lodging,Khao San,card_not_accepted
+D01873,T006787,M03188,retail,Ubud,card_not_accepted
+D01874,T013828,M00563,lodging,Khao San,card_not_accepted
+D01875,T009391,M04143,lodging,Ubud,card_not_accepted
+D01876,T004982,M04595,lodging,Ubud,card_not_accepted
+D01877,T005561,M02367,transport,Ubud,card_not_accepted
+D01878,T013769,M00755,transport,Old City,card_not_accepted
+D01879,T009513,M04860,dining,Ubud,card_not_accepted
+D01880,T001810,M04110,transport,Ubud,card_not_accepted
+D01881,T011481,M02301,dining,George Town,card_not_accepted
+D01882,T009023,M03323,transport,Old Quarter,card_not_accepted
+D01883,T004897,M00568,lodging,Khao San,card_not_accepted
+D01884,T005184,M01262,transport,Ubud,card_not_accepted
+D01885,T014972,M04890,dining,Malioboro,card_not_accepted
+D01886,T008240,M00101,dining,Ubud,card_not_accepted
+D01887,T007646,M01877,dining,Malioboro,card_not_accepted
+D01888,T012537,M00517,transport,Old City,card_not_accepted
+D01889,T001926,M02621,dining,Malioboro,card_not_accepted
+D01890,T014002,M04765,dining,Malioboro,card_not_accepted
+D01891,T008917,M03457,dining,Malioboro,card_not_accepted
+D01892,T000667,M01869,transport,Malioboro,card_not_accepted
+D01893,T014515,M01124,lodging,Malioboro,card_not_accepted
+D01894,T001076,M01092,dining,Ba Dinh,card_not_accepted
+D01895,T014940,M00592,dining,Old Quarter,card_not_accepted
+D01896,T002937,M01638,lodging,Old Quarter,card_not_accepted
+D01897,T009340,M01398,transport,Malioboro,card_not_accepted
+D01898,T000833,M00829,retail,Old City,card_not_accepted
+D01899,T005966,M04301,transport,Khao San,card_not_accepted
+D01900,T013975,M02874,dining,Ubud,card_not_accepted
+D01901,T002229,M00541,dining,Ubud,card_not_accepted
+D01902,T003011,M00513,dining,Old Quarter,card_not_accepted
+D01903,T014906,M04506,dining,Old Quarter,card_not_accepted
+D01904,T012036,M03166,transport,Old Quarter,card_not_accepted
+D01905,T004092,M03719,lodging,Ubud,card_not_accepted
+D01906,T013061,M03701,dining,Ubud,card_not_accepted
+D01907,T001456,M02054,lodging,Old Quarter,card_not_accepted
+D01908,T010502,M01753,lodging,George Town,card_not_accepted
+D01909,T000587,M01091,retail,Ubud,card_not_accepted
+D01910,T013323,M03486,dining,George Town,card_not_accepted
+D01911,T013151,M01747,retail,Han River,card_not_accepted
+D01912,T012061,M04331,transport,Han River,card_not_accepted
+D01913,T006793,M03912,transport,Ubud,card_not_accepted
+D01914,T003440,M01304,lodging,Old Quarter,card_not_accepted
+D01915,T007800,M03951,lodging,Han River,card_not_accepted
+D01916,T003257,M00190,lodging,Old City,card_not_accepted
+D01917,T013159,M01106,lodging,Malioboro,card_not_accepted
+D01918,T014514,M00057,transport,Han River,card_not_accepted
+D01919,T004266,M00919,dining,Ubud,card_not_accepted
+D01920,T004712,M00011,lodging,Khao San,card_not_accepted
+D01921,T008944,M04973,dining,Old City,card_not_accepted
+D01922,T003783,M01123,lodging,Ubud,card_not_accepted
+D01923,T010179,M01222,dining,Old Quarter,card_not_accepted
+D01924,T001668,M02025,dining,Old City,card_not_accepted
+D01925,T014296,M00945,retail,Malioboro,card_not_accepted
+D01926,T010672,M03246,dining,Han River,card_not_accepted
+D01927,T012793,M01992,retail,Malioboro,card_not_accepted
+D01928,T010367,M04063,lodging,Old City,card_not_accepted
+D01929,T005247,M03277,dining,Ubud,card_not_accepted
+D01930,T013420,M01397,transport,Han River,card_not_accepted
+D01931,T003559,M00048,transport,Old Quarter,card_not_accepted
+D01932,T008026,M03788,retail,Ubud,card_not_accepted
+D01933,T009353,M00982,retail,Old Quarter,card_not_accepted
+D01934,T011831,M00223,lodging,Malioboro,card_not_accepted
+D01935,T012956,M04580,transport,Old Quarter,card_not_accepted
+D01936,T011813,M04656,retail,Han River,card_not_accepted
+D01937,T012548,M01375,dining,Ubud,card_not_accepted
+D01938,T010012,M04779,transport,Malioboro,card_not_accepted
+D01939,T006622,M02263,lodging,Malioboro,card_not_accepted
+D01940,T007953,M01044,transport,Ubud,card_not_accepted
+D01941,T002491,M03193,dining,Ba Dinh,card_not_accepted
+D01942,T000204,M03172,dining,Old Quarter,card_not_accepted
+D01943,T012609,M01012,dining,Ubud,card_not_accepted
+D01944,T008130,M01366,transport,Ba Dinh,card_not_accepted
+D01945,T012249,M02828,lodging,Han River,card_not_accepted
+D01946,T001658,M03082,lodging,Old City,card_not_accepted
+D01947,T001390,M01324,retail,Ubud,card_not_accepted
+D01948,T004841,M04025,retail,Malioboro,card_not_accepted
+D01949,T010729,M01856,transport,Old City,card_not_accepted
+D01950,T013897,M04013,transport,Old Quarter,card_not_accepted
+D01951,T009720,M02491,lodging,Ubud,card_not_accepted
+D01952,T005532,M03748,lodging,Ba Dinh,card_not_accepted
+D01953,T009223,M00797,retail,Han River,card_not_accepted
+D01954,T000977,M01404,transport,Han River,card_not_accepted
+D01955,T010965,M02149,lodging,Han River,card_not_accepted
+D01956,T014093,M00373,transport,Ubud,card_not_accepted
+D01957,T013817,M04895,lodging,Malioboro,card_not_accepted
+D01958,T011245,M00296,lodging,Ubud,card_not_accepted
+D01959,T004007,M04744,lodging,Khao San,card_not_accepted
+D01960,T007574,M03495,transport,George Town,card_not_accepted
+D01961,T004888,M03631,transport,Old Quarter,card_not_accepted
+D01962,T001190,M04584,lodging,Malioboro,card_not_accepted
+D01963,T011151,M01749,lodging,Malioboro,card_not_accepted
+D01964,T006310,M04607,dining,Han River,card_not_accepted
+D01965,T013562,M01818,transport,Ba Dinh,card_not_accepted
+D01966,T002246,M01592,dining,Ubud,card_not_accepted
+D01967,T007609,M01009,retail,Ubud,card_not_accepted
+D01968,T000305,M01182,lodging,Ubud,card_not_accepted
+D01969,T006136,M04240,lodging,Old City,card_not_accepted
+D01970,T004331,M04132,retail,Ba Dinh,card_not_accepted
+D01971,T007664,M00195,dining,Malioboro,card_not_accepted
+D01972,T000135,M00894,retail,Old Quarter,card_not_accepted
+D01973,T007093,M04574,lodging,George Town,card_not_accepted
+D01974,T010408,M00442,lodging,Han River,card_not_accepted
+D01975,T012137,M04551,dining,Khao San,card_not_accepted
+D01976,T005613,M00718,dining,Malioboro,card_not_accepted
+D01977,T003763,M00038,dining,Khao San,card_not_accepted
+D01978,T002746,M04120,dining,Malioboro,card_not_accepted
+D01979,T006341,M04502,lodging,Malioboro,card_not_accepted
+D01980,T002030,M04417,lodging,Khao San,card_not_accepted
+D01981,T013794,M01030,retail,Ubud,card_not_accepted
+D01982,T007832,M01124,retail,Ubud,card_not_accepted
+D01983,T011025,M02839,dining,Ubud,card_not_accepted
+D01984,T006323,M00949,transport,Old Quarter,card_not_accepted
+D01985,T011793,M03478,lodging,George Town,card_not_accepted
+D01986,T009640,M01575,lodging,Khao San,card_not_accepted
+D01987,T000102,M02189,retail,George Town,card_not_accepted
+D01988,T005978,M04530,lodging,Ubud,card_not_accepted
+D01989,T011079,M04930,lodging,Old Quarter,card_not_accepted
+D01990,T014845,M00526,transport,Malioboro,card_not_accepted
+D01991,T006513,M02304,dining,Ba Dinh,card_not_accepted
+D01992,T006324,M02445,transport,Ba Dinh,card_not_accepted
+D01993,T000858,M00613,retail,Malioboro,card_not_accepted
+D01994,T006331,M02554,retail,Ba Dinh,card_not_accepted
+D01995,T014496,M03503,transport,Malioboro,card_not_accepted
+D01996,T005598,M04102,dining,Han River,card_not_accepted
+D01997,T011463,M02038,dining,George Town,card_not_accepted
+D01998,T001232,M03591,dining,George Town,card_not_accepted
+D01999,T004604,M01112,transport,Old Quarter,card_not_accepted
+D02000,T013556,M03091,retail,Ba Dinh,card_not_accepted
+D02001,T010268,M01233,transport,Ba Dinh,card_not_accepted
+D02002,T012154,M04469,transport,Malioboro,card_not_accepted
+D02003,T004485,M01375,lodging,George Town,card_not_accepted
+D02004,T008866,M03820,retail,Old Quarter,card_not_accepted
+D02005,T005946,M03489,dining,Han River,card_not_accepted
+D02006,T012396,M01259,dining,Ubud,card_not_accepted
+D02007,T014554,M00932,retail,George Town,card_not_accepted
+D02008,T014572,M01428,retail,Malioboro,card_not_accepted
+D02009,T010799,M01731,retail,Malioboro,card_not_accepted
+D02010,T003063,M03724,transport,Khao San,card_not_accepted
+D02011,T012321,M00860,retail,Khao San,card_not_accepted
+D02012,T013877,M03724,dining,Ba Dinh,card_not_accepted
+D02013,T008543,M02072,retail,Old City,card_not_accepted
+D02014,T006163,M00872,dining,George Town,card_not_accepted
+D02015,T009875,M02527,transport,Old City,card_not_accepted
+D02016,T000185,M02301,transport,Khao San,card_not_accepted
+D02017,T010695,M03913,retail,Khao San,card_not_accepted
+D02018,T013184,M03089,lodging,Malioboro,card_not_accepted
+D02019,T000729,M04764,transport,Ba Dinh,card_not_accepted
+D02020,T002322,M04858,transport,Old Quarter,card_not_accepted
+D02021,T007539,M03823,retail,Old City,card_not_accepted
+D02022,T013008,M04495,transport,Ubud,card_not_accepted
+D02023,T008959,M03310,lodging,Old Quarter,card_not_accepted
+D02024,T000003,M01821,retail,Ba Dinh,card_not_accepted
+D02025,T001537,M01600,retail,Ubud,card_not_accepted
+D02026,T011169,M04330,dining,George Town,card_not_accepted
+D02027,T006891,M00249,retail,Khao San,card_not_accepted
+D02028,T004746,M02054,retail,Old City,card_not_accepted
+D02029,T007309,M01220,retail,Khao San,card_not_accepted
+D02030,T011877,M01583,lodging,Malioboro,card_not_accepted
+D02031,T014091,M04476,retail,Malioboro,card_not_accepted
+D02032,T007899,M04986,dining,Han River,card_not_accepted
+D02033,T011810,M04103,dining,Khao San,card_not_accepted
+D02034,T003795,M00445,lodging,Malioboro,card_not_accepted
+D02035,T010619,M04912,lodging,Ubud,card_not_accepted
+D02036,T001745,M00563,dining,Ubud,card_not_accepted
+D02037,T010569,M03319,dining,Khao San,card_not_accepted
+D02038,T002413,M04136,transport,Khao San,card_not_accepted
+D02039,T014291,M04001,lodging,Old Quarter,card_not_accepted
+D02040,T014719,M04525,transport,Malioboro,card_not_accepted
+D02041,T014585,M00033,retail,Malioboro,card_not_accepted
+D02042,T007123,M04972,dining,Malioboro,card_not_accepted
+D02043,T010921,M01638,transport,Khao San,card_not_accepted
+D02044,T013184,M03089,retail,Malioboro,card_not_accepted
+D02045,T004923,M02279,retail,Ubud,card_not_accepted
+D02046,T013290,M03453,transport,Old City,card_not_accepted
+D02047,T009679,M01968,dining,Ubud,card_not_accepted
+D02048,T014536,M00951,retail,Khao San,card_not_accepted
+D02049,T014211,M02473,retail,Old City,card_not_accepted
+D02050,T008387,M01821,lodging,Khao San,card_not_accepted
+D02051,T014066,M00793,lodging,Ba Dinh,card_not_accepted
+D02052,T012376,M01130,retail,Old City,card_not_accepted
+D02053,T009882,M00346,dining,Khao San,card_not_accepted
+D02054,T010799,M01731,dining,Malioboro,card_not_accepted
+D02055,T007652,M04900,transport,Khao San,card_not_accepted
+D02056,T003073,M03923,dining,Han River,card_not_accepted
+D02057,T003588,M02182,lodging,Han River,card_not_accepted
+D02058,T005838,M02920,dining,Ba Dinh,card_not_accepted
+D02059,T006961,M01653,dining,Ba Dinh,card_not_accepted
+D02060,T011895,M01800,retail,Ubud,card_not_accepted
+D02061,T009571,M01160,lodging,Old City,card_not_accepted
+D02062,T006639,M00129,lodging,Old Quarter,card_not_accepted
+D02063,T008095,M00545,lodging,Ba Dinh,card_not_accepted
+D02064,T000214,M04585,dining,Ubud,card_not_accepted
+D02065,T007707,M01418,dining,Old Quarter,card_not_accepted
+D02066,T001470,M04040,retail,Ubud,card_not_accepted
+D02067,T000740,M00121,dining,Old Quarter,card_not_accepted
+D02068,T001929,M03429,lodging,Ubud,card_not_accepted
+D02069,T014992,M03408,dining,Han River,card_not_accepted
+D02070,T002499,M04184,retail,Old City,card_not_accepted
+D02071,T003636,M00819,transport,Old Quarter,card_not_accepted
+D02072,T004780,M00494,transport,Ba Dinh,card_not_accepted
+D02073,T010099,M03240,lodging,Ubud,card_not_accepted
+D02074,T014804,M03913,dining,Malioboro,card_not_accepted
+D02075,T008444,M03738,retail,Ubud,card_not_accepted
+D02076,T009654,M00443,transport,Old Quarter,card_not_accepted
+D02077,T009048,M00751,lodging,Malioboro,card_not_accepted
+D02078,T013352,M03225,dining,Khao San,card_not_accepted
+D02079,T009727,M04991,transport,Malioboro,card_not_accepted
+D02080,T001012,M01810,dining,George Town,card_not_accepted
+D02081,T012140,M01876,lodging,Han River,card_not_accepted
+D02082,T005078,M01089,lodging,Old Quarter,card_not_accepted
+D02083,T001725,M00865,retail,Old Quarter,card_not_accepted
+D02084,T001132,M02281,dining,Ubud,card_not_accepted
+D02085,T009657,M04217,dining,Old City,card_not_accepted
+D02086,T013049,M01311,transport,Han River,card_not_accepted
+D02087,T009163,M04337,transport,Ubud,card_not_accepted
+D02088,T008779,M03312,transport,Khao San,card_not_accepted
+D02089,T001562,M04808,lodging,Old City,card_not_accepted
+D02090,T003426,M03695,transport,Ba Dinh,card_not_accepted
+D02091,T003473,M03612,transport,Ubud,card_not_accepted
+D02092,T009726,M00381,transport,Old Quarter,card_not_accepted
+D02093,T006996,M01910,lodging,Malioboro,card_not_accepted
+D02094,T000884,M02236,dining,Old Quarter,card_not_accepted
+D02095,T013411,M01205,retail,Han River,card_not_accepted
+D02096,T014746,M01808,lodging,Khao San,card_not_accepted
+D02097,T012852,M04446,lodging,Old Quarter,card_not_accepted
+D02098,T003396,M04697,retail,George Town,card_not_accepted
+D02099,T011336,M03461,transport,Ba Dinh,card_not_accepted
+D02100,T000219,M04202,lodging,Old City,card_not_accepted
+D02101,T003512,M01967,dining,Old City,card_not_accepted
+D02102,T008465,M04659,transport,Ba Dinh,card_not_accepted
+D02103,T003612,M02355,retail,Malioboro,card_not_accepted
+D02104,T009380,M02453,lodging,Old City,card_not_accepted
+D02105,T009121,M03489,retail,Old Quarter,card_not_accepted
+D02106,T013144,M00620,transport,Khao San,card_not_accepted
+D02107,T004680,M01944,dining,Old Quarter,card_not_accepted
+D02108,T006626,M02432,retail,Old City,card_not_accepted
+D02109,T000253,M04037,dining,Ba Dinh,card_not_accepted
+D02110,T008070,M03312,transport,Old Quarter,card_not_accepted
+D02111,T007287,M02501,retail,George Town,card_not_accepted
+D02112,T008037,M01526,retail,Malioboro,card_not_accepted
+D02113,T002265,M03405,retail,Ubud,card_not_accepted
+D02114,T001688,M03886,lodging,Old Quarter,card_not_accepted
+D02115,T002466,M02740,retail,Old City,card_not_accepted
+D02116,T002957,M00353,lodging,Old Quarter,card_not_accepted
+D02117,T009360,M03512,dining,Khao San,card_not_accepted
+D02118,T011118,M03779,lodging,George Town,card_not_accepted
+D02119,T014399,M02723,retail,Malioboro,card_not_accepted
+D02120,T007852,M02227,dining,Old Quarter,card_not_accepted
+D02121,T001103,M04595,lodging,Ubud,card_not_accepted
+D02122,T012618,M00678,retail,Han River,card_not_accepted
+D02123,T003670,M03749,retail,Ubud,card_not_accepted
+D02124,T007994,M00163,transport,Ba Dinh,card_not_accepted
+D02125,T004804,M02093,transport,Ubud,card_not_accepted
+D02126,T014961,M04024,dining,Old City,card_not_accepted
+D02127,T004586,M04751,retail,Malioboro,card_not_accepted
+D02128,T013393,M04736,retail,Malioboro,card_not_accepted
+D02129,T003902,M04568,transport,Khao San,card_not_accepted
+D02130,T001227,M02997,dining,Khao San,card_not_accepted
+D02131,T006188,M02668,dining,Ba Dinh,card_not_accepted
+D02132,T014779,M01122,lodging,George Town,card_not_accepted
+D02133,T008323,M03971,transport,Han River,card_not_accepted
+D02134,T013145,M00649,transport,Ba Dinh,card_not_accepted
+D02135,T005156,M00367,lodging,Old Quarter,card_not_accepted
+D02136,T011329,M00856,lodging,George Town,card_not_accepted
+D02137,T014216,M03697,dining,Ubud,card_not_accepted
+D02138,T013889,M00898,dining,George Town,card_not_accepted
+D02139,T011211,M00353,transport,Khao San,card_not_accepted
+D02140,T000536,M01405,lodging,Ba Dinh,card_not_accepted
+D02141,T011909,M00189,retail,Khao San,card_not_accepted
+D02142,T005175,M01533,retail,George Town,card_not_accepted
+D02143,T008358,M00919,lodging,Khao San,card_not_accepted
+D02144,T014754,M00718,lodging,Old Quarter,card_not_accepted
+D02145,T000719,M02928,retail,Malioboro,card_not_accepted
+D02146,T013492,M01816,lodging,Han River,card_not_accepted
+D02147,T005600,M00244,transport,Khao San,card_not_accepted
+D02148,T001692,M02160,lodging,Old City,card_not_accepted
+D02149,T009765,M00015,dining,Ubud,card_not_accepted
+D02150,T008137,M00142,lodging,Khao San,card_not_accepted
+D02151,T008214,M03129,lodging,Old City,card_not_accepted
+D02152,T012258,M02982,retail,Khao San,card_not_accepted
+D02153,T003014,M00770,transport,Khao San,card_not_accepted
+D02154,T013424,M02212,dining,Ubud,card_not_accepted
+D02155,T011230,M00769,dining,Ubud,card_not_accepted
+D02156,T005452,M00260,retail,Malioboro,card_not_accepted
+D02157,T006695,M04815,lodging,George Town,card_not_accepted
+D02158,T008431,M04490,transport,George Town,card_not_accepted
+D02159,T011880,M04876,lodging,George Town,card_not_accepted
+D02160,T006375,M02417,transport,Ubud,card_not_accepted
+D02161,T011529,M01498,lodging,Ubud,card_not_accepted
+D02162,T005182,M04962,retail,George Town,card_not_accepted
+D02163,T014624,M02459,transport,Old Quarter,card_not_accepted
+D02164,T002872,M01225,transport,Old City,card_not_accepted
+D02165,T007189,M02491,lodging,Khao San,card_not_accepted
+D02166,T009532,M04260,transport,Ba Dinh,card_not_accepted
+D02167,T008940,M03087,dining,Old Quarter,card_not_accepted
+D02168,T011129,M01544,dining,Old City,card_not_accepted
+D02169,T008993,M02980,dining,Old City,card_not_accepted
+D02170,T006982,M01728,dining,Khao San,card_not_accepted
+D02171,T004348,M04973,lodging,Old Quarter,card_not_accepted
+D02172,T001637,M03873,retail,Malioboro,card_not_accepted
+D02173,T008120,M03844,retail,Old Quarter,card_not_accepted
+D02174,T005113,M04760,lodging,Han River,card_not_accepted
+D02175,T013912,M04792,dining,George Town,card_not_accepted
+D02176,T012227,M00595,dining,Old Quarter,card_not_accepted
+D02177,T009763,M00679,dining,Old City,card_not_accepted
+D02178,T002154,M01001,dining,George Town,card_not_accepted
+D02179,T004508,M02603,retail,Ubud,card_not_accepted
+D02180,T009723,M00208,lodging,Ubud,card_not_accepted
+D02181,T007067,M03543,retail,Khao San,card_not_accepted
+D02182,T002316,M00836,retail,Khao San,card_not_accepted
+D02183,T011703,M00924,dining,Han River,card_not_accepted
+D02184,T011054,M01229,retail,Han River,card_not_accepted
+D02185,T000172,M00455,retail,Ubud,card_not_accepted
+D02186,T012144,M01372,transport,Malioboro,card_not_accepted
+D02187,T004694,M03172,dining,Ubud,card_not_accepted
+D02188,T007800,M03951,retail,Han River,card_not_accepted
+D02189,T008467,M02828,lodging,Malioboro,card_not_accepted
+D02190,T010852,M02090,transport,Malioboro,card_not_accepted
+D02191,T006611,M04129,lodging,Han River,card_not_accepted
+D02192,T007328,M03928,retail,Malioboro,card_not_accepted
+D02193,T014874,M04779,transport,Malioboro,card_not_accepted
+D02194,T014556,M03919,retail,Old Quarter,card_not_accepted
+D02195,T014160,M02446,lodging,Old Quarter,card_not_accepted
+D02196,T002871,M02041,retail,Han River,card_not_accepted
+D02197,T009050,M03486,transport,Ubud,card_not_accepted
+D02198,T006503,M04690,dining,Malioboro,card_not_accepted
+D02199,T003783,M01123,retail,Ubud,card_not_accepted
+D02200,T000109,M03342,dining,Ubud,card_not_accepted
+D02201,T006970,M01182,dining,Old Quarter,card_not_accepted
+D02202,T006049,M02212,retail,Ubud,card_not_accepted
+D02203,T007581,M04085,retail,Old City,card_not_accepted
+D02204,T001908,M01951,transport,Malioboro,card_not_accepted
+D02205,T000873,M04673,transport,Khao San,card_not_accepted
+D02206,T013389,M02048,retail,Han River,card_not_accepted
+D02207,T008433,M03698,transport,Malioboro,card_not_accepted
+D02208,T007928,M03558,retail,Malioboro,card_not_accepted
+D02209,T011496,M04744,transport,Old City,card_not_accepted
+D02210,T003240,M02228,dining,Ubud,card_not_accepted
+D02211,T008825,M03218,transport,Ubud,card_not_accepted
+D02212,T010235,M02181,transport,George Town,card_not_accepted
+D02213,T013556,M03091,transport,Ba Dinh,card_not_accepted
+D02214,T014954,M04817,transport,Han River,card_not_accepted
+D02215,T006329,M02350,dining,Ba Dinh,card_not_accepted
+D02216,T004688,M00794,retail,Ba Dinh,card_not_accepted
+D02217,T010059,M00676,lodging,Old City,card_not_accepted
+D02218,T008448,M04456,dining,Old Quarter,card_not_accepted
+D02219,T001501,M04129,lodging,Han River,card_not_accepted
+D02220,T004680,M01944,lodging,Old Quarter,card_not_accepted
+D02221,T007679,M00407,transport,Han River,card_not_accepted
+D02222,T001682,M03564,dining,Ubud,card_not_accepted
+D02223,T001621,M02252,transport,Han River,card_not_accepted
+D02224,T011920,M00297,lodging,Malioboro,card_not_accepted
+D02225,T002668,M02784,dining,Han River,card_not_accepted
+D02226,T010316,M00282,dining,Ubud,card_not_accepted
+D02227,T004743,M01250,transport,Malioboro,card_not_accepted
+D02228,T005592,M03466,dining,Khao San,card_not_accepted
+D02229,T001367,M03251,retail,Ubud,card_not_accepted
+D02230,T002927,M04336,dining,Old Quarter,card_not_accepted
+D02231,T006380,M03678,retail,Old City,card_not_accepted
+D02232,T005053,M00369,lodging,George Town,card_not_accepted
+D02233,T008240,M00101,lodging,Ubud,card_not_accepted
+D02234,T012854,M00276,lodging,Han River,card_not_accepted
+D02235,T010611,M02002,retail,Khao San,card_not_accepted
+D02236,T012066,M02243,transport,Han River,card_not_accepted
+D02237,T011684,M04849,transport,Ba Dinh,card_not_accepted
+D02238,T008011,M04808,dining,George Town,card_not_accepted
+D02239,T003011,M00513,transport,Old Quarter,card_not_accepted
+D02240,T014794,M01575,dining,Khao San,card_not_accepted
+D02241,T006709,M00929,dining,Han River,card_not_accepted
+D02242,T012889,M01977,transport,Malioboro,card_not_accepted
+D02243,T011444,M03848,transport,Han River,card_not_accepted
+D02244,T009341,M03886,transport,Ba Dinh,card_not_accepted
+D02245,T001517,M04760,retail,Malioboro,card_not_accepted
+D02246,T004672,M02196,transport,Old Quarter,card_not_accepted
+D02247,T014463,M02630,retail,Malioboro,card_not_accepted
+D02248,T009731,M01100,retail,George Town,card_not_accepted
+D02249,T002154,M01001,transport,George Town,card_not_accepted
+D02250,T008101,M00641,lodging,Khao San,card_not_accepted
+D02251,T006175,M02141,transport,Old City,card_not_accepted
+D02252,T004611,M03138,transport,George Town,card_not_accepted
+D02253,T008969,M00827,lodging,Khao San,card_not_accepted
+D02254,T011522,M01888,retail,Khao San,card_not_accepted
+D02255,T001983,M01662,lodging,Khao San,card_not_accepted
+D02256,T010249,M04051,lodging,Malioboro,card_not_accepted
+D02257,T013890,M04568,transport,Malioboro,card_not_accepted
+D02258,T006818,M01133,transport,Old Quarter,card_not_accepted
+D02259,T006658,M02263,lodging,Ubud,card_not_accepted
+D02260,T009419,M01391,transport,George Town,card_not_accepted
+D02261,T008103,M00388,transport,Malioboro,card_not_accepted
+D02262,T003007,M01728,dining,George Town,card_not_accepted
+D02263,T002977,M04945,lodging,Malioboro,card_not_accepted
+D02264,T009900,M01741,transport,Old City,card_not_accepted
+D02265,T010011,M02768,retail,Ba Dinh,card_not_accepted
+D02266,T013967,M01746,lodging,Ubud,card_not_accepted
+D02267,T007417,M00858,transport,Ubud,card_not_accepted
+D02268,T009025,M00207,lodging,Han River,card_not_accepted
+D02269,T006421,M03645,retail,Old Quarter,card_not_accepted
+D02270,T006897,M02613,transport,Old Quarter,card_not_accepted
+D02271,T000740,M00121,lodging,Old Quarter,card_not_accepted
+D02272,T004524,M01858,dining,Old Quarter,card_not_accepted
+D02273,T003988,M03834,retail,Khao San,card_not_accepted
+D02274,T014361,M02190,lodging,Ba Dinh,card_not_accepted
+D02275,T011410,M00099,retail,Ubud,card_not_accepted
+D02276,T004419,M03959,transport,George Town,card_not_accepted
+D02277,T008972,M04835,lodging,Ba Dinh,card_not_accepted
+D02278,T000072,M04490,dining,Han River,card_not_accepted
+D02279,T004432,M02436,transport,George Town,card_not_accepted
+D02280,T010145,M02920,transport,George Town,card_not_accepted
+D02281,T008749,M04674,dining,Han River,card_not_accepted
+D02282,T003573,M04831,dining,Old City,card_not_accepted
+D02283,T009339,M02241,transport,Malioboro,card_not_accepted
+D02284,T004469,M00751,dining,Ubud,card_not_accepted
+D02285,T012581,M03365,retail,Ubud,card_not_accepted
+D02286,T005987,M03651,transport,Ubud,card_not_accepted
+D02287,T013781,M00180,transport,Malioboro,card_not_accepted
+D02288,T009460,M04548,transport,Malioboro,card_not_accepted
+D02289,T005028,M02655,lodging,Khao San,card_not_accepted
+D02290,T011680,M04331,transport,Old Quarter,card_not_accepted
+D02291,T002456,M04518,retail,Khao San,card_not_accepted
+D02292,T006549,M04470,transport,Ubud,card_not_accepted
+D02293,T009728,M00498,lodging,Old Quarter,card_not_accepted
+D02294,T004611,M03138,retail,George Town,card_not_accepted
+D02295,T011496,M04744,dining,Old City,card_not_accepted
+D02296,T007609,M01009,transport,Ubud,card_not_accepted
+D02297,T011017,M03894,dining,George Town,card_not_accepted
+D02298,T014954,M04817,lodging,Han River,card_not_accepted
+D02299,T014839,M01280,lodging,Old Quarter,card_not_accepted
+D02300,T000863,M02302,retail,Han River,card_not_accepted
+D02301,T002438,M02708,dining,Ubud,card_not_accepted
+D02302,T004354,M04783,lodging,Ubud,card_not_accepted
+D02303,T004938,M00549,retail,Han River,card_not_accepted
+D02304,T013833,M02463,transport,Ubud,card_not_accepted
+D02305,T004648,M04280,lodging,Ubud,card_not_accepted
+D02306,T010434,M00094,retail,Ubud,card_not_accepted
+D02307,T013818,M03195,transport,Malioboro,card_not_accepted
+D02308,T008986,M02139,dining,Ubud,card_not_accepted
+D02309,T000216,M01140,transport,Old City,card_not_accepted
+D02310,T014909,M00579,retail,Han River,card_not_accepted
+D02311,T014909,M00579,lodging,Han River,card_not_accepted
+D02312,T003911,M02217,dining,Ubud,card_not_accepted
+D02313,T000466,M02634,retail,Ubud,card_not_accepted
+D02314,T000355,M02239,retail,Old Quarter,card_not_accepted
+D02315,T006772,M01638,transport,Ubud,card_not_accepted
+D02316,T008538,M03715,retail,Old City,card_not_accepted
+D02317,T000183,M04933,retail,Han River,card_not_accepted
+D02318,T010965,M02149,retail,Han River,card_not_accepted
+D02319,T012928,M01635,transport,Han River,card_not_accepted
+D02320,T014500,M02270,lodging,Ubud,card_not_accepted
+D02321,T000129,M01811,dining,Old Quarter,card_not_accepted
+D02322,T009159,M00513,retail,Malioboro,card_not_accepted
+D02323,T003649,M02435,dining,Ubud,card_not_accepted
+D02324,T004318,M03346,retail,Khao San,card_not_accepted
+D02325,T007571,M03546,lodging,Ba Dinh,card_not_accepted
+D02326,T014468,M01640,lodging,Khao San,card_not_accepted
+D02327,T013246,M01117,dining,Old City,card_not_accepted
+D02328,T006400,M02567,lodging,Ba Dinh,card_not_accepted
+D02329,T010449,M00043,lodging,Ubud,card_not_accepted
+D02330,T004012,M04422,transport,George Town,card_not_accepted
+D02331,T012951,M03466,transport,Old City,card_not_accepted
+D02332,T012716,M03774,transport,Old Quarter,card_not_accepted
+D02333,T012721,M01821,dining,Ubud,card_not_accepted
+D02334,T004731,M02260,lodging,Ubud,card_not_accepted
+D02335,T006137,M00985,retail,Ba Dinh,card_not_accepted
+D02336,T011088,M01121,dining,Khao San,card_not_accepted
+D02337,T000038,M01161,transport,Malioboro,card_not_accepted
+D02338,T012116,M02420,dining,Old City,card_not_accepted
+D02339,T009710,M02653,retail,Han River,card_not_accepted
+D02340,T012451,M01373,lodging,Old Quarter,card_not_accepted
+D02341,T001808,M00320,retail,Khao San,card_not_accepted
+D02342,T001830,M03541,retail,Malioboro,card_not_accepted
+D02343,T000049,M01016,transport,Malioboro,card_not_accepted
+D02344,T012787,M03128,retail,Ubud,card_not_accepted
+D02345,T011342,M04137,dining,Khao San,card_not_accepted
+D02346,T012160,M02952,transport,Ba Dinh,card_not_accepted
+D02347,T001785,M02376,transport,Old Quarter,card_not_accepted
+D02348,T009605,M00771,transport,Khao San,card_not_accepted
+D02349,T007588,M00515,transport,Old Quarter,card_not_accepted
+D02350,T003249,M00291,lodging,Old City,card_not_accepted
+D02351,T002514,M01124,retail,Ubud,card_not_accepted
+D02352,T007384,M04774,dining,Khao San,card_not_accepted
+D02353,T003685,M04123,lodging,Old Quarter,card_not_accepted
+D02354,T007141,M00045,lodging,Ba Dinh,card_not_accepted
+D02355,T001938,M00330,dining,Malioboro,card_not_accepted
+D02356,T011022,M00140,transport,Khao San,card_not_accepted
+D02357,T012559,M02396,dining,Malioboro,card_not_accepted
+D02358,T010794,M02753,transport,Ubud,card_not_accepted
+D02359,T006443,M01280,dining,Han River,card_not_accepted
+D02360,T011675,M03683,dining,Khao San,card_not_accepted
+D02361,T010888,M00061,transport,Khao San,card_not_accepted
+D02362,T008221,M02068,lodging,Malioboro,card_not_accepted
+D02363,T014009,M01874,transport,Malioboro,card_not_accepted
+D02364,T014697,M03405,lodging,Old City,card_not_accepted
+D02365,T011733,M03185,transport,Khao San,card_not_accepted
+D02366,T006595,M01107,transport,George Town,card_not_accepted
+D02367,T010243,M04386,retail,Old City,card_not_accepted
+D02368,T009044,M04636,retail,Ubud,card_not_accepted
+D02369,T012754,M02005,retail,Han River,card_not_accepted
+D02370,T010918,M02281,lodging,Malioboro,card_not_accepted
+D02371,T014826,M00470,transport,Malioboro,card_not_accepted
+D02372,T006429,M02677,dining,Malioboro,card_not_accepted
+D02373,T003559,M00048,dining,Old Quarter,card_not_accepted
+D02374,T012628,M04853,lodging,George Town,card_not_accepted
+D02375,T004707,M01488,lodging,Malioboro,card_not_accepted
+D02376,T014468,M01640,retail,Khao San,card_not_accepted
+D02377,T008695,M03667,retail,Ba Dinh,card_not_accepted
+D02378,T011715,M00005,retail,Malioboro,card_not_accepted
+D02379,T001771,M00244,transport,Ubud,card_not_accepted
+D02380,T001221,M02207,lodging,Old Quarter,card_not_accepted
+D02381,T011186,M01084,transport,Han River,card_not_accepted
+D02382,T011820,M03602,dining,Old Quarter,card_not_accepted
+D02383,T002259,M00506,lodging,Han River,card_not_accepted
+D02384,T004069,M00235,lodging,Old Quarter,card_not_accepted
+D02385,T001237,M03750,dining,Old Quarter,card_not_accepted
+D02386,T013773,M04907,transport,Khao San,card_not_accepted
+D02387,T012872,M01022,dining,Ubud,card_not_accepted
+D02388,T010481,M04050,dining,Han River,card_not_accepted
+D02389,T006346,M03233,lodging,Ubud,card_not_accepted
+D02390,T011959,M04810,retail,George Town,card_not_accepted
+D02391,T004648,M04280,dining,Ubud,card_not_accepted
+D02392,T003866,M01205,retail,Ubud,card_not_accepted
+D02393,T007338,M01014,lodging,Khao San,card_not_accepted
+D02394,T010496,M04763,transport,Han River,card_not_accepted
+D02395,T014024,M01744,dining,Old City,card_not_accepted
+D02396,T008033,M03451,retail,Ubud,card_not_accepted
+D02397,T011322,M02929,retail,Old Quarter,card_not_accepted
+D02398,T011355,M01192,transport,Ubud,card_not_accepted
+D02399,T002615,M03651,dining,Old City,card_not_accepted

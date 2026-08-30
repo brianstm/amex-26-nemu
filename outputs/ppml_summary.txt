@@ -1,0 +1,41 @@
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:         observed_spend   No. Observations:                60000
+Model:                            GLM   Df Residuals:                    59974
+Model Family:                 Poisson   Df Model:                           25
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:            -2.4844e+06
+Date:                Fri, 28 Aug 2026   Deviance:                   4.6259e+06
+Time:                        10:09:49   Pearson chi2:                 4.15e+06
+No. Iterations:                     8   Pseudo R-squ. (CS):              1.000
+Covariance Type:                  HC0                                         
+======================================================================================================
+                                         coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------------------------------
+Intercept                             -1.6331      0.054    -30.344      0.000      -1.739      -1.528
+C(home_market)[T.Hong Kong]           -0.0010      0.012     -0.082      0.934      -0.025       0.023
+C(home_market)[T.Japan]               -0.0017      0.012     -0.137      0.891      -0.026       0.023
+C(home_market)[T.Singapore]           -0.0058      0.010     -0.567      0.570      -0.026       0.014
+C(home_market)[T.United States]        0.0005      0.013      0.035      0.972      -0.026       0.027
+C(dest_country)[T.France]             -0.1641      0.017     -9.709      0.000      -0.197      -0.131
+C(dest_country)[T.Hong Kong]          -0.2790      0.014    -19.789      0.000      -0.307      -0.251
+C(dest_country)[T.Indonesia]          -1.9880      0.028    -71.715      0.000      -2.042      -1.934
+C(dest_country)[T.Italy]              -0.2924      0.023    -12.595      0.000      -0.338      -0.247
+C(dest_country)[T.Japan]              -0.3745      0.012    -30.506      0.000      -0.399      -0.350
+C(dest_country)[T.Malaysia]           -1.4183      0.016    -87.926      0.000      -1.450      -1.387
+C(dest_country)[T.Singapore]          -0.4056      0.014    -29.851      0.000      -0.432      -0.379
+C(dest_country)[T.South Korea]        -0.4250      0.013    -32.193      0.000      -0.451      -0.399
+C(dest_country)[T.Thailand]           -1.4361      0.019    -74.357      0.000      -1.474      -1.398
+C(dest_country)[T.Vietnam]            -1.4043      0.026    -53.199      0.000      -1.456      -1.353
+C(category)[T.lodging]                 0.1180      0.011     10.285      0.000       0.096       0.141
+C(category)[T.retail]                 -0.0264      0.009     -2.956      0.003      -0.044      -0.009
+C(category)[T.transport]              -0.0204      0.010     -2.010      0.044      -0.040      -0.001
+C(trip_type)[T.leisure]                0.2222      0.008     27.036      0.000       0.206       0.238
+C(segment)[T.core]                     0.0144      0.018      0.785      0.433      -0.022       0.050
+C(segment)[T.gold]                     0.0129      0.018      0.705      0.481      -0.023       0.049
+C(segment)[T.platinum]                -0.0025      0.019     -0.134      0.894      -0.040       0.035
+np.log(acceptance_density)             0.0707      0.035      2.025      0.043       0.002       0.139
+I(np.log(acceptance_density) ** 2)    -0.9214      0.025    -36.335      0.000      -0.971      -0.872
+np.log(domestic_intensity)             0.9993      0.006    162.643      0.000       0.987       1.011
+np.log(nights)                         1.0020      0.006    158.933      0.000       0.990       1.014
+======================================================================================================

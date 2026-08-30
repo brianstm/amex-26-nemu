@@ -1,0 +1,11 @@
+{
+  "n_eligible_rows": 14005,
+  "n_treated_rows": 7024,
+  "n_control_rows": 6981,
+  "mean_spend_diff_treatment_minus_control": 163.845430878342,
+  "spend_diff_ci_low": 64.99416882483126,
+  "spend_diff_ci_high": 249.35436322322468,
+  "predicted_incremental_per_treated": 200.6254886370405,
+  "realized_incremental_per_treated_net_of_control": 203.14580209266927,
+  "calibration_ratio": 1.0125622794628473
+}

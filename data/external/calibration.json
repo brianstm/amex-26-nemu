@@ -1,0 +1,803 @@
+{
+  "fetched_at": "2026-08-24T13:54:17Z",
+  "notes": "Country knobs for the synthetic DGP. Rows in members/trips/transactions remain simulated. Acceptance density is designed (OSM does not observe card terminals).",
+  "sources": {
+    "price_level": {
+      "publisher": "World Bank WDI / International Comparison Program",
+      "indicator": "PA.NUS.GDP.PLI",
+      "indicator_name": "Price level index (GDP), United States = 100",
+      "transform": "divide by Singapore so PRICE_LEVEL['Singapore'] = 1.0",
+      "replaces": "PA.NUS.PPPC.RF (archived; data.worldbank.org redirects here)"
+    },
+    "cash_intensity": {
+      "publisher": "World Bank Global Findex Database 2025 (source 28)",
+      "instore_indicators": [
+        "fin25e2",
+        "fin25e2b"
+      ],
+      "fallback_indicator": "g20.made",
+      "transform": "in-store: fin25e2b/(fin25e2+fin25e2b); else 1 - g20.made/100; clipped to [0.04, 0.85]"
+    },
+    "trip_weights": {
+      "arrivals_indicator": "ST.INT.ARVL",
+      "arrivals_year_policy": "latest 2015\u20132019 (avoid COVID collapse)",
+      "osm": "Nominatim centroid + Overpass restaurant/cafe/hotel nodes in 1.2 km",
+      "formula": "(0.55 + 0.45 * (log1p(arrivals)/log1p(max))^0.4) * relative log OSM amenity within country"
+    },
+    "acceptance_density": {
+      "source": "designed",
+      "why_not_osm": "OSM counts mapped amenities, not issuer acceptance. A dense cash strip (Khao San) would look saturated."
+    }
+  },
+  "price_level": {
+    "Singapore": 1.0,
+    "Hong Kong": 1.1713,
+    "Japan": 1.0724,
+    "South Korea": 0.9487,
+    "Australia": 1.4968,
+    "Thailand": 0.5074,
+    "Vietnam": 0.463,
+    "Indonesia": 0.4736,
+    "Malaysia": 0.5228,
+    "France": 1.2658,
+    "Italy": 1.14
+  },
+  "price_level_meta": {
+    "Singapore": {
+      "year": 2025,
+      "pli_us100": 60.4907,
+      "relative_to_singapore": 1.0
+    },
+    "Hong Kong": {
+      "year": 2025,
+      "pli_us100": 70.8544,
+      "relative_to_singapore": 1.1713
+    },
+    "Japan": {
+      "year": 2025,
+      "pli_us100": 64.868,
+      "relative_to_singapore": 1.0724
+    },
+    "South Korea": {
+      "year": 2025,
+      "pli_us100": 57.3893,
+      "relative_to_singapore": 0.9487
+    },
+    "Australia": {
+      "year": 2025,
+      "pli_us100": 90.5404,
+      "relative_to_singapore": 1.4968
+    },
+    "Thailand": {
+      "year": 2025,
+      "pli_us100": 30.6916,
+      "relative_to_singapore": 0.5074
+    },
+    "Vietnam": {
+      "year": 2025,
+      "pli_us100": 28.0067,
+      "relative_to_singapore": 0.463
+    },
+    "Indonesia": {
+      "year": 2025,
+      "pli_us100": 28.6505,
+      "relative_to_singapore": 0.4736
+    },
+    "Malaysia": {
+      "year": 2025,
+      "pli_us100": 31.6272,
+      "relative_to_singapore": 0.5228
+    },
+    "France": {
+      "year": 2025,
+      "pli_us100": 76.5697,
+      "relative_to_singapore": 1.2658
+    },
+    "Italy": {
+      "year": 2025,
+      "pli_us100": 68.96,
+      "relative_to_singapore": 1.14
+    },
+    "United States": {
+      "year": 2025,
+      "pli_us100": 100.0,
+      "relative_to_singapore": 1.6531
+    },
+    "_singapore_pli": {
+      "year": 2025,
+      "pli_us100": 60.4907
+    }
+  },
+  "cash_intensity": {
+    "Singapore": 0.0896,
+    "Hong Kong": 0.14,
+    "Japan": 0.1166,
+    "South Korea": 0.04,
+    "Australia": 0.04,
+    "Thailand": 0.4571,
+    "Vietnam": 0.316,
+    "Indonesia": 0.8005,
+    "Malaysia": 0.4729,
+    "France": 0.04,
+    "Italy": 0.0708
+  },
+  "cash_intensity_meta": {
+    "Singapore": {
+      "source": "findex_one_minus_g20_made",
+      "raw": 0.0896,
+      "clipped": 0.0896,
+      "g20.made_digital_payment_pct": {
+        "year": 2021,
+        "pct": 91.0396
+      }
+    },
+    "Hong Kong": {
+      "source": "findex_one_minus_g20_made",
+      "raw": 0.14,
+      "clipped": 0.14,
+      "g20.made_digital_payment_pct": {
+        "year": 2021,
+        "pct": 86.0023
+      }
+    },
+    "Japan": {
+      "source": "findex_one_minus_g20_made",
+      "raw": 0.1166,
+      "clipped": 0.1166,
+      "g20.made_digital_payment_pct": {
+        "year": 2021,
+        "pct": 88.3367
+      }
+    },
+    "South Korea": {
+      "source": "findex_one_minus_g20_made",
+      "raw": 0.0383,
+      "clipped": 0.04,
+      "g20.made_digital_payment_pct": {
+        "year": 2021,
+        "pct": 96.1654
+      }
+    },
+    "Australia": {
+      "source": "findex_one_minus_g20_made",
+      "raw": 0.0285,
+      "clipped": 0.04,
+      "g20.made_digital_payment_pct": {
+        "year": 2021,
+        "pct": 97.1523
+      }
+    },
+    "Thailand": {
+      "source": "findex_instore_noncard_share",
+      "raw": 0.4571,
+      "clipped": 0.4571,
+      "fin25e2_used_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 49.8497
+      },
+      "fin25e2b_did_not_use_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 41.9752
+      }
+    },
+    "Vietnam": {
+      "source": "findex_instore_noncard_share",
+      "raw": 0.316,
+      "clipped": 0.316,
+      "fin25e2_used_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 48.2598
+      },
+      "fin25e2b_did_not_use_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 22.2909
+      }
+    },
+    "Indonesia": {
+      "source": "findex_instore_noncard_share",
+      "raw": 0.8005,
+      "clipped": 0.8005,
+      "fin25e2_used_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 11.237
+      },
+      "fin25e2b_did_not_use_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 45.0908
+      }
+    },
+    "Malaysia": {
+      "source": "findex_instore_noncard_share",
+      "raw": 0.4729,
+      "clipped": 0.4729,
+      "fin25e2_used_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 46.7471
+      },
+      "fin25e2b_did_not_use_phone_or_card_instore": {
+        "year": 2024,
+        "pct": 41.9447
+      }
+    },
+    "France": {
+      "source": "findex_one_minus_g20_made",
+      "raw": 0.0196,
+      "clipped": 0.04,
+      "g20.made_digital_payment_pct": {
+        "year": 2021,
+        "pct": 98.0375
+      }
+    },
+    "Italy": {
+      "source": "findex_one_minus_g20_made",
+      "raw": 0.0708,
+      "clipped": 0.0708,
+      "g20.made_digital_payment_pct": {
+        "year": 2021,
+        "pct": 92.9178
+      }
+    }
+  },
+  "tourist_arrivals": {
+    "Singapore": {
+      "year": 2019,
+      "arrivals": 19116000.0
+    },
+    "Hong Kong": {
+      "year": 2019,
+      "arrivals": 55913000.0
+    },
+    "Japan": {
+      "year": 2019,
+      "arrivals": 31881000.0
+    },
+    "South Korea": {
+      "year": 2019,
+      "arrivals": 17503000.0
+    },
+    "Australia": {
+      "year": 2019,
+      "arrivals": 9466000.0
+    },
+    "Thailand": {
+      "year": 2019,
+      "arrivals": 39916000.0
+    },
+    "Vietnam": {
+      "year": 2019,
+      "arrivals": 18009000.0
+    },
+    "Indonesia": {
+      "year": 2019,
+      "arrivals": 16107000.0
+    },
+    "Malaysia": {
+      "year": 2019,
+      "arrivals": 26101000.0
+    },
+    "France": {
+      "year": 2019,
+      "arrivals": 217877000.0
+    },
+    "Italy": {
+      "year": 2019,
+      "arrivals": 95399000.0
+    }
+  },
+  "districts": [
+    {
+      "country": "Japan",
+      "city": "Tokyo",
+      "district": "Shibuya",
+      "acceptance_density": 0.94,
+      "trip_weight": 0.9403,
+      "osm": {
+        "query": "Shibuya, Tokyo, Japan",
+        "display_name": "\u6e0b\u8c37\u533a, \u6771\u4eac\u90fd, \u65e5\u672c",
+        "lat": 35.6637109,
+        "lon": 139.6976941,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1213
+      }
+    },
+    {
+      "country": "Japan",
+      "city": "Tokyo",
+      "district": "Ginza",
+      "acceptance_density": 0.91,
+      "trip_weight": 0.9289,
+      "osm": {
+        "query": "Ginza, Chuo, Tokyo, Japan",
+        "display_name": "\u9280\u5ea7, \u4e2d\u592e\u533a, \u6771\u4eac\u90fd, 104-0061, \u65e5\u672c",
+        "lat": 35.6720135,
+        "lon": 139.7647202,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1113
+      }
+    },
+    {
+      "country": "Japan",
+      "city": "Kyoto",
+      "district": "Gion",
+      "acceptance_density": 0.48,
+      "trip_weight": 0.9033,
+      "osm": {
+        "query": "Gion, Higashiyama, Kyoto, Japan",
+        "display_name": "\u7947\u5712, \u6771\u5c71\u533a, \u4eac\u90fd\u5e02, \u4eac\u90fd\u5e9c, \u65e5\u672c",
+        "lat": 35.0046897,
+        "lon": 135.778403,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 917
+      }
+    },
+    {
+      "country": "Japan",
+      "city": "Osaka",
+      "district": "Namba",
+      "acceptance_density": 0.72,
+      "trip_weight": 0.9409,
+      "osm": {
+        "query": "Namba, Osaka, Japan",
+        "display_name": "\u306a\u3093\u3070, \u8535\u524d\u901a, \u96e3\u6ce2\u4e2d\u4e8c\u4e01\u76ee, \u6d6a\u901f\u533a, \u5927\u962a\u5e02, \u5927\u962a\u5e9c, 542-8503, \u65e5\u672c",
+        "lat": 34.6634688,
+        "lon": 135.5021796,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1218
+      }
+    },
+    {
+      "country": "South Korea",
+      "city": "Seoul",
+      "district": "Gangnam",
+      "acceptance_density": 0.93,
+      "trip_weight": 0.9377,
+      "osm": {
+        "query": "Gangnam-gu, Seoul, South Korea",
+        "display_name": "\uac15\ub0a8\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, \ub300\ud55c\ubbfc\uad6d",
+        "lat": 37.5177,
+        "lon": 127.0473,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1188
+      }
+    },
+    {
+      "country": "South Korea",
+      "city": "Seoul",
+      "district": "Myeongdong",
+      "acceptance_density": 0.81,
+      "trip_weight": 1.099,
+      "osm": {
+        "query": "Myeongdong, Seoul, South Korea",
+        "display_name": "\uba85\ub3d9, \ud1f4\uacc4\ub85c, \ucda9\ubb34\ub85c1\uac00, \uba85\ub3d9, \uc911\uad6c, \uc11c\uc6b8\ud2b9\ubcc4\uc2dc, 04631, \ub300\ud55c\ubbfc\uad6d",
+        "lat": 37.5608977,
+        "lon": 126.9863762,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 4019
+      }
+    },
+    {
+      "country": "South Korea",
+      "city": "Busan",
+      "district": "Haeundae",
+      "acceptance_density": 0.55,
+      "trip_weight": 0.6696,
+      "osm": {
+        "query": "Haeundae Beach, Busan, South Korea",
+        "display_name": "\ud574\uc6b4\ub300 \ud574\uc218\uc695\uc7a5, \uc6b01\ub3d9, \ud574\uc6b4\ub300\uad6c, \ubd80\uc0b0\uad11\uc5ed\uc2dc, \ub300\ud55c\ubbfc\uad6d",
+        "lat": 35.1577809,
+        "lon": 129.1581318,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 156
+      }
+    },
+    {
+      "country": "Thailand",
+      "city": "Bangkok",
+      "district": "Sukhumvit",
+      "acceptance_density": 0.68,
+      "trip_weight": 0.9321,
+      "osm": {
+        "query": "Asok, Sukhumvit, Bangkok, Thailand",
+        "display_name": "\u0e2d\u0e42\u0e28\u0e01, \u0e16\u0e19\u0e19\u0e2a\u0e38\u0e02\u0e38\u0e21\u0e27\u0e34\u0e17, \u0e2a\u0e38\u0e02\u0e38\u0e21\u0e27\u0e34\u0e17, \u0e41\u0e02\u0e27\u0e07\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22, \u0e40\u0e02\u0e15\u0e04\u0e25\u0e2d\u0e07\u0e40\u0e15\u0e22, \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23, 10110, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+        "lat": 13.7370432,
+        "lon": 100.5603571,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 756
+      }
+    },
+    {
+      "country": "Thailand",
+      "city": "Bangkok",
+      "district": "Khao San",
+      "acceptance_density": 0.22,
+      "trip_weight": 0.917,
+      "osm": {
+        "query": "Khao San Road, Bangkok, Thailand",
+        "display_name": "\u0e16\u0e19\u0e19\u0e02\u0e49\u0e32\u0e27\u0e2a\u0e32\u0e23, \u0e41\u0e02\u0e27\u0e07\u0e15\u0e25\u0e32\u0e14\u0e22\u0e2d\u0e14, \u0e40\u0e02\u0e15\u0e1e\u0e23\u0e30\u0e19\u0e04\u0e23, \u0e01\u0e23\u0e38\u0e07\u0e40\u0e17\u0e1e\u0e21\u0e2b\u0e32\u0e19\u0e04\u0e23, 10200, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+        "lat": 13.7589052,
+        "lon": 100.4972746,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 679
+      }
+    },
+    {
+      "country": "Thailand",
+      "city": "Chiang Mai",
+      "district": "Old City",
+      "acceptance_density": 0.31,
+      "trip_weight": 1.0043,
+      "osm": {
+        "query": "Si Phum, Chiang Mai, Thailand",
+        "display_name": "Si Phum Thailand Post Office, 153-155, \u0e16\u0e19\u0e19\u0e1e\u0e23\u0e30\u0e1b\u0e01\u0e40\u0e01\u0e25\u0e49\u0e32, \u0e41\u0e02\u0e27\u0e07\u0e28\u0e23\u0e35\u0e27\u0e34\u0e0a\u0e31\u0e22, \u0e15\u0e33\u0e1a\u0e25\u0e28\u0e23\u0e35\u0e20\u0e39\u0e21\u0e34, \u0e40\u0e17\u0e28\u0e1a\u0e32\u0e25\u0e19\u0e04\u0e23\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e1f\u0e49\u0e32\u0e2e\u0e48\u0e32\u0e21, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e40\u0e21\u0e37\u0e2d\u0e07\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e40\u0e0a\u0e35\u0e22\u0e07\u0e43\u0e2b\u0e21\u0e48, 50200, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+        "lat": 18.7907793,
+        "lon": 98.9877475,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1264
+      }
+    },
+    {
+      "country": "Thailand",
+      "city": "Phuket",
+      "district": "Patong",
+      "acceptance_density": 0.4,
+      "trip_weight": 0.8973,
+      "osm": {
+        "query": "Patong Beach, Phuket, Thailand",
+        "display_name": "\u0e2b\u0e32\u0e14\u0e1b\u0e48\u0e32\u0e15\u0e2d\u0e07, \u0e1b\u0e48\u0e32\u0e15\u0e2d\u0e07, \u0e15\u0e33\u0e1a\u0e25\u0e1b\u0e48\u0e32\u0e15\u0e2d\u0e07, \u0e2d\u0e33\u0e40\u0e20\u0e2d\u0e01\u0e30\u0e17\u0e39\u0e49, \u0e08\u0e31\u0e07\u0e2b\u0e27\u0e31\u0e14\u0e20\u0e39\u0e40\u0e01\u0e47\u0e15, \u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+        "lat": 7.896632,
+        "lon": 98.2954295,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 590
+      }
+    },
+    {
+      "country": "Vietnam",
+      "city": "Hanoi",
+      "district": "Old Quarter",
+      "acceptance_density": 0.16,
+      "trip_weight": 0.9712,
+      "osm": {
+        "query": "Hanoi Old Quarter, Vietnam",
+        "display_name": "Ng\u00e2n h\u00e0ng Nh\u00e0 n\u01b0\u1edbc Vi\u1ec7t Nam, 49, Ph\u1ed1 L\u00fd Th\u00e1i T\u1ed5, Khu ph\u1ed1 c\u1ed5, Ph\u01b0\u1eddng Ho\u00e0n Ki\u1ebfm, Th\u00e0nh ph\u1ed1 H\u00e0 N\u1ed9i, 10063, Vi\u1ec7t Nam",
+        "lat": 21.0271958,
+        "lon": 105.8565753,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1236
+      }
+    },
+    {
+      "country": "Vietnam",
+      "city": "Hanoi",
+      "district": "Ba Dinh",
+      "acceptance_density": 0.29,
+      "trip_weight": 0.8463,
+      "osm": {
+        "query": "Ba Dinh Square, Hanoi, Vietnam",
+        "display_name": "Qu\u1ea3ng tr\u01b0\u1eddng Ba \u0110\u00ecnh, Ph\u01b0\u1eddng Ba \u0110\u00ecnh, Th\u00e0nh ph\u1ed1 H\u00e0 N\u1ed9i, 11120, Vi\u1ec7t Nam",
+        "lat": 21.0369867,
+        "lon": 105.8357925,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 494
+      }
+    },
+    {
+      "country": "Vietnam",
+      "city": "Ho Chi Minh City",
+      "district": "District 1",
+      "acceptance_density": 0.38,
+      "trip_weight": 0.9615,
+      "osm": {
+        "query": "Ben Thanh, District 1, Ho Chi Minh City, Vietnam",
+        "display_name": "Du L\u1ecbch Vietnam Airlines, 94-96, Nguy\u1ec5n Du, Khu ph\u1ed1 3, Qu\u1eadn 1, Ph\u01b0\u1eddng S\u00e0i G\u00f2n, Th\u00e0nh ph\u1ed1 H\u1ed3 Ch\u00ed Minh, 71006, Vi\u1ec7t Nam",
+        "lat": 10.7774797,
+        "lon": 106.698349,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1151
+      }
+    },
+    {
+      "country": "Vietnam",
+      "city": "Da Nang",
+      "district": "Han River",
+      "acceptance_density": 0.21,
+      "trip_weight": 0.8345,
+      "osm": {
+        "query": "Han River Bridge, Da Nang, Vietnam",
+        "display_name": "C\u1ea7u S\u00f4ng H\u00e0n, T\u1ed5 d\u00e2n ph\u1ed1 Chung c\u01b0 Azura, Ph\u01b0\u1eddng An H\u1ea3i, Th\u00e0nh ph\u1ed1 \u0110\u00e0 N\u1eb5ng, 50207, Vi\u1ec7t Nam",
+        "lat": 16.0721398,
+        "lon": 108.2268106,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 453
+      }
+    },
+    {
+      "country": "Indonesia",
+      "city": "Jakarta",
+      "district": "SCBD",
+      "acceptance_density": 0.44,
+      "trip_weight": 0.7362,
+      "osm": {
+        "query": "SCBD, Jakarta, Indonesia",
+        "display_name": "SCBD, Senayan, Kebayoran Baru, Jakarta Selatan, Daerah Khusus Ibukota Jakarta, 12190, Indonesia",
+        "lat": -6.2265931,
+        "lon": 106.8095842,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 91
+      }
+    },
+    {
+      "country": "Indonesia",
+      "city": "Bali",
+      "district": "Seminyak",
+      "acceptance_density": 0.36,
+      "trip_weight": 1.0014,
+      "osm": {
+        "query": "Seminyak, Bali, Indonesia",
+        "display_name": "Seminyak, Kuta, Badung, Bali, 80361, Indonesia",
+        "lat": -8.6898586,
+        "lon": 115.1667783,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 468
+      }
+    },
+    {
+      "country": "Indonesia",
+      "city": "Bali",
+      "district": "Ubud",
+      "acceptance_density": 0.14,
+      "trip_weight": 1.0011,
+      "osm": {
+        "query": "Ubud, Bali, Indonesia",
+        "display_name": "Ubud, Gianyar, Bali, Indonesia",
+        "lat": -8.5170195,
+        "lon": 115.2550507,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 467
+      }
+    },
+    {
+      "country": "Indonesia",
+      "city": "Yogyakarta",
+      "district": "Malioboro",
+      "acceptance_density": 0.19,
+      "trip_weight": 0.8543,
+      "osm": {
+        "query": "Jalan Malioboro, Yogyakarta",
+        "display_name": "Jalan Malioboro, Kampung Sosrokusuman, Suryatmajan, Danurejan, Kota Yogyakarta, Depok, Daerah Istimewa Yogyakarta, 55213, Indonesia",
+        "lat": -7.7932485,
+        "lon": 110.3657751,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 189
+      }
+    },
+    {
+      "country": "Malaysia",
+      "city": "Kuala Lumpur",
+      "district": "KLCC",
+      "acceptance_density": 0.77,
+      "trip_weight": 0.8763,
+      "osm": {
+        "query": "KLCC, Kuala Lumpur, Malaysia",
+        "display_name": "KLCC, 156, Jalan Ampang, Kampung Sungai Baru, Kampung Paya, Kampung Cendana, Kuala Lumpur, 50088, Malaysia",
+        "lat": 3.1593097,
+        "lon": 101.7133583,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 479
+      }
+    },
+    {
+      "country": "Malaysia",
+      "city": "Kuala Lumpur",
+      "district": "Bukit Bintang",
+      "acceptance_density": 0.61,
+      "trip_weight": 0.9599,
+      "osm": {
+        "query": "Bukit Bintang, Kuala Lumpur, Malaysia",
+        "display_name": "MR6 Bukit Bintang, Jalan Sultan Ismail, Kampung Dollah, Bukit Bintang, Kuala Lumpur, 55100, Malaysia",
+        "lat": 3.1460953,
+        "lon": 101.7114762,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 864
+      }
+    },
+    {
+      "country": "Malaysia",
+      "city": "Penang",
+      "district": "George Town",
+      "acceptance_density": 0.33,
+      "trip_weight": 0.9232,
+      "osm": {
+        "query": "George Town, Penang, Malaysia",
+        "display_name": "George Town, Pulau Pinang, Malaysia",
+        "lat": 5.4141619,
+        "lon": 100.3287352,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 667
+      }
+    },
+    {
+      "country": "Singapore",
+      "city": "Singapore",
+      "district": "Orchard",
+      "acceptance_density": 0.96,
+      "trip_weight": 0.8334,
+      "osm": {
+        "query": "Orchard Road, Singapore",
+        "display_name": "Orchard Road, Somerset, Orchard, Central Region, Singapore, 238857, Singapore",
+        "lat": 1.3027701,
+        "lon": 103.8360084,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 477
+      }
+    },
+    {
+      "country": "Singapore",
+      "city": "Singapore",
+      "district": "Chinatown",
+      "acceptance_density": 0.78,
+      "trip_weight": 0.9788,
+      "osm": {
+        "query": "Chinatown, Singapore",
+        "display_name": "Chinatown, Tanjong Pagar, Outram, Central Region, Singapore",
+        "lat": 1.2799695,
+        "lon": 103.8436879,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1402
+      }
+    },
+    {
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "district": "Central",
+      "acceptance_density": 0.95,
+      "trip_weight": 0.962,
+      "osm": {
+        "query": "Central, Hong Kong",
+        "display_name": "\u4e2d\u74b0 Central, \u4e2d\u5340 Central District, \u9999\u6e2f\u5cf6 Hong Kong Island, \u9999\u6e2f Hong Kong, \u4e2d\u56fd",
+        "lat": 22.2818286,
+        "lon": 114.1582784,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 519
+      }
+    },
+    {
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "district": "Mong Kok",
+      "acceptance_density": 0.7,
+      "trip_weight": 0.9401,
+      "osm": {
+        "query": "Mong Kok, Hong Kong",
+        "display_name": "\u65fa\u89d2 Mong Kok, \u4e9e\u7686\u8001\u8857 Argyle Street, \u65fa\u89d2 Mong Kok, \u6cb9\u5c16\u65fa\u5340 Yau Tsim Mong District, \u4e5d\u9f8d Kowloon, \u9999\u6e2f Hong Kong, \u4e2d\u56fd",
+        "lat": 22.319308,
+        "lon": 114.1698076,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 450
+      }
+    },
+    {
+      "country": "Australia",
+      "city": "Sydney",
+      "district": "CBD",
+      "acceptance_density": 0.92,
+      "trip_weight": 0.856,
+      "osm": {
+        "query": "Sydney CBD, New South Wales, Australia",
+        "display_name": "Sydney CBD, Sydney, New South Wales, Australia",
+        "lat": -33.8747234,
+        "lon": 151.2053644,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1035
+      }
+    },
+    {
+      "country": "Australia",
+      "city": "Melbourne",
+      "district": "Laneways",
+      "acceptance_density": 0.88,
+      "trip_weight": 0.8896,
+      "osm": {
+        "query": "Degraves Street, Melbourne, Australia",
+        "display_name": "Degraves Street, Melbourne, Victoria, 3000, Australia",
+        "lat": -37.8175554,
+        "lon": 144.9658915,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1359
+      }
+    },
+    {
+      "country": "France",
+      "city": "Paris",
+      "district": "Le Marais",
+      "acceptance_density": 0.74,
+      "trip_weight": 1.0153,
+      "osm": {
+        "query": "Le Marais, Paris, France",
+        "display_name": "Le Marais, Paris, \u00cele-de-France, France m\u00e9tropolitaine, France",
+        "lat": 48.8603823,
+        "lon": 2.360742,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 2321
+      }
+    },
+    {
+      "country": "France",
+      "city": "Paris",
+      "district": "Montmartre",
+      "acceptance_density": 0.41,
+      "trip_weight": 0.9847,
+      "osm": {
+        "query": "Montmartre, Paris, France",
+        "display_name": "Montmartre, Paris, \u00cele-de-France, France m\u00e9tropolitaine, France",
+        "lat": 48.8854619,
+        "lon": 2.3391535,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1836
+      }
+    },
+    {
+      "country": "Italy",
+      "city": "Rome",
+      "district": "Centro Storico",
+      "acceptance_density": 0.52,
+      "trip_weight": 0.9691,
+      "osm": {
+        "query": "Pantheon, Rome, Italy",
+        "display_name": "Pantheon, Piazza della Rotonda, Colonna, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+        "lat": 41.898616,
+        "lon": 12.4768334,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1256
+      }
+    },
+    {
+      "country": "Italy",
+      "city": "Florence",
+      "district": "Duomo",
+      "acceptance_density": 0.38,
+      "trip_weight": 0.9734,
+      "osm": {
+        "query": "Piazza del Duomo, Florence, Italy",
+        "display_name": "Piazza del Duomo, Quartiere 1, Firenze, Toscana, 50123, Italia",
+        "lat": 43.7731014,
+        "lon": 11.2554774,
+        "radius_m": 1200,
+        "amenity_hotel_nodes": 1296
+      }
+    }
+  ],
+  "district_trip_weights": [
+    0.9403,
+    0.9289,
+    0.9033,
+    0.9409,
+    0.9377,
+    1.099,
+    0.6696,
+    0.9321,
+    0.917,
+    1.0043,
+    0.8973,
+    0.9712,
+    0.8463,
+    0.9615,
+    0.8345,
+    0.7362,
+    1.0014,
+    1.0011,
+    0.8543,
+    0.8763,
+    0.9599,
+    0.9232,
+    0.8334,
+    0.9788,
+    0.962,
+    0.9401,
+    0.856,
+    0.8896,
+    1.0153,
+    0.9847,
+    0.9691,
+    0.9734
+  ]
+}
