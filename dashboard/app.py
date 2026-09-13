@@ -104,11 +104,17 @@ TERRACOTTA_M = "#D97A59"
 PURPLE_U = "#8532A8"
 FONT = "Montserrat, sans-serif"
 PALETTE = [LIME, BLUE_N, TERRACOTTA_M, PURPLE_U, "#C4E64A", GRAY, WHITE]
+CAUSE_LABELS = {
+    "no_acceptance": "Not accepted",
+    "rail_substitution": "Other card",
+    "cash": "Cash",
+    "no_demand": "No demand",
+}
 CAUSE_COLORS = {
-    "no_acceptance": BLUE_N,
-    "rail_substitution": LIME,
-    "cash": TERRACOTTA_M,
-    "no_demand": PURPLE_U,
+    "Not accepted": BLUE_N,
+    "Other card": LIME,
+    "Cash": TERRACOTTA_M,
+    "No demand": PURPLE_U,
 }
 
 THEMES = {
@@ -659,7 +665,7 @@ def main() -> None:
         money(m["estimated_leakage"]),
         delta=f"{m['recovery_ratio_vs_acceptance']:.0%} of hidden",
     )
-    c3.metric("Corridor correlation", f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
+    c3.metric("By destination corr.", f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
     c4.metric(
         "Cause $ accuracy",
         f"{m.get('cause_value_weighted_accuracy', 0):.0%}",
@@ -679,12 +685,12 @@ def main() -> None:
     with st.sidebar:
         st.header("Filters")
         f_region = st.multiselect("Region", REGION_ORDER)
-        # Region cascades into the destination list. LATAM / US have no corridor
+        # Region cascades into the destination list. LATAM / US have no destination
         # data yet. Amex would light these up as NEMU expands.
         empty_regions = [r for r in f_region if r in {"LATAM", "US"}
                          and not (leakage["dest_country"].map(REGION) == r).any()]
         if empty_regions:
-            st.caption(f"No corridor data yet for: {', '.join(empty_regions)}.")
+            st.caption(f"No destination data yet for: {', '.join(empty_regions)}.")
         country_pool = leakage["dest_country"]
         if f_region:
             country_pool = country_pool[country_pool.map(REGION).isin(f_region)]
@@ -878,71 +884,73 @@ def main() -> None:
             )
 
     with tab_explain:
-        st.subheader("Why the gap, and which lever to pull")
+        st.subheader("What's causing the gap — and what to do about it")
         explain(
             "Every dollar we can win back is tagged with one of four reasons, "
             "so the fix is obvious.",
-            "<b>no_acceptance</b>: sign up merchants (Match). "
-            "<b>rail_substitution</b>: send an offer (Match). "
-            "<b>cash</b>: a cash culture, not a coverage hole, so do not "
-            "overspend. <b>no_demand</b>: do nothing.",
+            "<b>Not accepted</b>: sign up merchants (Match). "
+            "<b>Other card</b>: send an offer (Match). "
+            "<b>Cash</b>: a cash culture, not a coverage hole, so do not "
+            "overspend. <b>No demand</b>: do nothing.",
         )
         cause_cty = (
             view.groupby(["dest_country", "cause"], as_index=False)["leakage_estimate"]
             .sum()
             .rename(columns={"leakage_estimate": "usd"})
         )
+        cause_cty["reason"] = cause_cty["cause"].map(CAUSE_LABELS)
         cause_cty["sgd"] = cause_cty["usd"] * SGD_PER_USD
         fig = px.bar(
             cause_cty,
             x="dest_country",
             y="sgd",
-            color="cause",
+            color="reason",
             color_discrete_map=CAUSE_COLORS,
-            title="Recoverable value by cause",
-            labels={"cause": "", "sgd": "SGD", "dest_country": ""},
+            title="Recoverable value by reason",
+            labels={"reason": "", "sgd": "SGD", "dest_country": ""},
         )
         fig.update_xaxes(title="")
         fig.update_yaxes(title="SGD")
         st.plotly_chart(style_fig(fig, theme, height=560), width="stretch")
         graph_note(
             "Stacked bars show how much recoverable value sits in each destination, "
-            "split by cause. Tall no_acceptance stacks mean acquiring; "
-            "rail_substitution stacks mean offers. Amounts in SGD."
+            "split by reason. Tall Not accepted stacks mean sign up merchants; "
+            "Other card stacks mean send an offer. Amounts in SGD."
         )
 
         pie = view.groupby("cause", as_index=False)["leakage_estimate"].sum()
+        pie["reason"] = pie["cause"].map(CAUSE_LABELS)
         pie["leakage_estimate"] = pie["leakage_estimate"] * SGD_PER_USD
         figp = px.pie(
             pie,
-            names="cause",
+            names="reason",
             values="leakage_estimate",
-            color="cause",
+            color="reason",
             color_discrete_map=CAUSE_COLORS,
             title="Portfolio mix (SGD)",
             hole=0.45,
-            labels={"cause": ""},
+            labels={"reason": ""},
         )
         st.plotly_chart(style_fig(figp, theme, height=380), width="stretch")
         graph_note(
-            "Portfolio share of leakage by cause across the filtered corridor set. "
-            "Use it to size acquiring vs incentive budget."
+            "Portfolio share of leakage by reason for the destinations you filtered. "
+            "Use it to size merchant sign-ups vs offers."
         )
 
     with tab_uplift:
         st.subheader("Proof the model works: hidden-file test")
         explain(
-            "Each dot is a corridor. The bottom axis is the real leakage the "
-            "data generator hid from the model. The side axis is what the model "
+            "Each dot is one destination and spend category. The bottom axis is the "
+            "real leakage we hid from the model. The side axis is what the model "
             "guessed without ever seeing it. On the dashed line means a perfect "
             "guess.",
-            "It answers the obvious question for a synthetic ledger: can the "
-            "method recover a known answer it was never shown? Yes — we hide "
-            "the truth file from the likelihood and score against it later.",
+            "It answers a simple question: can the method recover a known answer "
+            "it was never shown? Yes — we hide the truth file from training and "
+            "score against it later.",
         )
         st.write(
-            "ground_truth.csv was written by the DGP and **never entered the likelihood**. "
-            "Each point is a destination × category corridor. The dashed line is y = x."
+            "ground_truth.csv is written once and **never used to train the model**. "
+            "Each point is a destination × category pair. The dashed line is y = x."
         )
         cv = data["corridor_val"].copy()
         if f_country:
@@ -972,18 +980,18 @@ def main() -> None:
             )
         )
         fig.update_xaxes(title="Hidden acceptance leakage (SGD)", range=[0, lim])
-        fig.update_yaxes(title="PPML estimate (SGD)", range=[0, lim])
+        fig.update_yaxes(title="Model estimate (SGD)", range=[0, lim])
         st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
         graph_note(
-            "Each point is a destination × category corridor. X = hidden truth "
-            "the model never saw; Y = PPML estimate. Points near the dashed "
-            "y = x line mean the model recovered the right answer. Amounts in SGD."
+            "Each point is a destination × category pair. X = hidden truth the model "
+            "never saw; Y = model estimate. Points near the dashed y = x line mean "
+            "the model recovered the right answer. Amounts in SGD."
         )
 
         k1, k2, k3 = st.columns(3)
         k1.metric("Row correlation", f"{m['row_corr_vs_acceptance_leakage']:.3f}")
-        k2.metric("Corridor correlation", f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
-        k3.metric("Corridor MAPE", f"{m['corridor_mape_vs_acceptance_leakage']:.0%}")
+        k2.metric("By destination corr.", f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
+        k3.metric("Average % error", f"{m['corridor_mape_vs_acceptance_leakage']:.0%}")
 
         st.caption(
             "Cash leakage is *not* on this scatter. Destination-country fixed effects "
@@ -996,16 +1004,17 @@ def main() -> None:
         ).assign(
             acceptance_leakage_sgd=lambda d: d["acceptance_leakage"] * SGD_PER_USD,
             leakage_estimate_sgd=lambda d: d["leakage_estimate"] * SGD_PER_USD,
+            reason=lambda d: d["cause"].map(CAUSE_LABELS),
         )
         fig2 = px.scatter(
             row_sample,
             x="acceptance_leakage_sgd",
             y="leakage_estimate_sgd",
-            color="cause",
+            color="reason",
             opacity=0.35,
             color_discrete_map=CAUSE_COLORS,
             title="Trip by category (4k sample): noisier, still on the diagonal",
-            labels={"cause": ""},
+            labels={"reason": ""},
         )
         hi = float(
             max(
@@ -1020,11 +1029,11 @@ def main() -> None:
             )
         )
         fig2.update_xaxes(title="Hidden acceptance leakage (SGD)")
-        fig2.update_yaxes(title="PPML estimate (SGD)")
+        fig2.update_yaxes(title="Model estimate (SGD)")
         st.plotly_chart(style_fig(fig2, theme, height=420), width="stretch")
         graph_note(
-            "Same test at trip × category grain (4k sample). More noise than the "
-            "corridor plot, but the cloud still tracks the diagonal — coloured by cause. "
+            "Same test at trip × category level (4k sample). More noise than the chart "
+            "above, but the cloud still tracks the diagonal — coloured by reason. "
             "Amounts in SGD."
         )
 
@@ -1177,7 +1186,7 @@ def main() -> None:
             st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
             graph_note(
                 "Top merchants ranked by estimated recoverable value. Longer bars "
-                "are the first acquiring calls; colour is spend category. Amounts in SGD."
+                "are the first shops to call; colour is spend category. Amounts in SGD."
             )
 
             show = md_show.sort_values("est_recoverable_value", ascending=False).head(200)
@@ -1242,8 +1251,8 @@ def main() -> None:
                 st.write(
                     "Candidate venues come from **OpenStreetMap / Google Maps POIs** "
                     "in each target district. NEMU scrapes the top tourist spots for "
-                    "a corridor, then an LLM decides which are legitimate, "
-                    "high-footfall businesses worth an acquiring call and drops "
+                    "a destination, then an LLM decides which are legitimate, "
+                    "high-footfall businesses worth signing and drops "
                     "closed venues, duplicates, pure transit stops and global chains "
                     "that already take Amex."
                 )
@@ -1290,7 +1299,7 @@ def main() -> None:
                     "simulated capture at the district level."
                 )
 
-            with st.expander("District-level summary (how the acquiring budget is spread)"):
+            with st.expander("District-level summary (how the sign-up budget is spread)"):
                 merch = data["merchants"].copy()
                 if f_country:
                     merch = merch[merch["dest_country"].isin(f_country)]
