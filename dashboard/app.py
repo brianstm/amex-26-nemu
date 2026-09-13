@@ -563,9 +563,10 @@ def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
         key=f"merch-map-{'-'.join(sorted(focus_districts)) or 'all'}",
     )
     st.caption(
-        "Zoom out to see numbered clusters; zoom in to expand into merchant pins. "
-        "Pick a district above to fly to that area. Pin positions are illustrative "
-        "(scattered around the district centre — we don't hold exact store coordinates)."
+        "Numbered lime circles are clusters of merchants — zoom in to split them "
+        "into smaller groups, then into coloured pins (dining / retail / "
+        "transport / lodging). Pick a district above to fly to that area. Pin "
+        "positions are illustrative (scattered around the district centre)."
     )
 
 
@@ -578,6 +579,11 @@ def explain(what: str, why: str) -> None:
     )
 
 
+def graph_note(text: str) -> None:
+    """Short description placed directly under a chart."""
+    st.caption(text)
+
+
 def main() -> None:
     data = load_all()
     m = data["metrics"]
@@ -588,7 +594,6 @@ def main() -> None:
     st.markdown(
         """
         <div class="nemu-wordmark"><span>Nemu</span></div>
-        <div class="nemu-pillars">Notice &nbsp; Explain &nbsp; Match &nbsp; Uplift</div>
         <div class="nemu-note">Hybrid ledger: ISO currencies, World Bank FX, OSM merchant names. Trips and acceptance are simulated. No American Express data.</div>
         """,
         unsafe_allow_html=True,
@@ -608,13 +613,13 @@ def main() -> None:
     )
 
     st.markdown(
-        f'<div class="nemu-claim">Here is the quick proof this works. We took our '
-        f'test data and hid {money(m["hidden_acceptance_leakage"])} of spending that '
-        f'Amex was quietly losing. Without ever being shown the answer, the model '
-        f'found {money(m["estimated_leakage"])} of it '
-        f'({m["recovery_ratio_vs_acceptance"]:.0%}) and correctly worked out where '
-        f'{m.get("cause_value_weighted_accuracy", 0):.0%} of those dollars were '
-        f'going.</div>',
+        f'<div class="nemu-claim"><strong>Quick proof</strong>'
+        f'<ul style="margin:0.4rem 0 0 1.1rem;padding:0">'
+        f'<li>Hidden: <strong>{money(m["hidden_acceptance_leakage"])}</strong> acceptance leakage</li>'
+        f'<li>Model found: <strong>{money(m["estimated_leakage"])}</strong> '
+        f'({m["recovery_ratio_vs_acceptance"]:.0%} recovered)</li>'
+        f'<li>Cause accuracy: <strong>{m.get("cause_value_weighted_accuracy", 0):.0%}</strong> of dollars tagged correctly</li>'
+        f'</ul></div>',
         unsafe_allow_html=True,
     )
 
@@ -640,27 +645,11 @@ def main() -> None:
     view = apply_filters(leakage, f_country, f_cat, f_seg, f_region)
     merged_view = apply_filters(data["merged"], f_country, f_cat, f_seg, f_region)
 
-    (
-        tab_rank,
-        tab_drill,
-        tab_cause,
-        tab_merch,
-        tab_offers,
-        tab_val,
-        tab_hold,
-    ) = st.tabs(
-        [
-            "1 · Where to grow",
-            "2 · Break it down",
-            "3 · Why the gap",
-            "4 · Merchants to target",
-            "5 · Offers",
-            "6 · Proof: model works",
-            "7 · Proof: offers pay off",
-        ]
+    tab_notice, tab_explain, tab_match, tab_uplift = st.tabs(
+        ["Notice", "Explain", "Match", "Uplift"]
     )
 
-    with tab_rank:
+    with tab_notice:
         st.subheader("Where to grow: what we see vs what we are missing")
         explain(
             "The same destinations, ranked two ways. On the left by the Amex "
@@ -704,6 +693,11 @@ def main() -> None:
             fig.update_xaxes(title="Estimated recoverable (USD)")
             fig.update_yaxes(title="")
             st.plotly_chart(style_fig(fig, theme), width="stretch")
+        graph_note(
+            "Left = where Amex already books volume. Right = where the model "
+            "sees recoverable leakage. Countries that climb on the right "
+            "(e.g. Vietnam, Indonesia) are the growth targets."
+        )
 
         rank = agg.copy()
         rank["rank_observed"] = rank["observed"].rank(ascending=False).astype(int)
@@ -717,7 +711,6 @@ def main() -> None:
             hide_index=True,
         )
 
-    with tab_drill:
         st.subheader("Break the opportunity down")
         explain(
             "The money we can win back, split by spending type first "
@@ -813,13 +806,13 @@ def main() -> None:
                 hide_index=True,
             )
 
-    with tab_cause:
+    with tab_explain:
         st.subheader("Why the gap, and which lever to pull")
         explain(
             "Every dollar we can win back is tagged with one of four reasons, "
             "so the fix is obvious.",
-            "<b>no_acceptance</b>: sign up merchants (Tab 4). "
-            "<b>rail_substitution</b>: send an offer (Tab 5). "
+            "<b>no_acceptance</b>: sign up merchants (Match). "
+            "<b>rail_substitution</b>: send an offer (Match). "
             "<b>cash</b>: a cash culture, not a coverage hole, so do not "
             "overspend. <b>no_demand</b>: do nothing.",
         )
@@ -840,6 +833,11 @@ def main() -> None:
         fig.update_xaxes(title="")
         fig.update_yaxes(title="USD")
         st.plotly_chart(style_fig(fig, theme, height=560), width="stretch")
+        graph_note(
+            "Stacked bars show how much recoverable value sits in each destination, "
+            "split by cause. Tall no_acceptance stacks mean acquiring; "
+            "rail_substitution stacks mean offers."
+        )
 
         pie = view.groupby("cause", as_index=False)["leakage_estimate"].sum()
         figp = px.pie(
@@ -853,8 +851,12 @@ def main() -> None:
             labels={"cause": ""},
         )
         st.plotly_chart(style_fig(figp, theme, height=380), width="stretch")
+        graph_note(
+            "Portfolio share of leakage by cause across the filtered corridor set. "
+            "Use it to size acquiring vs incentive budget."
+        )
 
-    with tab_val:
+    with tab_uplift:
         st.subheader("Proof the model works: hidden-file test")
         explain(
             "Each dot is a corridor. The bottom axis is the real leakage the "
@@ -896,6 +898,11 @@ def main() -> None:
         fig.update_xaxes(title="Hidden acceptance leakage (USD)", range=[0, lim])
         fig.update_yaxes(title="PPML estimate (USD)", range=[0, lim])
         st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
+        graph_note(
+            "Each point is a destination × category corridor. X = hidden truth "
+            "the model never saw; Y = PPML estimate. Points near the dashed "
+            "y = x line mean the model recovered the right answer."
+        )
 
         k1, k2, k3 = st.columns(3)
         k1.metric("Row correlation", f"{m['row_corr_vs_acceptance_leakage']:.3f}")
@@ -931,8 +938,65 @@ def main() -> None:
             )
         )
         st.plotly_chart(style_fig(fig2, theme, height=420), width="stretch")
+        graph_note(
+            "Same test at trip × category grain (4k sample). More noise than the "
+            "corridor plot, but the cloud still tracks the diagonal — coloured by cause."
+        )
 
-    with tab_merch:
+
+        st.subheader("Proof the offers pay off: randomised holdout")
+        explain(
+            "Half the eligible travellers were randomly held back and got no "
+            "offer. We compare what the treated group actually spent with what "
+            "the model said the offers would add.",
+            "This is the honest ROI check. If the predicted extra dollars match "
+            "the real ones (dots on the diagonal), the offer engine is "
+            "calibrated and worth funding, not just optimistic.",
+        )
+        hm = data["holdout_m"]
+        h1, h2, h3, h4 = st.columns(4)
+        h1.metric("Holdout T − C spend", f"${hm['mean_spend_diff_treatment_minus_control']:,.0f}")
+        h2.metric("95% CI (USD)", f"{hm['spend_diff_ci_low']:,.0f} to {hm['spend_diff_ci_high']:,.0f}")
+        h3.metric("Predicted incremental / treated", f"${hm['predicted_incremental_per_treated']:,.0f}")
+        h4.metric("Calibration (realized / predicted)", f"{hm['calibration_ratio']:.2f}")
+        calib = data["calib"].copy()
+        fig = go.Figure()
+        fig.add_trace(
+            go.Scatter(
+                x=calib["predicted"],
+                y=calib["realized"],
+                mode="markers+text",
+                text=calib["recommended_arm"] + " / " + calib["category"],
+                textposition="top center",
+                marker=dict(size=12, color=LIME),
+                name="arm × category",
+            )
+        )
+        hi = float(max(calib["predicted"].max(), calib["realized"].max()) * 1.15)
+        fig.add_trace(
+            go.Scatter(
+                x=[0, hi], y=[0, hi], mode="lines", name="y = x",
+                line=dict(color=theme["muted"], dash="dash"),
+            )
+        )
+        fig.update_xaxes(title="Predicted incremental $")
+        fig.update_yaxes(title="Realized incremental $")
+        fig.update_layout(title="Uplift calibration")
+        st.plotly_chart(style_fig(fig, theme, height=480), width="stretch")
+        graph_note(
+            "Each marker is an offer arm × category cell. X = dollars the model "
+            "predicted the offer would add; Y = dollars the holdout actually "
+            "added. On the dashed line means the offer engine is calibrated."
+        )
+        st.dataframe(
+            calib.style.format(
+                {"predicted": "${:,.2f}", "realized": "${:,.2f}", "calibration_gap": "${:,.2f}"}
+            ),
+            width="stretch",
+            hide_index=True,
+        )
+
+    with tab_match:
         st.subheader("Which merchants to sign up first")
         explain(
             "Amex already knows the region. This goes one level deeper: the "
@@ -1008,6 +1072,10 @@ def main() -> None:
             fig.update_xaxes(title="Estimated recoverable value (USD)")
             fig.update_yaxes(title="")
             st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
+            graph_note(
+                "Top merchants ranked by estimated recoverable value. Longer bars "
+                "are the first acquiring calls; colour is spend category."
+            )
 
             show = md_show.sort_values("est_recoverable_value", ascending=False).head(200)
             st.dataframe(
@@ -1060,6 +1128,11 @@ def main() -> None:
             figc.update_xaxes(title="", tickformat=".0%")
             figc.update_yaxes(title="")
             st.plotly_chart(style_fig(figc, theme, height=420), width="stretch")
+            graph_note(
+                "Share of local spend that is already on card (lime) vs still cash "
+                "(terracotta) by district. High-cash districts are where signing "
+                "merchants unlocks the most volume."
+            )
 
             with st.expander("How we discover merchants (and the LLM judge)"):
                 st.write(
@@ -1155,7 +1228,6 @@ def main() -> None:
                 st.button("Run scan now", disabled=True)
                 st.caption(f"Next scan: {cadence.split()[-1]} from last refresh.")
 
-    with tab_offers:
         st.subheader("Who to reward, and with what")
         explain(
             "Each traveller is sorted into one of five behaviour types, then "
@@ -1239,6 +1311,10 @@ def main() -> None:
             figp.update_xaxes(title="Travellers")
             figp.update_yaxes(title="")
             st.plotly_chart(style_fig(figp, theme, height=360), width="stretch")
+            graph_note(
+                "Headcount by behavioural pattern. Each bar is one of the five "
+                "shopper types that map to a concrete offer."
+            )
 
             st.markdown("**Who gets which offer**")
             st.write(
@@ -1298,54 +1374,6 @@ def main() -> None:
                 width="stretch",
                 hide_index=True,
             )
-
-    with tab_hold:
-        st.subheader("Proof the offers pay off: randomised holdout")
-        explain(
-            "Half the eligible travellers were randomly held back and got no "
-            "offer. We compare what the treated group actually spent with what "
-            "the model said the offers would add.",
-            "This is the honest ROI check. If the predicted extra dollars match "
-            "the real ones (dots on the diagonal), the offer engine is "
-            "calibrated and worth funding, not just optimistic.",
-        )
-        hm = data["holdout_m"]
-        h1, h2, h3, h4 = st.columns(4)
-        h1.metric("Holdout T − C spend", f"${hm['mean_spend_diff_treatment_minus_control']:,.0f}")
-        h2.metric("95% CI (USD)", f"{hm['spend_diff_ci_low']:,.0f} to {hm['spend_diff_ci_high']:,.0f}")
-        h3.metric("Predicted incremental / treated", f"${hm['predicted_incremental_per_treated']:,.0f}")
-        h4.metric("Calibration (realized / predicted)", f"{hm['calibration_ratio']:.2f}")
-        calib = data["calib"].copy()
-        fig = go.Figure()
-        fig.add_trace(
-            go.Scatter(
-                x=calib["predicted"],
-                y=calib["realized"],
-                mode="markers+text",
-                text=calib["recommended_arm"] + " / " + calib["category"],
-                textposition="top center",
-                marker=dict(size=12, color=LIME),
-                name="arm × category",
-            )
-        )
-        hi = float(max(calib["predicted"].max(), calib["realized"].max()) * 1.15)
-        fig.add_trace(
-            go.Scatter(
-                x=[0, hi], y=[0, hi], mode="lines", name="y = x",
-                line=dict(color=theme["muted"], dash="dash"),
-            )
-        )
-        fig.update_xaxes(title="Predicted incremental $")
-        fig.update_yaxes(title="Realized incremental $")
-        fig.update_layout(title="Uplift calibration")
-        st.plotly_chart(style_fig(fig, theme, height=480), width="stretch")
-        st.dataframe(
-            calib.style.format(
-                {"predicted": "${:,.2f}", "realized": "${:,.2f}", "calibration_gap": "${:,.2f}"}
-            ),
-            width="stretch",
-            hide_index=True,
-        )
 
 
 if __name__ == "__main__":
