@@ -1,6 +1,17 @@
 """NEMU Streamlit dashboard. Reads files in ``outputs/``."""
 
 from __future__ import annotations
+from data.config import (
+    CATEGORY_IMAGES,
+    CURRENCY,
+    DISTRICT_COORDS,
+    DISTRICT_IMAGES,
+    FX_LCU_PER_USD,
+    MERCHANT_IMAGES,
+    OUTPUT_DIR,
+    REGION,
+    REGION_ORDER,
+)
 
 import json
 import os
@@ -23,17 +34,6 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from data.config import (
-    CATEGORY_IMAGES,
-    CURRENCY,
-    DISTRICT_COORDS,
-    DISTRICT_IMAGES,
-    FX_LCU_PER_USD,
-    MERCHANT_IMAGES,
-    OUTPUT_DIR,
-    REGION,
-    REGION_ORDER,
-)
 
 # Dashboard displays money in SGD. Pipeline stores USD; convert at World Bank FX.
 SGD_PER_USD = float(FX_LCU_PER_USD.get("Singapore", 1.35))
@@ -70,6 +70,7 @@ def _carto_tiles() -> tuple[str, str]:
     if key:
         return f"{base}?key={quote(key, safe='')}", attr
     return base, attr
+
 
 _FALLBACK_IMG = next(iter(DISTRICT_IMAGES.values()), "")
 _CAT_HEX = {
@@ -179,11 +180,13 @@ def load_all() -> dict:
     seg_path = OUTPUT_DIR / "behavioral_segments.csv"
     segments = pd.read_csv(seg_path) if seg_path.exists() else pd.DataFrame()
     disc_path = OUTPUT_DIR / "merchant_discovery.csv"
-    discovery = pd.read_csv(disc_path) if disc_path.exists() else pd.DataFrame()
+    discovery = pd.read_csv(
+        disc_path) if disc_path.exists() else pd.DataFrame()
     metrics = json.loads((OUTPUT_DIR / "notice_metrics.json").read_text())
     holdout_m = json.loads((OUTPUT_DIR / "holdout_metrics.json").read_text())
     merged = leakage.merge(
-        truth[["trip_id", "category", "acceptance_leakage", "total_leakage", "true_cause"]],
+        truth[["trip_id", "category", "acceptance_leakage",
+               "total_leakage", "true_cause"]],
         on=["trip_id", "category"],
         how="left",
     )
@@ -505,15 +508,18 @@ def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
     coordinates).
     """
     md = md.copy()
-    md["lat"] = md["dest_district"].map(lambda d: DISTRICT_COORDS.get(d, (None, None))[0])
-    md["lon"] = md["dest_district"].map(lambda d: DISTRICT_COORDS.get(d, (None, None))[1])
+    md["lat"] = md["dest_district"].map(
+        lambda d: DISTRICT_COORDS.get(d, (None, None))[0])
+    md["lon"] = md["dest_district"].map(
+        lambda d: DISTRICT_COORDS.get(d, (None, None))[1])
     md = md.dropna(subset=["lat", "lon"])
     if md.empty:
         st.info("No mapped districts for the current filters.")
         return
 
     # Cap pins for performance; keep highest-value merchants.
-    d = md.sort_values("est_recoverable_value", ascending=False).head(280).copy()
+    d = md.sort_values("est_recoverable_value",
+                       ascending=False).head(280).copy()
     rng = np.random.default_rng(26)
     ang = rng.uniform(0, 2 * np.pi, len(d))
     rad = 0.012 * np.sqrt(rng.uniform(0, 1, len(d)))
@@ -526,7 +532,8 @@ def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
             focus = d
         center_lat = float(focus["lat"].mean())
         center_lon = float(focus["lon"].mean())
-        zoom = 13.0 if len(focus_districts) == 1 else _zoom_for(focus["lat"], focus["lon"]) + 2.5
+        zoom = 13.0 if len(focus_districts) == 1 else _zoom_for(
+            focus["lat"], focus["lon"]) + 2.5
         zoom = min(max(zoom, 11.0), 14.0)
     else:
         center_lat = float(d["lat"].mean())
@@ -659,13 +666,15 @@ def main() -> None:
         )
 
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Hidden acceptance leakage", money(m["hidden_acceptance_leakage"]))
+    c1.metric("Hidden acceptance leakage", money(
+        m["hidden_acceptance_leakage"]))
     c2.metric(
         "Model recovered",
         money(m["estimated_leakage"]),
         delta=f"{m['recovery_ratio_vs_acceptance']:.0%} of hidden",
     )
-    c3.metric("By destination corr.", f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
+    c3.metric("By destination Correlation",
+              f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
     c4.metric(
         "Cause $ accuracy",
         f"{m.get('cause_value_weighted_accuracy', 0):.0%}",
@@ -690,10 +699,12 @@ def main() -> None:
         empty_regions = [r for r in f_region if r in {"LATAM", "US"}
                          and not (leakage["dest_country"].map(REGION) == r).any()]
         if empty_regions:
-            st.caption(f"No destination data yet for: {', '.join(empty_regions)}.")
+            st.caption(
+                f"No destination data yet for: {', '.join(empty_regions)}.")
         country_pool = leakage["dest_country"]
         if f_region:
-            country_pool = country_pool[country_pool.map(REGION).isin(f_region)]
+            country_pool = country_pool[country_pool.map(
+                REGION).isin(f_region)]
         countries = sorted(country_pool.unique())
         categories = sorted(leakage["category"].unique())
         segments = sorted(leakage["segment"].unique())
@@ -702,7 +713,8 @@ def main() -> None:
         f_seg = st.multiselect("Segment", segments)
 
     view = apply_filters(leakage, f_country, f_cat, f_seg, f_region)
-    merged_view = apply_filters(data["merged"], f_country, f_cat, f_seg, f_region)
+    merged_view = apply_filters(
+        data["merged"], f_country, f_cat, f_seg, f_region)
 
     tab_notice, tab_explain, tab_match, tab_uplift = st.tabs(
         ["Notice", "Explain", "Match", "Uplift"]
@@ -765,8 +777,10 @@ def main() -> None:
         )
 
         rank = agg.copy()
-        rank["rank_observed"] = rank["observed"].rank(ascending=False).astype(int)
-        rank["rank_recoverable"] = rank["recoverable"].rank(ascending=False).astype(int)
+        rank["rank_observed"] = rank["observed"].rank(
+            ascending=False).astype(int)
+        rank["rank_recoverable"] = rank["recoverable"].rank(
+            ascending=False).astype(int)
         rank["rank_shift"] = rank["rank_observed"] - rank["rank_recoverable"]
         st.caption("Currency: SGD")
         st.dataframe(
@@ -865,7 +879,8 @@ def main() -> None:
             sample = sample.sample(frac=1.0, random_state=26).copy()
             if "amount_usd" in sample.columns:
                 sample["amount_sgd"] = sample["amount_usd"] * SGD_PER_USD
-                cols = [("amount_sgd" if c == "amount_usd" else c) for c in cols]
+                cols = [("amount_sgd" if c == "amount_usd" else c)
+                        for c in cols]
             st.caption(
                 f"Showing 25 of {len(sample):,} tickets, shuffled so you see a "
                 f"mix of dining, retail, transport and lodging. "
@@ -894,7 +909,8 @@ def main() -> None:
             "overspend. <b>No demand</b>: do nothing.",
         )
         cause_cty = (
-            view.groupby(["dest_country", "cause"], as_index=False)["leakage_estimate"]
+            view.groupby(["dest_country", "cause"], as_index=False)[
+                "leakage_estimate"]
             .sum()
             .rename(columns={"leakage_estimate": "usd"})
         )
@@ -957,7 +973,8 @@ def main() -> None:
             cv = cv[cv["dest_country"].isin(f_country)]
         if f_cat:
             cv = cv[cv["category"].isin(f_cat)]
-        lim = float(max(cv["est"].max(), cv["truth_acc"].max()) * 1.05) * SGD_PER_USD
+        lim = float(max(cv["est"].max(), cv["truth_acc"].max())
+                    * 1.05) * SGD_PER_USD
         fig = px.scatter(
             cv.assign(
                 truth_sgd=cv["truth_acc"] * SGD_PER_USD,
@@ -979,7 +996,8 @@ def main() -> None:
                 line=dict(color=theme["muted"], dash="dash"),
             )
         )
-        fig.update_xaxes(title="Hidden acceptance leakage (SGD)", range=[0, lim])
+        fig.update_xaxes(
+            title="Hidden acceptance leakage (SGD)", range=[0, lim])
         fig.update_yaxes(title="Model estimate (SGD)", range=[0, lim])
         st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
         graph_note(
@@ -989,9 +1007,12 @@ def main() -> None:
         )
 
         k1, k2, k3 = st.columns(3)
-        k1.metric("Row correlation", f"{m['row_corr_vs_acceptance_leakage']:.3f}")
-        k2.metric("By destination corr.", f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
-        k3.metric("Average % error", f"{m['corridor_mape_vs_acceptance_leakage']:.0%}")
+        k1.metric("Row correlation",
+                  f"{m['row_corr_vs_acceptance_leakage']:.3f}")
+        k2.metric("By destination correlation",
+                  f"{m['corridor_corr_vs_acceptance_leakage']:.3f}")
+        k3.metric("Average % error",
+                  f"{m['corridor_mape_vs_acceptance_leakage']:.0%}")
 
         st.caption(
             "Cash leakage is *not* on this scatter. Destination-country fixed effects "
@@ -1037,7 +1058,6 @@ def main() -> None:
             "Amounts in SGD."
         )
 
-
         st.subheader("Did the offers actually pay off?")
         explain(
             "Half the eligible travellers were randomly held back and got no "
@@ -1049,13 +1069,16 @@ def main() -> None:
         )
         hm = data["holdout_m"]
         h1, h2, h3, h4 = st.columns(4)
-        h1.metric("Holdout T − C spend", money(hm["mean_spend_diff_treatment_minus_control"]))
+        h1.metric("Holdout T − C spend", money(
+            hm["mean_spend_diff_treatment_minus_control"]))
         h2.metric(
             "95% CI (SGD)",
             f"{to_sgd(hm['spend_diff_ci_low']):,.0f} to {to_sgd(hm['spend_diff_ci_high']):,.0f}",
         )
-        h3.metric("Predicted incremental / treated", money(hm["predicted_incremental_per_treated"]))
-        h4.metric("Calibration (realized / predicted)", f"{hm['calibration_ratio']:.2f}")
+        h3.metric("Predicted incremental / treated",
+                  money(hm["predicted_incremental_per_treated"]))
+        h4.metric("Calibration (realized / predicted)",
+                  f"{hm['calibration_ratio']:.2f}")
         calib = data["calib"].copy()
         calib_sgd = calib.assign(
             predicted=calib["predicted"] * SGD_PER_USD,
@@ -1068,13 +1091,15 @@ def main() -> None:
                 x=calib_sgd["predicted"],
                 y=calib_sgd["realized"],
                 mode="markers+text",
-                text=calib_sgd["recommended_arm"] + " / " + calib_sgd["category"],
+                text=calib_sgd["recommended_arm"] +
+                " / " + calib_sgd["category"],
                 textposition="top center",
                 marker=dict(size=12, color=LIME),
                 name="arm × category",
             )
         )
-        hi = float(max(calib_sgd["predicted"].max(), calib_sgd["realized"].max()) * 1.15)
+        hi = float(max(calib_sgd["predicted"].max(),
+                   calib_sgd["realized"].max()) * 1.15)
         fig.add_trace(
             go.Scatter(
                 x=[0, hi], y=[0, hi], mode="lines", name="y = x",
@@ -1148,16 +1173,19 @@ def main() -> None:
 
             k1, k2, k3, k4 = st.columns(4)
             k1.metric("Merchant targets", f"{len(md_show):,}")
-            k2.metric("Recoverable value", money(md_show["est_recoverable_value"].sum()))
+            k2.metric("Recoverable value", money(
+                md_show["est_recoverable_value"].sum()))
             if len(md_show):
                 k3.metric(
                     "Typical spend / visit",
                     f"S${to_sgd(md_show['price_low'].median()):,.0f}-"
                     f"{to_sgd(md_show['price_high'].median()):,.0f}",
                 )
-                k4.metric("Avg card share", f"{md_show['credit_share'].mean():.0%}")
+                k4.metric("Avg card share",
+                          f"{md_show['credit_share'].mean():.0%}")
 
-            top = md_show.sort_values("est_recoverable_value", ascending=False).head(15)
+            top = md_show.sort_values(
+                "est_recoverable_value", ascending=False).head(15)
             top_plot = top.assign(
                 est_recoverable_value_sgd=top["est_recoverable_value"] * SGD_PER_USD
             )
@@ -1169,7 +1197,8 @@ def main() -> None:
                 orientation="h",
                 color_discrete_sequence=PALETTE,
                 title="Top merchants to onboard, by recoverable value",
-                custom_data=["dest_district", "sub_category", "price_range", "visits"],
+                custom_data=["dest_district",
+                             "sub_category", "price_range", "visits"],
             )
             fig.update_traces(
                 hovertemplate=(
@@ -1189,8 +1218,10 @@ def main() -> None:
                 "are the first shops to call; colour is spend category. Amounts in SGD."
             )
 
-            show = md_show.sort_values("est_recoverable_value", ascending=False).head(200)
-            st.caption("Currency: SGD (est_recoverable_value converted from USD)")
+            show = md_show.sort_values(
+                "est_recoverable_value", ascending=False).head(200)
+            st.caption(
+                "Currency: SGD (est_recoverable_value converted from USD)")
             st.dataframe(
                 show[
                     [
@@ -1221,7 +1252,8 @@ def main() -> None:
                 hide_index=True,
             )
 
-            st.markdown("**Cash vs card by district** (where signing merchants is the fix)")
+            st.markdown(
+                "**Cash vs card by district** (where signing merchants is the fix)")
             byd = (
                 md.groupby("dest_district", as_index=False)
                 .agg(card=("credit_share", "mean"), cash=("cash_share", "mean"))
@@ -1240,7 +1272,8 @@ def main() -> None:
             )
             figc.update_xaxes(title="", tickformat=".0%")
             figc.update_yaxes(title="")
-            st.plotly_chart(style_fig(figc, theme, height=420), width="stretch")
+            st.plotly_chart(style_fig(figc, theme, height=420),
+                            width="stretch")
             graph_note(
                 "Share of local spend that is already on card (lime) vs still cash "
                 "(terracotta) by district. High-cash districts are where signing "
@@ -1290,9 +1323,11 @@ def main() -> None:
                                 cands, ", ".join(f_dist)
                             )
                         st.caption(f"Source: {src}")
-                        st.dataframe(pd.DataFrame(verdicts), width="stretch", hide_index=True)
+                        st.dataframe(pd.DataFrame(verdicts),
+                                     width="stretch", hide_index=True)
                 else:
-                    st.caption("Pick a district above to run the judge live on its venues.")
+                    st.caption(
+                        "Pick a district above to run the judge live on its venues.")
                 st.caption(
                     "Merchant names are real OSM venues; the recoverable value "
                     "attached to them is allocated from district-level estimates on "
@@ -1338,9 +1373,11 @@ def main() -> None:
                 "fresh as venues open and close."
             )
             with rc2:
-                cadence = st.selectbox("Re-scan cadence", ["Every 3 months", "Every 6 months"])
+                cadence = st.selectbox(
+                    "Re-scan cadence", ["Every 3 months", "Every 6 months"])
                 st.button("Run scan now", disabled=True)
-                st.caption(f"Next scan: {cadence.split()[-1]} from last refresh.")
+                st.caption(
+                    f"Next scan: {cadence.split()[-1]} from last refresh.")
 
         st.subheader("Who to reward, and with what")
         explain(
@@ -1360,11 +1397,13 @@ def main() -> None:
         else:
             if f_seg:
                 seg = seg[seg["segment"].isin(f_seg)]
-            targeted = seg[seg["is_targeted"]] if "is_targeted" in seg.columns else seg
+            targeted = seg[seg["is_targeted"]
+                           ] if "is_targeted" in seg.columns else seg
             o1, o2, o3 = st.columns(3)
             o1.metric("Targeted travellers", f"{len(targeted):,}")
             o2.metric("Behaviour types", "5")
-            o3.metric("Leakage at stake", money(targeted["leakage_estimate"].sum()))
+            o3.metric("Leakage at stake", money(
+                targeted["leakage_estimate"].sum()))
 
             pattern_info = [
                 (
@@ -1413,7 +1452,8 @@ def main() -> None:
                 .rename(columns={"size": "travellers"})
             )
             order = [p for p, _, _ in pattern_info]
-            dist["pattern"] = pd.Categorical(dist["pattern"], categories=order, ordered=True)
+            dist["pattern"] = pd.Categorical(
+                dist["pattern"], categories=order, ordered=True)
             figp = px.bar(
                 dist.sort_values("pattern", ascending=False),
                 x="travellers",
@@ -1424,7 +1464,8 @@ def main() -> None:
             )
             figp.update_xaxes(title="Travellers")
             figp.update_yaxes(title="")
-            st.plotly_chart(style_fig(figp, theme, height=360), width="stretch")
+            st.plotly_chart(style_fig(figp, theme, height=360),
+                            width="stretch")
             graph_note(
                 "Headcount by behavioural pattern. Each bar is one of the five "
                 "shopper types that map to a concrete offer."
@@ -1449,7 +1490,8 @@ def main() -> None:
                     "lift for that person. We then prove those predictions hold up "
                     "with a real randomised test in the last tab."
                 )
-            avail = [p for p, _, _ in pattern_info if (targeted["pattern"] == p).any()]
+            avail = [p for p, _, _ in pattern_info if (
+                targeted["pattern"] == p).any()]
             f_pat = st.multiselect("Show only these shopper types", avail)
             drill = targeted.copy()
             if f_pat:

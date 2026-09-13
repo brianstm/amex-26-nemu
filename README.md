@@ -6,7 +6,7 @@ Proof of concept for American Express: estimate cross-border spend an issuer is 
 
 The ledger is **hybrid**. No American Express or card-member data was used. Trips, spend, and acceptance are simulated so Notice has a known causal structure. Ticket fields a real issuer file would also carry — currency, FX, MCC, merchant name — come from public sources (ISO 4217, World Bank, ISO 18245, OpenStreetMap). Country knobs (prices, cash, trip volume) are calibrated to Findex, PPP, and OSM counts.
 
-| Hidden (never in the likelihood) | Model found | Cause $ accuracy | Corridor corr. | Holdout calibration |
+| Hidden (never in the likelihood) | Model found | Cause $ accuracy | Corridor Correlation | Holdout calibration |
 | ---: | ---: | ---: | ---: | ---: |
 | **USD 7.34M** acceptance leakage | **USD 6.82M (93%)** | **92%** | 0.964 | 1.01 |
 
