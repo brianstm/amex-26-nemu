@@ -3,15 +3,21 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
+import html as html_lib
+
+import folium
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import pydeck as pdk
 import streamlit as st
+from folium.plugins import MarkerCluster
+from streamlit_folium import st_folium
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -27,13 +33,61 @@ from data.config import (
     REGION_ORDER,
 )
 
+
+def _env_value(name: str) -> str | None:
+    """Read a secret from the environment, Streamlit secrets, or repo ``.env``."""
+    val = os.environ.get(name)
+    if val:
+        return val.strip().strip('"').strip("'") or None
+    try:
+        secrets = st.secrets  # type: ignore[attr-defined]
+        if name in secrets:
+            return str(secrets[name]).strip() or None
+    except Exception:
+        pass
+    env_path = ROOT / ".env"
+    if env_path.exists():
+        for line in env_path.read_text().splitlines():
+            line = line.strip()
+            if line.startswith(f"{name}=") and not line.startswith("#"):
+                return line.split("=", 1)[1].strip().strip('"').strip("'") or None
+    return None
+
+
+def _carto_tiles() -> tuple[str, str]:
+    """Carto light basemap URL, with ``MAP_API`` key when available."""
+    attr = (
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> '
+        '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+    )
+    base = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+    key = _env_value("MAP_API")
+    if key:
+        return f"{base}?key={quote(key, safe='')}", attr
+    return base, attr
+
 _FALLBACK_IMG = next(iter(DISTRICT_IMAGES.values()), "")
-_CAT_RGB = {
-    "dining": [167, 252, 4],
-    "retail": [47, 95, 194],
-    "transport": [217, 122, 89],
-    "lodging": [133, 50, 168],
+_CAT_HEX = {
+    "dining": "#A7FC04",
+    "retail": "#2F5FC2",
+    "transport": "#D97A59",
+    "lodging": "#8532A8",
 }
+_CLUSTER_ICON_JS = """
+function(cluster) {
+  var n = cluster.getChildCount();
+  var size = n < 10 ? 36 : (n < 40 ? 44 : 54);
+  return L.divIcon({
+    html: '<div style="background:#A7FC04;border:2px solid #1E1E1E;border-radius:50%;'
+      + 'width:' + size + 'px;height:' + size + 'px;display:flex;align-items:center;'
+      + 'justify-content:center;font-family:Montserrat,sans-serif;font-weight:800;'
+      + 'font-size:13px;color:#1E1E1E;box-shadow:0 1px 4px rgba(0,0,0,.2);">'
+      + n + '</div>',
+    className: '',
+    iconSize: L.point(size, size)
+  });
+}
+"""
 
 CHARCOAL = "#1E1E1E"
 INK = "#1A1A1A"
@@ -405,11 +459,11 @@ def _zoom_for(lats: pd.Series, lons: pd.Series) -> float:
 
 
 def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
-    """Interactive map (pydeck / Carto) whose hover cards show a real photo.
+    """Clustered merchant map: numbered blobs when zoomed out, pins when zoomed in.
 
-    Scroll to zoom, drag to pan. With no district picked you see districts as
-    bubbles; pick one (or more) and it zooms in to the named merchants, each
-    pin showing a picture of the place plus its numbers on hover.
+    District selection only recentres / zooms the view — it does not hide other
+    merchants. Pins are scattered around each district centre (no exact store
+    coordinates).
     """
     md = md.copy()
     md["lat"] = md["dest_district"].map(lambda d: DISTRICT_COORDS.get(d, (None, None))[0])
@@ -419,103 +473,100 @@ def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
         st.info("No mapped districts for the current filters.")
         return
 
+    # Cap pins for performance; keep highest-value merchants.
+    d = md.sort_values("est_recoverable_value", ascending=False).head(280).copy()
+    rng = np.random.default_rng(26)
+    ang = rng.uniform(0, 2 * np.pi, len(d))
+    rad = 0.012 * np.sqrt(rng.uniform(0, 1, len(d)))
+    d["pin_lat"] = d["lat"] + rad * np.cos(ang)
+    d["pin_lon"] = d["lon"] + rad * np.sin(ang)
+
     if focus_districts:
-        # merchant view: spread each district's merchants around its centre so
-        # they read as a cluster of pins (we have no per-merchant coordinates).
-        rng = np.random.default_rng(26)
-        d = md.sort_values("est_recoverable_value", ascending=False).head(70).copy()
-        # scatter tightly around the district centre so pins sit over the town
-        # (we have no exact store coordinates); positions are illustrative.
-        ang = rng.uniform(0, 2 * np.pi, len(d))
-        rad = 0.010 * np.sqrt(rng.uniform(0, 1, len(d)))
-        d["lat"] = d["lat"] + rad * np.cos(ang)
-        d["lon"] = d["lon"] + rad * np.sin(ang)
-        d["name"] = d["merchant_name"]
-        # Named brands (KLIA Ekspres, Uniqlo...) show their own photo; other
-        # local shops show a photo of their category so pins vary by type.
-        d["image_url"] = [
-            MERCHANT_IMAGES.get(n) or CATEGORY_IMAGES.get(cat)
-            or DISTRICT_IMAGES.get(dist) or _FALLBACK_IMG
-            for n, cat, dist in zip(d["merchant_name"], d["category"], d["dest_district"])
-        ]
-        d["l1"] = [f"{dist} · {sub}" for dist, sub in zip(d["dest_district"], d["sub_category"])]
-        d["l2"] = d["price_range"]
-        d["l3"] = [
-            f"{v} visits · ${val:,.0f} recoverable"
-            for v, val in zip(d["visits"], d["est_recoverable_value"])
-        ]
-        d["color"] = d["category"].map(lambda c: _CAT_RGB.get(c, [120, 120, 120]))
-        val = d["est_recoverable_value"].to_numpy(dtype=float)
+        focus = d[d["dest_district"].isin(focus_districts)]
+        if focus.empty:
+            focus = d
+        center_lat = float(focus["lat"].mean())
+        center_lon = float(focus["lon"].mean())
+        zoom = 13.0 if len(focus_districts) == 1 else _zoom_for(focus["lat"], focus["lon"]) + 2.5
+        zoom = min(max(zoom, 11.0), 14.0)
     else:
-        # district view: one bubble per district, sized by recoverable value.
-        d = (
-            md.groupby(["region", "dest_country", "dest_city", "dest_district"], as_index=False)
-            .agg(
-                recoverable=("est_recoverable_value", "sum"),
-                merchants=("merchant_name", "nunique"),
-                card_share=("credit_share", "mean"),
-                lat=("lat", "first"),
-                lon=("lon", "first"),
-            )
-        )
-        d["name"] = d["dest_district"]
-        d["image_url"] = [DISTRICT_IMAGES.get(x) or _FALLBACK_IMG for x in d["dest_district"]]
-        d["l1"] = [f"{city}, {country}" for city, country in zip(d["dest_city"], d["dest_country"])]
-        d["l2"] = [f"{m} merchants to target" for m in d["merchants"]]
-        d["l3"] = [
-            f"${val:,.0f} recoverable · {cs:.0%} on card"
-            for val, cs in zip(d["recoverable"], d["card_share"])
-        ]
-        d["color"] = [[167, 252, 4]] * len(d)
-        val = d["recoverable"].to_numpy(dtype=float)
+        center_lat = float(d["lat"].mean())
+        center_lon = float(d["lon"].mean())
+        zoom = _zoom_for(d["lat"], d["lon"])
 
-    hi = float(val.max()) or 1.0
-    merch_view = bool(focus_districts)
-    d["radius"] = (120 if merch_view else 300) + (700 if merch_view else 3200) * (val / hi)
-
-    layer = pdk.Layer(
-        "ScatterplotLayer",
-        data=d,
-        get_position="[lon, lat]",
-        get_radius="radius",
-        get_fill_color="color",
-        opacity=0.6,
-        stroked=False,
-        pickable=True,
-        radius_min_pixels=4,
-        radius_max_pixels=12 if merch_view else 30,
+    tiles, attr = _carto_tiles()
+    fmap = folium.Map(
+        location=[center_lat, center_lon],
+        zoom_start=zoom,
+        tiles=tiles,
+        attr=attr,
+        control_scale=True,
     )
-    view = pdk.ViewState(
-        latitude=float(d["lat"].mean()),
-        longitude=float(d["lon"].mean()),
-        zoom=_zoom_for(d["lat"], d["lon"]),
-    )
-    tooltip = {
-        "html": (
-            "<div style='max-width:220px'>"
-            "<img src='{image_url}' style='width:210px;border-radius:6px;"
-            "margin-bottom:6px;display:block'/>"
-            "<b>{name}</b><br>{l1}<br>{l2}<br>{l3}</div>"
-        ),
-        "style": {
-            "backgroundColor": "white",
-            "color": "#1E1E1E",
-            "fontFamily": "Montserrat, sans-serif",
-            "fontSize": "12px",
-            "borderRadius": "8px",
-            "padding": "8px",
-            "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+    cluster = MarkerCluster(
+        name="Merchants",
+        overlay=False,
+        control=False,
+        icon_create_function=_CLUSTER_ICON_JS,
+        options={
+            "showCoverageOnHover": False,
+            "maxClusterRadius": 55,
+            "spiderfyOnMaxZoom": True,
+            "disableClusteringAtZoom": 15,
         },
-    }
-    st.pydeck_chart(
-        pdk.Deck(layers=[layer], initial_view_state=view, map_style="light", tooltip=tooltip),
-        width="stretch",
-    )
-    if merch_view:
-        st.caption(
-            "Pins are scattered around the district centre for illustration, "
-            "not exact store addresses (we don't hold per-merchant coordinates)."
+    ).add_to(fmap)
+
+    for row in d.itertuples(index=False):
+        color = _CAT_HEX.get(row.category, "#777777")
+        img = (
+            MERCHANT_IMAGES.get(row.merchant_name)
+            or CATEGORY_IMAGES.get(row.category)
+            or DISTRICT_IMAGES.get(row.dest_district)
+            or _FALLBACK_IMG
         )
+        name = html_lib.escape(str(row.merchant_name))
+        line1 = html_lib.escape(f"{row.dest_district} · {row.sub_category}")
+        line2 = html_lib.escape(str(row.price_range))
+        line3 = html_lib.escape(
+            f"{int(row.visits)} visits · ${row.est_recoverable_value:,.0f} recoverable"
+        )
+        popup_html = (
+            f"<div style='max-width:220px;font-family:Montserrat,sans-serif;font-size:12px;'>"
+            f"<img src='{html_lib.escape(img)}' style='width:210px;border-radius:6px;"
+            f"margin-bottom:6px;display:block'/>"
+            f"<b>{name}</b><br>{line1}<br>{line2}<br>{line3}</div>"
+        )
+        folium.CircleMarker(
+            location=[float(row.pin_lat), float(row.pin_lon)],
+            radius=7,
+            color=CHARCOAL,
+            weight=1,
+            fill=True,
+            fill_color=color,
+            fill_opacity=0.85,
+            popup=folium.Popup(popup_html, max_width=240),
+            tooltip=name,
+        ).add_to(cluster)
+
+    if focus_districts:
+        bounds = [
+            [float(r.pin_lat), float(r.pin_lon)]
+            for r in d[d["dest_district"].isin(focus_districts)].itertuples(index=False)
+        ]
+        if bounds:
+            fmap.fit_bounds(bounds, padding=(40, 40))
+
+    st_folium(
+        fmap,
+        height=520,
+        use_container_width=True,
+        returned_objects=[],
+        key=f"merch-map-{'-'.join(sorted(focus_districts)) or 'all'}",
+    )
+    st.caption(
+        "Zoom out to see numbered clusters; zoom in to expand into merchant pins. "
+        "Pick a district above to fly to that area. Pin positions are illustrative "
+        "(scattered around the district centre — we don't hold exact store coordinates)."
+    )
 
 
 def explain(what: str, why: str) -> None:
@@ -907,30 +958,33 @@ def main() -> None:
             if f_cat:
                 md = md[md["category"].isin(f_cat)]
             districts = sorted(md["dest_district"].unique())
-            f_dist = st.multiselect("District", districts)
-            if f_dist:
-                md = md[md["dest_district"].isin(f_dist)]
+            f_dist = st.multiselect(
+                "District",
+                districts,
+                help="Zooms the map to that area. Tables below still focus on the selection.",
+            )
 
             st.markdown("**Map view**")
             st.caption(
-                "Each bubble is a target district, sized by how much spend it can "
-                "win back. Scroll to zoom and drag to pan. Pick one or more "
-                "districts in the filter above to zoom in and see the individual "
-                "merchants as pins."
+                "Numbered lime circles are clusters — zoom in to split them into "
+                "smaller groups, then into individual merchant pins. Pick a district "
+                "above to fly to that area (the map keeps every merchant visible)."
             )
             merchant_map(md, f_dist, theme)
 
+            md_show = md[md["dest_district"].isin(f_dist)] if f_dist else md
+
             k1, k2, k3, k4 = st.columns(4)
-            k1.metric("Merchant targets", f"{len(md):,}")
-            k2.metric("Recoverable value", money(md["est_recoverable_value"].sum()))
-            if len(md):
+            k1.metric("Merchant targets", f"{len(md_show):,}")
+            k2.metric("Recoverable value", money(md_show["est_recoverable_value"].sum()))
+            if len(md_show):
                 k3.metric(
                     "Typical spend / visit",
-                    f"${md['price_low'].median():,.0f}-{md['price_high'].median():,.0f}",
+                    f"${md_show['price_low'].median():,.0f}-{md_show['price_high'].median():,.0f}",
                 )
-                k4.metric("Avg card share", f"{md['credit_share'].mean():.0%}")
+                k4.metric("Avg card share", f"{md_show['credit_share'].mean():.0%}")
 
-            top = md.sort_values("est_recoverable_value", ascending=False).head(15)
+            top = md_show.sort_values("est_recoverable_value", ascending=False).head(15)
             fig = px.bar(
                 top.sort_values("est_recoverable_value"),
                 x="est_recoverable_value",
@@ -955,7 +1009,7 @@ def main() -> None:
             fig.update_yaxes(title="")
             st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
 
-            show = md.sort_values("est_recoverable_value", ascending=False).head(200)
+            show = md_show.sort_values("est_recoverable_value", ascending=False).head(200)
             st.dataframe(
                 show[
                     [

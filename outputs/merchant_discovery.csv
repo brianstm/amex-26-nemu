@@ -1,16 +1,16 @@
 dest_country,dest_district,merchant_name,category,visits,keep,tourist_score,reason
-Indonesia,Malioboro,TransJakarta,transport,30,False,0.1,Public transit infrastructure from Jakarta misattributed to Malioboro.
-Indonesia,Malioboro,Malioboro 1,transport,26,False,0.2,Public bus stop infrastructure not suitable for merchant acquisition.
-Indonesia,Malioboro,Mangkubumi 1,transport,25,False,0.2,Public transit bus stop location.
-Indonesia,Malioboro,Parkir Bus Wisata,transport,24,False,0.3,Municipal bus parking lot facility rather than a point-of-sale merchant.
-Indonesia,Malioboro,MRT Jakarta,transport,24,False,0.1,Jakarta metro system mislocated in Yogyakarta.
-Indonesia,Malioboro,Blue Bird,transport,23,False,0.4,National taxi fleet company managed centrally rather than local venue acquisition.
-Indonesia,Malioboro,Srigading,retail,22,True,0.8,Independent local retail business in a prominent tourist corridor.
-Indonesia,Malioboro,Tugu Station,transport,22,False,0.6,State railway hub rather than individual card-accepting merchant.
-Indonesia,Malioboro,Indomaret,retail,21,False,0.4,Ubiquitous national convenience chain with low average transaction values.
-Indonesia,Malioboro,TransJogja,transport,20,False,0.2,Public bus transport system.
-Indonesia,Malioboro,Simple Tour,retail,20,True,0.85,Local travel agency serving foreign and domestic visitors with high card spend potential.
-Indonesia,Malioboro,Mangkubumi 2,transport,20,False,0.2,Public transit bus stop facility.
+Indonesia,Malioboro,TransJakarta,transport,30,False,0.1,Jakarta bus rapid transit (misplaced record).
+Indonesia,Malioboro,Malioboro 1,transport,26,False,0.2,Bus-stop placeholder.
+Indonesia,Malioboro,Mangkubumi 1,transport,25,False,0.2,Bus stop.
+Indonesia,Malioboro,Parkir Bus Wisata,transport,24,False,0.15,Tourist-bus parking lot.
+Indonesia,Malioboro,MRT Jakarta,transport,24,False,0.1,Jakarta metro (misplaced record).
+Indonesia,Malioboro,Blue Bird,transport,23,False,0.25,Taxi fleet that already accepts cards.
+Indonesia,Malioboro,Srigading,retail,22,True,0.5,Local shop / eatery on Malioboro.
+Indonesia,Malioboro,Tugu Station,transport,22,False,0.2,Rail station.
+Indonesia,Malioboro,Indomaret,retail,21,False,0.3,"Chain minimart, already card-capable."
+Indonesia,Malioboro,TransJogja,transport,20,False,0.15,City bus operator.
+Indonesia,Malioboro,Simple Tour,retail,20,True,0.45,Independent tour agency.
+Indonesia,Malioboro,Mangkubumi 2,transport,20,False,0.2,Bus stop.
 Indonesia,Ubud,Bali Bagus,retail,45,True,0.5,Local shop with tourist footfall.
 Indonesia,Ubud,Ubud Palace stop,transport,43,False,0.3,Transit stop near the palace.
 Indonesia,Ubud,TransJakarta,transport,41,False,0.1,Jakarta bus rapid transit (misplaced record).
