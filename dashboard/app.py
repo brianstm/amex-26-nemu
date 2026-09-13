@@ -25,13 +25,18 @@ if str(ROOT) not in sys.path:
 
 from data.config import (
     CATEGORY_IMAGES,
+    CURRENCY,
     DISTRICT_COORDS,
     DISTRICT_IMAGES,
+    FX_LCU_PER_USD,
     MERCHANT_IMAGES,
     OUTPUT_DIR,
     REGION,
     REGION_ORDER,
 )
+
+# Dashboard displays money in SGD. Pipeline stores USD; convert at World Bank FX.
+SGD_PER_USD = float(FX_LCU_PER_USD.get("Singapore", 1.35))
 
 
 def _env_value(name: str) -> str | None:
@@ -192,13 +197,42 @@ def load_all() -> dict:
     }
 
 
+def to_sgd(x: float) -> float:
+    """Convert a USD amount to SGD."""
+    return float(x) * SGD_PER_USD
+
+
 def money(x: float) -> str:
-    ax = abs(x)
+    """Format a USD amount as compact SGD (S$…)."""
+    ax = abs(to_sgd(x))
+    s = to_sgd(x)
     if ax >= 1_000_000:
-        return f"${x/1_000_000:,.2f}M"
+        return f"S${s/1_000_000:,.2f}M"
     if ax >= 1_000:
-        return f"${x/1_000:,.0f}K"
-    return f"${x:,.0f}"
+        return f"S${s/1_000:,.0f}K"
+    return f"S${s:,.0f}"
+
+
+def format_sgd(x, decimals: int = 0) -> str:
+    """Format one USD cell as SGD for Styler.format callables."""
+    if pd.isna(x):
+        return "—"
+    return f"S${to_sgd(x):,.{decimals}f}"
+
+
+def fx_rates_table() -> pd.DataFrame:
+    """Country FX board: local units per USD, and SGD equivalent of 1 USD."""
+    rows = []
+    for country, lcu in sorted(FX_LCU_PER_USD.items()):
+        rows.append(
+            {
+                "Country": country,
+                "Currency": CURRENCY.get(country, "—"),
+                "Local per 1 USD": float(lcu),
+                "SGD per 1 USD": SGD_PER_USD,
+            }
+        )
+    return pd.DataFrame(rows)
 
 
 def style_fig(fig: go.Figure, theme: dict, height: int = 420) -> go.Figure:
@@ -527,7 +561,7 @@ def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
         line1 = html_lib.escape(f"{row.dest_district} · {row.sub_category}")
         line2 = html_lib.escape(str(row.price_range))
         line3 = html_lib.escape(
-            f"{int(row.visits)} visits · ${row.est_recoverable_value:,.0f} recoverable"
+            f"{int(row.visits)} visits · {money(row.est_recoverable_value)} recoverable"
         )
         popup_html = (
             f"<div style='max-width:220px;font-family:Montserrat,sans-serif;font-size:12px;'>"
@@ -594,10 +628,31 @@ def main() -> None:
     st.markdown(
         """
         <div class="nemu-wordmark"><span>Nemu</span></div>
-        <div class="nemu-note">Hybrid ledger: ISO currencies, World Bank FX, OSM merchant names. Trips and acceptance are simulated. No American Express data.</div>
+        <div class="nemu-note">Public FX, merchant names, and ISO codes — with simulated trips. Figures in <b>SGD</b>.</div>
         """,
         unsafe_allow_html=True,
     )
+    rate_label = f"{SGD_PER_USD:.6f}"
+    with st.expander(
+        f"FX rates used · shown in SGD (Singapore rate {rate_label} per 1 USD)",
+        expanded=False,
+    ):
+        st.caption(
+            "Amounts start in USD and are converted to SGD using the World Bank "
+            f"Singapore rate ({rate_label} SGD per 1 USD). "
+            "The table below is the same public FX series attached to tickets."
+        )
+        fx = fx_rates_table()
+        st.dataframe(
+            fx.style.format(
+                {
+                    "Local per 1 USD": "{:,.6f}",
+                    "SGD per 1 USD": "{:,.6f}",
+                }
+            ),
+            width="stretch",
+            hide_index=True,
+        )
 
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Hidden acceptance leakage", money(m["hidden_acceptance_leakage"]))
@@ -613,7 +668,7 @@ def main() -> None:
     )
 
     st.markdown(
-        f'<div class="nemu-claim"><strong>Quick proof</strong>'
+        f'<div class="nemu-claim"><strong>Blind test results</strong>'
         f'<ul style="margin:0.4rem 0 0 1.1rem;padding:0">'
         f'<li>Hidden: <strong>{money(m["hidden_acceptance_leakage"])}</strong> acceptance leakage</li>'
         f'<li>Model found: <strong>{money(m["estimated_leakage"])}</strong> '
@@ -666,46 +721,53 @@ def main() -> None:
                 recoverable=("leakage_estimate", "sum"),
             )
         )
-        left = agg.sort_values("observed", ascending=True)
-        right = agg.sort_values("recoverable", ascending=True)
+        left = agg.sort_values("observed", ascending=True).assign(
+            observed_sgd=lambda d: d["observed"] * SGD_PER_USD,
+            recoverable_sgd=lambda d: d["recoverable"] * SGD_PER_USD,
+        )
+        right = agg.sort_values("recoverable", ascending=True).assign(
+            observed_sgd=lambda d: d["observed"] * SGD_PER_USD,
+            recoverable_sgd=lambda d: d["recoverable"] * SGD_PER_USD,
+        )
         col_a, col_b = st.columns(2)
         with col_a:
             fig = px.bar(
                 left,
-                x="observed",
+                x="observed_sgd",
                 y="dest_country",
                 orientation="h",
                 color_discrete_sequence=[theme["bar_observed"]],
                 title="Ranked by observed Amex volume",
             )
-            fig.update_xaxes(title="Observed spend (USD)")
+            fig.update_xaxes(title="Observed spend (SGD)")
             fig.update_yaxes(title="")
             st.plotly_chart(style_fig(fig, theme), width="stretch")
         with col_b:
             fig = px.bar(
                 right,
-                x="recoverable",
+                x="recoverable_sgd",
                 y="dest_country",
                 orientation="h",
                 color_discrete_sequence=[theme["bar_recoverable"]],
                 title="Ranked by recoverable leakage",
             )
-            fig.update_xaxes(title="Estimated recoverable (USD)")
+            fig.update_xaxes(title="Estimated recoverable (SGD)")
             fig.update_yaxes(title="")
             st.plotly_chart(style_fig(fig, theme), width="stretch")
         graph_note(
             "Left = where Amex already books volume. Right = where the model "
             "sees recoverable leakage. Countries that climb on the right "
-            "(e.g. Vietnam, Indonesia) are the growth targets."
+            "(e.g. Vietnam, Indonesia) are the growth targets. Amounts in SGD."
         )
 
         rank = agg.copy()
         rank["rank_observed"] = rank["observed"].rank(ascending=False).astype(int)
         rank["rank_recoverable"] = rank["recoverable"].rank(ascending=False).astype(int)
         rank["rank_shift"] = rank["rank_observed"] - rank["rank_recoverable"]
+        st.caption("Currency: SGD")
         st.dataframe(
             rank.sort_values("recoverable", ascending=False).style.format(
-                {"observed": "${:,.0f}", "recoverable": "${:,.0f}"}
+                {"observed": format_sgd, "recoverable": format_sgd}
             ),
             width="stretch",
             hide_index=True,
@@ -750,11 +812,12 @@ def main() -> None:
             )
             .sort_values("recoverable", ascending=False)
         )
+        st.caption("Currency: SGD")
         st.dataframe(
             table.style.format(
                 {
-                    "observed_spend": "${:,.0f}",
-                    "recoverable": "${:,.0f}",
+                    "observed_spend": format_sgd,
+                    "recoverable": format_sgd,
                     "mean_acceptance": "{:.2f}",
                     "mean_cash": "{:.2f}",
                 }
@@ -771,7 +834,7 @@ def main() -> None:
                 "one row per purchase. Each has a real currency code, a real "
                 "merchant name from OpenStreetMap, and an `mcc` (the industry "
                 "code, e.g. 5812 = restaurants). The amounts and which trip a "
-                "ticket belongs to are simulated; this is not real Amex data."
+                "ticket belongs to are simulated."
             )
             sample = txns
             if f_country:
@@ -795,13 +858,23 @@ def main() -> None:
             ]
             # The file is ordered by category, so a plain head() would show only
             # dining. Shuffle first so the preview mixes all four categories.
-            sample = sample.sample(frac=1.0, random_state=26)
+            sample = sample.sample(frac=1.0, random_state=26).copy()
+            if "amount_usd" in sample.columns:
+                sample["amount_sgd"] = sample["amount_usd"] * SGD_PER_USD
+                cols = [("amount_sgd" if c == "amount_usd" else c) for c in cols]
             st.caption(
                 f"Showing 25 of {len(sample):,} tickets, shuffled so you see a "
-                "mix of dining, retail, transport and lodging."
+                f"mix of dining, retail, transport and lodging. "
+                f"Currency: SGD (amount_sgd = amount_usd × {SGD_PER_USD:.4g})."
             )
+            fmt = {}
+            if "amount_local" in cols:
+                fmt["amount_local"] = "{:,.2f}"
+            if "amount_sgd" in cols:
+                fmt["amount_sgd"] = "S${:,.2f}"
+            head = sample[cols].head(25)
             st.dataframe(
-                sample[cols].head(25),
+                head.style.format(fmt) if fmt else head,
                 width="stretch",
                 hide_index=True,
             )
@@ -821,32 +894,34 @@ def main() -> None:
             .sum()
             .rename(columns={"leakage_estimate": "usd"})
         )
+        cause_cty["sgd"] = cause_cty["usd"] * SGD_PER_USD
         fig = px.bar(
             cause_cty,
             x="dest_country",
-            y="usd",
+            y="sgd",
             color="cause",
             color_discrete_map=CAUSE_COLORS,
             title="Recoverable value by cause",
-            labels={"cause": "", "usd": "USD", "dest_country": ""},
+            labels={"cause": "", "sgd": "SGD", "dest_country": ""},
         )
         fig.update_xaxes(title="")
-        fig.update_yaxes(title="USD")
+        fig.update_yaxes(title="SGD")
         st.plotly_chart(style_fig(fig, theme, height=560), width="stretch")
         graph_note(
             "Stacked bars show how much recoverable value sits in each destination, "
             "split by cause. Tall no_acceptance stacks mean acquiring; "
-            "rail_substitution stacks mean offers."
+            "rail_substitution stacks mean offers. Amounts in SGD."
         )
 
         pie = view.groupby("cause", as_index=False)["leakage_estimate"].sum()
+        pie["leakage_estimate"] = pie["leakage_estimate"] * SGD_PER_USD
         figp = px.pie(
             pie,
             names="cause",
             values="leakage_estimate",
             color="cause",
             color_discrete_map=CAUSE_COLORS,
-            title="Portfolio mix",
+            title="Portfolio mix (SGD)",
             hole=0.45,
             labels={"cause": ""},
         )
@@ -863,9 +938,9 @@ def main() -> None:
             "data generator hid from the model. The side axis is what the model "
             "guessed without ever seeing it. On the dashed line means a perfect "
             "guess.",
-            "It answers the obvious question: you have no real Amex data. We "
-            "cannot use real answers, but we can prove the method recovers a "
-            "known answer it was never shown.",
+            "It answers the obvious question for a synthetic ledger: can the "
+            "method recover a known answer it was never shown? Yes — we hide "
+            "the truth file from the likelihood and score against it later.",
         )
         st.write(
             "ground_truth.csv was written by the DGP and **never entered the likelihood**. "
@@ -876,11 +951,14 @@ def main() -> None:
             cv = cv[cv["dest_country"].isin(f_country)]
         if f_cat:
             cv = cv[cv["category"].isin(f_cat)]
-        lim = float(max(cv["est"].max(), cv["truth_acc"].max()) * 1.05)
+        lim = float(max(cv["est"].max(), cv["truth_acc"].max()) * 1.05) * SGD_PER_USD
         fig = px.scatter(
-            cv,
-            x="truth_acc",
-            y="est",
+            cv.assign(
+                truth_sgd=cv["truth_acc"] * SGD_PER_USD,
+                est_sgd=cv["est"] * SGD_PER_USD,
+            ),
+            x="truth_sgd",
+            y="est_sgd",
             color="dest_country",
             hover_data=["category"],
             color_discrete_sequence=PALETTE,
@@ -895,13 +973,13 @@ def main() -> None:
                 line=dict(color=theme["muted"], dash="dash"),
             )
         )
-        fig.update_xaxes(title="Hidden acceptance leakage (USD)", range=[0, lim])
-        fig.update_yaxes(title="PPML estimate (USD)", range=[0, lim])
+        fig.update_xaxes(title="Hidden acceptance leakage (SGD)", range=[0, lim])
+        fig.update_yaxes(title="PPML estimate (SGD)", range=[0, lim])
         st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
         graph_note(
             "Each point is a destination × category corridor. X = hidden truth "
             "the model never saw; Y = PPML estimate. Points near the dashed "
-            "y = x line mean the model recovered the right answer."
+            "y = x line mean the model recovered the right answer. Amounts in SGD."
         )
 
         k1, k2, k3 = st.columns(3)
@@ -917,11 +995,14 @@ def main() -> None:
 
         row_sample = merged_view.sample(
             n=min(4_000, len(merged_view)), random_state=26
+        ).assign(
+            acceptance_leakage_sgd=lambda d: d["acceptance_leakage"] * SGD_PER_USD,
+            leakage_estimate_sgd=lambda d: d["leakage_estimate"] * SGD_PER_USD,
         )
         fig2 = px.scatter(
             row_sample,
-            x="acceptance_leakage",
-            y="leakage_estimate",
+            x="acceptance_leakage_sgd",
+            y="leakage_estimate_sgd",
             color="cause",
             opacity=0.35,
             color_discrete_map=CAUSE_COLORS,
@@ -929,7 +1010,10 @@ def main() -> None:
             labels={"cause": ""},
         )
         hi = float(
-            max(row_sample["acceptance_leakage"].quantile(0.99), row_sample["leakage_estimate"].quantile(0.99))
+            max(
+                row_sample["acceptance_leakage_sgd"].quantile(0.99),
+                row_sample["leakage_estimate_sgd"].quantile(0.99),
+            )
         )
         fig2.add_trace(
             go.Scatter(
@@ -937,10 +1021,13 @@ def main() -> None:
                 line=dict(color=theme["muted"], dash="dash"),
             )
         )
+        fig2.update_xaxes(title="Hidden acceptance leakage (SGD)")
+        fig2.update_yaxes(title="PPML estimate (SGD)")
         st.plotly_chart(style_fig(fig2, theme, height=420), width="stretch")
         graph_note(
             "Same test at trip × category grain (4k sample). More noise than the "
-            "corridor plot, but the cloud still tracks the diagonal — coloured by cause."
+            "corridor plot, but the cloud still tracks the diagonal — coloured by cause. "
+            "Amounts in SGD."
         )
 
 
@@ -955,42 +1042,56 @@ def main() -> None:
         )
         hm = data["holdout_m"]
         h1, h2, h3, h4 = st.columns(4)
-        h1.metric("Holdout T − C spend", f"${hm['mean_spend_diff_treatment_minus_control']:,.0f}")
-        h2.metric("95% CI (USD)", f"{hm['spend_diff_ci_low']:,.0f} to {hm['spend_diff_ci_high']:,.0f}")
-        h3.metric("Predicted incremental / treated", f"${hm['predicted_incremental_per_treated']:,.0f}")
+        h1.metric("Holdout T − C spend", money(hm["mean_spend_diff_treatment_minus_control"]))
+        h2.metric(
+            "95% CI (SGD)",
+            f"{to_sgd(hm['spend_diff_ci_low']):,.0f} to {to_sgd(hm['spend_diff_ci_high']):,.0f}",
+        )
+        h3.metric("Predicted incremental / treated", money(hm["predicted_incremental_per_treated"]))
         h4.metric("Calibration (realized / predicted)", f"{hm['calibration_ratio']:.2f}")
         calib = data["calib"].copy()
+        calib_sgd = calib.assign(
+            predicted=calib["predicted"] * SGD_PER_USD,
+            realized=calib["realized"] * SGD_PER_USD,
+            calibration_gap=calib["calibration_gap"] * SGD_PER_USD,
+        )
         fig = go.Figure()
         fig.add_trace(
             go.Scatter(
-                x=calib["predicted"],
-                y=calib["realized"],
+                x=calib_sgd["predicted"],
+                y=calib_sgd["realized"],
                 mode="markers+text",
-                text=calib["recommended_arm"] + " / " + calib["category"],
+                text=calib_sgd["recommended_arm"] + " / " + calib_sgd["category"],
                 textposition="top center",
                 marker=dict(size=12, color=LIME),
                 name="arm × category",
             )
         )
-        hi = float(max(calib["predicted"].max(), calib["realized"].max()) * 1.15)
+        hi = float(max(calib_sgd["predicted"].max(), calib_sgd["realized"].max()) * 1.15)
         fig.add_trace(
             go.Scatter(
                 x=[0, hi], y=[0, hi], mode="lines", name="y = x",
                 line=dict(color=theme["muted"], dash="dash"),
             )
         )
-        fig.update_xaxes(title="Predicted incremental $")
-        fig.update_yaxes(title="Realized incremental $")
+        fig.update_xaxes(title="Predicted incremental SGD")
+        fig.update_yaxes(title="Realized incremental SGD")
         fig.update_layout(title="Uplift calibration")
         st.plotly_chart(style_fig(fig, theme, height=480), width="stretch")
         graph_note(
             "Each marker is an offer arm × category cell. X = dollars the model "
             "predicted the offer would add; Y = dollars the holdout actually "
-            "added. On the dashed line means the offer engine is calibrated."
+            "added. On the dashed line means the offer engine is calibrated. "
+            "Amounts in SGD."
         )
+        st.caption("Currency: SGD")
         st.dataframe(
-            calib.style.format(
-                {"predicted": "${:,.2f}", "realized": "${:,.2f}", "calibration_gap": "${:,.2f}"}
+            calib_sgd.style.format(
+                {
+                    "predicted": "S${:,.2f}",
+                    "realized": "S${:,.2f}",
+                    "calibration_gap": "S${:,.2f}",
+                }
             ),
             width="stretch",
             hide_index=True,
@@ -1044,14 +1145,18 @@ def main() -> None:
             if len(md_show):
                 k3.metric(
                     "Typical spend / visit",
-                    f"${md_show['price_low'].median():,.0f}-{md_show['price_high'].median():,.0f}",
+                    f"S${to_sgd(md_show['price_low'].median()):,.0f}-"
+                    f"{to_sgd(md_show['price_high'].median()):,.0f}",
                 )
                 k4.metric("Avg card share", f"{md_show['credit_share'].mean():.0%}")
 
             top = md_show.sort_values("est_recoverable_value", ascending=False).head(15)
+            top_plot = top.assign(
+                est_recoverable_value_sgd=top["est_recoverable_value"] * SGD_PER_USD
+            )
             fig = px.bar(
-                top.sort_values("est_recoverable_value"),
-                x="est_recoverable_value",
+                top_plot.sort_values("est_recoverable_value_sgd"),
+                x="est_recoverable_value_sgd",
                 y="merchant_name",
                 color="category",
                 orientation="h",
@@ -1066,18 +1171,19 @@ def main() -> None:
                     "Type: %{customdata[1]}<br>"
                     "Spend per visit: %{customdata[2]}<br>"
                     "Visits seen: %{customdata[3]}<br>"
-                    "Recoverable value: $%{x:,.0f}<extra></extra>"
+                    "Recoverable value: S$%{x:,.0f}<extra></extra>"
                 )
             )
-            fig.update_xaxes(title="Estimated recoverable value (USD)")
+            fig.update_xaxes(title="Estimated recoverable value (SGD)")
             fig.update_yaxes(title="")
             st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
             graph_note(
                 "Top merchants ranked by estimated recoverable value. Longer bars "
-                "are the first acquiring calls; colour is spend category."
+                "are the first acquiring calls; colour is spend category. Amounts in SGD."
             )
 
             show = md_show.sort_values("est_recoverable_value", ascending=False).head(200)
+            st.caption("Currency: SGD (est_recoverable_value converted from USD)")
             st.dataframe(
                 show[
                     [
@@ -1098,7 +1204,7 @@ def main() -> None:
                     ]
                 ].style.format(
                     {
-                        "est_recoverable_value": "${:,.0f}",
+                        "est_recoverable_value": format_sgd,
                         "credit_share": "{:.0%}",
                         "cash_share": "{:.0%}",
                         "acceptance_density": "{:.2f}",
@@ -1183,7 +1289,7 @@ def main() -> None:
                 st.caption(
                     "Merchant names are real OSM venues; the recoverable value "
                     "attached to them is allocated from district-level estimates on "
-                    "simulated capture, not observed Amex acquiring data."
+                    "simulated capture at the district level."
                 )
 
             with st.expander("District-level summary (how the acquiring budget is spread)"):
@@ -1193,6 +1299,7 @@ def main() -> None:
                 signed = merch[merch["merchants_signed"] > 0].sort_values(
                     "recoverable_value", ascending=False
                 )
+                st.caption("Currency: SGD")
                 st.dataframe(
                     signed[
                         [
@@ -1208,9 +1315,9 @@ def main() -> None:
                     ].style.format(
                         {
                             "acceptance_density": "{:.2f}",
-                            "recoverable_value": "${:,.0f}",
+                            "recoverable_value": format_sgd,
                             "coverage": "{:.0%}",
-                            "covered_value": "${:,.0f}",
+                            "covered_value": format_sgd,
                         }
                     ),
                     width="stretch",
