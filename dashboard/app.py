@@ -500,7 +500,7 @@ def _zoom_for(lats: pd.Series, lons: pd.Series) -> float:
 def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
     """Clustered merchant map: numbered blobs when zoomed out, pins when zoomed in.
 
-    District selection only recentres / zooms the view — it does not hide other
+    District selection only recentres / zooms the view. It does not hide other
     merchants. Pins are scattered around each district centre (no exact store
     coordinates).
     """
@@ -602,7 +602,7 @@ def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
         key=f"merch-map-{'-'.join(sorted(focus_districts)) or 'all'}",
     )
     st.caption(
-        "Numbered lime circles are clusters of merchants — zoom in to split them "
+        "Numbered lime circles are clusters of merchants. Zoom in to split them "
         "into smaller groups, then into coloured pins (dining / retail / "
         "transport / lodging). Pick a district above to fly to that area. Pin "
         "positions are illustrative (scattered around the district centre)."
@@ -633,7 +633,7 @@ def main() -> None:
     st.markdown(
         """
         <div class="nemu-wordmark"><span>Nemu</span></div>
-        <div class="nemu-note">Public FX, merchant names, and ISO codes — with simulated trips. Figures in <b>SGD</b>.</div>
+        <div class="nemu-note">Public FX, merchant names, and ISO codes, with simulated trips. Figures in <b>SGD</b>.</div>
         """,
         unsafe_allow_html=True,
     )
@@ -777,7 +777,7 @@ def main() -> None:
             hide_index=True,
         )
 
-        st.subheader("Break the opportunity down")
+        st.subheader("Where the opportunity sits")
         explain(
             "The money we can win back, split by spending type first "
             "(food, shopping, transport, hotels). You can then go deeper by "
@@ -832,7 +832,7 @@ def main() -> None:
 
         txns = data.get("txns", pd.DataFrame())
         if not txns.empty and {"merchant_name", "currency", "amount_local"}.issubset(txns.columns):
-            st.subheader("The raw card transactions underneath")
+            st.subheader("Underlying card transactions")
             st.write(
                 "This is the ticket-level data every chart above is built from: "
                 "one row per purchase. Each has a real currency code, a real "
@@ -884,7 +884,7 @@ def main() -> None:
             )
 
     with tab_explain:
-        st.subheader("What's causing the gap — and what to do about it")
+        st.subheader("What's causing the gap, and what to do about it")
         explain(
             "Every dollar we can win back is tagged with one of four reasons, "
             "so the fix is obvious.",
@@ -938,14 +938,14 @@ def main() -> None:
         )
 
     with tab_uplift:
-        st.subheader("Proof the model works: hidden-file test")
+        st.subheader("Does the model get it right? A blind test")
         explain(
             "Each dot is one destination and spend category. The bottom axis is the "
             "real leakage we hid from the model. The side axis is what the model "
             "guessed without ever seeing it. On the dashed line means a perfect "
             "guess.",
             "It answers a simple question: can the method recover a known answer "
-            "it was never shown? Yes — we hide the truth file from training and "
+            "it was never shown? Yes. We hide the truth file from training and "
             "score against it later.",
         )
         st.write(
@@ -968,7 +968,7 @@ def main() -> None:
             color="dest_country",
             hover_data=["category"],
             color_discrete_sequence=PALETTE,
-            title="Estimated leakage vs hidden acceptance leakage",
+            title="What we estimated vs what was really missing",
         )
         fig.add_trace(
             go.Scatter(
@@ -1013,7 +1013,7 @@ def main() -> None:
             color="reason",
             opacity=0.35,
             color_discrete_map=CAUSE_COLORS,
-            title="Trip by category (4k sample): noisier, still on the diagonal",
+            title="Same check, trip by trip (sample of 4,000)",
             labels={"reason": ""},
         )
         hi = float(
@@ -1033,12 +1033,12 @@ def main() -> None:
         st.plotly_chart(style_fig(fig2, theme, height=420), width="stretch")
         graph_note(
             "Same test at trip × category level (4k sample). More noise than the chart "
-            "above, but the cloud still tracks the diagonal — coloured by reason. "
+            "above, but the cloud still tracks the diagonal, coloured by reason. "
             "Amounts in SGD."
         )
 
 
-        st.subheader("Proof the offers pay off: randomised holdout")
+        st.subheader("Did the offers actually pay off?")
         explain(
             "Half the eligible travellers were randomly held back and got no "
             "offer. We compare what the treated group actually spent with what "
@@ -1138,7 +1138,7 @@ def main() -> None:
 
             st.markdown("**Map view**")
             st.caption(
-                "Numbered lime circles are clusters — zoom in to split them into "
+                "Numbered lime circles are clusters. Zoom in to split them into "
                 "smaller groups, then into individual merchant pins. Pick a district "
                 "above to fly to that area (the map keeps every merchant visible)."
             )
