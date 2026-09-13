@@ -1,10 +1,7 @@
 """Behavioural-pattern classification + incentive-recommendation drill.
 
-The finalist deck lists eight traveller patterns and says NEMU should only spend
-incentive budget on the actionable ones — excluding *Fee-Sensitive Traveller*,
-*Already Loyal* and *Low Responsiveness*. This module derives each member's
-pattern from observed behaviour and the uplift model, then walks the drill the
-deck asks for: category -> sub-category -> merchant -> a concrete voucher.
+Five traveller patterns NEMU tracks — each maps to one concrete offer.
+Category → sub-category → merchant → voucher.
 
 Signals used:
 - ``pred_te_2x_points`` / ``pred_te_statement_credit`` — from the causal-forest
@@ -33,36 +30,31 @@ from match.merchant_targets_detail import classify_subcategory
 HHI_LOYAL = 0.50
 ROUND_THRESHOLDS = np.array([50, 100, 200, 500, 1000], dtype=float)
 
-TARGETED = {
-    "Merchant Explorer",
-    "Category Loyalist",
-    "Threshold Chaser",
-    "Points Optimiser",
-    "Immediate Value Seeker",
-}
-
-INTERVENTION = {
-    "Points Optimiser": "2x / 3x points",
-    "Immediate Value Seeker": "Cashback / statement credit",
-    "Threshold Chaser": "Spend X, get Y back",
-    "Category Loyalist": "Category-specific reward",
-    "Merchant Explorer": "Merchant-specific voucher",
-    "Fee-Sensitive Traveller": "No incentive (FX-offset out of scope)",
-    "Already Loyal": "No incentive",
-    "Low Responsiveness": "No incentive",
-}
-
-# Order matches the deck's table (targeted first, excluded last).
 PATTERN_ORDER = [
     "Points Optimiser",
     "Immediate Value Seeker",
     "Threshold Chaser",
     "Category Loyalist",
     "Merchant Explorer",
-    "Fee-Sensitive Traveller",
-    "Already Loyal",
-    "Low Responsiveness",
 ]
+
+TARGETED = set(PATTERN_ORDER)
+
+INTERVENTION = {
+    "Points Optimiser": "2x / 3x points",
+    "Immediate Value Seeker": "Cashback",
+    "Threshold Chaser": "Spend ¥10,000, get ¥1,000 back",
+    "Category Loyalist": "Dining / retail / attraction-specific reward",
+    "Merchant Explorer": "Merchant-specific voucher",
+}
+
+OBSERVES = {
+    "Points Optimiser": "Historically increases spend when points multipliers appear",
+    "Immediate Value Seeker": "Stronger response to direct monetary savings",
+    "Threshold Chaser": "Spend jumps when close to a reward threshold",
+    "Category Loyalist": "Consistently spends heavily in one category",
+    "Merchant Explorer": "Frequently tries new merchants and local businesses",
+}
 
 
 def _threshold_score(amounts: np.ndarray) -> float:
@@ -77,28 +69,17 @@ def _threshold_score(amounts: np.ndarray) -> float:
 
 
 def classify_vectorised(up: pd.DataFrame) -> np.ndarray:
-    """Assign patterns by priority. Cutoffs are relative (data quantiles) so the
-    split stays sensible regardless of the exact spend scale."""
-    pu = up["predicted_uplift"]
-    low_cut = pu.quantile(0.10)          # bottom-decile responsiveness
-    med = pu.quantile(0.50)
-    cash_hi = up["mean_cash"].quantile(0.75)
+    """Assign one of the five patterns by priority (data-relative cutoffs)."""
     explorer_cut = up["distinct_merchants"].quantile(0.80)
     thr_cut = up["threshold_score"].quantile(0.85)
 
     conditions = [
-        pu < low_cut,
-        up["spend_top_quartile"] & (pu < med),
-        (up["mean_cash"] >= cash_hi) & (pu < med),
         up["distinct_merchants"] >= explorer_cut,
         up["category_hhi"] >= HHI_LOYAL,
         up["threshold_score"] >= thr_cut,
         up["te_points"] >= up["te_credit"],
     ]
     choices = [
-        "Low Responsiveness",
-        "Already Loyal",
-        "Fee-Sensitive Traveller",
         "Merchant Explorer",
         "Category Loyalist",
         "Threshold Chaser",
@@ -111,13 +92,13 @@ def _voucher(pattern: str, cat: str, sub: str, merchant: str) -> str:
     if pattern == "Merchant Explorer":
         return f"{merchant} voucher"
     if pattern == "Category Loyalist":
-        return f"{sub} reward ({cat})"
+        return f"{cat.title()} / {sub} reward"
     if pattern == "Points Optimiser":
         return f"3x points on {cat}"
     if pattern == "Immediate Value Seeker":
         return f"Cashback at {merchant}"
     if pattern == "Threshold Chaser":
-        return f"Spend & get-back at {merchant}"
+        return f"Spend ¥10,000, get ¥1,000 back · {merchant}"
     return "—"
 
 
@@ -181,7 +162,7 @@ def build(
         up[c] = up[c].fillna(0.0)
 
     up["pattern"] = classify_vectorised(up)
-    up["is_targeted"] = up["pattern"].isin(TARGETED)
+    up["is_targeted"] = True
     up["recommended_intervention"] = up["pattern"].map(INTERVENTION)
 
     # ---- incentive drill: top sub-category + merchant in the top category --
@@ -215,10 +196,10 @@ def build(
     up["top_category"] = up["top_category"].fillna("—")
 
     up["recommended_voucher"] = [
-        _voucher(p, c, s, mch) if t else "—"
-        for p, c, s, mch, t in zip(
+        _voucher(p, c, s, mch)
+        for p, c, s, mch in zip(
             up["pattern"], up["top_category"], up["top_subcategory"],
-            up["top_merchant"], up["is_targeted"],
+            up["top_merchant"],
         )
     ]
     return up
@@ -245,11 +226,9 @@ def run() -> pd.DataFrame:
     counts = seg["pattern"].value_counts().reindex(PATTERN_ORDER).fillna(0).astype(int)
     n = len(seg)
     for p in PATTERN_ORDER:
-        flag = "target" if p in TARGETED else "skip"
-        print(f"  {p:<26} {counts[p]:>5}  ({counts[p]/n:>5.1%})  [{flag}]")
-    targeted = seg[seg["is_targeted"]]
-    print(f"\ntargeted members: {len(targeted):,} / {n:,}")
-    print(f"leakage at stake (targeted): ${targeted['leakage_estimate'].sum():,.0f}")
+        print(f"  {p:<26} {counts[p]:>5}  ({counts[p]/n:>5.1%})  → {INTERVENTION[p]}")
+    print(f"\ntargeted members: {n:,} / {n:,}")
+    print(f"leakage at stake: ${seg['leakage_estimate'].sum():,.0f}")
     print(f"\nwrote {OUTPUT_DIR / 'behavioral_segments.csv'}")
     return seg
 

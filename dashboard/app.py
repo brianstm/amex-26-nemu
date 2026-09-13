@@ -78,10 +78,10 @@ function(cluster) {
   var n = cluster.getChildCount();
   var size = n < 10 ? 36 : (n < 40 ? 44 : 54);
   return L.divIcon({
-    html: '<div style="background:#A7FC04;border:2px solid #1E1E1E;border-radius:50%;'
+    html: '<div style="background:rgba(167,252,4,0.55);border:2px solid #B0B0B0;border-radius:50%;'
       + 'width:' + size + 'px;height:' + size + 'px;display:flex;align-items:center;'
       + 'justify-content:center;font-family:Montserrat,sans-serif;font-weight:800;'
-      + 'font-size:13px;color:#1E1E1E;box-shadow:0 1px 4px rgba(0,0,0,.2);">'
+      + 'font-size:13px;color:#1E1E1E;box-shadow:0 1px 3px rgba(0,0,0,.12);">'
       + n + '</div>',
     className: '',
     iconSize: L.point(size, size)
@@ -538,11 +538,11 @@ def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
         folium.CircleMarker(
             location=[float(row.pin_lat), float(row.pin_lon)],
             radius=7,
-            color=CHARCOAL,
-            weight=1,
+            color=color,
+            weight=0,
             fill=True,
             fill_color=color,
-            fill_opacity=0.85,
+            fill_opacity=0.9,
             popup=folium.Popup(popup_html, max_width=240),
             tooltip=name,
         ).add_to(cluster)
@@ -1158,12 +1158,12 @@ def main() -> None:
     with tab_offers:
         st.subheader("Who to reward, and with what")
         explain(
-            "For the offer markets, each traveller is sorted into a behaviour "
-            "type, then followed from their top spending category down to a "
-            "specific merchant and the exact voucher to send.",
-            "A blanket points offer wastes money on people who would spend "
-            "anyway. NEMU only rewards the five responsive types and skips the "
-            "three that never change, so rewards turn into real return.",
+            "Each traveller is sorted into one of five behaviour types, then "
+            "followed from their top spending category down to a specific "
+            "merchant and the exact offer to send.",
+            "A blanket points offer wastes money on people who respond to cash "
+            "or a merchant voucher instead. Matching the offer to the behaviour "
+            "type turns rewards into real return.",
         )
         seg = data["segments"]
         if seg.empty:
@@ -1174,55 +1174,71 @@ def main() -> None:
         else:
             if f_seg:
                 seg = seg[seg["segment"].isin(f_seg)]
-            targeted = seg[seg["is_targeted"]]
+            targeted = seg[seg["is_targeted"]] if "is_targeted" in seg.columns else seg
             o1, o2, o3 = st.columns(3)
             o1.metric("Targeted travellers", f"{len(targeted):,}")
-            o2.metric("Skipped (no incentive)", f"{len(seg) - len(targeted):,}")
+            o2.metric("Behaviour types", "5")
             o3.metric("Leakage at stake", money(targeted["leakage_estimate"].sum()))
 
             pattern_info = [
-                ("Points Optimiser", "Spends more when points multipliers appear", "2x / 3x points", True),
-                ("Immediate Value Seeker", "Responds to direct monetary savings", "Cashback / statement credit", True),
-                ("Threshold Chaser", "Spend jumps near a reward threshold", "Spend X, get Y back", True),
-                ("Category Loyalist", "Spends heavily in one category", "Category-specific reward", True),
-                ("Merchant Explorer", "Tries many new merchants & local shops", "Merchant-specific voucher", True),
-                ("Fee-Sensitive Traveller", "Usage falls where FX friction is high", "FX-offset credit (out of scope)", False),
-                ("Already Loyal", "Would use Amex regardless", "No incentive", False),
-                ("Low Responsiveness", "Does not change behaviour after offers", "No incentive", False),
+                (
+                    "Points Optimiser",
+                    "Historically increases spend when points multipliers appear",
+                    "2x / 3x points",
+                ),
+                (
+                    "Immediate Value Seeker",
+                    "Stronger response to direct monetary savings",
+                    "Cashback",
+                ),
+                (
+                    "Threshold Chaser",
+                    "Spend jumps when close to a reward threshold",
+                    "Spend ¥10,000, get ¥1,000 back",
+                ),
+                (
+                    "Category Loyalist",
+                    "Consistently spends heavily in one category",
+                    "Dining / retail / attraction-specific reward",
+                ),
+                (
+                    "Merchant Explorer",
+                    "Frequently tries new merchants and local businesses",
+                    "Merchant-specific voucher",
+                ),
             ]
             counts = seg["pattern"].value_counts()
             ref = pd.DataFrame(
                 [
                     {
-                        "Pattern": p,
+                        "Behavioural Patterns": p,
                         "What NEMU observes": obs,
-                        "Best intervention": act,
+                        "Possible Intervention": act,
                         "Travellers": int(counts.get(p, 0)),
-                        "Action": "target" if keep else "skip",
                     }
-                    for p, obs, act, keep in pattern_info
+                    for p, obs, act in pattern_info
                 ]
             )
             st.dataframe(ref, width="stretch", hide_index=True)
 
             dist = (
-                seg.groupby(["pattern", "is_targeted"], as_index=False)
+                seg.groupby("pattern", as_index=False)
                 .size()
                 .rename(columns={"size": "travellers"})
             )
-            dist["group"] = dist["is_targeted"].map({True: "Targeted", False: "Skipped"})
+            order = [p for p, _, _ in pattern_info]
+            dist["pattern"] = pd.Categorical(dist["pattern"], categories=order, ordered=True)
             figp = px.bar(
-                dist.sort_values("travellers"),
+                dist.sort_values("pattern", ascending=False),
                 x="travellers",
                 y="pattern",
-                color="group",
                 orientation="h",
-                color_discrete_map={"Targeted": LIME, "Skipped": GRAY},
+                color_discrete_sequence=[LIME],
                 title="How many travellers of each shopper type",
             )
             figp.update_xaxes(title="Travellers")
             figp.update_yaxes(title="")
-            st.plotly_chart(style_fig(figp, theme, height=440), width="stretch")
+            st.plotly_chart(style_fig(figp, theme, height=360), width="stretch")
 
             st.markdown("**Who gets which offer**")
             st.write(
@@ -1243,10 +1259,7 @@ def main() -> None:
                     "lift for that person. We then prove those predictions hold up "
                     "with a real randomised test in the last tab."
                 )
-            avail = [
-                p for p, _, _, keep in pattern_info
-                if keep and (targeted["pattern"] == p).any()
-            ]
+            avail = [p for p, _, _ in pattern_info if (targeted["pattern"] == p).any()]
             f_pat = st.multiselect("Show only these shopper types", avail)
             drill = targeted.copy()
             if f_pat:
