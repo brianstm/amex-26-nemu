@@ -229,7 +229,6 @@ def fx_rates_table() -> pd.DataFrame:
                 "Country": country,
                 "Currency": CURRENCY.get(country, "—"),
                 "Local per 1 USD": float(lcu),
-                "SGD per 1 USD": SGD_PER_USD,
             }
         )
     return pd.DataFrame(rows)
@@ -634,11 +633,11 @@ def main() -> None:
     )
     rate_label = f"{SGD_PER_USD:.6f}"
     with st.expander(
-        f"FX rates used · shown in SGD (Singapore rate {rate_label} per 1 USD)",
+        f"FX rates used",
         expanded=False,
     ):
         st.caption(
-            "Amounts start in USD and are converted to SGD using the World Bank "
+            "All data standardized to show in SGD using the World Bank "
             f"Singapore rate ({rate_label} SGD per 1 USD). "
             "The table below is the same public FX series attached to tickets."
         )
@@ -647,7 +646,6 @@ def main() -> None:
             fx.style.format(
                 {
                     "Local per 1 USD": "{:,.6f}",
-                    "SGD per 1 USD": "{:,.6f}",
                 }
             ),
             width="stretch",
