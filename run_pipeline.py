@@ -33,7 +33,10 @@ _require_working_scipy()
 
 from data.generate_synthetic import generate
 from explain.cause_classifier import run as run_explain
+from match.behavioral_segments import run as run_segments
+from match.discover_merchants import run as run_discovery
 from match.merchant_clustering import run as run_merchants
+from match.merchant_targets_detail import run as run_merchant_detail
 from match.uplift_model import run as run_uplift
 from notice.counterfactual_model import run as run_notice
 from uplift.holdout_measurement import run as run_holdout
@@ -44,7 +47,10 @@ def main() -> None:
     run_notice()
     run_explain()
     run_merchants()
+    run_merchant_detail()
+    run_discovery()
     run_uplift()
+    run_segments()
     run_holdout()
     print("\nPipeline complete. Launch the demo with:")
     print("  .venv/bin/streamlit run dashboard/app.py")

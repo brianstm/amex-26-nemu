@@ -1,0 +1,97 @@
+dest_country,dest_district,merchant_name,category,visits,keep,tourist_score,reason
+Indonesia,Malioboro,TransJakarta,transport,30,False,0.1,Public transit infrastructure from Jakarta misattributed to Malioboro.
+Indonesia,Malioboro,Malioboro 1,transport,26,False,0.2,Public bus stop infrastructure not suitable for merchant acquisition.
+Indonesia,Malioboro,Mangkubumi 1,transport,25,False,0.2,Public transit bus stop location.
+Indonesia,Malioboro,Parkir Bus Wisata,transport,24,False,0.3,Municipal bus parking lot facility rather than a point-of-sale merchant.
+Indonesia,Malioboro,MRT Jakarta,transport,24,False,0.1,Jakarta metro system mislocated in Yogyakarta.
+Indonesia,Malioboro,Blue Bird,transport,23,False,0.4,National taxi fleet company managed centrally rather than local venue acquisition.
+Indonesia,Malioboro,Srigading,retail,22,True,0.8,Independent local retail business in a prominent tourist corridor.
+Indonesia,Malioboro,Tugu Station,transport,22,False,0.6,State railway hub rather than individual card-accepting merchant.
+Indonesia,Malioboro,Indomaret,retail,21,False,0.4,Ubiquitous national convenience chain with low average transaction values.
+Indonesia,Malioboro,TransJogja,transport,20,False,0.2,Public bus transport system.
+Indonesia,Malioboro,Simple Tour,retail,20,True,0.85,Local travel agency serving foreign and domestic visitors with high card spend potential.
+Indonesia,Malioboro,Mangkubumi 2,transport,20,False,0.2,Public transit bus stop facility.
+Indonesia,Ubud,Bali Bagus,retail,45,True,0.5,Local shop with tourist footfall.
+Indonesia,Ubud,Ubud Palace stop,transport,43,False,0.3,Transit stop near the palace.
+Indonesia,Ubud,TransJakarta,transport,41,False,0.1,Jakarta bus rapid transit (misplaced record).
+Indonesia,Ubud,Fresh! Spa,retail,38,True,0.6,"Tourist spa, typically cash-heavy."
+Indonesia,Ubud,Vio,retail,38,True,0.45,Independent shop / cafe.
+Indonesia,Ubud,Threads of Life,retail,36,True,0.65,Well-known textile gallery popular with visitors.
+Indonesia,Ubud,Kura-Kura Bus,transport,35,False,0.25,Tourist shuttle operator.
+Indonesia,Ubud,Blue Bird,transport,34,False,0.25,Taxi fleet that already accepts cards.
+Indonesia,Ubud,Jaens Spa Ubud,retail,34,True,0.6,"Popular spa, cash-heavy."
+Indonesia,Ubud,MRT Jakarta,transport,33,False,0.1,Jakarta metro (misplaced record).
+Indonesia,Ubud,Delta Dewata,retail,32,True,0.55,Local supermarket popular with tourists.
+Indonesia,Ubud,Grab,transport,32,False,0.2,"Ride-hailing app that already accepts cards, not a fixed acquiring target."
+Malaysia,George Town,Swettenham Pier,transport,56,False,0.5,"Cruise terminal / infrastructure, not a shop."
+Malaysia,George Town,KLIA Ekspres,transport,49,False,0.35,"Airport rail, already cashless; kept on the map as a landmark."
+Malaysia,George Town,KOMTAR Terminal,transport,46,False,0.3,"Bus terminal, transit infrastructure."
+Malaysia,George Town,ETS,transport,42,False,0.2,Intercity rail operator.
+Malaysia,George Town,Grab,transport,38,False,0.2,"Ride-hailing app that already accepts cards, not a fixed acquiring target."
+Malaysia,George Town,Penang Times Square,retail,37,True,0.7,Busy shopping mall with mixed acceptance among tenants.
+Malaysia,George Town,Rapid Penang,transport,34,False,0.15,Public bus operator.
+Malaysia,George Town,Rapid KL,transport,34,False,0.15,Transit operator (misplaced record).
+Malaysia,George Town,Telagamas Motors,retail,32,False,0.3,"Auto dealer, low tourist relevance."
+Malaysia,George Town,Prasarana,transport,31,False,0.1,"Transit holding company, not a merchant."
+Malaysia,George Town,Banana Travel & Tours,retail,31,True,0.5,"Independent tour operator, likely card-light."
+Malaysia,George Town,Happy Mart,retail,28,True,0.45,Local convenience shop with tourist footfall.
+Thailand,Khao San,Granny Bike,retail,42,True,0.5,Independent rental / bike shop popular with backpackers.
+Thailand,Khao San,Velo Thailand,retail,41,True,0.55,Bike-tour shop with steady tourist demand.
+Thailand,Khao San,7-Eleven,retail,39,False,0.3,Global convenience chain that already takes cards.
+Thailand,Khao San,Thai Green,lodging,36,True,0.5,Independent guesthouse.
+Thailand,Khao San,Khao San market stalls,retail,35,True,0.7,"Cash-heavy street-market stalls, strong acceptance-gap target."
+Thailand,Khao San,Travel Store,retail,35,True,0.45,Independent travel shop.
+Thailand,Khao San,Thai Airways Contact Center,retail,33,False,0.15,"Airline office, not a walk-in merchant."
+Thailand,Khao San,At Home Guest House,lodging,32,True,0.55,Independent guesthouse.
+Thailand,Khao San,Baan Sabai Thai Massage,retail,32,True,0.6,Popular cash-heavy massage spa.
+Thailand,Khao San,Buddy Lodge,lodging,30,True,0.6,Well-known Khao San hotel.
+Thailand,Khao San,Apple,lodging,28,False,0.2,Ambiguous / likely global chain or mislabeled record.
+Thailand,Khao San,Nat,lodging,28,False,0.25,Ambiguous placeholder name.
+Thailand,Old City,RTC,transport,55,False,0.2,Regional transit.
+Thailand,Old City,Chang Phuak Gate,transport,52,False,0.6,"Historic city gate, a landmark not a merchant."
+Thailand,Old City,Grab,transport,52,False,0.2,"Ride-hailing app that already accepts cards, not a fixed acquiring target."
+Thailand,Old City,MRT Blue Line,transport,51,False,0.1,Bangkok metro (misplaced record).
+Thailand,Old City,Airport Rail Link,transport,51,False,0.1,Airport rail (misplaced record).
+Thailand,Old City,BMTA,transport,51,False,0.1,Bangkok bus authority.
+Thailand,Old City,BTS Skytrain,transport,45,False,0.1,Bangkok skytrain (misplaced record).
+Thailand,Old City,Green Bamboo Massage,retail,26,True,0.6,Popular cash-heavy massage spa.
+Thailand,Old City,Rama Guest House,lodging,26,True,0.55,Independent guesthouse.
+Thailand,Old City,Thapae Boutique House,lodging,25,True,0.6,Boutique hotel in the Old City.
+Thailand,Old City,T. J. R. Boutique House,lodging,22,True,0.55,Boutique guesthouse.
+Thailand,Old City,La Terrasse,dining,22,True,0.55,Independent restaurant.
+Vietnam,Ba Dinh,Grab,transport,56,False,0.2,"Ride-hailing app that already accepts cards, not a fixed acquiring target."
+Vietnam,Ba Dinh,Saigon Metro,transport,55,False,0.1,Transit operator (and geographically misplaced); nothing to onboard.
+Vietnam,Ba Dinh,Vietnam Airlines,transport,53,False,0.15,National airline already accepts Amex.
+Vietnam,Ba Dinh,Mai Linh Taxi,transport,47,False,0.25,"Taxi fleet, not a fixed-location merchant to sign."
+Vietnam,Ba Dinh,Hanoi Metro,transport,47,False,0.15,"Public transit, not a merchant."
+Vietnam,Ba Dinh,Ba Dinh Square,transport,33,False,0.2,"Public landmark, no merchant to onboard."
+Vietnam,Ba Dinh,Pow pow Snow,retail,22,True,0.55,Independent dessert cafe with tourist footfall.
+Vietnam,Ba Dinh,Khách Sạn Hanoi Friends Inn,lodging,20,True,0.6,"Independent guesthouse, likely card-light."
+Vietnam,Ba Dinh,DIY Box,dining,19,True,0.5,Independent eatery worth an acquiring call.
+Vietnam,Ba Dinh,Imperial Citadel of Thang Long,retail,18,False,0.7,"UNESCO site ticketed by an authority, not a signable shop."
+Vietnam,Ba Dinh,Ray Quan,dining,18,True,0.55,Local restaurant frequented by visitors.
+Vietnam,Ba Dinh,Khách Sạn Calypso Grand,lodging,18,True,0.65,"Independent hotel, strong acquiring candidate."
+Vietnam,Han River,Grand Mercure Danang,lodging,130,False,0.6,Accor chain hotel that already accepts Amex.
+Vietnam,Han River,Han Market,retail,130,True,0.8,"Iconic cash-heavy local market, prime acquiring target."
+Vietnam,Han River,Hilton Da Nang,lodging,120,False,0.6,"Global chain hotel, already accepts Amex."
+Vietnam,Han River,Vincom Da Nang,retail,109,True,0.65,Shopping mall with mixed tenant acceptance.
+Vietnam,Han River,Vietnam Airlines,transport,44,False,0.15,National airline already accepts Amex.
+Vietnam,Han River,Saigon Metro,transport,38,False,0.1,Transit operator (and geographically misplaced); nothing to onboard.
+Vietnam,Han River,Grab,transport,38,False,0.2,"Ride-hailing app that already accepts cards, not a fixed acquiring target."
+Vietnam,Han River,Mai Linh Taxi,transport,37,False,0.25,"Taxi fleet, not a fixed-location merchant to sign."
+Vietnam,Han River,Dragon Bridge,transport,32,False,0.75,"Landmark bridge, not a merchant."
+Vietnam,Han River,Hanoi Metro,transport,31,False,0.15,"Public transit, not a merchant."
+Vietnam,Han River,Da Nang Station,transport,26,False,0.2,Rail station.
+Vietnam,Han River,LuuLy Coffee,dining,14,True,0.5,Independent cafe.
+Vietnam,Old Quarter,Hang Ngang silk shops,retail,152,True,0.7,"Cash-heavy silk shopping street, strong target."
+Vietnam,Old Quarter,Pho Gia Truyen Bat Dan,dining,143,True,0.85,"Famous cash-only pho institution, prime acquiring target."
+Vietnam,Old Quarter,La Siesta Classic Ma May,lodging,128,True,0.7,Well-reviewed independent boutique hotel.
+Vietnam,Old Quarter,Hanoi Social Club stay,lodging,125,True,0.6,Popular independent cafe and stay.
+Vietnam,Old Quarter,Dong Xuan Market,retail,113,True,0.8,"Largest indoor market, cash-heavy, prime target."
+Vietnam,Old Quarter,Bun Cha Huong Lien,dining,111,True,0.85,"Famous 'Obama' bun cha, cash-only, prime target."
+Vietnam,Old Quarter,Vietnam Airlines,transport,57,False,0.15,National airline already accepts Amex.
+Vietnam,Old Quarter,Mai Linh Taxi,transport,51,False,0.25,"Taxi fleet, not a fixed-location merchant to sign."
+Vietnam,Old Quarter,Grab,transport,48,False,0.2,"Ride-hailing app that already accepts cards, not a fixed acquiring target."
+Vietnam,Old Quarter,Hoan Kiem Lake walk,transport,42,False,0.7,"Public lakeside promenade, no merchant."
+Vietnam,Old Quarter,Saigon Metro,transport,42,False,0.1,Transit operator (and geographically misplaced); nothing to onboard.
+Vietnam,Old Quarter,Hanoi Metro,transport,41,False,0.15,"Public transit, not a merchant."

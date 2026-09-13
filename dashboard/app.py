@@ -6,16 +6,34 @@ import json
 import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import pydeck as pdk
 import streamlit as st
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from data.config import OUTPUT_DIR
+from data.config import (
+    CATEGORY_IMAGES,
+    DISTRICT_COORDS,
+    DISTRICT_IMAGES,
+    MERCHANT_IMAGES,
+    OUTPUT_DIR,
+    REGION,
+    REGION_ORDER,
+)
+
+_FALLBACK_IMG = next(iter(DISTRICT_IMAGES.values()), "")
+_CAT_RGB = {
+    "dining": [167, 252, 4],
+    "retail": [47, 95, 194],
+    "transport": [217, 122, 89],
+    "lodging": [133, 50, 168],
+}
 
 CHARCOAL = "#1E1E1E"
 INK = "#1A1A1A"
@@ -91,6 +109,12 @@ def load_all() -> dict:
     holdout = pd.read_csv(OUTPUT_DIR / "holdout_assignments.csv")
     calib = pd.read_csv(OUTPUT_DIR / "holdout_calibration.csv")
     corridor_val = pd.read_csv(OUTPUT_DIR / "validation_corridor.csv")
+    md_path = OUTPUT_DIR / "merchant_targets_detail.csv"
+    merch_detail = pd.read_csv(md_path) if md_path.exists() else pd.DataFrame()
+    seg_path = OUTPUT_DIR / "behavioral_segments.csv"
+    segments = pd.read_csv(seg_path) if seg_path.exists() else pd.DataFrame()
+    disc_path = OUTPUT_DIR / "merchant_discovery.csv"
+    discovery = pd.read_csv(disc_path) if disc_path.exists() else pd.DataFrame()
     metrics = json.loads((OUTPUT_DIR / "notice_metrics.json").read_text())
     holdout_m = json.loads((OUTPUT_DIR / "holdout_metrics.json").read_text())
     merged = leakage.merge(
@@ -106,6 +130,9 @@ def load_all() -> dict:
         "holdout": holdout,
         "calib": calib,
         "corridor_val": corridor_val,
+        "merch_detail": merch_detail,
+        "segments": segments,
+        "discovery": discovery,
         "metrics": metrics,
         "holdout_m": holdout_m,
     }
@@ -149,6 +176,11 @@ def style_fig(fig: go.Figure, theme: dict, height: int = 420) -> go.Figure:
         ),
         coloraxis_colorbar=dict(outlinewidth=0),
         legend_title_text="",
+        hoverlabel=dict(
+            bgcolor=WHITE,
+            bordercolor=GRAY,
+            font=dict(family=FONT, color=CHARCOAL, size=12),
+        ),
     )
     fig.update_xaxes(
         gridcolor=theme["grid"],
@@ -247,18 +279,51 @@ def inject_css(theme: dict) -> None:
         div[data-testid="stExpander"], div[data-testid="stDataFrame"] {{
             border: 1px solid {theme["border"]};
         }}
+        /* Streamlit 1.54+ chips use [data-tag], not data-baseweb="tag".
+           Primary lime + white text fails contrast — force charcoal text/icons. */
+        [data-testid="stMultiSelect"] [data-tag],
+        [data-testid="stMultiSelect"] [data-tag] * {{
+            background-color: {LIME} !important;
+            color: {CHARCOAL} !important;
+            -webkit-text-fill-color: {CHARCOAL} !important;
+        }}
+        [data-testid="stMultiSelect"] [data-tag] {{
+            border: 1px solid {LIME} !important;
+            border-radius: 4px !important;
+        }}
+        [data-testid="stMultiSelect"] [data-tag] button,
+        [data-testid="stMultiSelect"] [data-tag] svg,
+        [data-testid="stMultiSelect"] [data-tag] path {{
+            background: transparent !important;
+            color: {CHARCOAL} !important;
+            fill: {CHARCOAL} !important;
+            stroke: {CHARCOAL} !important;
+            -webkit-text-fill-color: {CHARCOAL} !important;
+        }}
+        /* Keep the lime block size; allow "Nemu" glyphs to paint outside it. */
+        .element-container:has(.nemu-wordmark),
+        [data-testid="stMarkdownContainer"]:has(.nemu-wordmark),
+        [data-testid="stMarkdownContainer"]:has(.nemu-wordmark) > * {{
+            overflow: visible !important;
+        }}
         .nemu-wordmark {{
             display: inline-block;
             background: {LIME};
-            padding: 0.12rem 1.35rem 0.02rem 1.35rem;
+            padding: 0.55rem 1.35rem 0.35rem 1.35rem;
+            height: 4.1rem;
+            box-sizing: border-box;
             line-height: 1;
+            overflow: visible;
         }}
         .nemu-wordmark span {{
             font-family: "Montserrat", sans-serif;
             font-weight: 900;
-            font-size: 3.4rem;
+            font-size: 3.2rem;
+            line-height: 1.15;
+            display: inline-block;
             color: {CHARCOAL};
             letter-spacing: -0.045em;
+            overflow: visible;
         }}
         .nemu-pillars {{
             margin-top: 0.55rem;
@@ -286,6 +351,28 @@ def inject_css(theme: dict) -> None:
             line-height: 1.45;
         }}
         .nemu-claim strong {{ color: {theme["claim_strong"]}; font-weight: 700; }}
+        .nemu-explain {{
+            background: {theme["card"]};
+            border-left: 4px solid {LIME};
+            padding: 0.75rem 1.05rem;
+            margin: 0.2rem 0 1.1rem 0;
+            color: {theme["claim_text"]};
+            font-weight: 400;
+            font-size: 0.94rem;
+            line-height: 1.5;
+        }}
+        .nemu-what, .nemu-why {{
+            display: inline-block;
+            font-weight: 800;
+            font-size: 0.62rem;
+            letter-spacing: 0.12em;
+            color: {CHARCOAL};
+            background: {LIME};
+            padding: 0.05rem 0.4rem;
+            margin-right: 0.5rem;
+            border-radius: 2px;
+        }}
+        .nemu-why {{ margin-top: 0.35rem; }}
         header[data-testid="stHeader"] {{ background: {theme["header_bg"]}; }}
         </style>
         """,
@@ -293,8 +380,10 @@ def inject_css(theme: dict) -> None:
     )
 
 
-def apply_filters(df: pd.DataFrame, country, category, segment) -> pd.DataFrame:
+def apply_filters(df: pd.DataFrame, country, category, segment, region=None) -> pd.DataFrame:
     out = df
+    if region and "dest_country" in out.columns:
+        out = out[out["dest_country"].map(REGION).isin(region)]
     if country:
         out = out[out["dest_country"].isin(country)]
     if category:
@@ -304,13 +393,146 @@ def apply_filters(df: pd.DataFrame, country, category, segment) -> pd.DataFrame:
     return out
 
 
+def _zoom_for(lats: pd.Series, lons: pd.Series) -> float:
+    """Rough zoom level so the visible points fit the frame."""
+    if len(lats) <= 1:
+        return 12.0
+    span = max(float(lats.max() - lats.min()), float(lons.max() - lons.min()))
+    for limit, z in [(0.2, 12), (1, 9), (5, 6), (20, 4.2), (60, 3.2)]:
+        if span < limit:
+            return float(z)
+    return 2.5
+
+
+def merchant_map(md: pd.DataFrame, focus_districts: list, theme: dict) -> None:
+    """Interactive map (pydeck / Carto) whose hover cards show a real photo.
+
+    Scroll to zoom, drag to pan. With no district picked you see districts as
+    bubbles; pick one (or more) and it zooms in to the named merchants, each
+    pin showing a picture of the place plus its numbers on hover.
+    """
+    md = md.copy()
+    md["lat"] = md["dest_district"].map(lambda d: DISTRICT_COORDS.get(d, (None, None))[0])
+    md["lon"] = md["dest_district"].map(lambda d: DISTRICT_COORDS.get(d, (None, None))[1])
+    md = md.dropna(subset=["lat", "lon"])
+    if md.empty:
+        st.info("No mapped districts for the current filters.")
+        return
+
+    if focus_districts:
+        # merchant view: spread each district's merchants around its centre so
+        # they read as a cluster of pins (we have no per-merchant coordinates).
+        rng = np.random.default_rng(26)
+        d = md.sort_values("est_recoverable_value", ascending=False).head(70).copy()
+        # scatter tightly around the district centre so pins sit over the town
+        # (we have no exact store coordinates); positions are illustrative.
+        ang = rng.uniform(0, 2 * np.pi, len(d))
+        rad = 0.010 * np.sqrt(rng.uniform(0, 1, len(d)))
+        d["lat"] = d["lat"] + rad * np.cos(ang)
+        d["lon"] = d["lon"] + rad * np.sin(ang)
+        d["name"] = d["merchant_name"]
+        # Named brands (KLIA Ekspres, Uniqlo...) show their own photo; other
+        # local shops show a photo of their category so pins vary by type.
+        d["image_url"] = [
+            MERCHANT_IMAGES.get(n) or CATEGORY_IMAGES.get(cat)
+            or DISTRICT_IMAGES.get(dist) or _FALLBACK_IMG
+            for n, cat, dist in zip(d["merchant_name"], d["category"], d["dest_district"])
+        ]
+        d["l1"] = [f"{dist} · {sub}" for dist, sub in zip(d["dest_district"], d["sub_category"])]
+        d["l2"] = d["price_range"]
+        d["l3"] = [
+            f"{v} visits · ${val:,.0f} recoverable"
+            for v, val in zip(d["visits"], d["est_recoverable_value"])
+        ]
+        d["color"] = d["category"].map(lambda c: _CAT_RGB.get(c, [120, 120, 120]))
+        val = d["est_recoverable_value"].to_numpy(dtype=float)
+    else:
+        # district view: one bubble per district, sized by recoverable value.
+        d = (
+            md.groupby(["region", "dest_country", "dest_city", "dest_district"], as_index=False)
+            .agg(
+                recoverable=("est_recoverable_value", "sum"),
+                merchants=("merchant_name", "nunique"),
+                card_share=("credit_share", "mean"),
+                lat=("lat", "first"),
+                lon=("lon", "first"),
+            )
+        )
+        d["name"] = d["dest_district"]
+        d["image_url"] = [DISTRICT_IMAGES.get(x) or _FALLBACK_IMG for x in d["dest_district"]]
+        d["l1"] = [f"{city}, {country}" for city, country in zip(d["dest_city"], d["dest_country"])]
+        d["l2"] = [f"{m} merchants to target" for m in d["merchants"]]
+        d["l3"] = [
+            f"${val:,.0f} recoverable · {cs:.0%} on card"
+            for val, cs in zip(d["recoverable"], d["card_share"])
+        ]
+        d["color"] = [[167, 252, 4]] * len(d)
+        val = d["recoverable"].to_numpy(dtype=float)
+
+    hi = float(val.max()) or 1.0
+    merch_view = bool(focus_districts)
+    d["radius"] = (120 if merch_view else 300) + (700 if merch_view else 3200) * (val / hi)
+
+    layer = pdk.Layer(
+        "ScatterplotLayer",
+        data=d,
+        get_position="[lon, lat]",
+        get_radius="radius",
+        get_fill_color="color",
+        opacity=0.6,
+        stroked=False,
+        pickable=True,
+        radius_min_pixels=4,
+        radius_max_pixels=12 if merch_view else 30,
+    )
+    view = pdk.ViewState(
+        latitude=float(d["lat"].mean()),
+        longitude=float(d["lon"].mean()),
+        zoom=_zoom_for(d["lat"], d["lon"]),
+    )
+    tooltip = {
+        "html": (
+            "<div style='max-width:220px'>"
+            "<img src='{image_url}' style='width:210px;border-radius:6px;"
+            "margin-bottom:6px;display:block'/>"
+            "<b>{name}</b><br>{l1}<br>{l2}<br>{l3}</div>"
+        ),
+        "style": {
+            "backgroundColor": "white",
+            "color": "#1E1E1E",
+            "fontFamily": "Montserrat, sans-serif",
+            "fontSize": "12px",
+            "borderRadius": "8px",
+            "padding": "8px",
+            "boxShadow": "0 2px 8px rgba(0,0,0,0.15)",
+        },
+    }
+    st.pydeck_chart(
+        pdk.Deck(layers=[layer], initial_view_state=view, map_style="light", tooltip=tooltip),
+        width="stretch",
+    )
+    if merch_view:
+        st.caption(
+            "Pins are scattered around the district centre for illustration, "
+            "not exact store addresses (we don't hold per-merchant coordinates)."
+        )
+
+
+def explain(what: str, why: str) -> None:
+    """Plain-English 'what am I looking at / why it matters' note per tab."""
+    st.markdown(
+        f'<div class="nemu-explain"><span class="nemu-what">WHAT</span> {what}'
+        f'<br><span class="nemu-why">WHY IT MATTERS</span> {why}</div>',
+        unsafe_allow_html=True,
+    )
+
+
 def main() -> None:
     data = load_all()
     m = data["metrics"]
     leakage = data["leakage"]
 
-    mode = st.session_state.get("theme_mode", "Dark")
-    theme = THEMES[mode]
+    theme = THEMES["Light"]
     inject_css(theme)
     st.markdown(
         """
@@ -335,52 +557,67 @@ def main() -> None:
     )
 
     st.markdown(
-        f'<div class="nemu-claim"><strong>Demo claim.</strong> We hid {money(m["hidden_acceptance_leakage"])} of coverage leakage. '
-        f'The gravity model found {money(m["estimated_leakage"])} '
-        f'({m["recovery_ratio_vs_acceptance"]:.0%}) without seeing the labels, '
-        f'and attributed {m.get("cause_value_weighted_accuracy", 0):.0%} of estimated '
-        f'dollars to the correct cause.</div>',
+        f'<div class="nemu-claim">Here is the quick proof this works. We took our '
+        f'test data and hid {money(m["hidden_acceptance_leakage"])} of spending that '
+        f'Amex was quietly losing. Without ever being shown the answer, the model '
+        f'found {money(m["estimated_leakage"])} of it '
+        f'({m["recovery_ratio_vs_acceptance"]:.0%}) and correctly worked out where '
+        f'{m.get("cause_value_weighted_accuracy", 0):.0%} of those dollars were '
+        f'going.</div>',
         unsafe_allow_html=True,
     )
 
     with st.sidebar:
-        st.header("Appearance")
-        st.radio(
-            "Mode",
-            ["Dark", "Light"],
-            horizontal=True,
-            key="theme_mode",
-            label_visibility="collapsed",
-        )
         st.header("Filters")
-        countries = sorted(leakage["dest_country"].unique())
+        f_region = st.multiselect("Region", REGION_ORDER)
+        # Region cascades into the destination list. LATAM / US have no corridor
+        # data yet. Amex would light these up as NEMU expands.
+        empty_regions = [r for r in f_region if r in {"LATAM", "US"}
+                         and not (leakage["dest_country"].map(REGION) == r).any()]
+        if empty_regions:
+            st.caption(f"No corridor data yet for: {', '.join(empty_regions)}.")
+        country_pool = leakage["dest_country"]
+        if f_region:
+            country_pool = country_pool[country_pool.map(REGION).isin(f_region)]
+        countries = sorted(country_pool.unique())
         categories = sorted(leakage["category"].unique())
         segments = sorted(leakage["segment"].unique())
         f_country = st.multiselect("Destination", countries)
         f_cat = st.multiselect("Category", categories)
         f_seg = st.multiselect("Segment", segments)
 
-    view = apply_filters(leakage, f_country, f_cat, f_seg)
-    merged_view = apply_filters(data["merged"], f_country, f_cat, f_seg)
+    view = apply_filters(leakage, f_country, f_cat, f_seg, f_region)
+    merged_view = apply_filters(data["merged"], f_country, f_cat, f_seg, f_region)
 
-    tab_rank, tab_drill, tab_cause, tab_val, tab_merch, tab_hold = st.tabs(
+    (
+        tab_rank,
+        tab_drill,
+        tab_cause,
+        tab_merch,
+        tab_offers,
+        tab_val,
+        tab_hold,
+    ) = st.tabs(
         [
-            "Corridor ranking",
-            "Drill-down",
-            "Causes",
-            "Validation",
-            "Merchant targets",
-            "Holdout",
+            "1 · Where to grow",
+            "2 · Break it down",
+            "3 · Why the gap",
+            "4 · Merchants to target",
+            "5 · Offers",
+            "6 · Proof: model works",
+            "7 · Proof: offers pay off",
         ]
     )
 
     with tab_rank:
-        st.subheader("Observed volume is not recoverable value")
-        st.write(
-            "Left: destinations ranked the way a dashboard of *captured* spend would "
-            "rank them. Right: the same destinations ranked by Notice's recoverable "
-            "coverage leakage. Sparse, cheaper markets jump up the list — that is the "
-            "product."
+        st.subheader("Where to grow: what we see vs what we are missing")
+        explain(
+            "The same destinations, ranked two ways. On the left by the Amex "
+            "spend we already see. On the right by the spend we are missing and "
+            "could win back.",
+            "A normal dashboard only shows where we already win. The opportunity "
+            "is the places that jump up the right-hand list: smaller, cheaper "
+            "markets where cards are not widely accepted yet.",
         )
         agg = (
             view.groupby("dest_country", as_index=False)
@@ -430,14 +667,33 @@ def main() -> None:
         )
 
     with tab_drill:
-        st.subheader("Corridor → category → segment")
-        grain = st.radio("Grain", ["country", "country × category", "country × category × segment"], horizontal=True)
-        if grain == "country":
-            keys = ["dest_country"]
-        elif grain == "country × category":
-            keys = ["dest_country", "category"]
-        else:
-            keys = ["dest_country", "category", "segment"]
+        st.subheader("Break the opportunity down")
+        explain(
+            "The money we can win back, split by spending type first "
+            "(food, shopping, transport, hotels). You can then go deeper by "
+            "country and card tier.",
+            "You send a food reward or a shopping reward, not a country reward. "
+            "Seeing that most of the gap is food in Vietnam tells the team "
+            "exactly what offer to send.",
+        )
+        grain = st.radio(
+            "Group by",
+            [
+                "Category",
+                "Category × Country",
+                "Country",
+                "Country × Category",
+                "Country × Category × Segment",
+            ],
+            horizontal=True,
+        )
+        keys = {
+            "Category": ["category"],
+            "Category × Country": ["category", "dest_country"],
+            "Country": ["dest_country"],
+            "Country × Category": ["dest_country", "category"],
+            "Country × Category × Segment": ["dest_country", "category", "segment"],
+        }[grain]
         table = (
             view.groupby(keys, as_index=False)
             .agg(
@@ -465,12 +721,13 @@ def main() -> None:
 
         txns = data.get("txns", pd.DataFrame())
         if not txns.empty and {"merchant_name", "currency", "amount_local"}.issubset(txns.columns):
-            st.subheader("Issuer tickets (real currency + OSM merchants)")
+            st.subheader("The raw card transactions underneath")
             st.write(
-                "Spend and which trip the ticket belongs to are simulated. "
-                "`currency` is ISO 4217, `amount_local` uses World Bank FX, "
-                "`merchant_name` is an OpenStreetMap POI (or a public transport operator), "
-                "`mcc` is ISO 18245. This is not an Amex merchant file."
+                "This is the ticket-level data every chart above is built from: "
+                "one row per purchase. Each has a real currency code, a real "
+                "merchant name from OpenStreetMap, and an `mcc` (the industry "
+                "code, e.g. 5812 = restaurants). The amounts and which trip a "
+                "ticket belongs to are simulated; this is not real Amex data."
             )
             sample = txns
             if f_country:
@@ -492,6 +749,13 @@ def main() -> None:
                 ]
                 if c in sample.columns
             ]
+            # The file is ordered by category, so a plain head() would show only
+            # dining. Shuffle first so the preview mixes all four categories.
+            sample = sample.sample(frac=1.0, random_state=26)
+            st.caption(
+                f"Showing 25 of {len(sample):,} tickets, shuffled so you see a "
+                "mix of dining, retail, transport and lodging."
+            )
             st.dataframe(
                 sample[cols].head(25),
                 width="stretch",
@@ -499,11 +763,14 @@ def main() -> None:
             )
 
     with tab_cause:
-        st.subheader("Which lever, per destination")
-        st.write(
-            "no_acceptance → send acquiring. rail_substitution → send an offer. "
-            "cash → do not confuse a cash culture with a coverage hole. "
-            "no_demand → do nothing."
+        st.subheader("Why the gap, and which lever to pull")
+        explain(
+            "Every dollar we can win back is tagged with one of four reasons, "
+            "so the fix is obvious.",
+            "<b>no_acceptance</b>: sign up merchants (Tab 4). "
+            "<b>rail_substitution</b>: send an offer (Tab 5). "
+            "<b>cash</b>: a cash culture, not a coverage hole, so do not "
+            "overspend. <b>no_demand</b>: do nothing.",
         )
         cause_cty = (
             view.groupby(["dest_country", "cause"], as_index=False)["leakage_estimate"]
@@ -537,7 +804,16 @@ def main() -> None:
         st.plotly_chart(style_fig(figp, theme, height=380), width="stretch")
 
     with tab_val:
-        st.subheader("Hidden-file test — the slide that answers “you don’t have real data”")
+        st.subheader("Proof the model works: hidden-file test")
+        explain(
+            "Each dot is a corridor. The bottom axis is the real leakage the "
+            "data generator hid from the model. The side axis is what the model "
+            "guessed without ever seeing it. On the dashed line means a perfect "
+            "guess.",
+            "It answers the obvious question: you have no real Amex data. We "
+            "cannot use real answers, but we can prove the method recovers a "
+            "known answer it was never shown.",
+        )
         st.write(
             "ground_truth.csv was written by the DGP and **never entered the likelihood**. "
             "Each point is a destination × category corridor. The dashed line is y = x."
@@ -591,7 +867,7 @@ def main() -> None:
             color="cause",
             opacity=0.35,
             color_discrete_map=CAUSE_COLORS,
-            title="Trip × category (4k sample) — noisier, still on the diagonal",
+            title="Trip by category (4k sample): noisier, still on the diagonal",
             labels={"cause": ""},
         )
         hi = float(
@@ -606,58 +882,370 @@ def main() -> None:
         st.plotly_chart(style_fig(fig2, theme, height=420), width="stretch")
 
     with tab_merch:
-        st.subheader("Where to sign the next merchant")
-        st.write(
-            "Greedy submodular selection on `no_acceptance` districts. "
-            "Diminishing returns: the fifth restaurant in Ubud is worth less than "
-            "the first one in the Old Quarter."
+        st.subheader("Which merchants to sign up first")
+        explain(
+            "Amex already knows the region. This goes one level deeper: the "
+            "actual shops to sign up in the low-acceptance areas, each with a "
+            "typical spend per visit and how much local spending is still cash "
+            "versus card.",
+            "You cannot sign up a whole country, you sign up merchants. Ranking "
+            "them by how much spend they unlock, where later shops in the same "
+            "area are worth less than the first, turns the plan into a call list.",
         )
-        merch = data["merchants"].copy()
-        if f_country:
-            merch = merch[merch["dest_country"].isin(f_country)]
-        signed = merch[merch["merchants_signed"] > 0].sort_values("recoverable_value", ascending=False)
-        fig = px.bar(
-            signed.sort_values("covered_value"),
-            x="covered_value",
-            y="dest_district",
-            color="dest_country",
-            orientation="h",
-            color_discrete_sequence=PALETTE,
-            title="Covered recoverable value after greedy assignment",
-            hover_data=["merchants_signed", "acceptance_density"],
+        md = data["merch_detail"]
+        if md.empty:
+            st.warning(
+                "merchant_targets_detail.csv not found. Run "
+                "`python -m match.merchant_targets_detail`."
+            )
+        else:
+            md = md.copy()
+            if f_region:
+                md = md[md["dest_country"].map(REGION).isin(f_region)]
+            if f_country:
+                md = md[md["dest_country"].isin(f_country)]
+            if f_cat:
+                md = md[md["category"].isin(f_cat)]
+            districts = sorted(md["dest_district"].unique())
+            f_dist = st.multiselect("District", districts)
+            if f_dist:
+                md = md[md["dest_district"].isin(f_dist)]
+
+            st.markdown("**Map view**")
+            st.caption(
+                "Each bubble is a target district, sized by how much spend it can "
+                "win back. Scroll to zoom and drag to pan. Pick one or more "
+                "districts in the filter above to zoom in and see the individual "
+                "merchants as pins."
+            )
+            merchant_map(md, f_dist, theme)
+
+            k1, k2, k3, k4 = st.columns(4)
+            k1.metric("Merchant targets", f"{len(md):,}")
+            k2.metric("Recoverable value", money(md["est_recoverable_value"].sum()))
+            if len(md):
+                k3.metric(
+                    "Typical spend / visit",
+                    f"${md['price_low'].median():,.0f}-{md['price_high'].median():,.0f}",
+                )
+                k4.metric("Avg card share", f"{md['credit_share'].mean():.0%}")
+
+            top = md.sort_values("est_recoverable_value", ascending=False).head(15)
+            fig = px.bar(
+                top.sort_values("est_recoverable_value"),
+                x="est_recoverable_value",
+                y="merchant_name",
+                color="category",
+                orientation="h",
+                color_discrete_sequence=PALETTE,
+                title="Top merchants to onboard, by recoverable value",
+                custom_data=["dest_district", "sub_category", "price_range", "visits"],
+            )
+            fig.update_traces(
+                hovertemplate=(
+                    "<b>%{y}</b><br>"
+                    "District: %{customdata[0]}<br>"
+                    "Type: %{customdata[1]}<br>"
+                    "Spend per visit: %{customdata[2]}<br>"
+                    "Visits seen: %{customdata[3]}<br>"
+                    "Recoverable value: $%{x:,.0f}<extra></extra>"
+                )
+            )
+            fig.update_xaxes(title="Estimated recoverable value (USD)")
+            fig.update_yaxes(title="")
+            st.plotly_chart(style_fig(fig, theme, height=520), width="stretch")
+
+            show = md.sort_values("est_recoverable_value", ascending=False).head(200)
+            st.dataframe(
+                show[
+                    [
+                        "priority_rank",
+                        "region",
+                        "dest_country",
+                        "dest_city",
+                        "dest_district",
+                        "category",
+                        "sub_category",
+                        "merchant_name",
+                        "price_range",
+                        "visits",
+                        "est_recoverable_value",
+                        "credit_share",
+                        "cash_share",
+                        "acceptance_density",
+                    ]
+                ].style.format(
+                    {
+                        "est_recoverable_value": "${:,.0f}",
+                        "credit_share": "{:.0%}",
+                        "cash_share": "{:.0%}",
+                        "acceptance_density": "{:.2f}",
+                    }
+                ),
+                width="stretch",
+                hide_index=True,
+            )
+
+            st.markdown("**Cash vs card by district** (where signing merchants is the fix)")
+            byd = (
+                md.groupby("dest_district", as_index=False)
+                .agg(card=("credit_share", "mean"), cash=("cash_share", "mean"))
+                .sort_values("cash", ascending=False)
+                .head(12)
+            )
+            figc = px.bar(
+                byd.melt("dest_district", ["card", "cash"], "kind", "share"),
+                x="share",
+                y="dest_district",
+                color="kind",
+                orientation="h",
+                barmode="stack",
+                color_discrete_map={"card": LIME, "cash": TERRACOTTA_M},
+                title="Share of local spend: card vs cash",
+            )
+            figc.update_xaxes(title="", tickformat=".0%")
+            figc.update_yaxes(title="")
+            st.plotly_chart(style_fig(figc, theme, height=420), width="stretch")
+
+            with st.expander("How we discover merchants (and the LLM judge)"):
+                st.write(
+                    "Candidate venues come from **OpenStreetMap / Google Maps POIs** "
+                    "in each target district. NEMU scrapes the top tourist spots for "
+                    "a corridor, then an LLM decides which are legitimate, "
+                    "high-footfall businesses worth an acquiring call and drops "
+                    "closed venues, duplicates, pure transit stops and global chains "
+                    "that already take Amex."
+                )
+                st.markdown(
+                    "**The LLM:** Google **Gemini** (`gemini-3.6-flash`) in "
+                    "`match/discover_merchants.py`. It sends the candidate list to "
+                    "Gemini's API with a strict JSON schema, so every verdict "
+                    "(`keep`, `tourist_score`, `reason`) comes back clean. If the key "
+                    "is missing, it uses a real backup set of verdicts we judged "
+                    "ahead of time, so the numbers are always genuine, not made up."
+                )
+                disc = data.get("discovery", pd.DataFrame())
+                if not disc.empty:
+                    dshow = disc
+                    if f_dist:
+                        dshow = dshow[dshow["dest_district"].isin(f_dist)]
+                    st.dataframe(
+                        dshow[["dest_district", "merchant_name", "category",
+                               "visits", "keep", "tourist_score", "reason"]]
+                        .head(60),
+                        width="stretch",
+                        hide_index=True,
+                    )
+                if f_dist:
+                    if st.button("Ask Gemini to judge this district (live)"):
+                        from match.discover_merchants import judge_tourist_merchants
+                        cands = [
+                            {"name": r.merchant_name, "category": r.category,
+                             "district": r.dest_district, "visits": int(r.visits)}
+                            for r in md[md["dest_district"].isin(f_dist)]
+                            .sort_values("visits", ascending=False).head(12).itertuples()
+                        ]
+                        with st.spinner("Asking Gemini to judge these venues..."):
+                            verdicts, src = judge_tourist_merchants(
+                                cands, ", ".join(f_dist)
+                            )
+                        st.caption(f"Source: {src}")
+                        st.dataframe(pd.DataFrame(verdicts), width="stretch", hide_index=True)
+                else:
+                    st.caption("Pick a district above to run the judge live on its venues.")
+                st.caption(
+                    "Merchant names are real OSM venues; the recoverable value "
+                    "attached to them is allocated from district-level estimates on "
+                    "simulated capture, not observed Amex acquiring data."
+                )
+
+            with st.expander("District-level summary (how the acquiring budget is spread)"):
+                merch = data["merchants"].copy()
+                if f_country:
+                    merch = merch[merch["dest_country"].isin(f_country)]
+                signed = merch[merch["merchants_signed"] > 0].sort_values(
+                    "recoverable_value", ascending=False
+                )
+                st.dataframe(
+                    signed[
+                        [
+                            "rank_by_value",
+                            "dest_country",
+                            "dest_district",
+                            "acceptance_density",
+                            "recoverable_value",
+                            "merchants_signed",
+                            "coverage",
+                            "covered_value",
+                        ]
+                    ].style.format(
+                        {
+                            "acceptance_density": "{:.2f}",
+                            "recoverable_value": "${:,.0f}",
+                            "coverage": "{:.0%}",
+                            "covered_value": "${:,.0f}",
+                        }
+                    ),
+                    width="stretch",
+                    hide_index=True,
+                )
+
+            st.divider()
+            rc1, rc2 = st.columns([3, 1])
+            rc1.caption(
+                "Merchant list is re-scanned on a schedule so the target list stays "
+                "fresh as venues open and close."
+            )
+            with rc2:
+                cadence = st.selectbox("Re-scan cadence", ["Every 3 months", "Every 6 months"])
+                st.button("Run scan now", disabled=True)
+                st.caption(f"Next scan: {cadence.split()[-1]} from last refresh.")
+
+    with tab_offers:
+        st.subheader("Who to reward, and with what")
+        explain(
+            "For the offer markets, each traveller is sorted into a behaviour "
+            "type, then followed from their top spending category down to a "
+            "specific merchant and the exact voucher to send.",
+            "A blanket points offer wastes money on people who would spend "
+            "anyway. NEMU only rewards the five responsive types and skips the "
+            "three that never change, so rewards turn into real return.",
         )
-        st.plotly_chart(style_fig(fig, theme, height=420), width="stretch")
-        st.dataframe(
-            signed[
+        seg = data["segments"]
+        if seg.empty:
+            st.warning(
+                "behavioral_segments.csv not found. Run "
+                "`python -m match.behavioral_segments`."
+            )
+        else:
+            if f_seg:
+                seg = seg[seg["segment"].isin(f_seg)]
+            targeted = seg[seg["is_targeted"]]
+            o1, o2, o3 = st.columns(3)
+            o1.metric("Targeted travellers", f"{len(targeted):,}")
+            o2.metric("Skipped (no incentive)", f"{len(seg) - len(targeted):,}")
+            o3.metric("Leakage at stake", money(targeted["leakage_estimate"].sum()))
+
+            pattern_info = [
+                ("Points Optimiser", "Spends more when points multipliers appear", "2x / 3x points", True),
+                ("Immediate Value Seeker", "Responds to direct monetary savings", "Cashback / statement credit", True),
+                ("Threshold Chaser", "Spend jumps near a reward threshold", "Spend X, get Y back", True),
+                ("Category Loyalist", "Spends heavily in one category", "Category-specific reward", True),
+                ("Merchant Explorer", "Tries many new merchants & local shops", "Merchant-specific voucher", True),
+                ("Fee-Sensitive Traveller", "Usage falls where FX friction is high", "FX-offset credit (out of scope)", False),
+                ("Already Loyal", "Would use Amex regardless", "No incentive", False),
+                ("Low Responsiveness", "Does not change behaviour after offers", "No incentive", False),
+            ]
+            counts = seg["pattern"].value_counts()
+            ref = pd.DataFrame(
                 [
-                    "rank_by_value",
-                    "dest_country",
-                    "dest_city",
-                    "dest_district",
-                    "acceptance_density",
-                    "recoverable_value",
-                    "merchants_signed",
-                    "coverage",
-                    "covered_value",
+                    {
+                        "Pattern": p,
+                        "What NEMU observes": obs,
+                        "Best intervention": act,
+                        "Travellers": int(counts.get(p, 0)),
+                        "Action": "target" if keep else "skip",
+                    }
+                    for p, obs, act, keep in pattern_info
                 ]
-            ].style.format(
-                {
-                    "acceptance_density": "{:.2f}",
-                    "recoverable_value": "${:,.0f}",
-                    "coverage": "{:.0%}",
-                    "covered_value": "${:,.0f}",
+            )
+            st.dataframe(ref, width="stretch", hide_index=True)
+
+            dist = (
+                seg.groupby(["pattern", "is_targeted"], as_index=False)
+                .size()
+                .rename(columns={"size": "travellers"})
+            )
+            dist["group"] = dist["is_targeted"].map({True: "Targeted", False: "Skipped"})
+            figp = px.bar(
+                dist.sort_values("travellers"),
+                x="travellers",
+                y="pattern",
+                color="group",
+                orientation="h",
+                color_discrete_map={"Targeted": LIME, "Skipped": GRAY},
+                title="How many travellers of each shopper type",
+            )
+            figp.update_xaxes(title="Travellers")
+            figp.update_yaxes(title="")
+            st.plotly_chart(style_fig(figp, theme, height=440), width="stretch")
+
+            st.markdown("**Who gets which offer**")
+            st.write(
+                "Every row is one traveller. It shows what kind of shopper they "
+                "are, the category and the place they spend most on, and the exact "
+                "voucher we would send them. Use the filter to look at one shopper "
+                "type at a time."
+            )
+            with st.expander("What does 'Predicted lift' mean?"):
+                st.write(
+                    "It is how much more we expect a traveller to spend if they get "
+                    "the offer next to them. So 17% means we expect their spend in "
+                    "that category to go up by about 17%.\n\n"
+                    "The number is not a guess. A machine-learning model (a causal "
+                    "forest, see the last tab) learns from past offers how different "
+                    "kinds of travellers responded, then predicts the lift for each "
+                    "person and each offer. NEMU picks the offer with the highest "
+                    "lift for that person. We then prove those predictions hold up "
+                    "with a real randomised test in the last tab."
+                )
+            avail = [
+                p for p, _, _, keep in pattern_info
+                if keep and (targeted["pattern"] == p).any()
+            ]
+            f_pat = st.multiselect("Show only these shopper types", avail)
+            drill = targeted.copy()
+            if f_pat:
+                drill = drill[drill["pattern"].isin(f_pat)]
+            drill = drill.sort_values("predicted_uplift", ascending=False)
+
+            tbl = drill.head(50).copy()
+            tbl["top_category"] = tbl["top_category"].astype(str).str.title()
+            tbl = tbl[
+                [
+                    "member_id",
+                    "segment",
+                    "home_market",
+                    "pattern",
+                    "top_category",
+                    "top_subcategory",
+                    "top_merchant",
+                    "recommended_voucher",
+                    "predicted_uplift",
+                ]
+            ].rename(
+                columns={
+                    "member_id": "Traveller",
+                    "segment": "Card tier",
+                    "home_market": "From",
+                    "pattern": "Behaviour type",
+                    "top_category": "Top category",
+                    "top_subcategory": "Sub-type",
+                    "top_merchant": "Top merchant",
+                    "recommended_voucher": "Voucher to send",
+                    "predicted_uplift": "Predicted lift",
                 }
-            ),
-            width="stretch",
-            hide_index=True,
-        )
+            )
+            st.dataframe(
+                tbl.style.format({"Predicted lift": "{:.0%}"}),
+                width="stretch",
+                hide_index=True,
+            )
 
     with tab_hold:
-        st.subheader("Did the offer model pay for itself?")
+        st.subheader("Proof the offers pay off: randomised holdout")
+        explain(
+            "Half the eligible travellers were randomly held back and got no "
+            "offer. We compare what the treated group actually spent with what "
+            "the model said the offers would add.",
+            "This is the honest ROI check. If the predicted extra dollars match "
+            "the real ones (dots on the diagonal), the offer engine is "
+            "calibrated and worth funding, not just optimistic.",
+        )
         hm = data["holdout_m"]
         h1, h2, h3, h4 = st.columns(4)
         h1.metric("Holdout T − C spend", f"${hm['mean_spend_diff_treatment_minus_control']:,.0f}")
-        h2.metric("95% CI", f"${hm['spend_diff_ci_low']:,.0f} – ${hm['spend_diff_ci_high']:,.0f}")
+        h2.metric("95% CI (USD)", f"{hm['spend_diff_ci_low']:,.0f} to {hm['spend_diff_ci_high']:,.0f}")
         h3.metric("Predicted incremental / treated", f"${hm['predicted_incremental_per_treated']:,.0f}")
         h4.metric("Calibration (realized / predicted)", f"{hm['calibration_ratio']:.2f}")
         calib = data["calib"].copy()

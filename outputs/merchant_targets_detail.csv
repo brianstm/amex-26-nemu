@@ -1,0 +1,490 @@
+region,dest_country,dest_city,dest_district,category,sub_category,merchant_name,mcc,visits,avg_spend_per_visit,price_low,price_high,price_range,est_recoverable_value,acceptance_density,cash_intensity,credit_share,cash_share,priority_rank
+SEA,Vietnam,Hanoi,Old Quarter,retail,General Retail,Hang Ngang silk shops,5311,152,15.0,5.0,25.0,$5–25 / visit,62850.14572754189,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,1
+SEA,Vietnam,Da Nang,Han River,lodging,Budget & Hostel,Grand Mercure Danang,7011,130,20.0,20.0,60.0,$20–60 / visit,49937.93085802052,0.21,0.316,0.6839999999999999,0.316,2
+SEA,Thailand,Bangkok,Khao San,retail,Premium Retail,Granny Bike,5311,42,30.0,10.0,30.0,$10–30 / visit,48883.088857774106,0.22,0.4571,0.5428999999999999,0.4571,3
+SEA,Indonesia,Bali,Ubud,retail,Local Shops,Bali Bagus,5311,45,10.0,5.0,15.0,$5–15 / visit,47731.80590186035,0.14,0.8005,0.1995,0.8005,4
+SEA,Vietnam,Hanoi,Old Quarter,dining,Fine Dining,Pho Gia Truyen Bat Dan,5812,143,25.0,10.0,40.0,$10–40 / visit,40075.02224941164,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,5
+SEA,Thailand,Chiang Mai,Old City,transport,Premium Transport,RTC,4111,55,20.0,5.0,25.0,$5–25 / visit,35008.16021435176,0.31,0.4571,0.5428999999999999,0.4571,6
+SEA,Vietnam,Hanoi,Ba Dinh,transport,Ride-hail & Taxi,Grab,4111,56,30.0,10.0,25.0,$10–25 / visit,33940.83585876677,0.29,0.316,0.6839999999999999,0.316,7
+SEA,Malaysia,Penang,George Town,transport,Premium Transport,Swettenham Pier,4111,56,30.0,10.0,35.0,$10–35 / visit,33294.38807603083,0.33,0.4729,0.5271,0.4729,8
+SEA,Indonesia,Yogyakarta,Malioboro,transport,City Transport,TransJakarta,4111,30,10.0,5.0,15.0,$5–15 / visit,33031.13205806344,0.19,0.8005,0.1995,0.8005,9
+SEA,Vietnam,Da Nang,Han River,retail,General Retail,Han Market,5311,130,20.0,10.0,35.0,$10–35 / visit,31841.830548815542,0.21,0.316,0.6839999999999999,0.316,10
+SEA,Thailand,Bangkok,Khao San,retail,General Retail,Velo Thailand,5311,41,25.0,10.0,45.0,$10–45 / visit,31169.233593945417,0.22,0.4571,0.5428999999999999,0.4571,11
+SEA,Indonesia,Bali,Ubud,transport,City Transport,Ubud Palace stop,4111,43,5.0,5.0,10.0,$5–10 / visit,30435.143170772473,0.14,0.8005,0.1995,0.8005,12
+SEA,Vietnam,Hanoi,Old Quarter,lodging,Budget & Hostel,La Siesta Classic Ma May,7011,128,15.0,20.0,50.0,$20–50 / visit,25552.96236309378,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,13
+SEA,Thailand,Chiang Mai,Old City,transport,Ride-hail & Taxi,Grab,4111,52,25.0,10.0,25.0,$10–25 / visit,22322.188489156022,0.31,0.4571,0.5428999999999999,0.4571,14
+SEA,Vietnam,Hanoi,Ba Dinh,transport,Rail & Metro,Saigon Metro,4111,55,20.0,5.0,25.0,$5–25 / visit,21641.63243312346,0.29,0.316,0.6839999999999999,0.316,15
+SEA,Malaysia,Penang,George Town,transport,Premium Transport,KLIA Ekspres,4111,49,35.0,10.0,45.0,$10–45 / visit,21229.439128297552,0.33,0.4729,0.5271,0.4729,16
+SEA,Indonesia,Yogyakarta,Malioboro,transport,Premium Transport,Malioboro 1,4111,26,15.0,5.0,15.0,$5–15 / visit,21061.5796801577,0.19,0.8005,0.1995,0.8005,17
+SEA,Vietnam,Da Nang,Han River,lodging,Budget & Hostel,Hilton Da Nang,7011,120,25.0,20.0,55.0,$20–55 / visit,20303.24755709497,0.21,0.316,0.6839999999999999,0.316,18
+SEA,Thailand,Bangkok,Khao San,retail,Convenience,7-Eleven,5311,39,15.0,10.0,25.0,$10–25 / visit,19874.380803974695,0.22,0.4571,0.5428999999999999,0.4571,19
+SEA,Indonesia,Bali,Ubud,transport,City Transport,TransJakarta,4111,41,5.0,5.0,10.0,$5–10 / visit,19406.304084323685,0.14,0.8005,0.1995,0.8005,20
+SEA,Vietnam,Hanoi,Old Quarter,lodging,Budget & Hostel,Hanoi Social Club stay,7011,125,15.0,15.0,45.0,$15–45 / visit,16293.288160040227,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,21
+SEA,Thailand,Chiang Mai,Old City,transport,Premium Transport,Chang Phuak Gate,4111,52,30.0,10.0,25.0,$10–25 / visit,14233.255786493375,0.31,0.4571,0.5428999999999999,0.4571,22
+SEA,Vietnam,Hanoi,Ba Dinh,transport,Rail & Metro,Vietnam Airlines,4111,53,30.0,5.0,30.0,$5–30 / visit,13799.314086410332,0.29,0.316,0.6839999999999999,0.316,23
+SEA,Malaysia,Penang,George Town,transport,Premium Transport,KOMTAR Terminal,4111,46,30.0,10.0,45.0,$10–45 / visit,13536.488031343315,0.33,0.4729,0.5271,0.4729,24
+SEA,Indonesia,Yogyakarta,Malioboro,transport,City Transport,Mangkubumi 1,4111,25,10.0,5.0,15.0,$5–15 / visit,13429.45612169365,0.19,0.8005,0.1995,0.8005,25
+SEA,Vietnam,Da Nang,Han River,retail,General Retail,Vincom Da Nang,5311,109,20.0,10.0,35.0,$10–35 / visit,12945.922211749748,0.21,0.316,0.6839999999999999,0.316,26
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Thai Green,7011,36,20.0,20.0,60.0,$20–60 / visit,12672.464696665638,0.22,0.4571,0.5428999999999999,0.4571,27
+SEA,Indonesia,Bali,Ubud,retail,Local Shops,Fresh! Spa,5311,38,5.0,5.0,15.0,$5–15 / visit,12374.005803097381,0.14,0.8005,0.1995,0.8005,28
+SEA,Vietnam,Hanoi,Old Quarter,retail,General Retail,Dong Xuan Market,5311,113,20.0,5.0,30.0,$5–30 / visit,10389.059213327371,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,29
+SEA,Thailand,Chiang Mai,Old City,transport,Rail & Metro,MRT Blue Line,4111,51,30.0,10.0,35.0,$10–35 / visit,9075.524578701681,0.31,0.4571,0.5428999999999999,0.4571,30
+SEA,Vietnam,Hanoi,Ba Dinh,transport,Ride-hail & Taxi,Mai Linh Taxi,4111,47,30.0,10.0,30.0,$10–30 / visit,8798.831134566119,0.29,0.316,0.6839999999999999,0.316,31
+SEA,Malaysia,Penang,George Town,transport,Premium Transport,ETS,4111,42,30.0,10.0,30.0,$10–30 / visit,8631.245842875696,0.33,0.4729,0.5271,0.4729,32
+SEA,Indonesia,Yogyakarta,Malioboro,transport,Rail & Metro,MRT Jakarta,4111,24,10.0,5.0,10.0,$5–10 / visit,8562.999284161233,0.19,0.8005,0.1995,0.8005,33
+SEA,Vietnam,Da Nang,Han River,transport,Rail & Metro,Vietnam Airlines,4111,44,15.0,5.0,15.0,$5–15 / visit,8254.684450917252,0.21,0.316,0.6839999999999999,0.316,34
+SEA,Thailand,Bangkok,Khao San,retail,Premium Retail,Khao San market stalls,5311,35,30.0,10.0,35.0,$10–35 / visit,8080.320241027085,0.22,0.4571,0.5428999999999999,0.4571,35
+SEA,Indonesia,Bali,Ubud,retail,Local Shops,Vio,5311,38,5.0,5.0,15.0,$5–15 / visit,7890.014448386079,0.14,0.8005,0.1995,0.8005,36
+SEA,Vietnam,Hanoi,Old Quarter,dining,Fine Dining,Bun Cha Huong Lien,5812,111,25.0,10.0,35.0,$10–35 / visit,6624.356623283087,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,37
+SEA,Thailand,Chiang Mai,Old City,transport,Premium Transport,BMTA,4111,51,20.0,10.0,30.0,$10–30 / visit,5786.809962115525,0.31,0.4571,0.5428999999999999,0.4571,38
+SEA,Vietnam,Hanoi,Ba Dinh,transport,Rail & Metro,Hanoi Metro,4111,47,20.0,10.0,35.0,$10–35 / visit,5610.382432765505,0.29,0.316,0.6839999999999999,0.316,39
+SEA,Malaysia,Penang,George Town,transport,Ride-hail & Taxi,Grab,4111,38,30.0,10.0,35.0,$10–35 / visit,5503.525332985944,0.33,0.4729,0.5271,0.4729,40
+SEA,Indonesia,Yogyakarta,Malioboro,transport,City Transport,Parkir Bus Wisata,4111,24,10.0,5.0,10.0,$5–10 / visit,5460.009405898294,0.19,0.8005,0.1995,0.8005,41
+SEA,Vietnam,Da Nang,Han River,transport,Rail & Metro,Saigon Metro,4111,38,15.0,5.0,15.0,$5–15 / visit,5263.41918865936,0.21,0.316,0.6839999999999999,0.316,42
+SEA,Thailand,Bangkok,Khao San,retail,General Retail,Travel Store,5311,35,20.0,10.0,25.0,$10–25 / visit,5152.239659798103,0.22,0.4571,0.5428999999999999,0.4571,43
+SEA,Indonesia,Bali,Ubud,retail,Local Shops,Threads of Life,5311,36,10.0,5.0,15.0,$5–15 / visit,5030.895328993501,0.14,0.8005,0.1995,0.8005,44
+SEA,Vietnam,Hanoi,Old Quarter,transport,Rail & Metro,Vietnam Airlines,4111,57,15.0,5.0,15.0,$5–15 / visit,4223.876269387443,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,45
+SEA,Thailand,Chiang Mai,Old City,transport,Rail & Metro,Airport Rail Link,4111,51,20.0,10.0,30.0,$10–30 / visit,3689.832939930187,0.31,0.4571,0.5428999999999999,0.4571,46
+SEA,Vietnam,Hanoi,Ba Dinh,transport,Premium Transport,Ba Dinh Square,4111,33,20.0,10.0,30.0,$10–30 / visit,3577.337780495537,0.29,0.316,0.6839999999999999,0.316,47
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Penang Times Square,5311,37,60.0,20.0,60.0,$20–60 / visit,3509.202685475432,0.33,0.4729,0.5271,0.4729,48
+SEA,Indonesia,Yogyakarta,Malioboro,transport,Premium Transport,Blue Bird,4111,23,15.0,5.0,15.0,$5–15 / visit,3481.4557053204257,0.19,0.8005,0.1995,0.8005,49
+SEA,Vietnam,Da Nang,Han River,transport,Ride-hail & Taxi,Grab,4111,38,15.0,5.0,15.0,$5–15 / visit,3356.1042484754385,0.21,0.316,0.6839999999999999,0.316,50
+SEA,Thailand,Bangkok,Khao San,retail,Premium Retail,Thai Airways Contact Center,5311,33,35.0,10.0,45.0,$10–45 / visit,3285.213050989456,0.22,0.4571,0.5428999999999999,0.4571,51
+SEA,Indonesia,Bali,Ubud,transport,City Transport,Kura-Kura Bus,4111,35,5.0,5.0,10.0,$5–10 / visit,3207.840489628737,0.14,0.8005,0.1995,0.8005,52
+SEA,Vietnam,Hanoi,Old Quarter,transport,Ride-hail & Taxi,Mai Linh Taxi,4111,51,15.0,5.0,15.0,$5–15 / visit,2693.2624183285902,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,53
+SEA,Thailand,Chiang Mai,Old City,transport,Premium Transport,BTS Skytrain,4111,45,30.0,10.0,30.0,$10–30 / visit,2352.741357280817,0.31,0.4571,0.5428999999999999,0.4571,54
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Pow pow Snow,5311,22,55.0,20.0,65.0,$20–65 / visit,2281.011276704104,0.29,0.316,0.6839999999999999,0.316,55
+SEA,Malaysia,Penang,George Town,transport,Premium Transport,Rapid Penang,4111,34,30.0,15.0,30.0,$15–30 / visit,2237.566422005861,0.33,0.4729,0.5271,0.4729,56
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,Srigading,5311,22,10.0,5.0,20.0,$5–20 / visit,2219.8741663365386,0.19,0.8005,0.1995,0.8005,57
+SEA,Vietnam,Da Nang,Han River,transport,Ride-hail & Taxi,Mai Linh Taxi,4111,37,15.0,5.0,20.0,$5–20 / visit,2139.9465486053773,0.21,0.316,0.6839999999999999,0.316,58
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,At Home Guest House,7011,32,20.0,20.0,60.0,$20–60 / visit,2094.7443253861356,0.22,0.4571,0.5428999999999999,0.4571,59
+SEA,Indonesia,Bali,Ubud,transport,City Transport,Blue Bird,4111,34,10.0,5.0,15.0,$5–15 / visit,2045.4094020994582,0.14,0.8005,0.1995,0.8005,60
+SEA,Vietnam,Hanoi,Old Quarter,transport,Ride-hail & Taxi,Grab,4111,48,10.0,5.0,15.0,$5–15 / visit,1717.2999376312443,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,61
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Green Bamboo Massage,5311,26,35.0,15.0,45.0,$15–45 / visit,1500.1741228870712,0.31,0.4571,0.5428999999999999,0.4571,62
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Khách Sạn Hanoi Friends Inn,7011,20,25.0,20.0,70.0,$20–70 / visit,1454.4370041932611,0.29,0.316,0.6839999999999999,0.316,63
+SEA,Malaysia,Penang,George Town,transport,Premium Transport,Rapid KL,4111,34,50.0,10.0,45.0,$10–45 / visit,1426.7353417945437,0.33,0.4729,0.5271,0.4729,64
+SEA,Indonesia,Yogyakarta,Malioboro,transport,Rail & Metro,Tugu Station,4111,22,15.0,5.0,20.0,$5–20 / visit,1415.4542615140938,0.19,0.8005,0.1995,0.8005,65
+SEA,Vietnam,Da Nang,Han River,transport,Premium Transport,Dragon Bridge,4111,32,15.0,5.0,25.0,$5–25 / visit,1364.4901623566384,0.21,0.316,0.6839999999999999,0.316,66
+SEA,Thailand,Bangkok,Khao San,retail,Premium Retail,Baan Sabai Thai Massage,5311,32,30.0,10.0,50.0,$10–50 / visit,1335.6679523161588,0.22,0.4571,0.5428999999999999,0.4571,67
+SEA,Indonesia,Bali,Ubud,retail,Local Shops,Jaens Spa Ubud,5311,34,5.0,5.0,15.0,$5–15 / visit,1304.2106163704725,0.14,0.8005,0.1995,0.8005,68
+SEA,Vietnam,Hanoi,Old Quarter,transport,City Transport,Hoan Kiem Lake walk,4111,42,10.0,5.0,15.0,$5–15 / visit,1094.998785011998,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,69
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,Rama Guest House,7011,26,50.0,20.0,100.0,$20–100 / visit,956.5532530872971,0.31,0.4571,0.5428999999999999,0.4571,70
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,DIY Box,5812,19,85.0,30.0,65.0,$30–65 / visit,927.3899786340575,0.29,0.316,0.6839999999999999,0.316,71
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Telagamas Motors,5311,32,55.0,15.0,60.0,$15–60 / visit,909.7266188419129,0.33,0.4729,0.5271,0.4729,72
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,Indomaret,5311,21,10.0,5.0,25.0,$5–25 / visit,902.5334844743927,0.19,0.8005,0.1995,0.8005,73
+SEA,Vietnam,Da Nang,Han River,transport,Rail & Metro,Hanoi Metro,4111,31,10.0,5.0,15.0,$5–15 / visit,870.0373401295576,0.21,0.316,0.6839999999999999,0.316,74
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Buddy Lodge,7011,30,20.0,20.0,65.0,$20–65 / visit,851.659487615792,0.22,0.4571,0.5428999999999999,0.4571,75
+SEA,Indonesia,Bali,Ubud,transport,Rail & Metro,MRT Jakarta,4111,33,5.0,5.0,10.0,$5–10 / visit,831.601404641799,0.14,0.8005,0.1995,0.8005,76
+SEA,Vietnam,Hanoi,Old Quarter,transport,Rail & Metro,Saigon Metro,4111,42,10.0,5.0,15.0,$5–15 / visit,698.2020513152877,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,77
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Thapae Boutique House,7011,25,35.0,25.0,80.0,$25–80 / visit,609.9252826938482,0.31,0.4571,0.5428999999999999,0.4571,78
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Cửa Hàng Ben,5311,18,25.0,15.0,40.0,$15–40 / visit,591.3299579089904,0.29,0.316,0.6839999999999999,0.316,79
+SEA,Malaysia,Penang,George Town,transport,Premium Transport,Prasarana,4111,31,40.0,15.0,40.0,$15–40 / visit,580.067302453295,0.33,0.4729,0.5271,0.4729,80
+SEA,Indonesia,Yogyakarta,Malioboro,transport,City Transport,Jalan Jend. Sudirman (U),4111,20,10.0,5.0,15.0,$5–15 / visit,575.4807574821662,0.19,0.8005,0.1995,0.8005,81
+SEA,Vietnam,Da Nang,Han River,transport,Rail & Metro,Da Nang Station,4111,26,15.0,5.0,20.0,$5–20 / visit,554.7603010287338,0.21,0.316,0.6839999999999999,0.316,82
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Apple,7011,28,20.0,20.0,65.0,$20–65 / visit,543.0420648996038,0.22,0.4571,0.5428999999999999,0.4571,83
+SEA,Indonesia,Bali,Ubud,retail,Local Shops,Delta Dewata,5311,32,5.0,5.0,15.0,$5–15 / visit,530.2524665278205,0.14,0.8005,0.1995,0.8005,84
+SEA,Vietnam,Hanoi,Old Quarter,transport,Rail & Metro,Hanoi Metro,4111,41,10.0,5.0,15.0,$5–15 / visit,445.1932834386973,0.16,0.31600000000000006,0.6839999999999999,0.31600000000000006,85
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,T. J. R. Boutique House,7011,22,40.0,25.0,65.0,$25–65 / visit,388.9055306314659,0.31,0.4571,0.5428999999999999,0.4571,86
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Khách Sạn Calypso Grand,7011,18,25.0,20.0,65.0,$20–65 / visit,377.04862806009055,0.29,0.316,0.6839999999999999,0.316,87
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Banana Travel & Tours,5311,31,30.0,10.0,50.0,$10–50 / visit,369.8672418795225,0.33,0.4729,0.5271,0.4729,88
+SEA,Indonesia,Yogyakarta,Malioboro,transport,City Transport,Mangkubumi 2,4111,20,10.0,5.0,15.0,$5–15 / visit,366.94273168725147,0.19,0.8005,0.1995,0.8005,89
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,LuuLy Coffee,5812,14,45.0,20.0,70.0,$20–70 / visit,353.73078533809,0.21,0.316,0.6839999999999999,0.316,90
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Nat,7011,28,15.0,20.0,55.0,$20–55 / visit,346.2589080948054,0.22,0.4571,0.5428999999999999,0.4571,91
+SEA,Indonesia,Bali,Ubud,transport,Ride-hail & Taxi,Grab,4111,32,5.0,5.0,10.0,$5–10 / visit,338.1039001250204,0.14,0.8005,0.1995,0.8005,92
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,La Terrasse,5812,22,40.0,15.0,70.0,$15–70 / visit,247.9771146520265,0.31,0.4571,0.5428999999999999,0.4571,93
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Imperial Citadel of Thang Long,5311,18,35.0,15.0,55.0,$15–55 / visit,240.41681978148097,0.29,0.316,0.6839999999999999,0.316,94
+SEA,Malaysia,Penang,George Town,retail,Convenience,Happy Mart,5311,28,50.0,20.0,60.0,$20–60 / visit,235.83776578508326,0.33,0.4729,0.5271,0.4729,95
+SEA,Indonesia,Yogyakarta,Malioboro,transport,City Transport,TransJogja,4111,20,10.0,5.0,15.0,$5–15 / visit,233.9730157567864,0.19,0.8005,0.1995,0.8005,96
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,BarCa Phe Quynh Anh,5812,12,40.0,15.0,45.0,$15–45 / visit,225.5487068268445,0.21,0.316,0.6839999999999999,0.316,97
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Amazing House,7011,28,30.0,25.0,60.0,$25–60 / visit,220.78442755106414,0.22,0.4571,0.5428999999999999,0.4571,98
+SEA,Indonesia,Bali,Ubud,retail,Local Shops,Ubud Art Market,5311,30,5.0,5.0,15.0,$5–15 / visit,215.5845648928293,0.14,0.8005,0.1995,0.8005,99
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,The Jersey Royal,7011,22,25.0,25.0,75.0,$25–75 / visit,158.11718926007214,0.31,0.4571,0.5428999999999999,0.4571,100
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Ray Quan,5812,18,135.0,35.0,125.0,$35–125 / visit,153.29653241605064,0.29,0.316,0.6839999999999999,0.316,101
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Campbell Street shops,5311,28,35.0,15.0,50.0,$15–50 / visit,150.37679868015127,0.33,0.4729,0.5271,0.4729,102
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,Simple Tour,5311,20,10.0,5.0,20.0,$5–20 / visit,149.1877815663717,0.19,0.8005,0.1995,0.8005,103
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,CaPhe Muoi Thuong,5812,12,35.0,15.0,45.0,$15–45 / visit,143.8162050346819,0.21,0.316,0.6839999999999999,0.316,104
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Swana Bangkok,7011,26,25.0,20.0,65.0,$20–65 / visit,140.77836644625614,0.22,0.4571,0.5428999999999999,0.4571,105
+SEA,Indonesia,Bali,Ubud,transport,City Transport,Perama,4111,30,5.0,5.0,10.0,$5–10 / visit,137.46278763079877,0.14,0.8005,0.1995,0.8005,106
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,Franco Thai,7011,22,50.0,25.0,70.0,$25–70 / visit,100.81997112752975,0.31,0.4571,0.5428999999999999,0.4571,107
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Sofitel Legend Metropole Hanoi,7011,17,45.0,25.0,70.0,$25–70 / visit,97.74618461447346,0.29,0.316,0.6839999999999999,0.316,108
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Dobi,5311,28,45.0,15.0,75.0,$15–75 / visit,95.88448018922423,0.33,0.4729,0.5271,0.4729,109
+SEA,Indonesia,Yogyakarta,Malioboro,transport,Ride-hail & Taxi,Grab,4111,19,10.0,5.0,20.0,$5–20 / visit,95.12632940471829,0.19,0.8005,0.1995,0.8005,110
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,CaPhe Sao Mai,5812,12,35.0,10.0,30.0,$10–30 / visit,91.70126098952237,0.21,0.316,0.6839999999999999,0.316,111
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Bangkok House,7011,26,25.0,20.0,75.0,$20–75 / visit,89.76424958545917,0.22,0.4571,0.5428999999999999,0.4571,112
+SEA,Indonesia,Bali,Ubud,retail,General Retail,Bali Ethnic Spa,5311,28,15.0,5.0,20.0,$5–20 / visit,87.65014319380278,0.14,0.8005,0.1995,0.8005,113
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Thapae Chill Garden,5812,21,60.0,15.0,65.0,$15–65 / visit,64.28565183660749,0.31,0.4571,0.5428999999999999,0.4571,114
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Khách Sạn Hanoi Serenity Diamond,7011,16,45.0,20.0,70.0,$20–70 / visit,62.325719023807466,0.29,0.316,0.6839999999999999,0.316,115
+SEA,Malaysia,Penang,George Town,retail,Convenience,7-Eleven,5311,27,40.0,15.0,45.0,$15–45 / visit,61.13864387226972,0.33,0.4729,0.5271,0.4729,116
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,Beringharjo Market,5311,18,15.0,5.0,30.0,$5–30 / visit,60.6552255888946,0.19,0.8005,0.1995,0.8005,117
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,CafeTo Be,5812,12,40.0,20.0,45.0,$20–45 / visit,58.47130554613498,0.21,0.316,0.6839999999999999,0.316,118
+SEA,Thailand,Bangkok,Khao San,retail,General Retail,Shaman,5311,25,25.0,10.0,35.0,$10–35 / visit,57.23621254489186,0.22,0.4571,0.5428999999999999,0.4571,119
+SEA,Indonesia,Bali,Ubud,transport,Local Transit,KAI Commuter,4111,24,5.0,5.0,10.0,$5–10 / visit,55.88819879404822,0.14,0.8005,0.1995,0.8005,120
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,PJ,5311,20,50.0,20.0,45.0,$20–45 / visit,40.990341356376895,0.31,0.4571,0.5428999999999999,0.4571,121
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Ba Dinh Square kiosks,5311,16,55.0,20.0,50.0,$20–50 / visit,39.74063301964835,0.29,0.316,0.6839999999999999,0.316,122
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Ban Heang,5311,27,35.0,10.0,40.0,$10–40 / visit,38.9837204849372,0.33,0.4729,0.5271,0.4729,123
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Local Shops,Malioboro Street stalls,5311,18,5.0,5.0,15.0,$5–15 / visit,38.67547937844856,0.19,0.8005,0.1995,0.8005,124
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,MienThao Coffee,5812,12,40.0,15.0,50.0,$15–50 / visit,37.28295047829398,0.21,0.316,0.6839999999999999,0.316,125
+SEA,Thailand,Bangkok,Khao San,lodging,Hotel,Khaosan Palace Hotel,7011,25,20.0,20.0,50.0,$20–50 / visit,36.495420410830334,0.22,0.4571,0.5428999999999999,0.4571,126
+SEA,Indonesia,Bali,Ubud,lodging,Hotel,Panorama Hotel,7011,21,10.0,20.0,45.0,$20–45 / visit,35.63588889451917,0.14,0.8005,0.1995,0.8005,127
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Mad Dog,5812,20,40.0,15.0,50.0,$15–50 / visit,26.136595593412114,0.31,0.4571,0.5428999999999999,0.4571,128
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Khách Sạn Apt Ez,7011,16,30.0,25.0,70.0,$25–70 / visit,25.339746376597578,0.29,0.316,0.6839999999999999,0.316,129
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Bread History,5311,26,40.0,10.0,65.0,$10–65 / visit,24.857117636150353,0.33,0.4729,0.5271,0.4729,130
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Local Shops,Best lumpia,5311,18,10.0,5.0,20.0,$5–20 / visit,24.66057442916615,0.19,0.8005,0.1995,0.8005,131
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,Madame Lan,5812,11,35.0,15.0,30.0,$15–30 / visit,23.772658800480656,0.21,0.316,0.6839999999999999,0.316,132
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,Phra Pin Klao Pier (Phra Nakhon),4111,23,15.0,5.0,25.0,$5–25 / visit,23.270507459217246,0.22,0.4571,0.5428999999999999,0.4571,133
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Four Seasons Sayan,7011,16,5.0,15.0,40.0,$15–40 / visit,22.7224459672111,0.14,0.8005,0.1995,0.8005,134
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Smile Guesthouse,7011,20,60.0,25.0,85.0,$25–85 / visit,16.665429137913126,0.31,0.4571,0.5428999999999999,0.4571,135
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,ODC Vietnam,5311,16,40.0,10.0,50.0,$10–50 / visit,16.15733564467441,0.29,0.316,0.6839999999999999,0.316,136
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Urban Artsan,5311,26,55.0,25.0,65.0,$25–65 / visit,15.849597972983508,0.33,0.4729,0.5271,0.4729,137
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Convenience,Circle K,5311,18,10.0,5.0,15.0,$5–15 / visit,15.724276491200353,0.19,0.8005,0.1995,0.8005,138
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,Cafe Win,5812,11,30.0,10.0,40.0,$10–40 / visit,15.158116490085622,0.21,0.316,0.6839999999999999,0.316,139
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Samsen 6,7011,22,15.0,20.0,55.0,$20–55 / visit,14.83793065852144,0.22,0.4571,0.5428999999999999,0.4571,140
+SEA,Indonesia,Bali,Ubud,dining,Casual Dining,Batan Warung,5812,16,10.0,5.0,15.0,$5–15 / visit,14.488471222398486,0.14,0.8005,0.1995,0.8005,141
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Kristi House,7011,20,30.0,25.0,75.0,$25–75 / visit,10.62634677719123,0.31,0.4571,0.5428999999999999,0.4571,142
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Khách Sạn Đông Thanh,7011,15,55.0,25.0,70.0,$25–70 / visit,10.30237206224638,0.29,0.316,0.6839999999999999,0.316,143
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,41 Living Story,5311,24,45.0,20.0,65.0,$20–65 / visit,10.106149859461718,0.33,0.4729,0.5271,0.4729,144
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Asia Afrika,7011,18,15.0,15.0,45.0,$15–45 / visit,10.026241354673825,0.19,0.8005,0.1995,0.8005,145
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,SaoMai Coffee,5812,11,20.0,10.0,40.0,$10–40 / visit,9.665241799640773,0.21,0.316,0.6839999999999999,0.316,146
+SEA,Thailand,Bangkok,Khao San,lodging,Budget & Hostel,Amarin Inn,7011,20,30.0,20.0,55.0,$20–55 / visit,9.461082299685025,0.22,0.4571,0.5428999999999999,0.4571,147
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Nuriani Guesthouse,7011,15,5.0,15.0,40.0,$15–40 / visit,9.238257125363159,0.14,0.8005,0.1995,0.8005,148
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,J.I.B Computer Group,5311,19,50.0,20.0,60.0,$20–60 / visit,6.775657854032401,0.31,0.4571,0.5428999999999999,0.4571,149
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,thai an,5311,15,55.0,20.0,50.0,$20–50 / visit,6.5690824553699265,0.29,0.316,0.6839999999999999,0.316,150
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,Old Penang Guesthouse,7011,23,55.0,30.0,85.0,$30–85 / visit,6.44396565490119,0.33,0.4729,0.5271,0.4729,151
+SEA,Indonesia,Yogyakarta,Malioboro,transport,Local Transit,Malioboro 2,4111,17,5.0,5.0,10.0,$5–10 / visit,6.393013742694426,0.19,0.8005,0.1995,0.8005,152
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,CafeHai Ha,5812,11,25.0,15.0,40.0,$15–40 / visit,6.1628302636824746,0.21,0.316,0.6839999999999999,0.316,153
+SEA,Thailand,Bangkok,Khao San,transport,Rail & Metro,Airport Rail Link,4111,20,20.0,10.0,25.0,$10–25 / visit,6.032652419089664,0.22,0.4571,0.5428999999999999,0.4571,154
+SEA,Indonesia,Bali,Ubud,lodging,Hotel,Cendana Resort & Spa,7011,15,15.0,20.0,60.0,$20–60 / visit,5.890572815052014,0.14,0.8005,0.1995,0.8005,155
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Traveller Inn,7011,19,30.0,20.0,65.0,$20–65 / visit,4.32035019348825,0.31,0.4571,0.5428999999999999,0.4571,156
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,tạp hóa,5311,15,25.0,15.0,35.0,$15–35 / visit,4.188631903868564,0.29,0.316,0.6839999999999999,0.316,157
+SEA,Malaysia,Penang,George Town,retail,Premium Retail,Mercedes-Benz Georgetown,5311,21,50.0,15.0,50.0,$15–50 / visit,4.108853909648854,0.33,0.4729,0.5271,0.4729,158
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Hotel,Gaotama Hotel,7011,17,15.0,20.0,50.0,$20–50 / visit,4.076365536046859,0.19,0.8005,0.1995,0.8005,159
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,Nha Que,5812,10,70.0,25.0,45.0,$25–45 / visit,3.9295940697905647,0.21,0.316,0.6839999999999999,0.316,160
+SEA,Thailand,Bangkok,Khao San,transport,City Transport,Chao Phraya Express Boat,4111,20,10.0,5.0,15.0,$5–15 / visit,3.846589011360745,0.22,0.4571,0.5428999999999999,0.4571,161
+SEA,Indonesia,Bali,Ubud,dining,Casual Dining,Bali Bohemia,5812,15,10.0,10.0,15.0,$10–15 / visit,3.7559950560550646,0.14,0.8005,0.1995,0.8005,162
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Tattoo Studio,5311,19,45.0,15.0,50.0,$15–50 / visit,2.754776908232671,0.31,0.4571,0.5428999999999999,0.4571,163
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Nhà Hàng Chả Cá Thủy Hồng,5812,14,50.0,20.0,105.0,$20–105 / visit,2.67078961868769,0.29,0.316,0.6839999999999999,0.316,164
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,The Frame Guesthouse,7011,19,45.0,25.0,80.0,$25–80 / visit,2.619920923693283,0.33,0.4729,0.5271,0.4729,165
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,boomerang,5311,17,10.0,5.0,20.0,$5–20 / visit,2.5992054220842467,0.19,0.8005,0.1995,0.8005,166
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,Ca Phe 83,5812,10,30.0,15.0,45.0,$15–45 / visit,2.5056198033444406,0.21,0.316,0.6839999999999999,0.316,167
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,BTS Skytrain,4111,19,15.0,5.0,15.0,$5–15 / visit,2.452693441362577,0.22,0.4571,0.5428999999999999,0.4571,168
+SEA,Indonesia,Bali,Ubud,dining,Cafe & Coffee,Clear Cafe,5812,15,10.0,5.0,15.0,$5–15 / visit,2.394928185092911,0.14,0.8005,0.1995,0.8005,169
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Frangipani Serviced Residences,7011,19,25.0,25.0,55.0,$25–55 / visit,1.7565233081267426,0.31,0.4571,0.5428999999999999,0.4571,170
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Cửa Hàng Thời Trang Maily,5311,14,40.0,15.0,50.0,$15–50 / visit,1.7029706479344533,0.29,0.316,0.6839999999999999,0.316,171
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,Page 63 Hostel,7011,19,35.0,30.0,80.0,$30–80 / visit,1.6705353359697583,0.33,0.4729,0.5271,0.4729,172
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,Massage,5311,16,10.0,5.0,20.0,$5–20 / visit,1.65732654896887,0.19,0.8005,0.1995,0.8005,173
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,HoaTieu Coffee,5812,10,35.0,15.0,30.0,$15–30 / visit,1.5976537238734334,0.21,0.316,0.6839999999999999,0.316,174
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,Phra Pin Klao Pier (Thon Buri) 12,4111,19,15.0,5.0,30.0,$5–30 / visit,1.5639063855108728,0.22,0.4571,0.5428999999999999,0.4571,175
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Inata Bisma,7011,14,10.0,15.0,55.0,$15–55 / visit,1.5270736319276872,0.14,0.8005,0.1995,0.8005,176
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Rachamankha,7011,19,25.0,20.0,55.0,$20–55 / visit,1.1200087102414218,0.31,0.4571,0.5428999999999999,0.4571,177
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Vanmieu Hotel,7011,14,30.0,25.0,75.0,$25–75 / visit,1.0858620265085834,0.29,0.316,0.6839999999999999,0.316,178
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Micke's Place,5812,19,45.0,20.0,50.0,$20–50 / visit,1.0651803584932593,0.33,0.4729,0.5271,0.4729,179
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,Telephone & SimCard,5311,16,20.0,5.0,20.0,$5–20 / visit,1.0567580640527172,0.19,0.8005,0.1995,0.8005,180
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,PhoCoffee,5812,9,40.0,15.0,60.0,$15–60 / visit,1.018708990885056,0.21,0.316,0.6839999999999999,0.316,181
+SEA,Thailand,Bangkok,Khao San,transport,City Transport,Sanam Luang,4111,19,15.0,5.0,20.0,$5–20 / visit,0.9971907379027821,0.22,0.4571,0.5428999999999999,0.4571,182
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Sri Ratih Cottages,7011,13,15.0,15.0,45.0,$15–45 / visit,0.9737051373163952,0.14,0.8005,0.1995,0.8005,183
+SEA,Thailand,Chiang Mai,Old City,dining,Fast Food,McDonald's,5812,19,50.0,20.0,55.0,$20–55 / visit,0.7141490837115212,0.31,0.4571,0.5428999999999999,0.4571,184
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Cửa Hàng Làm Tóc Cao Minh,5311,14,45.0,15.0,40.0,$15–40 / visit,0.6923761968789383,0.29,0.316,0.6839999999999999,0.316,185
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,Guest Inn,7011,18,40.0,25.0,90.0,$25–90 / visit,0.6791889831298719,0.33,0.4729,0.5271,0.4729,186
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Hotel,Andrea hotel,7011,16,10.0,20.0,55.0,$20–55 / visit,0.6738186910933348,0.19,0.8005,0.1995,0.8005,187
+SEA,Vietnam,Da Nang,Han River,dining,Casual Dining,CaPhe Bar Diem Tam Nguyen Thy,5812,9,20.0,10.0,25.0,$10–25 / visit,0.6495575308985224,0.21,0.316,0.6839999999999999,0.316,188
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,BMTA,4111,17,25.0,10.0,20.0,$10–20 / visit,0.6358368870233053,0.22,0.4571,0.5428999999999999,0.4571,189
+SEA,Indonesia,Bali,Ubud,dining,Casual Dining,Bollero,5812,13,10.0,5.0,15.0,$5–15 / visit,0.6208618069316802,0.14,0.8005,0.1995,0.8005,190
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,SP Chicken,5812,19,40.0,20.0,45.0,$20–45 / visit,0.45536156022936186,0.31,0.4571,0.5428999999999999,0.4571,191
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Cửa Hàng Thời Trang Indigo,5311,14,60.0,10.0,80.0,$10–80 / visit,0.4414785546428319,0.29,0.316,0.6839999999999999,0.316,192
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Tek Sen,5812,17,45.0,20.0,60.0,$20–60 / visit,0.4330700159149735,0.33,0.4729,0.5271,0.4729,193
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Convenience,Alfamart,5311,16,5.0,5.0,15.0,$5–15 / visit,0.4296457665300472,0.19,0.8005,0.1995,0.8005,194
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,CafeThoang Sai Gon,5812,8,25.0,15.0,25.0,$15–25 / visit,0.4141761677988262,0.21,0.316,0.6839999999999999,0.316,195
+SEA,Thailand,Bangkok,Khao San,transport,City Transport,Wat Daowaduengsaram,4111,17,10.0,5.0,15.0,$5–15 / visit,0.405427499005611,0.22,0.4571,0.5428999999999999,0.4571,196
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Juice ja café,5812,13,5.0,5.0,15.0,$5–15 / visit,0.3958789663664001,0.14,0.8005,0.1995,0.8005,197
+SEA,Thailand,Chiang Mai,Old City,lodging,Hotel,BP Chiang Mai City Hotel,7011,18,25.0,20.0,55.0,$20–55 / visit,0.29035134996865375,0.31,0.4571,0.5428999999999999,0.4571,198
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,OH,5311,14,30.0,10.0,60.0,$10–60 / visit,0.2814991547775599,0.29,0.316,0.6839999999999999,0.316,199
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Dream Catcher Traveller's Refuge,7011,16,40.0,25.0,80.0,$25–80 / visit,0.27613763377067546,0.33,0.4729,0.5271,0.4729,200
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Losmen Red Palm,7011,16,20.0,20.0,50.0,$20–50 / visit,0.27395423596467294,0.19,0.8005,0.1995,0.8005,201
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,CaPhe Dragon,5812,8,40.0,15.0,50.0,$15–50 / visit,0.2640903843193551,0.21,0.316,0.6839999999999999,0.316,202
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,Maharaj,4111,16,15.0,5.0,20.0,$5–20 / visit,0.25851198680758614,0.22,0.4571,0.5428999999999999,0.4571,203
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Agung Raka Resort & Villa,5812,12,5.0,5.0,10.0,$5–10 / visit,0.25242357359014594,0.14,0.8005,0.1995,0.8005,204
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Night Bazaar,5311,18,30.0,10.0,35.0,$10–35 / visit,0.18513619460139938,0.31,0.4571,0.5428999999999999,0.4571,205
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Street Market,5311,14,40.0,15.0,85.0,$15–85 / visit,0.1794917857439071,0.29,0.316,0.6839999999999999,0.316,206
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Straits Heritage,7011,16,75.0,25.0,85.0,$25–85 / visit,0.17607312901440603,0.33,0.4729,0.5271,0.4729,207
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Local Shops,Bromo Tour & Travel,5311,15,10.0,5.0,15.0,$5–15 / visit,0.17468093310710958,0.19,0.8005,0.1995,0.8005,208
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,Loc Thu,5812,8,25.0,15.0,35.0,$15–35 / visit,0.16839146361463478,0.21,0.316,0.6839999999999999,0.316,209
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,Rama 8 Bridge,4111,16,20.0,5.0,30.0,$5–30 / visit,0.16483452032019402,0.22,0.4571,0.5428999999999999,0.4571,210
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Sari Organik,5812,12,5.0,5.0,15.0,$5–15 / visit,0.16095237665404805,0.14,0.8005,0.1995,0.8005,211
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Skill Tattoo Studio,5311,18,65.0,20.0,60.0,$20–60 / visit,0.11804804956197966,0.31,0.4571,0.5428999999999999,0.4571,212
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Viettel,5311,14,40.0,10.0,35.0,$10–35 / visit,0.11444901557517927,0.29,0.316,0.6839999999999999,0.316,213
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,Red Inn Court,7011,16,35.0,25.0,90.0,$25–90 / visit,0.11226918380371818,0.33,0.4729,0.5271,0.4729,214
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Ismoyo,7011,15,10.0,15.0,50.0,$15–50 / visit,0.11138148050065334,0.19,0.8005,0.1995,0.8005,215
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,Cafe61,5812,7,30.0,15.0,25.0,$15–25 / visit,0.10737113769348422,0.21,0.316,0.6839999999999999,0.316,216
+SEA,Thailand,Bangkok,Khao San,transport,City Transport,Phanfa Leelard,4111,16,15.0,5.0,25.0,$5–25 / visit,0.10510313051522653,0.22,0.4571,0.5428999999999999,0.4571,217
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Bamboo Café,5812,11,5.0,5.0,15.0,$5–15 / visit,0.1026277664250517,0.14,0.8005,0.1995,0.8005,218
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,137 Pillars House,7011,18,70.0,25.0,105.0,$25–105 / visit,0.07527075964476027,0.31,0.4571,0.5428999999999999,0.4571,219
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,L'Espace bookshop,5311,13,85.0,25.0,60.0,$25–60 / visit,0.0729759142561328,0.29,0.316,0.6839999999999999,0.316,220
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,Just Inn,7011,15,35.0,20.0,85.0,$20–85 / visit,0.07158599215284966,0.33,0.4729,0.5271,0.4729,221
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Local Shops,Twins,5311,15,5.0,5.0,15.0,$5–15 / visit,0.0710199675365279,0.19,0.8005,0.1995,0.8005,222
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,Cafe Dong Xanh,5812,7,40.0,20.0,35.0,$20–35 / visit,0.06846286006502353,0.21,0.316,0.6839999999999999,0.316,223
+SEA,Thailand,Bangkok,Khao San,transport,Rail & Metro,Public Minivan Station (to Kanchanaburi / Koh Chang),4111,16,20.0,5.0,20.0,$5–20 / visit,0.06701671484008616,0.22,0.4571,0.5428999999999999,0.4571,224
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Warung Garasi,5812,11,5.0,5.0,10.0,$5–10 / visit,0.06543835301067705,0.14,0.8005,0.1995,0.8005,225
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Moonlight Thai Massage,5311,17,30.0,15.0,35.0,$15–35 / visit,0.047994755343455445,0.31,0.4571,0.5428999999999999,0.4571,226
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Nhà Hàng Chả Cá Văn Miếu,5812,13,45.0,15.0,60.0,$15–60 / visit,0.04653149732004716,0.29,0.316,0.6839999999999999,0.316,227
+SEA,Malaysia,Penang,George Town,lodging,Hotel,Eastern & Oriental Hotel,7011,15,35.0,25.0,70.0,$25–70 / visit,0.04564524385843247,0.33,0.4729,0.5271,0.4729,228
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,The Phoenix Yogyakarta,7011,15,10.0,20.0,45.0,$20–45 / visit,0.045284330628554796,0.19,0.8005,0.1995,0.8005,229
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,Ca Phe New Life,5812,7,25.0,10.0,35.0,$10–35 / visit,0.04365384691800089,0.21,0.316,0.6839999999999999,0.316,230
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,Phra Arthit,4111,15,15.0,5.0,20.0,$5–20 / visit,0.042731744011247415,0.22,0.4571,0.5428999999999999,0.4571,231
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,L.O.L. Bar&Restaurant,5812,11,5.0,5.0,15.0,$5–15 / visit,0.04172533607537094,0.14,0.8005,0.1995,0.8005,232
+SEA,Thailand,Chiang Mai,Old City,retail,General Retail,Jumjim 2,5311,17,25.0,10.0,45.0,$10–45 / visit,0.03060280713718659,0.31,0.4571,0.5428999999999999,0.4571,233
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cà Phê Trang,5812,13,115.0,45.0,75.0,$45–75 / visit,0.029669792628375043,0.29,0.316,0.6839999999999999,0.316,234
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Jim's Place,7011,15,55.0,25.0,85.0,$25–85 / visit,0.02910469247177728,0.33,0.4729,0.5271,0.4729,235
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Homey Home,7011,15,15.0,15.0,55.0,$15–55 / visit,0.02887456403611453,0.19,0.8005,0.1995,0.8005,236
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,Cafe34,5812,6,20.0,10.0,40.0,$10–40 / visit,0.027834921721504754,0.21,0.316,0.6839999999999999,0.316,237
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,Phra Pinklao Bridge N12,4111,15,20.0,5.0,35.0,$5–35 / visit,0.027246962949466474,0.22,0.4571,0.5428999999999999,0.4571,238
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,LaRaMona Tapas,5812,11,5.0,5.0,10.0,$5–10 / visit,0.026605248917536073,0.14,0.8005,0.1995,0.8005,239
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Na Inn,7011,17,55.0,35.0,110.0,$35–110 / visit,0.0195132113493219,0.31,0.4571,0.5428999999999999,0.4571,240
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cà Phê Goethe,5812,13,135.0,20.0,90.0,$20–90 / visit,0.018918295032632097,0.29,0.316,0.6839999999999999,0.316,241
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Sri Malaya,5812,14,45.0,20.0,45.0,$20–45 / visit,0.018557971264299488,0.33,0.4729,0.5271,0.4729,242
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Hotel,Hotel Gaotama,7011,15,10.0,15.0,45.0,$15–45 / visit,0.01841123489523224,0.19,0.8005,0.1995,0.8005,243
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,CaPhe Kien Viet,5812,6,65.0,25.0,50.0,$25–50 / visit,0.017748329687819905,0.21,0.316,0.6839999999999999,0.316,244
+SEA,Thailand,Bangkok,Khao San,dining,Casual Dining,Karim Roti-Mataba,5812,14,20.0,10.0,35.0,$10–35 / visit,0.017373430622775327,0.22,0.4571,0.5428999999999999,0.4571,245
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Adi House,7011,10,15.0,20.0,45.0,$20–45 / visit,0.016964255690725787,0.14,0.8005,0.1995,0.8005,246
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,Our House Coffee Shop,5812,17,75.0,25.0,80.0,$25–80 / visit,0.01244217288487319,0.31,0.4571,0.5428999999999999,0.4571,247
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Khách Sạn Mai,7011,13,15.0,20.0,50.0,$20–50 / visit,0.012062837493492634,0.29,0.316,0.6839999999999999,0.316,248
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,100 Cintra St,7011,14,50.0,30.0,110.0,$30–110 / visit,0.011833084915105319,0.33,0.4729,0.5271,0.4729,249
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Street & Local,Mi casa es tu casa,5812,14,10.0,5.0,15.0,$5–15 / visit,0.011739521675321279,0.19,0.8005,0.1995,0.8005,250
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,CaPhe New Life,5812,5,45.0,25.0,40.0,$25–40 / visit,0.011316834653218397,0.21,0.316,0.6839999999999999,0.316,251
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Nattaporn Ice Cream,5812,14,30.0,15.0,40.0,$15–40 / visit,0.011077788455329295,0.22,0.4571,0.5428999999999999,0.4571,252
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Ubud Bungalow,7011,10,5.0,15.0,40.0,$15–40 / visit,0.010816886999716582,0.14,0.8005,0.1995,0.8005,253
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Siri Guesthouse,7011,16,40.0,20.0,80.0,$20–80 / visit,0.007933479698740201,0.31,0.4571,0.5428999999999999,0.4571,254
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Royal Hotel,7011,12,40.0,25.0,100.0,$25–100 / visit,0.007691604774289496,0.29,0.316,0.6839999999999999,0.316,255
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Stardust,5812,14,110.0,30.0,75.0,$30–75 / visit,0.0075451080624020575,0.33,0.4729,0.5271,0.4729,256
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Nasi Goreng Sapi Padmanaba,5812,14,10.0,5.0,15.0,$5–15 / visit,0.007485449506758815,0.19,0.8005,0.1995,0.8005,257
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,MeTrang Coffee,5812,5,15.0,10.0,15.0,$10–15 / visit,0.007215932362140885,0.21,0.316,0.6839999999999999,0.316,258
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Pen,5812,14,25.0,15.0,35.0,$15–35 / visit,0.007063509776828644,0.22,0.4571,0.5428999999999999,0.4571,259
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Dewi Ayu 2,7011,10,10.0,15.0,40.0,$15–40 / visit,0.00689715166393088,0.14,0.8005,0.1995,0.8005,260
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Nuad Thai House,5311,16,30.0,15.0,30.0,$15–30 / visit,0.005058609996236582,0.31,0.4571,0.5428999999999999,0.4571,261
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Cafe & Coffee,Manzi Art Space and Cafe,5812,12,85.0,25.0,100.0,$25–100 / visit,0.004904383735235423,0.29,0.316,0.6839999999999999,0.316,262
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,Toh Soon Cafe,5812,14,65.0,25.0,60.0,$25–60 / visit,0.004810973307615968,0.33,0.4729,0.5271,0.4729,263
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,The 101,7011,14,20.0,20.0,60.0,$20–60 / visit,0.004772933333052743,0.19,0.8005,0.1995,0.8005,264
+SEA,Vietnam,Da Nang,Han River,dining,Cafe & Coffee,YoungCafe,5812,5,40.0,20.0,40.0,$20–40 / visit,0.004601081614299661,0.21,0.316,0.6839999999999999,0.316,265
+SEA,Thailand,Bangkok,Khao San,dining,Fast Food,McDonald's,5812,14,30.0,10.0,30.0,$10–30 / visit,0.004503892682961604,0.22,0.4571,0.5428999999999999,0.4571,266
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Bayu Guest House,7011,10,5.0,15.0,45.0,$15–45 / visit,0.004397818066927316,0.14,0.8005,0.1995,0.8005,267
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,Coffee & Relax,5812,16,45.0,20.0,50.0,$20–50 / visit,0.00322551214167578,0.31,0.4571,0.5428999999999999,0.4571,268
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cây Si,5812,12,40.0,20.0,40.0,$20–40 / visit,0.003127173135942073,0.29,0.316,0.6839999999999999,0.316,269
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,Red Inn Heritage,7011,14,90.0,45.0,110.0,$45–110 / visit,0.00306761201763688,0.33,0.4729,0.5271,0.4729,270
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Mid-scale Hotel,Pego Homestay,7011,14,35.0,25.0,60.0,$25–60 / visit,0.0030433566589683912,0.19,0.8005,0.1995,0.8005,271
+SEA,Vietnam,Da Nang,Han River,dining,Fine Dining,Bebe Li,5812,5,30.0,15.0,30.0,$15–30 / visit,0.0029337791651867914,0.21,0.316,0.6839999999999999,0.316,272
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Asahi,5812,13,50.0,15.0,45.0,$15–45 / visit,0.002871808766539611,0.22,0.4571,0.5428999999999999,0.4571,273
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Donna,5812,10,5.0,5.0,15.0,$5–15 / visit,0.0028041726051836794,0.14,0.8005,0.1995,0.8005,274
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Bloodline Tattoo,5311,16,25.0,15.0,55.0,$15–55 / visit,0.0020566773449302964,0.31,0.4571,0.5428999999999999,0.4571,275
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Nhà Hàng Hưng Phát,5812,12,40.0,15.0,55.0,$15–55 / visit,0.00199397362647199,0.29,0.316,0.6839999999999999,0.316,276
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Xavier Lodge,7011,14,75.0,40.0,90.0,$40–90 / visit,0.001955995780698525,0.33,0.4729,0.5271,0.4729,277
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Angkringan KR Yogyakarta,5812,14,10.0,10.0,20.0,$10–20 / visit,0.0019405298811838133,0.19,0.8005,0.1995,0.8005,278
+SEA,Thailand,Bangkok,Khao San,transport,Ride-hail & Taxi,Grab,4111,13,15.0,5.0,15.0,$5–15 / visit,0.0018311461156198573,0.22,0.4571,0.5428999999999999,0.4571,279
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Angga Homestay,7011,10,20.0,20.0,50.0,$20–50 / visit,0.0017880193950716825,0.14,0.8005,0.1995,0.8005,280
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,แม่ข่าพาร์ทเช็นเฅวร,5311,16,30.0,15.0,40.0,$15–40 / visit,0.0013113953739302816,0.31,0.4571,0.5428999999999999,0.4571,281
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Hotel Lele & Frog,7011,12,25.0,20.0,70.0,$20–70 / visit,0.0012714137178298998,0.29,0.316,0.6839999999999999,0.316,282
+SEA,Malaysia,Penang,George Town,lodging,Hotel,MunluStay 88 Hotel,7011,14,50.0,30.0,75.0,$30–75 / visit,0.0012471979742267882,0.33,0.4729,0.5271,0.4729,283
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Yogyakarta BnB,7011,13,15.0,20.0,45.0,$20–45 / visit,0.0012373364813060546,0.19,0.8005,0.1995,0.8005,284
+SEA,Thailand,Bangkok,Khao San,transport,Rail & Metro,MRT Blue Line,4111,13,25.0,5.0,30.0,$5–30 / visit,0.0011675903130520808,0.22,0.4571,0.5428999999999999,0.4571,285
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Laughing Buddha Bar,5812,9,10.0,5.0,15.0,$5–15 / visit,0.0011400915019434393,0.14,0.8005,0.1995,0.8005,286
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,Centerplace,7011,16,40.0,25.0,65.0,$25–65 / visit,0.0008361826083245104,0.31,0.4571,0.5428999999999999,0.4571,287
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,Tea shop,5311,11,30.0,15.0,40.0,$15–40 / visit,0.0008106891788464467,0.29,0.316,0.6839999999999999,0.316,288
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,28 Bahari,7011,14,50.0,30.0,80.0,$30–80 / visit,0.0007952485390126478,0.33,0.4729,0.5271,0.4729,289
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Cafe & Coffee,Fortunate Coffee Jogja,5812,13,5.0,5.0,15.0,$5–15 / visit,0.0007889605735093692,0.19,0.8005,0.1995,0.8005,290
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Taketei,5812,12,25.0,15.0,40.0,$15–40 / visit,0.0007444884531628864,0.22,0.4571,0.5428999999999999,0.4571,291
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Mingle,5812,9,5.0,5.0,15.0,$5–15 / visit,0.0007269544370638871,0.14,0.8005,0.1995,0.8005,292
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Britbike,5311,15,50.0,10.0,95.0,$10–95 / visit,0.0005331735709642313,0.31,0.4571,0.5428999999999999,0.4571,293
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,23 UHERA,5311,11,80.0,35.0,75.0,$35–75 / visit,0.0005169182426476333,0.29,0.316,0.6839999999999999,0.316,294
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,Seng Thor Coffee Shop,5812,13,50.0,20.0,55.0,$20–55 / visit,0.0005070728560105507,0.33,0.4729,0.5271,0.4729,295
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Gudeg Yu Djum,5812,13,10.0,5.0,15.0,$5–15 / visit,0.0005030634721892337,0.19,0.8005,0.1995,0.8005,296
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,The Frog Pond,5812,12,25.0,10.0,25.0,$10–25 / visit,0.0004747067962940077,0.22,0.4571,0.5428999999999999,0.4571,297
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Villa Mandi,7011,9,10.0,20.0,40.0,$20–40 / visit,0.00046352661401829624,0.14,0.8005,0.1995,0.8005,298
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,Coffee Bull,5812,15,40.0,10.0,55.0,$10–55 / visit,0.0003399664785475055,0.31,0.4571,0.5428999999999999,0.4571,299
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Tomodachi House,7011,11,35.0,20.0,50.0,$20–50 / visit,0.00032960162359898804,0.29,0.316,0.6839999999999999,0.316,300
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,Red Inn Hotel,7011,13,50.0,30.0,115.0,$30–115 / visit,0.0003233239279155833,0.33,0.4729,0.5271,0.4729,301
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Royal Ambarrukmo,7011,13,15.0,20.0,50.0,$20–50 / visit,0.00032076743192045466,0.19,0.8005,0.1995,0.8005,302
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Caffeine Lover,5812,12,60.0,15.0,60.0,$15–60 / visit,0.0003026864170832391,0.22,0.4571,0.5428999999999999,0.4571,303
+SEA,Indonesia,Bali,Ubud,dining,Casual Dining,Chili Café,5812,9,10.0,5.0,15.0,$5–15 / visit,0.00029555761812398267,0.14,0.8005,0.1995,0.8005,304
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,Cafe de Thaan Aoan,5812,15,45.0,20.0,80.0,$20–80 / visit,0.00021677219732960722,0.31,0.4571,0.5428999999999999,0.4571,305
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Bluebirds' Nest,5812,11,80.0,25.0,75.0,$25–75 / visit,0.00021016327402695632,0.29,0.316,0.6839999999999999,0.316,306
+SEA,Malaysia,Penang,George Town,lodging,Hotel,Reunion Heritage Hotel,7011,13,75.0,35.0,95.0,$35–95 / visit,0.00020616043853190292,0.33,0.4729,0.5271,0.4729,307
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,House of Raminten,5812,13,15.0,5.0,20.0,$5–20 / visit,0.00020453034471590065,0.19,0.8005,0.1995,0.8005,308
+SEA,Thailand,Bangkok,Khao San,dining,Casual Dining,Bow's Restaurant,5812,11,20.0,15.0,35.0,$15–35 / visit,0.000193001380645803,0.22,0.4571,0.5428999999999999,0.4571,309
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Tunjung Bungalows,7011,9,25.0,15.0,55.0,$15–55 / visit,0.00018845585774212917,0.14,0.8005,0.1995,0.8005,310
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Lotus's go fresh,5311,15,40.0,15.0,50.0,$15–50 / visit,0.00013822005550626784,0.31,0.4571,0.5428999999999999,0.4571,311
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Khách Sạn Hanoi Party Backpacker,7011,11,60.0,25.0,85.0,$25–85 / visit,0.00013400601995658848,0.29,0.316,0.6839999999999999,0.316,312
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Siok,7011,13,75.0,35.0,85.0,$35–85 / visit,0.0001314536993586316,0.33,0.4729,0.5271,0.4729,313
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,"Kencana Fashion, Metro Bringharjo",5311,13,10.0,5.0,20.0,$5–20 / visit,0.00013041430565176396,0.19,0.8005,0.1995,0.8005,314
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Khao San Road stalls,5812,11,80.0,25.0,60.0,$25–60 / visit,0.0001230631136016337,0.22,0.4571,0.5428999999999999,0.4571,315
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Teba House,7011,9,20.0,20.0,50.0,$20–50 / visit,0.00012016476023440972,0.14,0.8005,0.1995,0.8005,316
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,Vipa House,7011,15,40.0,25.0,70.0,$25–70 / visit,8.813299850952051e-05,0.31,0.4571,0.5428999999999999,0.4571,317
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Mojito Bar & Lounge,7011,11,55.0,25.0,80.0,$25–80 / visit,8.544601081111e-05,0.29,0.316,0.6839999999999999,0.316,318
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Hameediyah Tandoori House,5812,13,55.0,15.0,65.0,$15–65 / visit,8.381857934588858e-05,0.33,0.4729,0.5271,0.4729,319
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Mid-scale Hotel,Losmen Rizki,7011,12,35.0,20.0,70.0,$20–70 / visit,8.315583265777126e-05,0.19,0.8005,0.1995,0.8005,320
+SEA,Thailand,Bangkok,Khao San,transport,Premium Transport,Tha Wang Lang,4111,11,15.0,5.0,15.0,$5–15 / visit,7.846850565863009e-05,0.22,0.4571,0.5428999999999999,0.4571,321
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Onion Collective,5812,9,5.0,5.0,15.0,$5–15 / visit,7.66204339583403e-05,0.14,0.8005,0.1995,0.8005,322
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Darlin's Massage,5311,14,55.0,15.0,85.0,$15–85 / visit,5.6196080936510114e-05,0.31,0.4571,0.5428999999999999,0.4571,323
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Puku (Australian Football),5812,11,40.0,15.0,40.0,$15–40 / visit,5.448278193694218e-05,0.29,0.316,0.6839999999999999,0.316,324
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,The Mugshot Cafe,5812,13,85.0,30.0,90.0,$30–90 / visit,5.3445085819881916e-05,0.33,0.4729,0.5271,0.4729,325
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Hotel,Hotel Kombokarno Utama,7011,12,10.0,20.0,45.0,$20–45 / visit,5.302249987414423e-05,0.19,0.8005,0.1995,0.8005,326
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Thip Samai,5812,11,45.0,20.0,45.0,$20–45 / visit,5.003372822363532e-05,0.22,0.4571,0.5428999999999999,0.4571,327
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Biyukukung Suites & Spa,7011,9,10.0,15.0,40.0,$15–40 / visit,4.8855345681315026e-05,0.14,0.8005,0.1995,0.8005,328
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Home Massage,5311,14,35.0,10.0,40.0,$10–40 / visit,3.5832203215934774e-05,0.31,0.4571,0.5428999999999999,0.4571,329
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cà Phê Huy,5812,11,75.0,15.0,60.0,$15–60 / visit,3.473975554166483e-05,0.29,0.316,0.6839999999999999,0.316,330
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,The Daily Dose Cafe Penang,5812,13,85.0,25.0,60.0,$25–60 / visit,3.40780912845986e-05,0.33,0.4729,0.5271,0.4729,331
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,"Laura's backpacker 523, nr 2",7011,12,30.0,25.0,65.0,$25–65 / visit,3.380863858911654e-05,0.19,0.8005,0.1995,0.8005,332
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Suksabai,5812,10,30.0,10.0,45.0,$10–45 / visit,3.190291364598244e-05,0.22,0.4571,0.5428999999999999,0.4571,333
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Alamanda Accommodation,7011,9,5.0,15.0,45.0,$15–45 / visit,3.115154376361939e-05,0.14,0.8005,0.1995,0.8005,334
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Franco Thai,5812,14,50.0,20.0,45.0,$20–45 / visit,2.2847621505112037e-05,0.31,0.4571,0.5428999999999999,0.4571,335
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fast Food,KFC,5812,11,75.0,15.0,65.0,$15–65 / visit,2.2151046113823794e-05,0.29,0.316,0.6839999999999999,0.316,336
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,Joo Hooi Cafe,5812,12,100.0,25.0,135.0,$25–135 / visit,2.172915035659646e-05,0.33,0.4729,0.5271,0.4729,337
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Griya Sentana,7011,12,15.0,20.0,50.0,$20–50 / visit,2.155733973242673e-05,0.19,0.8005,0.1995,0.8005,338
+SEA,Thailand,Bangkok,Khao San,dining,Casual Dining,Teddy The Bake,5812,10,15.0,10.0,40.0,$10–40 / visit,2.034219585943685e-05,0.22,0.4571,0.5428999999999999,0.4571,339
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Warung Mendez,5812,9,5.0,5.0,15.0,$5–15 / visit,1.9863101270161432e-05,0.14,0.8005,0.1995,0.8005,340
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Florist,5311,14,55.0,20.0,75.0,$20–75 / visit,1.4568286669258478e-05,0.31,0.4571,0.5428999999999999,0.4571,341
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Upscale Hotel,Hanoi Blue Sky,7011,11,105.0,50.0,90.0,$50–90 / visit,1.4124130590046142e-05,0.29,0.316,0.6839999999999999,0.316,342
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Campbell House,7011,12,35.0,30.0,130.0,$30–130 / visit,1.3855117978188212e-05,0.33,0.4729,0.5271,0.4729,343
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,margo mulyo antique galery and bar,5812,12,10.0,5.0,20.0,$5–20 / visit,1.3745566687469881e-05,0.19,0.8005,0.1995,0.8005,344
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Gazebo,5812,10,55.0,20.0,55.0,$20–55 / visit,1.2970756745780813e-05,0.22,0.4571,0.5428999999999999,0.4571,345
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,COMO Uma Ubud,7011,9,5.0,15.0,40.0,$15–40 / visit,1.2665272548369136e-05,0.14,0.8005,0.1995,0.8005,346
+SEA,Thailand,Chiang Mai,Old City,retail,Convenience,7-Eleven,5311,14,60.0,15.0,55.0,$15–55 / visit,9.289149701215407e-06,0.31,0.4571,0.5428999999999999,0.4571,347
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Khách Sạn Moon View,7011,10,35.0,25.0,55.0,$25–55 / visit,9.005943281395672e-06,0.29,0.316,0.6839999999999999,0.316,348
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,Starbucks,5812,12,75.0,30.0,60.0,$30–60 / visit,8.834413266933755e-06,0.33,0.4729,0.5271,0.4729,349
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Local Shops,Elfon laundry,5311,12,5.0,5.0,15.0,$5–15 / visit,8.764560279925247e-06,0.19,0.8005,0.1995,0.8005,350
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Aquatini,5812,10,40.0,15.0,50.0,$15–50 / visit,8.270519648947876e-06,0.22,0.4571,0.5428999999999999,0.4571,351
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Cinta grill and inn,5812,8,5.0,5.0,10.0,$5–10 / visit,8.075734324802606e-06,0.14,0.8005,0.1995,0.8005,352
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,Lai Thai,7011,13,45.0,30.0,105.0,$30–105 / visit,5.923023354123933e-06,0.31,0.4571,0.5428999999999999,0.4571,353
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Nhà Hàng Âu Lạc Brazil II,5812,10,40.0,15.0,90.0,$15–90 / visit,5.742442968126855e-06,0.29,0.316,0.6839999999999999,0.316,354
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Gerai Makanan Muhibbah,5812,12,95.0,25.0,80.0,$25–80 / visit,5.633070602057847e-06,0.33,0.4729,0.5271,0.4729,355
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Cafe & Coffee,Tea Factory,5812,12,5.0,5.0,15.0,$5–15 / visit,5.588530371066352e-06,0.19,0.8005,0.1995,0.8005,356
+SEA,Thailand,Bangkok,Khao San,dining,Casual Dining,Brick Bar,5812,9,15.0,10.0,25.0,$10–25 / visit,5.273516156710228e-06,0.22,0.4571,0.5428999999999999,0.4571,357
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Tunjung Mas Bungalows,7011,8,5.0,15.0,40.0,$15–40 / visit,5.149315550512432e-06,0.14,0.8005,0.1995,0.8005,358
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Be 1st Salon,5311,13,50.0,20.0,95.0,$20–95 / visit,3.776686433302666e-06,0.31,0.4571,0.5428999999999999,0.4571,359
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Koto Van Mieu,5812,10,50.0,15.0,55.0,$15–55 / visit,3.6615432955602022e-06,0.29,0.316,0.6839999999999999,0.316,360
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Cheong Fatt Tze,7011,12,40.0,25.0,75.0,$25–75 / visit,3.59180439594512e-06,0.33,0.4729,0.5271,0.4729,361
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Lucifer Bar,5812,11,10.0,10.0,15.0,$10–15 / visit,3.563404290785206e-06,0.19,0.8005,0.1995,0.8005,362
+SEA,Thailand,Bangkok,Khao San,dining,Cafe & Coffee,Cafe De O'Sha,5812,9,45.0,15.0,50.0,$15–50 / visit,3.3625423595506697e-06,0.22,0.4571,0.5428999999999999,0.4571,363
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Ibunda Inn and Spa,7011,8,10.0,15.0,40.0,$15–40 / visit,3.2833485565904653e-06,0.14,0.8005,0.1995,0.8005,364
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Tein Sieng,5812,13,35.0,15.0,40.0,$15–40 / visit,2.4081215897217844e-06,0.31,0.4571,0.5428999999999999,0.4571,365
+SEA,Vietnam,Hanoi,Ba Dinh,retail,General Retail,Shoe Master,5311,10,20.0,10.0,35.0,$10–35 / visit,2.334703083631127e-06,0.29,0.316,0.6839999999999999,0.316,366
+SEA,Malaysia,Penang,George Town,lodging,Hotel,Wai Hai Hotel,7011,12,70.0,40.0,80.0,$40–80 / visit,2.2902355979734255e-06,0.33,0.4729,0.5271,0.4729,367
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Cafe & Coffee,Starbucks,5812,11,10.0,10.0,15.0,$10–15 / visit,2.272126891414446e-06,0.19,0.8005,0.1995,0.8005,368
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Jazz Happens,5812,9,45.0,15.0,50.0,$15–50 / visit,2.1440516694702107e-06,0.22,0.4571,0.5428999999999999,0.4571,369
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Naughty Nuri's Warung,5812,8,5.0,5.0,15.0,$5–15 / visit,2.0935554712687967e-06,0.14,0.8005,0.1995,0.8005,370
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Rioja II,5812,13,45.0,25.0,50.0,$25–50 / visit,1.5354861181347886e-06,0.31,0.4571,0.5428999999999999,0.4571,371
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Khách Sạn Little Hanoi 1,7011,10,25.0,25.0,50.0,$25–50 / visit,1.4886724118013705e-06,0.29,0.316,0.6839999999999999,0.316,372
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Deen Claypot-Briyani,5812,12,95.0,35.0,95.0,$35–95 / visit,1.4603186911141827e-06,0.33,0.4729,0.5271,0.4729,373
+SEA,Indonesia,Yogyakarta,Malioboro,retail,Local Shops,Lucky Boomerang,5311,11,10.0,5.0,25.0,$5–25 / visit,1.4487720700227194e-06,0.19,0.8005,0.1995,0.8005,374
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Hemlock,5812,9,35.0,10.0,50.0,$10–50 / visit,1.367107702985869e-06,0.22,0.4571,0.5428999999999999,0.4571,375
+SEA,Indonesia,Bali,Ubud,lodging,Hotel,Okawati Hotel,7011,8,10.0,15.0,45.0,$15–45 / visit,1.3349099054627745e-06,0.14,0.8005,0.1995,0.8005,376
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Zoe in Yellow Garden,5812,13,50.0,15.0,65.0,$15–65 / visit,9.79069175347178e-07,0.31,0.4571,0.5428999999999999,0.4571,377
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cửa Hàng Bánh Tôm Hồ Tây,5812,10,125.0,45.0,110.0,$45–110 / visit,9.492194383072361e-07,0.29,0.316,0.6839999999999999,0.316,378
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Cintra Heritage House,5812,12,70.0,30.0,85.0,$30–85 / visit,9.311403077938644e-07,0.33,0.4729,0.5271,0.4729,379
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Cafe & Coffee,Legend Cafe,5812,11,10.0,10.0,15.0,$10–15 / visit,9.237778571298377e-07,0.19,0.8005,0.1995,0.8005,380
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Joy Luck Club,5812,9,45.0,15.0,35.0,$15–35 / visit,8.717063577227683e-07,0.22,0.4571,0.5428999999999999,0.4571,381
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Who's Who,5812,8,5.0,5.0,15.0,$5–15 / visit,8.511761356018255e-07,0.14,0.8005,0.1995,0.8005,382
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Warorot Market,5311,13,40.0,15.0,70.0,$15–70 / visit,6.242820685864753e-07,0.31,0.4571,0.5428999999999999,0.4571,383
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Little Hanoi Deluxe Hotel,7011,10,15.0,20.0,45.0,$20–45 / visit,6.052490359313011e-07,0.29,0.316,0.6839999999999999,0.316,384
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,VR Penang Lily's Vegetarian Kitchen,5812,12,95.0,20.0,80.0,$20–80 / visit,5.937212733591312e-07,0.33,0.4729,0.5271,0.4729,385
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Wakeup Homestay,7011,11,15.0,20.0,45.0,$20–45 / visit,5.890267675508214e-07,0.19,0.8005,0.1995,0.8005,386
+SEA,Thailand,Bangkok,Khao San,dining,Casual Dining,Ricky's,5812,9,20.0,10.0,30.0,$10–30 / visit,5.558245136317211e-07,0.22,0.4571,0.5428999999999999,0.4571,387
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Artini 2,7011,8,15.0,15.0,45.0,$15–45 / visit,5.427338660483598e-07,0.14,0.8005,0.1995,0.8005,388
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Sideroad Tattoo,5311,13,65.0,25.0,50.0,$25–50 / visit,3.980598214834142e-07,0.31,0.4571,0.5428999999999999,0.4571,389
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Santa Barbara Hotel,7011,10,35.0,25.0,65.0,$25–65 / visit,3.859238240517386e-07,0.29,0.316,0.6839999999999999,0.316,390
+SEA,Malaysia,Penang,George Town,dining,Casual Dining,Reggae Mansion,5812,11,25.0,10.0,35.0,$10–35 / visit,3.785733981105111e-07,0.33,0.4729,0.5271,0.4729,391
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Hotel,Hotel 1001 Malam,7011,11,15.0,20.0,40.0,$20–40 / visit,3.755800490491808e-07,0.19,0.8005,0.1995,0.8005,392
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,The Family,5812,9,30.0,5.0,25.0,$5–25 / visit,3.5440935725306216e-07,0.22,0.4571,0.5428999999999999,0.4571,393
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Indochine,5812,7,5.0,5.0,15.0,$5–15 / visit,3.460623918309515e-07,0.14,0.8005,0.1995,0.8005,394
+SEA,Thailand,Chiang Mai,Old City,lodging,Mid-scale Hotel,Ban Wiang,7011,12,60.0,30.0,85.0,$30–85 / visit,2.5381414820736005e-07,0.31,0.4571,0.5428999999999999,0.4571,395
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Quán Cơm Mậu Dịch,5812,9,40.0,15.0,45.0,$15–45 / visit,2.460758945969142e-07,0.29,0.316,0.6839999999999999,0.316,396
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,Kheng Pin Kopitiam,5812,11,45.0,20.0,60.0,$20–60 / visit,2.4138905609037665e-07,0.33,0.4729,0.5271,0.4729,397
+SEA,Indonesia,Yogyakarta,Malioboro,transport,City Transport,KAI Commuter,4111,10,5.0,5.0,10.0,$5–10 / visit,2.394804124612419e-07,0.19,0.8005,0.1995,0.8005,398
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Smiths Bar,5812,8,35.0,15.0,35.0,$15–35 / visit,2.2598138338273094e-07,0.22,0.4571,0.5428999999999999,0.4571,399
+SEA,Indonesia,Bali,Ubud,lodging,Hotel,Alaya Resort Ubud,7011,7,10.0,15.0,45.0,$15–45 / visit,2.2065912324897968e-07,0.14,0.8005,0.1995,0.8005,400
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Batch : Baked & Brew,5812,11,60.0,15.0,110.0,$15–110 / visit,1.6183904617691398e-07,0.31,0.4571,0.5428999999999999,0.4571,401
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Khách Sạn First Eden,7011,9,25.0,25.0,60.0,$25–60 / visit,1.5690491783050488e-07,0.29,0.316,0.6839999999999999,0.316,402
+SEA,Malaysia,Penang,George Town,lodging,Budget & Hostel,The Small Inn,7011,11,70.0,30.0,105.0,$30–105 / visit,1.539164576566316e-07,0.33,0.4729,0.5271,0.4729,403
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Street & Local,Pak Gembul,5812,10,10.0,5.0,15.0,$5–15 / visit,1.526994527472817e-07,0.19,0.8005,0.1995,0.8005,404
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,White conner's,5812,8,50.0,15.0,50.0,$15–50 / visit,1.4409209178726212e-07,0.22,0.4571,0.5428999999999999,0.4571,405
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Arjuna House 2 (Home Stay),7011,7,15.0,20.0,45.0,$20–45 / visit,1.4069846889572806e-07,0.14,0.8005,0.1995,0.8005,406
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,Pop Coffee and Restaurant,5812,11,110.0,35.0,110.0,$35–110 / visit,1.0319313187401652e-07,0.31,0.4571,0.5428999999999999,0.4571,407
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Convenience,uni mart,5311,9,10.0,10.0,25.0,$10–25 / visit,1.0004699273663109e-07,0.29,0.316,0.6839999999999999,0.316,408
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Kapitan,5812,11,110.0,30.0,115.0,$30–115 / visit,9.814146639976899e-08,0.33,0.4729,0.5271,0.4729,409
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Betty losmen,7011,10,15.0,20.0,45.0,$20–45 / visit,9.736546980890559e-08,0.19,0.8005,0.1995,0.8005,410
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Green House,5812,7,25.0,10.0,35.0,$10–35 / visit,9.18771741496269e-08,0.22,0.4571,0.5428999999999999,0.4571,411
+SEA,Indonesia,Bali,Ubud,dining,Casual Dining,Ibu Rai,5812,7,15.0,10.0,20.0,$10–20 / visit,8.971330465799671e-08,0.14,0.8005,0.1995,0.8005,412
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Ratana's Kitchen,5812,11,55.0,25.0,65.0,$25–65 / visit,6.57988459368911e-08,0.31,0.4571,0.5428999999999999,0.4571,413
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cửa Hàng Bia Hơi Hà Nội,5812,9,55.0,25.0,40.0,$25–40 / visit,6.37927790539751e-08,0.29,0.316,0.6839999999999999,0.316,414
+SEA,Malaysia,Penang,George Town,lodging,Mid-scale Hotel,Muntri House,7011,11,65.0,40.0,80.0,$40–80 / visit,6.257776181793512e-08,0.33,0.4729,0.5271,0.4729,415
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Street & Local,lie djong,5812,10,5.0,5.0,15.0,$5–15 / visit,6.208296454603808e-08,0.19,0.8005,0.1995,0.8005,416
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Madame Masur,5812,6,45.0,15.0,45.0,$15–45 / visit,5.85834727292588e-08,0.22,0.4571,0.5428999999999999,0.4571,417
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Pande Home Stay,7011,7,10.0,15.0,50.0,$15–50 / visit,5.7203728624959874e-08,0.14,0.8005,0.1995,0.8005,418
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,New Delhi,5812,11,50.0,25.0,75.0,$25–75 / visit,4.1955196513586004e-08,0.31,0.4571,0.5428999999999999,0.4571,419
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Highway4,5812,9,60.0,25.0,50.0,$25–50 / visit,4.067607179500261e-08,0.29,0.316,0.6839999999999999,0.316,420
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Kek Seng,5812,11,30.0,15.0,35.0,$15–35 / visit,3.9901342600597834e-08,0.33,0.4729,0.5271,0.4729,421
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Hotel,Andrea Hotel,7011,10,10.0,15.0,50.0,$15–50 / visit,3.9585845930690634e-08,0.19,0.8005,0.1995,0.8005,422
+SEA,Thailand,Bangkok,Khao San,dining,Fine Dining,Ranee's,5812,6,40.0,15.0,35.0,$15–35 / visit,3.7354471431941506e-08,0.22,0.4571,0.5428999999999999,0.4571,423
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Kafé bunuté,5812,7,10.0,5.0,20.0,$5–20 / visit,3.647470774900635e-08,0.14,0.8005,0.1995,0.8005,424
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Body Care Massage,5311,10,25.0,10.0,45.0,$10–45 / visit,2.6751814403885867e-08,0.31,0.4571,0.5428999999999999,0.4571,425
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Ngog Mai Hotel,7011,8,15.0,20.0,45.0,$20–45 / visit,2.5936208473881825e-08,0.29,0.316,0.6839999999999999,0.316,426
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Wheeler's,5812,10,75.0,20.0,65.0,$20–65 / visit,2.544221932964608e-08,0.33,0.4729,0.5271,0.4729,427
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Street & Local,Tahu Tek Jumbo,5812,10,5.0,5.0,10.0,$5–10 / visit,2.524104977117033e-08,0.19,0.8005,0.1995,0.8005,428
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Bali Moon,7011,7,5.0,15.0,65.0,$15–65 / visit,2.32573004829433e-08,0.14,0.8005,0.1995,0.8005,429
+SEA,Thailand,Chiang Mai,Old City,retail,Premium Retail,Kodak Express,5311,10,35.0,5.0,35.0,$5–35 / visit,1.705770997087848e-08,0.31,0.4571,0.5428999999999999,0.4571,430
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Mid-scale Hotel,Nhà Khách Happy Moon,7011,8,70.0,30.0,100.0,$30–100 / visit,1.6537656669278244e-08,0.29,0.316,0.6839999999999999,0.316,431
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Kashmir,5812,10,55.0,20.0,85.0,$20–85 / visit,1.622267528431799e-08,0.33,0.4729,0.5271,0.4729,432
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Soto Mbak Nunung,5812,10,15.0,10.0,20.0,$10–20 / visit,1.609440391058453e-08,0.19,0.8005,0.1995,0.8005,433
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Texas BBQ,5812,6,5.0,5.0,15.0,$5–15 / visit,1.4829509518651328e-08,0.14,0.8005,0.1995,0.8005,434
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,New Boomerang,5812,10,40.0,20.0,40.0,$20–40 / visit,1.087647607963155e-08,0.31,0.4571,0.5428999999999999,0.4571,435
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Convenience,Kun's Mart,5311,8,40.0,15.0,40.0,$15–40 / visit,1.0544875454187392e-08,0.29,0.316,0.6839999999999999,0.316,436
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Gou Lou,5812,10,35.0,15.0,65.0,$15–65 / visit,1.0344034455899915e-08,0.33,0.4729,0.5271,0.4729,437
+SEA,Indonesia,Yogyakarta,Malioboro,retail,General Retail,Hero Supermarket,5311,10,20.0,5.0,25.0,$5–25 / visit,1.0262245016960265e-08,0.19,0.8005,0.1995,0.8005,438
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Sen-San's warung,5812,6,5.0,5.0,15.0,$5–15 / visit,9.455712743835148e-09,0.14,0.8005,0.1995,0.8005,439
+SEA,Thailand,Chiang Mai,Old City,lodging,Budget & Hostel,Rux-Thai Guest House,7011,10,20.0,20.0,60.0,$20–60 / visit,6.935147338813902e-09,0.31,0.4571,0.5428999999999999,0.4571,440
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,하노이 부라더스,5812,8,105.0,40.0,75.0,$40–75 / visit,6.72370944493532e-09,0.29,0.316,0.6839999999999999,0.316,441
+SEA,Malaysia,Penang,George Town,lodging,Hotel,B Street Hotel,7011,10,50.0,30.0,75.0,$30–75 / visit,6.595647570427405e-09,0.33,0.4729,0.5271,0.4729,442
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Oxen Free,5812,9,15.0,5.0,20.0,$5–20 / visit,6.543496321654132e-09,0.19,0.8005,0.1995,0.8005,443
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Alam Jiwa,7011,6,20.0,20.0,45.0,$20–45 / visit,6.0292286391180915e-09,0.14,0.8005,0.1995,0.8005,444
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Ginger & Kafe,5812,9,65.0,25.0,50.0,$25–50 / visit,4.422045178872598e-09,0.31,0.4571,0.5428999999999999,0.4571,445
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Tu Linh Palace Hotel,7011,8,35.0,25.0,55.0,$25–55 / visit,4.287226425415995e-09,0.29,0.316,0.6839999999999999,0.316,446
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Oh Lay Ee Hokkien Mee,5812,9,35.0,10.0,40.0,$10–40 / visit,4.205570569080294e-09,0.33,0.4729,0.5271,0.4729,447
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Lotus Losmen,7011,9,15.0,20.0,55.0,$20–55 / visit,4.172317464720225e-09,0.19,0.8005,0.1995,0.8005,448
+SEA,Indonesia,Bali,Ubud,dining,Casual Dining,CP Lounge,5812,6,20.0,10.0,25.0,$10–25 / visit,3.8444059128658935e-09,0.14,0.8005,0.1995,0.8005,449
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,Lucky Coffee,5812,9,55.0,25.0,75.0,$25–75 / visit,2.819620493792483e-09,0.31,0.4571,0.5428999999999999,0.4571,450
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Quan An Ngon,5812,7,75.0,25.0,85.0,$25–85 / visit,2.733656261221999e-09,0.29,0.316,0.6839999999999999,0.316,451
+SEA,Malaysia,Penang,George Town,dining,Fast Food,Pizza Hut,5812,8,70.0,25.0,60.0,$25–60 / visit,2.6815901884775727e-09,0.33,0.4729,0.5271,0.4729,452
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Cafe & Coffee,Kopi Jos,5812,9,10.0,5.0,15.0,$5–15 / visit,2.660387073008776e-09,0.19,0.8005,0.1995,0.8005,453
+SEA,Indonesia,Bali,Ubud,lodging,Budget & Hostel,Saren Indah,7011,6,20.0,20.0,60.0,$20–60 / visit,2.4513014363044976e-09,0.14,0.8005,0.1995,0.8005,454
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Kao Soy Nimman nearby,5812,9,55.0,15.0,65.0,$15–65 / visit,1.7978694037317738e-09,0.31,0.4571,0.5428999999999999,0.4571,455
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Street Food: BBQ Chicken,5812,7,65.0,20.0,45.0,$20–45 / visit,1.7430561890122719e-09,0.29,0.316,0.6839999999999999,0.316,456
+SEA,Malaysia,Penang,George Town,dining,Cafe & Coffee,Mona Lisa Cafe,5812,7,125.0,40.0,95.0,$40–95 / visit,1.7098573952860386e-09,0.33,0.4729,0.5271,0.4729,457
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,warung oncor asli,5812,9,10.0,5.0,15.0,$5–15 / visit,1.6963376919610467e-09,0.19,0.8005,0.1995,0.8005,458
+SEA,Indonesia,Bali,Ubud,dining,Cafe & Coffee,"Cafe Wayan, Bakery, cooking class",5812,5,10.0,5.0,15.0,$5–15 / visit,1.5630188038986357e-09,0.14,0.8005,0.1995,0.8005,459
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Eden Restaurant,5812,8,60.0,20.0,45.0,$20–45 / visit,1.1463721447588313e-09,0.31,0.4571,0.5428999999999999,0.4571,460
+SEA,Vietnam,Hanoi,Ba Dinh,retail,Premium Retail,sakura,5311,7,55.0,20.0,65.0,$20–65 / visit,1.1114216959727878e-09,0.29,0.316,0.6839999999999999,0.316,461
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Il Bacaro,5812,7,75.0,20.0,70.0,$20–70 / visit,1.0902532104930572e-09,0.33,0.4729,0.5271,0.4729,462
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Manuk Londho,5812,9,15.0,10.0,15.0,$10–15 / visit,1.081632667051468e-09,0.19,0.8005,0.1995,0.8005,463
+SEA,Indonesia,Bali,Ubud,dining,Street & Local,Locavore,5812,4,5.0,10.0,15.0,$10–15 / visit,9.966247908799629e-10,0.14,0.8005,0.1995,0.8005,464
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Dash,5812,8,90.0,25.0,90.0,$25–90 / visit,7.309591517332622e-10,0.31,0.4571,0.5428999999999999,0.4571,465
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Hotel,Hotel de l'Opera,7011,7,30.0,20.0,70.0,$20–70 / visit,7.086737616754658e-10,0.29,0.316,0.6839999999999999,0.316,466
+SEA,Malaysia,Penang,George Town,dining,Fine Dining,Enoshima Izakaya,5812,6,95.0,35.0,65.0,$35–65 / visit,6.951761394063928e-10,0.33,0.4729,0.5271,0.4729,467
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Via Via Jogja,5812,8,10.0,5.0,20.0,$5–20 / visit,6.89679438225757e-10,0.19,0.8005,0.1995,0.8005,468
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Inter Bar,5812,7,25.0,15.0,40.0,$15–40 / visit,4.660801328306997e-10,0.31,0.4571,0.5428999999999999,0.4571,469
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Khách Sạn Hanoi Street,7011,7,25.0,20.0,50.0,$20–50 / visit,4.518703407599767e-10,0.29,0.316,0.6839999999999999,0.316,470
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Hotel,Hotel Sekar Ayu,7011,8,15.0,20.0,55.0,$20–55 / visit,4.3975902540743276e-10,0.19,0.8005,0.1995,0.8005,471
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,Starbucks Coffee,5812,7,15.0,10.0,20.0,$10–20 / visit,2.9718581360447166e-10,0.31,0.4571,0.5428999999999999,0.4571,472
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cà Phê Bạch Thảo,5812,7,55.0,20.0,45.0,$20–45 / visit,2.881252501514868e-10,0.29,0.316,0.6839999999999999,0.316,473
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Cafe & Coffee,Pier 14 Coffee,5812,7,5.0,5.0,10.0,$5–10 / visit,2.8040273452953577e-10,0.19,0.8005,0.1995,0.8005,474
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Chiang Mai Saloon,5812,7,35.0,20.0,55.0,$20–55 / visit,1.8949404101683153e-10,0.31,0.4571,0.5428999999999999,0.4571,475
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Onion Cellar Ham Hanh,5812,6,80.0,20.0,60.0,$20–60 / visit,1.8371677068965302e-10,0.29,0.316,0.6839999999999999,0.316,476
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Ketoprak Jakarta,5812,7,10.0,10.0,15.0,$10–15 / visit,1.7879267732775811e-10,0.19,0.8005,0.1995,0.8005,477
+SEA,Thailand,Chiang Mai,Old City,dining,Fine Dining,Aroon Rai,5812,5,55.0,15.0,65.0,$15–65 / visit,1.2082673511690098e-10,0.31,0.4571,0.5428999999999999,0.4571,478
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Trà Xuân Tửu,5812,6,50.0,20.0,40.0,$20–40 / visit,1.1714298491676286e-10,0.29,0.316,0.6839999999999999,0.316,479
+SEA,Indonesia,Yogyakarta,Malioboro,lodging,Budget & Hostel,Trans Yogya,7011,7,30.0,25.0,50.0,$25–50 / visit,1.1400324436800481e-10,0.19,0.8005,0.1995,0.8005,480
+SEA,Thailand,Chiang Mai,Old City,dining,Cafe & Coffee,North Mountain Coffee,5812,4,55.0,10.0,15.0,$10–15 / visit,7.704252777908443e-11,0.31,0.4571,0.5428999999999999,0.4571,481
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Cong Caphe,5812,6,70.0,15.0,115.0,$15–115 / visit,7.4693664947934e-11,0.29,0.316,0.6839999999999999,0.316,482
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Street & Local,Holyland Warung,5812,7,10.0,5.0,15.0,$5–15 / visit,7.269167798525745e-11,0.19,0.8005,0.1995,0.8005,483
+SEA,Vietnam,Hanoi,Ba Dinh,lodging,Budget & Hostel,Soft pillow hostel,7011,6,40.0,25.0,90.0,$25–90 / visit,4.762678351860647e-11,0.29,0.316,0.6839999999999999,0.316,484
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Street & Local,Dunkin Donuts,5812,7,10.0,5.0,15.0,$5–15 / visit,4.635026027202415e-11,0.19,0.8005,0.1995,0.8005,485
+SEA,Vietnam,Hanoi,Ba Dinh,dining,Fine Dining,Trà Bát Bảo Tuấn Béo,5812,6,85.0,20.0,100.0,$20–100 / visit,3.0368177942659894e-11,0.29,0.316,0.6839999999999999,0.316,486
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,La-capila,5812,6,10.0,5.0,15.0,$5–15 / visit,2.9554230784439366e-11,0.19,0.8005,0.1995,0.8005,487
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Casual Dining,Batik,5812,4,10.0,10.0,15.0,$10–15 / visit,1.884460954768533e-11,0.19,0.8005,0.1995,0.8005,488
+SEA,Indonesia,Yogyakarta,Malioboro,dining,Street & Local,Dapur Sambal,5812,1,5.0,10.0,15.0,$10–15 / visit,1.2015853553924434e-11,0.19,0.8005,0.1995,0.8005,489
