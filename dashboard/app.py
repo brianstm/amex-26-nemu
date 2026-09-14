@@ -1,25 +1,13 @@
 """NEMU Streamlit dashboard. Reads files in ``outputs/``."""
 
 from __future__ import annotations
-from data.config import (
-    CATEGORY_IMAGES,
-    CURRENCY,
-    DISTRICT_COORDS,
-    DISTRICT_IMAGES,
-    FX_LCU_PER_USD,
-    MERCHANT_IMAGES,
-    OUTPUT_DIR,
-    REGION,
-    REGION_ORDER,
-)
 
+import html as html_lib
 import json
 import os
 import sys
 from pathlib import Path
 from urllib.parse import quote
-
-import html as html_lib
 
 import folium
 import numpy as np
@@ -30,9 +18,23 @@ import streamlit as st
 from folium.plugins import MarkerCluster
 from streamlit_folium import st_folium
 
+# Repo root must be importable before importing the local ``data`` package
+# (Streamlit runs this file from dashboard/, which is not the repo root).
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from data.config import ( 
+    CATEGORY_IMAGES,
+    CURRENCY,
+    DISTRICT_COORDS,
+    DISTRICT_IMAGES,
+    FX_LCU_PER_USD,
+    MERCHANT_IMAGES,
+    OUTPUT_DIR,
+    REGION,
+    REGION_ORDER,
+)
 
 
 # Dashboard displays money in SGD. Pipeline stores USD; convert at World Bank FX.
